@@ -1,0 +1,10 @@
+.form-buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  .ant-form-item-control-input-content {
+    display: flex;
+    gap: 10px;
+  }
+}
