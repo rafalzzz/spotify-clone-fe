@@ -1,28 +1,15 @@
 "use client";
-import { Button, Checkbox, Form, Input, InputNumber, Select } from "antd";
+import { Form } from "antd";
 
 import { useRegisterForm } from "@/register/hooks/use-register-form";
 
+import { CustomFormItem } from "@/components/custom-form-item";
+import { CustomFormButtons } from "@/components/custom-form-buttons";
+
 import "./RegisterForm.scss";
-import { FormItem } from "@/components/form-item";
-
-const { Option } = Select;
-
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
 
 export const RegisterForm = () => {
-  const { form, formItems, onFinish } = useRegisterForm();
+  const { form, formFields, formButtons, onFinish } = useRegisterForm();
 
   return (
     <Form
@@ -34,14 +21,10 @@ export const RegisterForm = () => {
       style={{ maxWidth: 600 }}
       scrollToFirstError
     >
-      {formItems.map(({ key, ...restProps }) => (
-        <FormItem key={key} {...restProps} />
+      {formFields.map(({ key, ...restProps }) => (
+        <CustomFormItem key={key} {...restProps} />
       ))}
-      <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
-          Register
-        </Button>
-      </Form.Item>
+      <CustomFormButtons formButtons={formButtons} />
     </Form>
   );
 };

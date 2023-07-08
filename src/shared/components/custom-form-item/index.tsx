@@ -1,17 +1,17 @@
 import { Form, Input, Select } from "antd";
 import { InputType } from "@/enums/input-type";
-import { FormItemProps } from "@/types/form-item-props";
+import { CustomFormItemProps } from "@/types/custom-form-item-props";
 
-import "./FormItem.scss";
+import "./CustomFormItem.scss";
 
-export const FormItem = ({
+export const CustomFormItem = ({
   type,
   name,
   label,
   rules,
   selectOptions,
   inputOptions,
-}: FormItemProps) => {
+}: CustomFormItemProps) => {
   const getFormItemInput = (inputType: InputType) => {
     switch (inputType) {
       case InputType.TEXT:
