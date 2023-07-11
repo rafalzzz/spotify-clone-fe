@@ -11,7 +11,7 @@ import {
   phoneNumberValidator,
 } from "@/register/utils/validators";
 
-import { PhoneNumberPrefix } from "@/components/phone-number-prefix";
+import { PHONE_PREFIX_OPTIONS, PhoneNumberPrefix } from "@/components/phone-number-prefix";
 
 import { InputType } from "@/enums/input-type";
 import { CustomFormItemProps } from "@/types/custom-form-item-props";
@@ -25,6 +25,7 @@ enum RegisterFormKeys {
   PASSWORD = "password",
   CONFIRM_PASSWORD = "confirm",
   GENDER = "gender",
+  PHONE_NUMBER_PREFIX = "phoneNumberPrefix",
   PHONE_NUMBER = "phone",
 }
 
@@ -37,6 +38,18 @@ const REGISTER_FORM_LABELS = {
   [RegisterFormKeys.CONFIRM_PASSWORD]: "Confirm password",
   [RegisterFormKeys.GENDER]: "Gender",
   [RegisterFormKeys.PHONE_NUMBER]: "Phone number",
+};
+
+export const INITIAL_VALUES = {
+  [RegisterFormKeys.FIRST_NAME]: "",
+  [RegisterFormKeys.LAST_NAME]: "",
+  [RegisterFormKeys.NICKNAME]: "",
+  [RegisterFormKeys.EMAIL]: "",
+  [RegisterFormKeys.PASSWORD]: "",
+  [RegisterFormKeys.CONFIRM_PASSWORD]: "",
+  [RegisterFormKeys.GENDER]: "",
+  [RegisterFormKeys.PHONE_NUMBER_PREFIX]: PHONE_PREFIX_OPTIONS[0].value,
+  [RegisterFormKeys.PHONE_NUMBER]: "",
 };
 
 export type RegisterFormType = Record<RegisterFormKeys, string>;
