@@ -12,6 +12,7 @@ import {
 } from "@/register/utils/validators";
 
 import { PHONE_PREFIX_OPTIONS, PhoneNumberPrefix } from "@/components/phone-number-prefix";
+import { PHONE_NUMBER_PREFIX } from "shared/consts/keys";
 
 import { InputType } from "@/enums/input-type";
 import { CustomFormItemProps } from "@/types/custom-form-item-props";
@@ -25,7 +26,6 @@ enum RegisterFormKeys {
   PASSWORD = "password",
   CONFIRM_PASSWORD = "confirm",
   GENDER = "gender",
-  PHONE_NUMBER_PREFIX = "phoneNumberPrefix",
   PHONE_NUMBER = "phone",
 }
 
@@ -41,21 +41,21 @@ const REGISTER_FORM_LABELS = {
 };
 
 export const INITIAL_VALUES = {
-  [RegisterFormKeys.FIRST_NAME]: "",
+  [RegisterFormKeys.FIRST_NAME]: undefined,
   [RegisterFormKeys.LAST_NAME]: "",
   [RegisterFormKeys.NICKNAME]: "",
   [RegisterFormKeys.EMAIL]: "",
   [RegisterFormKeys.PASSWORD]: "",
   [RegisterFormKeys.CONFIRM_PASSWORD]: "",
-  [RegisterFormKeys.GENDER]: "",
-  [RegisterFormKeys.PHONE_NUMBER_PREFIX]: PHONE_PREFIX_OPTIONS[0].value,
+  [RegisterFormKeys.GENDER]: undefined,
+  [PHONE_NUMBER_PREFIX]: PHONE_PREFIX_OPTIONS[0].value,
   [RegisterFormKeys.PHONE_NUMBER]: "",
 };
 
 export type RegisterFormType = Record<RegisterFormKeys, string>;
 
 export const useRegisterForm = () => {
-  const [form] = Form.useForm<RegisterFormType>();
+  const [form] = Form.useForm<Record<keyof typeof INITIAL_VALUES, string>>();
 
   const formFields: CustomFormItemProps<RegisterFormKeys>[] = useMemo(
     () => [
