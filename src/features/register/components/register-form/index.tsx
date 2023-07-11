@@ -1,7 +1,7 @@
 "use client";
 import { Form } from "antd";
 
-import { useRegisterForm } from "@/register/hooks/use-register-form";
+import { INITIAL_VALUES, useRegisterForm } from "@/register/hooks/use-register-form";
 
 import { CustomFormItem } from "@/components/custom-form-item";
 import { CustomFormButtons } from "@/components/custom-form-buttons";
@@ -17,6 +17,7 @@ export const RegisterForm = () => {
       form={form}
       name="register"
       layout="vertical"
+      initialValues={INITIAL_VALUES}
       onFinish={onFinish}
       style={{ maxWidth: 600 }}
       scrollToFirstError
