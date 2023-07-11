@@ -1,6 +1,5 @@
 import { RuleObject } from "antd/es/form";
-
-const phoneNumberRegex = /^\d{9}$/;
+import { phoneNumberRegex } from "shared/consts/regex";
 
 export const phoneNumberValidator = (_: RuleObject, value: string) => {
   if (!phoneNumberRegex.test(value)) {

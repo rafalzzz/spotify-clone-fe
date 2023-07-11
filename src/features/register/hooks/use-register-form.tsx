@@ -26,7 +26,7 @@ enum RegisterFormKeys {
   PASSWORD = "password",
   CONFIRM_PASSWORD = "confirm",
   GENDER = "gender",
-  PHONE_NUMBER = "phone",
+  PHONE_NUMBER = "phoneNumber",
 }
 
 const REGISTER_FORM_LABELS = {
@@ -52,10 +52,10 @@ export const INITIAL_VALUES = {
   [RegisterFormKeys.PHONE_NUMBER]: "",
 };
 
-export type RegisterFormType = Record<RegisterFormKeys, string>;
+export type RegisterFormType = Record<keyof typeof INITIAL_VALUES, string | number>;
 
 export const useRegisterForm = () => {
-  const [form] = Form.useForm<Record<keyof typeof INITIAL_VALUES, string>>();
+  const [form] = Form.useForm<RegisterFormType>();
 
   const formFields: CustomFormItemProps<RegisterFormKeys>[] = useMemo(
     () => [

@@ -1,0 +1,9 @@
+export const startWithUpperCase = /^[A-Z]/;
+export const hasOnlyLetters = /^[A-Za-z]+$/;
+export const hasOnlyLettersWithPauseMark = /^([A-Z][a-z]*)(-[A-Z][a-z]*)?$/;
+export const hasOnlyLettersAndDigits = /^[a-zA-Z0-9]+$/;
+export const hasUppercase = /[A-Z]/;
+export const hasLowercase = /[a-z]/;
+export const hasDigit = /[0-9]/;
+export const hasSpecialChar = /[^a-zA-Z0-9]/;
+export const phoneNumberRegex = /^\d{9}$/;
