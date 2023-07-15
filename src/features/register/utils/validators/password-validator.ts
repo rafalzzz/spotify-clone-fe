@@ -5,6 +5,10 @@ const MIN_LENGTH = 8;
 const MAX_LENGTH = 150;
 
 export const passwordValidator = (_: RuleObject, value: string) => {
+  if (!value) {
+    return Promise.reject(new Error(`Enter your password`));
+  }
+
   if (value.length < MIN_LENGTH) {
     return Promise.reject(new Error(`Password must be at least ${MIN_LENGTH} characters`));
   }

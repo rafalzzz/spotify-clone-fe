@@ -17,7 +17,7 @@ export const CustomFormItem = ({
       case InputType.TEXT:
         return <Input {...inputOptions} />;
       case InputType.PASSWORD:
-        return <Input.Password />;
+        return <Input.Password {...inputOptions} />;
       case InputType.SELECT:
         return <Select {...selectOptions} />;
       default:
@@ -28,7 +28,8 @@ export const CustomFormItem = ({
   return (
     <Form.Item
       name={name}
-      label={<span className="form-item__label">{label}:</span>}
+      className="form-item"
+      label={<span className="form-item__label">{label}</span>}
       rules={rules}
       validateFirst={true}
     >
