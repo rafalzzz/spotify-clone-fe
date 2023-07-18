@@ -8,4 +8,32 @@
   &__label {
     color: white;
   }
+
+  .ant-radio-wrapper {
+    color: white;
+    padding: 3px 0;
+
+    .ant-radio-checked > .ant-radio-inner {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+  }
+
+  .ant-checkbox-wrapper {
+    margin-top: 25px;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .ant-checkbox {
+      align-self: flex-start;
+      padding-top: 3px;
+    }
+
+    .ant-checkbox-checked > .ant-checkbox-inner {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+  }
 }
