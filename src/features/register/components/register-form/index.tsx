@@ -4,13 +4,18 @@ import { Form } from "antd";
 import { INITIAL_VALUES, useRegisterForm } from "@/register/hooks/use-register-form";
 
 import { CustomFormItem } from "@/components/custom-form-item";
-import { CustomDateInput } from "@/components/custom-date-input";
 import { CustomFormButtons } from "@/components/custom-form-buttons";
+import { DateOfBirthInput } from "@/register/components/date-of-birth-input";
+
+import { InputType, NonStandardInputType } from "@/enums/input-type";
 
 import "./RegisterForm.scss";
 
 export const RegisterForm = () => {
   const { form, formFields, formButtons, onFinish } = useRegisterForm();
+
+  const isStandardInput = (inputType: string) =>
+    Object.values(InputType).includes(inputType as InputType);
 
   return (
     <Form
@@ -23,10 +28,10 @@ export const RegisterForm = () => {
       onFinish={onFinish}
       scrollToFirstError
     >
-      {formFields.map(({ key, ...restProps }) => (
-        <CustomFormItem key={key} {...restProps} />
-      ))}
-      <CustomDateInput />
+      {formFields.map(({ key, type, ...restProps }) => {
+        if (isStandardInput(type)) return <CustomFormItem key={key} type={type} {...restProps} />;
+        if (type === NonStandardInputType.DATE_OF_BIRTH) return <DateOfBirthInput {...restProps} />;
+      })}
       <CustomFormButtons formButtons={formButtons} />
     </Form>
   );

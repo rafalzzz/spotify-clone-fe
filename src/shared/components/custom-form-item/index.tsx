@@ -7,7 +7,7 @@ import "./CustomFormItem.scss";
 export const CustomFormItem = ({
   type,
   name,
-  label,
+  label = "",
   rules,
   selectOptions,
   inputOptions,
@@ -33,7 +33,7 @@ export const CustomFormItem = ({
       rules={rules}
       validateFirst={true}
     >
-      {getFormItemInput(type)}
+      {getFormItemInput(type as InputType)}
     </Form.Item>
   );
 };

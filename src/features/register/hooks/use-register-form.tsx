@@ -2,23 +2,24 @@ import { useMemo, useCallback } from "react";
 import { Form } from "antd";
 
 import { usernameValidator, passwordValidator } from "@/register/utils/validators";
-
-import { InputType } from "@/enums/input-type";
-import { CustomFormItemProps } from "@/types/custom-form-item-props";
-import { CustomButtonProps } from "@/types/custom-button-props";
 import { emailValidator } from "../utils/validators/email-validator";
+
+import { InputType, NonStandardInputType } from "@/enums/input-type";
+import { CustomFormItemProps } from "@/types/custom-form-item-props";
+import { NonStandardItemProps } from "@/types/non-standard-form-item-props";
+import { CustomButtonProps } from "@/types/custom-button-props";
 
 enum RegisterFormKeys {
   EMAIL = "email",
   PASSWORD = "password",
   USERNAME = "username",
-  GENDER = "gender",
 }
 
 const REGISTER_FORM_LABELS = {
   [RegisterFormKeys.EMAIL]: "Your e-mail address",
   [RegisterFormKeys.PASSWORD]: "Create a password",
   [RegisterFormKeys.USERNAME]: "How should we address you?",
+  [NonStandardInputType.DATE_OF_BIRTH]: "Enter your date of birth",
 };
 
 export const INITIAL_VALUES = {
@@ -32,7 +33,7 @@ export type RegisterFormType = Record<keyof typeof INITIAL_VALUES, string | numb
 export const useRegisterForm = () => {
   const [form] = Form.useForm<RegisterFormType>();
 
-  const formFields: CustomFormItemProps<RegisterFormKeys>[] = useMemo(
+  const formFields: (CustomFormItemProps<RegisterFormKeys> | NonStandardItemProps)[] = useMemo(
     () => [
       {
         type: InputType.TEXT,
@@ -63,6 +64,12 @@ export const useRegisterForm = () => {
         inputOptions: {
           placeholder: "Enter a username",
         },
+      },
+      {
+        type: NonStandardInputType.DATE_OF_BIRTH,
+        key: NonStandardInputType.DATE_OF_BIRTH,
+        name: NonStandardInputType.DATE_OF_BIRTH,
+        label: REGISTER_FORM_LABELS[NonStandardInputType.DATE_OF_BIRTH],
       },
     ],
     []

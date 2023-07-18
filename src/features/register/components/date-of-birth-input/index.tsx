@@ -1,6 +1,6 @@
 import { Form, Input, Select, Row, Col } from "antd";
-
-import "./CustomDateInput.scss";
+import { dateOfBirthValidator } from "@/register/utils/validators";
+import "./DateOfBirthInput.scss";
 
 const { Option } = Select;
 
@@ -19,34 +19,46 @@ const MONTH_OPTIONS = [
   { label: "December", value: 12 },
 ];
 
-export const CustomDateInput = () => {
+type DateOfBirthInputProps = {
+  label: string;
+  name: string;
+};
+
+export const DateOfBirthInput = ({ label, name }: DateOfBirthInputProps) => {
   const form = Form.useFormInstance();
-  console.log({ form, errors: form.getFieldsError(), values: form.getFieldsValue() });
+
+  const handleMonthChange = () => {
+    form.validateFields([name]);
+  };
 
   return (
     <Form.Item
-      className="date-field"
-      label={<span className="date-field__label">Enter your date of birth</span>}
+      name={name}
+      className="date-of-birth"
+      label={<span className="date-of-birth__label">{label}</span>}
+      rules={[
+        ({ getFieldValue }) => ({
+          validator: dateOfBirthValidator(getFieldValue),
+        }),
+      ]}
     >
       <Row>
         <Col span={4}>
           <Form.Item
             name="day"
-            className="date-field__input"
-            label={<span className="date-field__label">Day</span>}
-            validateStatus={false ? "error" : ""}
+            className="date-of-birth__input"
+            label={<span className="date-of-birth__label">Day</span>}
           >
-            <Input maxLength={2} placeholder="DD" />
+            <Input maxLength={2} placeholder="DD" onChange={handleMonthChange} />
           </Form.Item>
         </Col>
         <Col span={14} offset={1}>
           <Form.Item
             name="month"
-            label={<span className="date-field__label">Month</span>}
-            className="date-field__input"
-            validateStatus={false ? "error" : ""}
+            label={<span className="date-of-birth__label">Month</span>}
+            className="date-of-birth__input"
           >
-            <Select placeholder="Month">
+            <Select placeholder="Month" onChange={handleMonthChange}>
               {MONTH_OPTIONS.map(({ label, value }) => (
                 <Option key={value} value={value} disabled={!value}>
                   {label}
@@ -58,11 +70,10 @@ export const CustomDateInput = () => {
         <Col span={4} offset={1}>
           <Form.Item
             name="year"
-            label={<span className="date-field__label">Year</span>}
-            className="date-field__input"
-            validateStatus={false ? "error" : ""}
+            label={<span className="date-of-birth__label">Year</span>}
+            className="date-of-birth__input"
           >
-            <Input maxLength={4} placeholder="RRRR" />
+            <Input maxLength={4} placeholder="RRRR" onChange={handleMonthChange} />
           </Form.Item>
         </Col>
       </Row>
