@@ -1,3 +1,4 @@
 import { CustomFormItemProps } from "./custom-form-item-props";
 
-export type NonStandardItemProps = Pick<CustomFormItemProps, "type" | "key" | "name" | "label">;
+type CustomFormItemKeys = "type" | "key" | "name" | "label";
+export type NonStandardItemProps = Pick<CustomFormItemProps, CustomFormItemKeys>;

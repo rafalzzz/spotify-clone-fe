@@ -5,7 +5,6 @@ const MAX_ALLOWED_AGE = 100;
 
 export const isValidDate = (year: number, month: number, day: number) => {
   const inputDate = getDate(year, month, day);
-  console.log({ inputDate });
   if (isNaN(inputDate as unknown as number) || !inputDate) return;
 
   inputDate.setHours(0, 0, 0, 0);

@@ -6,5 +6,4 @@ export const hasUppercase = /[A-Z]/;
 export const hasLowercase = /[a-z]/;
 export const hasDigit = /[0-9]/;
 export const hasSpecialChar = /[^a-zA-Z0-9]/;
-export const phoneNumberRegex = /^\d{9}$/;
 export const emailRegex = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;

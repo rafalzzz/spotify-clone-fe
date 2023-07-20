@@ -6,11 +6,11 @@
   }
 
   &__label {
-    color: white;
+    color: var(--main-text-color);
   }
 
   .ant-radio-wrapper {
-    color: white;
+    color: var(--main-text-color);
     padding: 3px 0;
 
     .ant-radio-checked > .ant-radio-inner {
@@ -21,7 +21,7 @@
 
   .ant-checkbox-wrapper {
     margin-top: 25px;
-    color: white;
+    color: var(--main-text-color);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
