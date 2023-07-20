@@ -1,25 +1,47 @@
-import { Form, Input, Select } from "antd";
+import { Form, Input, Select, Radio, Checkbox } from "antd";
 import { InputType } from "@/enums/input-type";
-import { CustomFormItemProps } from "@/types/custom-form-item-props";
+import {
+  CustomFormItemProps,
+  ExtendedCheckboxProps,
+  ExtendedRadioProps,
+} from "@/types/custom-form-item-props";
 
 import "./CustomFormItem.scss";
 
 export const CustomFormItem = ({
   type,
   name,
-  label,
+  label = "",
   rules,
-  selectOptions,
-  inputOptions,
+  selectProps,
+  inputProps,
+  radioProps,
+  checkboxProps,
 }: CustomFormItemProps) => {
   const getFormItemInput = (inputType: InputType) => {
     switch (inputType) {
       case InputType.TEXT:
-        return <Input {...inputOptions} />;
+        return <Input {...inputProps} />;
       case InputType.PASSWORD:
-        return <Input.Password />;
+        return <Input.Password {...inputProps} />;
       case InputType.SELECT:
-        return <Select {...selectOptions} />;
+        return <Select {...selectProps} />;
+      case InputType.RADIO:
+        const { options } = radioProps as ExtendedRadioProps;
+
+        return (
+          <Radio.Group>
+            {options.map(({ label, value }) => (
+              <Radio key={value} value={value}>
+                {label}
+              </Radio>
+            ))}
+          </Radio.Group>
+        );
+      case InputType.CHECKBOX:
+        const { text } = checkboxProps as ExtendedCheckboxProps;
+
+        return <Checkbox>{text}</Checkbox>;
       default:
         throw Error(`${inputType} input type does not exist`);
     }
@@ -28,11 +50,13 @@ export const CustomFormItem = ({
   return (
     <Form.Item
       name={name}
-      label={<span className="form-item__label">{label}:</span>}
+      className="form-item"
+      label={label ? <span className="form-item__label">{label}</span> : null}
       rules={rules}
       validateFirst={true}
+      valuePropName={type === InputType.CHECKBOX ? "checked" : "value"}
     >
-      {getFormItemInput(type)}
+      {getFormItemInput(type as InputType)}
     </Form.Item>
   );
 };

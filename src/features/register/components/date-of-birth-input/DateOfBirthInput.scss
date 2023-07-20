@@ -1,0 +1,34 @@
+.date-of-birth {
+  margin-bottom: 5px;
+
+  div:first-of-type {
+    padding: 0;
+    margin: 0;
+  }
+
+  .ant-form-item-label {
+    height: 30px;
+  }
+
+  &__input {
+    .ant-form-item-label {
+      padding: 0;
+      margin: 0;
+      height: 40px;
+    }
+  }
+
+  &__label {
+    color: var(--main-text-color);
+  }
+}
+
+.outer-form-item {
+  padding: 0;
+  margin: 0;
+}
+
+.ant-form-item-label {
+  padding: 0;
+  margin: 0;
+}
