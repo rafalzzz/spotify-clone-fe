@@ -20,17 +20,18 @@ export const RegisterForm = () => {
   return (
     <Form
       className="register-form"
-      form={form}
       name="register"
       layout="vertical"
-      size={"large"}
+      size="large"
+      form={form}
       initialValues={INITIAL_VALUES}
       onFinish={onFinish}
       scrollToFirstError
     >
       {formFields.map(({ key, type, ...restProps }) => {
         if (isStandardInput(type)) return <CustomFormItem key={key} type={type} {...restProps} />;
-        if (type === NonStandardInputType.DATE_OF_BIRTH) return <DateOfBirthInput {...restProps} />;
+        if (type === NonStandardInputType.DATE_OF_BIRTH)
+          return <DateOfBirthInput key={key} {...restProps} />;
       })}
       <CustomFormButtons formButtons={formButtons} />
     </Form>

@@ -10,7 +10,6 @@ import "./CustomFormItem.scss";
 
 export const CustomFormItem = ({
   type,
-  key,
   name,
   label = "",
   rules,
@@ -51,11 +50,11 @@ export const CustomFormItem = ({
   return (
     <Form.Item
       name={name}
-      key={key}
       className="form-item"
       label={label ? <span className="form-item__label">{label}</span> : null}
       rules={rules}
       validateFirst={true}
+      valuePropName={type === InputType.CHECKBOX ? "checked" : "value"}
     >
       {getFormItemInput(type as InputType)}
     </Form.Item>

@@ -20,11 +20,11 @@ const MONTH_OPTIONS = [
 ];
 
 type DateOfBirthInputProps = {
-  label: string;
   name: string;
+  label?: string;
 };
 
-export const DateOfBirthInput = ({ label, name }: DateOfBirthInputProps) => {
+export const DateOfBirthInput = ({ label = "", name }: DateOfBirthInputProps) => {
   const form = Form.useFormInstance();
 
   const handleMonthChange = () => {
