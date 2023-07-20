@@ -1,5 +1,4 @@
-import { isValidDate } from "@/register/utils/helpers/is-valid-date";
-import { isAllowedAge } from "@/register/utils/helpers/is-allowed-age";
+import { isAllowedAge, isValidDate } from "@/register/helpers";
 import { NamePath } from "antd/es/form/interface";
 
 export const dateOfBirthValidator =

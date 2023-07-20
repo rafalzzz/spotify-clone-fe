@@ -9,6 +9,8 @@ import {
 } from "@/register/utils/validators";
 import { emailValidator } from "@/register/utils/validators/email-validator";
 
+import { GENDER_OPTIONS } from "@/register/consts/gender-options";
+
 import { InputType, NonStandardInputType } from "@/enums/input-type";
 import { CustomFormItemProps } from "@/types/custom-form-item-props";
 import { NonStandardItemProps } from "@/types/non-standard-form-item-props";
@@ -22,6 +24,9 @@ enum RegisterFormKeys {
   OFFERS = "offers",
   SHARE_INFORMATION = "shareInformation",
   TERMS = "terms",
+  DAY = "day",
+  MONTH = "month",
+  YEAR = "year",
 }
 
 const REGISTER_FORM_LABELS = {
@@ -37,9 +42,12 @@ export const INITIAL_VALUES = {
   [RegisterFormKeys.PASSWORD]: "",
   [RegisterFormKeys.USERNAME]: "",
   [RegisterFormKeys.GENDER]: undefined,
+  [RegisterFormKeys.OFFERS]: false,
+  [RegisterFormKeys.SHARE_INFORMATION]: false,
+  [RegisterFormKeys.TERMS]: false,
 };
 
-export type RegisterFormType = Record<keyof typeof INITIAL_VALUES, string | number>;
+export type RegisterFormType = Record<RegisterFormKeys, string | number>;
 
 export const useRegisterForm = () => {
   const [form] = Form.useForm<RegisterFormType>();
@@ -89,13 +97,7 @@ export const useRegisterForm = () => {
         label: REGISTER_FORM_LABELS[RegisterFormKeys.GENDER],
         rules: [{ validator: genderValidator }],
         radioProps: {
-          options: [
-            { label: "Man", value: 0 },
-            { label: "Woman", value: 1 },
-            { label: "Non-binary person", value: 2 },
-            { label: "Other", value: 3 },
-            { label: "I don't want to give", value: 4 },
-          ],
+          options: GENDER_OPTIONS,
         },
       },
       {
@@ -127,8 +129,15 @@ export const useRegisterForm = () => {
     []
   );
 
-  const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+  const onFinish = (values: Record<RegisterFormKeys, string | number>) => {
+    const { year, month, day, ...restValues } = values;
+
+    const requestBody = {
+      ...restValues,
+      dateOfBirth: `${year}-${month}-${day}`,
+    };
+
+    console.log({ requestBody });
   };
 
   const clearForm = useCallback(() => {

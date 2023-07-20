@@ -1,14 +1,9 @@
 "use client";
 import { Form } from "antd";
-
 import { INITIAL_VALUES, useRegisterForm } from "@/register/hooks/use-register-form";
-
-import { CustomFormItem } from "@/components/custom-form-item";
-import { CustomFormButtons } from "@/components/custom-form-buttons";
+import { CustomFormButtons, CustomFormItem } from "@/components/index";
 import { DateOfBirthInput } from "@/register/components/date-of-birth-input";
-
 import { InputType, NonStandardInputType } from "@/enums/input-type";
-
 import "./RegisterForm.scss";
 
 export const RegisterForm = () => {

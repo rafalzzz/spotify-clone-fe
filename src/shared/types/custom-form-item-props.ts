@@ -2,14 +2,14 @@ import { Rule } from "antd/es/form";
 import { InputType, NonStandardInputType } from "@/enums/input-type";
 import { CheckboxProps, InputProps, RadioProps, SelectProps } from "antd";
 
-type Option = { label: string; value: string | number };
+export type OptionType = { label: string; value: string | number };
 
 export interface ExtendedSelectProps extends SelectProps {
-  options: Option[];
+  options: OptionType[];
 }
 
 export interface ExtendedRadioProps extends RadioProps {
-  options: Option[];
+  options: OptionType[];
 }
 
 export interface ExtendedCheckboxProps extends CheckboxProps {

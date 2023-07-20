@@ -1,23 +1,9 @@
 import { Form, Input, Select, Row, Col } from "antd";
 import { dateOfBirthValidator } from "@/register/utils/validators";
+import { MONTH_OPTIONS } from "@/register/consts/month-options";
 import "./DateOfBirthInput.scss";
 
 const { Option } = Select;
-
-const MONTH_OPTIONS = [
-  { label: "January", value: 1 },
-  { label: "February", value: 2 },
-  { label: "March", value: 3 },
-  { label: "April", value: 4 },
-  { label: "May", value: 5 },
-  { label: "June", value: 6 },
-  { label: "July", value: 7 },
-  { label: "August", value: 8 },
-  { label: "September", value: 9 },
-  { label: "October", value: 10 },
-  { label: "November", value: 11 },
-  { label: "December", value: 12 },
-];
 
 type DateOfBirthInputProps = {
   name: string;
