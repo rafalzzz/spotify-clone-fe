@@ -23,7 +23,7 @@ export const CustomFormItem = ({
       case InputType.TEXT:
         return <Input {...inputProps} />;
       case InputType.PASSWORD:
-        return <Input.Password {...inputProps} />;
+        return <Input.Password autoComplete="on" {...inputProps} />;
       case InputType.SELECT:
         return <Select {...selectProps} />;
       case InputType.RADIO:

@@ -8,31 +8,21 @@ import {
   termsValidator,
 } from "@/register/utils/validators";
 import { emailValidator } from "@/register/utils/validators/email-validator";
+import { parseRequestBody } from "@/register/helpers/parse-request-body";
 
 import { GENDER_OPTIONS } from "@/register/consts/gender-options";
 
 import { InputType, NonStandardInputType } from "@/enums/input-type";
+import { RegisterFormKeys } from "@/register/enums/register-form-keys";
 import { CustomFormItemProps } from "@/types/custom-form-item-props";
 import { NonStandardItemProps } from "@/types/non-standard-form-item-props";
 import { CustomButtonProps } from "@/types/custom-button-props";
-
-enum RegisterFormKeys {
-  EMAIL = "email",
-  PASSWORD = "password",
-  USERNAME = "username",
-  GENDER = "gender",
-  OFFERS = "offers",
-  SHARE_INFORMATION = "shareInformation",
-  TERMS = "terms",
-  DAY = "day",
-  MONTH = "month",
-  YEAR = "year",
-}
+import { registerUser } from "../utils/requests/register-user";
 
 const REGISTER_FORM_LABELS = {
   [RegisterFormKeys.EMAIL]: "Your e-mail address",
   [RegisterFormKeys.PASSWORD]: "Create a password",
-  [RegisterFormKeys.USERNAME]: "How should we address you?",
+  [RegisterFormKeys.NICKNAME]: "How should we address you?",
   [NonStandardInputType.DATE_OF_BIRTH]: "Enter your date of birth",
   [RegisterFormKeys.GENDER]: "Your gender?",
 };
@@ -40,7 +30,7 @@ const REGISTER_FORM_LABELS = {
 export const INITIAL_VALUES = {
   [RegisterFormKeys.EMAIL]: "",
   [RegisterFormKeys.PASSWORD]: "",
-  [RegisterFormKeys.USERNAME]: "",
+  [RegisterFormKeys.NICKNAME]: "",
   [RegisterFormKeys.GENDER]: undefined,
   [RegisterFormKeys.OFFERS]: false,
   [RegisterFormKeys.SHARE_INFORMATION]: false,
@@ -76,9 +66,9 @@ export const useRegisterForm = () => {
       },
       {
         type: InputType.TEXT,
-        key: RegisterFormKeys.USERNAME,
-        name: RegisterFormKeys.USERNAME,
-        label: REGISTER_FORM_LABELS[RegisterFormKeys.USERNAME],
+        key: RegisterFormKeys.NICKNAME,
+        name: RegisterFormKeys.NICKNAME,
+        label: REGISTER_FORM_LABELS[RegisterFormKeys.NICKNAME],
         rules: [{ validator: usernameValidator }],
         inputProps: {
           placeholder: "Enter a username",
@@ -129,15 +119,10 @@ export const useRegisterForm = () => {
     []
   );
 
-  const onFinish = (values: Record<RegisterFormKeys, string | number>) => {
-    const { year, month, day, ...restValues } = values;
-
-    const requestBody = {
-      ...restValues,
-      dateOfBirth: `${year}-${month}-${day}`,
-    };
-
-    console.log({ requestBody });
+  const onFinish = async (values: Record<RegisterFormKeys, string | number>) => {
+    const requestBody = parseRequestBody(values);
+    const response = await registerUser(requestBody);
+    console.log({ response });
   };
 
   const clearForm = useCallback(() => {
