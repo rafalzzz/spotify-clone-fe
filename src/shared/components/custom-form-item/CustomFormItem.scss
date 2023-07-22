@@ -10,21 +10,21 @@
   }
 
   .ant-radio-wrapper {
-    color: var(--main-text-color);
     padding: 3px 0;
+    color: var(--main-text-color);
 
     .ant-radio-checked > .ant-radio-inner {
-      background-color: var(--secondary-color);
       border-color: var(--secondary-color);
+      background-color: var(--secondary-color);
     }
   }
 
   .ant-checkbox-wrapper {
-    margin-top: 25px;
-    color: var(--main-text-color);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-top: 25px;
+    color: var(--main-text-color);
 
     .ant-checkbox {
       align-self: flex-start;
@@ -32,8 +32,8 @@
     }
 
     .ant-checkbox-checked > .ant-checkbox-inner {
-      background-color: var(--secondary-color);
       border-color: var(--secondary-color);
+      background-color: var(--secondary-color);
     }
   }
 }

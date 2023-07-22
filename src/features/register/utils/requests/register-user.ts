@@ -7,7 +7,7 @@ const agent = new https.Agent({
 });
 
 export async function registerUser(requestBody: any) {
-  const response = fetch("https://localhost:7173/api/user", {
+  const response = fetch(`${process.env.API_URL}/user`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -15,7 +15,13 @@ export async function registerUser(requestBody: any) {
     },
     agent,
     body: JSON.stringify(requestBody),
-  }).then((response) => response.text());
+  }).then(async (response) => {
+    if (response.status === 200) {
+      return;
+    }
+
+    return await response.json();
+  });
 
   return response;
 }
