@@ -6,15 +6,15 @@
     margin: 0;
   }
 
-  .ant-form-item-label {
+  .date-of-birth > .ant-form-item-label {
     height: 30px;
   }
 
   &__input {
     .ant-form-item-label {
+      height: 40px;
       padding: 0;
       margin: 0;
-      height: 40px;
     }
   }
 

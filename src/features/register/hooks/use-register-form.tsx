@@ -1,46 +1,39 @@
-import { useMemo, useCallback } from "react";
-import { Form } from "antd";
+import { Form } from 'antd';
+import { useRouter } from 'next/navigation';
+import { useMemo, useCallback } from 'react';
 
+import { GENDER_OPTIONS } from '@/register/consts/gender-options';
+import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { parseRequestBody } from '@/register/helpers/parse-request-body';
+import { registerUser } from '@/register/utils/requests/register-user';
 import {
   usernameValidator,
   passwordValidator,
   genderValidator,
   termsValidator,
-} from "@/register/utils/validators";
-import { emailValidator } from "@/register/utils/validators/email-validator";
+} from '@/register/utils/validators';
+import { emailValidator } from '@/register/utils/validators/email-validator';
 
-import { GENDER_OPTIONS } from "@/register/consts/gender-options";
+import { useDisplayError } from '@/hooks/use-display-error';
 
-import { InputType, NonStandardInputType } from "@/enums/input-type";
-import { CustomFormItemProps } from "@/types/custom-form-item-props";
-import { NonStandardItemProps } from "@/types/non-standard-form-item-props";
-import { CustomButtonProps } from "@/types/custom-button-props";
+import { InputType, NonStandardInputType } from '@/enums/input-type';
 
-enum RegisterFormKeys {
-  EMAIL = "email",
-  PASSWORD = "password",
-  USERNAME = "username",
-  GENDER = "gender",
-  OFFERS = "offers",
-  SHARE_INFORMATION = "shareInformation",
-  TERMS = "terms",
-  DAY = "day",
-  MONTH = "month",
-  YEAR = "year",
-}
+import { CustomButtonProps } from '@/types/custom-button-props';
+import { CustomFormItemProps } from '@/types/custom-form-item-props';
+import { NonStandardItemProps } from '@/types/non-standard-form-item-props';
 
 const REGISTER_FORM_LABELS = {
-  [RegisterFormKeys.EMAIL]: "Your e-mail address",
-  [RegisterFormKeys.PASSWORD]: "Create a password",
-  [RegisterFormKeys.USERNAME]: "How should we address you?",
-  [NonStandardInputType.DATE_OF_BIRTH]: "Enter your date of birth",
-  [RegisterFormKeys.GENDER]: "Your gender?",
+  [RegisterFormKeys.EMAIL]: 'Your e-mail address',
+  [RegisterFormKeys.PASSWORD]: 'Create a password',
+  [RegisterFormKeys.NICKNAME]: 'How should we address you?',
+  [NonStandardInputType.DATE_OF_BIRTH]: 'Enter your date of birth',
+  [RegisterFormKeys.GENDER]: 'Your gender?',
 };
 
 export const INITIAL_VALUES = {
-  [RegisterFormKeys.EMAIL]: "",
-  [RegisterFormKeys.PASSWORD]: "",
-  [RegisterFormKeys.USERNAME]: "",
+  [RegisterFormKeys.EMAIL]: '',
+  [RegisterFormKeys.PASSWORD]: '',
+  [RegisterFormKeys.NICKNAME]: '',
   [RegisterFormKeys.GENDER]: undefined,
   [RegisterFormKeys.OFFERS]: false,
   [RegisterFormKeys.SHARE_INFORMATION]: false,
@@ -50,7 +43,9 @@ export const INITIAL_VALUES = {
 export type RegisterFormType = Record<RegisterFormKeys, string | number>;
 
 export const useRegisterForm = () => {
+  const router = useRouter();
   const [form] = Form.useForm<RegisterFormType>();
+  const { displayError, contextHolder } = useDisplayError();
 
   const formFields: (CustomFormItemProps<RegisterFormKeys> | NonStandardItemProps)[] = useMemo(
     () => [
@@ -61,7 +56,7 @@ export const useRegisterForm = () => {
         label: REGISTER_FORM_LABELS[RegisterFormKeys.EMAIL],
         rules: [{ validator: emailValidator }],
         inputProps: {
-          placeholder: "Give me your e-mail address",
+          placeholder: 'Give me your e-mail address',
         },
       },
       {
@@ -76,12 +71,12 @@ export const useRegisterForm = () => {
       },
       {
         type: InputType.TEXT,
-        key: RegisterFormKeys.USERNAME,
-        name: RegisterFormKeys.USERNAME,
-        label: REGISTER_FORM_LABELS[RegisterFormKeys.USERNAME],
+        key: RegisterFormKeys.NICKNAME,
+        name: RegisterFormKeys.NICKNAME,
+        label: REGISTER_FORM_LABELS[RegisterFormKeys.NICKNAME],
         rules: [{ validator: usernameValidator }],
         inputProps: {
-          placeholder: "Enter a username",
+          placeholder: 'Enter a username',
         },
       },
       {
@@ -105,7 +100,7 @@ export const useRegisterForm = () => {
         key: RegisterFormKeys.OFFERS,
         name: RegisterFormKeys.OFFERS,
         checkboxProps: {
-          text: "I want to receive news and offers from Spotify",
+          text: 'I want to receive news and offers from Spotify',
         },
       },
       {
@@ -113,7 +108,7 @@ export const useRegisterForm = () => {
         key: RegisterFormKeys.SHARE_INFORMATION,
         name: RegisterFormKeys.SHARE_INFORMATION,
         checkboxProps: {
-          text: "Share my registration information with content providers on Spotify. This information may be used for marketing purposes. Note: According to our Privacy Policy, your data may be sent to a country outside the EEA.",
+          text: 'Share my registration information with content providers on Spotify. This information may be used for marketing purposes. Note: According to our Privacy Policy, your data may be sent to a country outside the EEA.',
         },
       },
       {
@@ -122,22 +117,24 @@ export const useRegisterForm = () => {
         name: RegisterFormKeys.TERMS,
         rules: [{ validator: termsValidator }],
         checkboxProps: {
-          text: "I accept the Spotify Terms of Use.",
+          text: 'I accept the Spotify Terms of Use.',
         },
       },
     ],
-    []
+    [],
   );
 
-  const onFinish = (values: Record<RegisterFormKeys, string | number>) => {
-    const { year, month, day, ...restValues } = values;
+  const onFinish = async (values: Record<RegisterFormKeys, string | number>) => {
+    const requestBody = parseRequestBody(values);
+    const response = await registerUser(requestBody);
 
-    const requestBody = {
-      ...restValues,
-      dateOfBirth: `${year}-${month}-${day}`,
-    };
+    if (!response) {
+      router.push('/login');
+    }
 
-    console.log({ requestBody });
+    if (response) {
+      displayError(response as string);
+    }
   };
 
   const clearForm = useCallback(() => {
@@ -146,11 +143,17 @@ export const useRegisterForm = () => {
 
   const formButtons: CustomButtonProps[] = useMemo(
     () => [
-      { key: 1, type: "default", htmlType: "reset", text: "Clear", onClick: clearForm },
-      { key: 2, type: "primary", htmlType: "submit", text: "Register" },
+      {
+        key: 1,
+        type: 'default',
+        htmlType: 'reset',
+        text: 'Clear',
+        onClick: clearForm,
+      },
+      { key: 2, type: 'primary', htmlType: 'submit', text: 'Register' },
     ],
-    [clearForm]
+    [clearForm],
   );
 
-  return { form, formFields, formButtons, onFinish };
+  return { form, formFields, formButtons, contextHolder, onFinish };
 };

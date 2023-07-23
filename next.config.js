@@ -1,4 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const StylelintPlugin = require("stylelint-webpack-plugin");
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverActions: true,
+  },
+  webpack: (config, options) => {
+    config.plugins.push(new StylelintPlugin());
+    return config;
+  },
+};
+
+module.exports = nextConfig;

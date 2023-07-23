@@ -1,4 +1,4 @@
-import { RuleObject } from "antd/es/form";
+import { RuleObject } from 'antd/es/form';
 
 export const genderValidator = (_: RuleObject, value: string) => {
   if (!value) {

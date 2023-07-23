@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-selector-bem-pattern",
+    "stylelint-order",
+    "stylelint-prettier"
+  ],
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "scss/at-import-partial-extension": "always",
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "scss/double-slash-comment-whitespace-inside": "never",
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    }
+  }
+}

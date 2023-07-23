@@ -16,12 +16,13 @@
     "incremental": true,
     "baseUrl": "src/",
     "paths": {
+      "@/register/*": ["features/register/*"],
       "@/components/*": ["shared/components/*"],
+      "@/hooks/*": ["shared/hooks/*"],
+      "@/utils/*": ["shared/utils/*"],
       "@/enums/*": ["shared/enums/*"],
       "@/types/*": ["shared/types/*"],
-      "@/utils/*": ["shared/utils/*"],
-      "@/styles/*": ["styles/*"],
-      "@/register/*": ["features/register/*"]
+      "@/styles/*": ["styles/*"]
     },
     "plugins": [
       {
