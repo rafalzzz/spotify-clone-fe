@@ -1,4 +1,4 @@
-import { notification } from "antd";
+import { notification } from 'antd';
 
 export const useDisplayError = () => {
   const [api, contextHolder] = notification.useNotification();

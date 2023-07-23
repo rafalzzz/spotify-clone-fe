@@ -1,5 +1,6 @@
-import { RuleObject } from "antd/es/form";
-import { hasOnlyLettersAndDigits } from "shared/consts/regex";
+import { RuleObject } from 'antd/es/form';
+
+import { hasOnlyLettersAndDigits } from 'shared/consts/regex';
 
 const MIN_LENGTH = 2;
 const MAX_LENGTH = 150;
@@ -18,7 +19,7 @@ export const usernameValidator = (_: RuleObject, value: string) => {
   }
 
   if (!hasOnlyLettersAndDigits.test(value)) {
-    return Promise.reject(new Error("Username must only contain letters and digits"));
+    return Promise.reject(new Error('Username must only contain letters and digits'));
   }
   return Promise.resolve();
 };

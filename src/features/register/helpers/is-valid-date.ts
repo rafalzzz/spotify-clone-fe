@@ -1,5 +1,5 @@
-import { getDate } from "@/utils/get-date";
-import { getPastDate } from "@/utils/get-past-date";
+import { getDate } from '@/utils/get-date';
+import { getPastDate } from '@/utils/get-past-date';
 
 const MAX_ALLOWED_AGE = 100;
 

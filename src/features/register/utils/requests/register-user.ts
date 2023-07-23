@@ -1,17 +1,18 @@
-"use server";
-import https from "https";
-import fetch from "node-fetch";
+'use server';
+import https from 'https';
+
+import fetch from 'node-fetch';
 
 const agent = new https.Agent({
   rejectUnauthorized: false,
 });
 
-export async function registerUser(requestBody: any) {
+export async function registerUser(requestBody: Record<string, string | number | boolean>) {
   const response = fetch(`${process.env.API_URL}/user`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
     agent,
     body: JSON.stringify(requestBody),

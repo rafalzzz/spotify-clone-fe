@@ -1,5 +1,6 @@
-import { RuleObject } from "antd/es/form";
-import { emailRegex } from "shared/consts/regex";
+import { RuleObject } from 'antd/es/form';
+
+import { emailRegex } from 'shared/consts/regex';
 
 export const emailValidator = (_: RuleObject, value: string) => {
   if (!value) {
@@ -7,7 +8,7 @@ export const emailValidator = (_: RuleObject, value: string) => {
   }
 
   if (!emailRegex.test(value)) {
-    return Promise.reject(new Error("Invalid e-mail address"));
+    return Promise.reject(new Error('Invalid e-mail address'));
   }
 
   return Promise.resolve();

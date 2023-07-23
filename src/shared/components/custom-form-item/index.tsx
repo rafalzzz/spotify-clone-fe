@@ -1,17 +1,19 @@
-import { Form, Input, Select, Radio, Checkbox } from "antd";
-import { InputType } from "@/enums/input-type";
+import { Form, Input, Select, Radio, Checkbox } from 'antd';
+
+import { InputType } from '@/enums/input-type';
+
 import {
   CustomFormItemProps,
   ExtendedCheckboxProps,
   ExtendedRadioProps,
-} from "@/types/custom-form-item-props";
+} from '@/types/custom-form-item-props';
 
-import "./CustomFormItem.scss";
+import './CustomFormItem.scss';
 
 export const CustomFormItem = ({
   type,
   name,
-  label = "",
+  label = '',
   rules,
   selectProps,
   inputProps,
@@ -23,7 +25,7 @@ export const CustomFormItem = ({
       case InputType.TEXT:
         return <Input {...inputProps} />;
       case InputType.PASSWORD:
-        return <Input.Password autoComplete="on" {...inputProps} />;
+        return <Input.Password autoComplete='on' {...inputProps} />;
       case InputType.SELECT:
         return <Select {...selectProps} />;
       case InputType.RADIO:
@@ -50,11 +52,11 @@ export const CustomFormItem = ({
   return (
     <Form.Item
       name={name}
-      className="form-item"
-      label={label ? <span className="form-item__label">{label}</span> : null}
+      className='form-item'
+      label={label ? <span className='form-item__label'>{label}</span> : null}
       rules={rules}
       validateFirst={true}
-      valuePropName={type === InputType.CHECKBOX ? "checked" : "value"}
+      valuePropName={type === InputType.CHECKBOX ? 'checked' : 'value'}
     >
       {getFormItemInput(type as InputType)}
     </Form.Item>

@@ -11,7 +11,8 @@
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
     "stylelint": "npx stylelint **/*.scss --fix",
-    "format": "npm run stylelint && npm run prettier:fix && npm run lint:fix"
+    "format": "npm run stylelint && npm run prettier:fix && npm run lint:fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.3.3",
@@ -30,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^8.0.3",
     "node-fetch": "^3.3.1",
     "prettier": "^3.0.0",
     "stylelint": "^15.10.2",

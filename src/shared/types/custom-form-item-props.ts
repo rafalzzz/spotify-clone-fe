@@ -1,6 +1,7 @@
-import { Rule } from "antd/es/form";
-import { InputType, NonStandardInputType } from "@/enums/input-type";
-import { CheckboxProps, InputProps, RadioProps, SelectProps } from "antd";
+import { CheckboxProps, InputProps, RadioProps, SelectProps } from 'antd';
+import { Rule } from 'antd/es/form';
+
+import { InputType, NonStandardInputType } from '@/enums/input-type';
 
 export type OptionType = { label: string; value: string | number };
 
