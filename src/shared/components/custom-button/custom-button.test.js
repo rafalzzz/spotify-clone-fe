@@ -7,10 +7,12 @@ import { CustomButton } from '.';
 
 import '@testing-library/jest-dom';
 
+const MOCKED_BUTTON_TEXT = 'Test Button';
+
 const getCustomButton = (additionalProps) => {
   const props = {
     ...commonButtonProps,
-    text: 'Test Button',
+    text: MOCKED_BUTTON_TEXT,
     ...additionalProps,
   };
 
@@ -24,7 +26,7 @@ describe('CustomButton', () => {
 
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveTextContent('Test Button');
+    expect(buttonElement).toHaveTextContent(MOCKED_BUTTON_TEXT);
   });
 
   it('handles click events', async () => {
@@ -33,7 +35,7 @@ describe('CustomButton', () => {
     const customButton = getCustomButton(additionalProps);
     render(customButton);
 
-    const buttonElement = await screen.findByRole('button', { name: /test Button/i });
+    const buttonElement = await screen.findByRole('button', { name: MOCKED_BUTTON_TEXT });
     expect(buttonElement).toBeInTheDocument();
 
     fireEvent.click(buttonElement, { button: 0 });
