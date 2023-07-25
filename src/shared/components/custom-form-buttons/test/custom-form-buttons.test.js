@@ -28,7 +28,7 @@ const renderCustomFormButtons = () => {
 
 describe('CustomFormButtons', () => {
   it('render component without error', () => {
-    const { screen } = renderCustomFormButtons();
+    const screen = renderCustomFormButtons();
     expect(screen).toMatchSnapshot();
   });
 

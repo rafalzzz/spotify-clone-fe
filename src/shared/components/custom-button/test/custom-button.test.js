@@ -21,8 +21,7 @@ const renderCustomButton = (additionalProps) => {
 
 describe('CustomButton', () => {
   it('render component without error', () => {
-    const { screen } = renderCustomButton();
-
+    const screen = renderCustomButton();
     expect(screen).toMatchSnapshot();
   });
 

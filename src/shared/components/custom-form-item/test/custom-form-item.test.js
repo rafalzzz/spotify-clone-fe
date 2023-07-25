@@ -86,7 +86,7 @@ const renderCustomFormItem = (type, formItemProps) => {
 describe('CustomFormItem', () => {
   it('render component without error', () => {
     const { type, props } = MOCKED_FORM_ITEMS[0];
-    const { screen } = renderCustomFormItem(type, props);
+    const screen = renderCustomFormItem(type, props);
     expect(screen).toMatchSnapshot();
   });
 
