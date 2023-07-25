@@ -22,7 +22,8 @@
       "@/utils/*": ["shared/utils/*"],
       "@/enums/*": ["shared/enums/*"],
       "@/types/*": ["shared/types/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/test-utils/*": ["test-utils/*"]
     },
     "plugins": [
       {
@@ -35,7 +36,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/shared/components/custom-button/custom-button.test.js"
+    "src/shared/components/custom-button/test/custom-button.test.js"
   ],
   "exclude": ["node_modules"]
 }

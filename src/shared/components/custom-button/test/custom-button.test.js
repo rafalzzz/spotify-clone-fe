@@ -1,41 +1,45 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 
-import { commonButtonProps } from '../../../../test-utils/common-mocks/common-button-props';
+import { CustomButton } from '..';
 
-import { CustomButton } from '.';
+import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
 
 import '@testing-library/jest-dom';
 
 const MOCKED_BUTTON_TEXT = 'Test Button';
 
-const getCustomButton = (additionalProps) => {
+const renderCustomButton = (additionalProps) => {
   const props = {
     ...commonButtonProps,
     text: MOCKED_BUTTON_TEXT,
     ...additionalProps,
   };
 
-  return <CustomButton {...props} />;
+  return render(<CustomButton {...props} />);
 };
 
 describe('CustomButton', () => {
-  it('renders the correct text', () => {
-    const customButton = getCustomButton();
-    render(customButton);
+  it('render component without error', () => {
+    const { screen } = renderCustomButton();
 
-    const buttonElement = screen.getByRole('button');
+    expect(screen).toMatchSnapshot();
+  });
+
+  it('renders the correct text', () => {
+    const { getByRole } = renderCustomButton();
+
+    const buttonElement = getByRole('button');
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveTextContent(MOCKED_BUTTON_TEXT);
   });
 
-  it('handles click events', async () => {
+  it('handles click event', async () => {
     const onClick = jest.fn();
     const additionalProps = { onClick };
-    const customButton = getCustomButton(additionalProps);
-    render(customButton);
+    const { findByRole } = renderCustomButton(additionalProps);
 
-    const buttonElement = await screen.findByRole('button', { name: MOCKED_BUTTON_TEXT });
+    const buttonElement = await findByRole('button', { name: MOCKED_BUTTON_TEXT });
     expect(buttonElement).toBeInTheDocument();
 
     fireEvent.click(buttonElement, { button: 0 });

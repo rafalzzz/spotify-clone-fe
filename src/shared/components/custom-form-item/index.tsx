@@ -23,16 +23,22 @@ export const CustomFormItem = ({
   const getFormItemInput = (inputType: InputType) => {
     switch (inputType) {
       case InputType.TEXT:
-        return <Input {...inputProps} />;
+        return <Input data-testid={`input-type-${InputType.TEXT}`} {...inputProps} />;
       case InputType.PASSWORD:
-        return <Input.Password autoComplete='on' {...inputProps} />;
+        return (
+          <Input.Password
+            autoComplete='on'
+            data-testid={`input-type-${InputType.PASSWORD}`}
+            {...inputProps}
+          />
+        );
       case InputType.SELECT:
-        return <Select {...selectProps} />;
+        return <Select data-testid={`input-type-${InputType.SELECT}`} {...selectProps} />;
       case InputType.RADIO:
         const { options } = radioProps as ExtendedRadioProps;
 
         return (
-          <Radio.Group>
+          <Radio.Group data-testid={`input-type-${InputType.RADIO}`}>
             {options.map(({ label, value }) => (
               <Radio key={value} value={value}>
                 {label}
@@ -43,7 +49,7 @@ export const CustomFormItem = ({
       case InputType.CHECKBOX:
         const { text } = checkboxProps as ExtendedCheckboxProps;
 
-        return <Checkbox>{text}</Checkbox>;
+        return <Checkbox data-testid={`input-type-${InputType.CHECKBOX}`}>{text}</Checkbox>;
       default:
         throw Error(`${inputType} input type does not exist`);
     }
