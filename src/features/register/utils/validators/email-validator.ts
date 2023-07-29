@@ -1,6 +1,6 @@
 import { RuleObject } from 'antd/es/form';
 
-import { emailRegex } from 'shared/consts/regex';
+import { emailRegex } from '@/consts/regex';
 
 export const emailValidator = (_: RuleObject, value: string) => {
   if (!value) {

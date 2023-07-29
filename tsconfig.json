@@ -18,10 +18,12 @@
     "paths": {
       "@/register/*": ["features/register/*"],
       "@/components/*": ["shared/components/*"],
+      "@/consts/*": ["shared/consts/*"],
       "@/hooks/*": ["shared/hooks/*"],
       "@/utils/*": ["shared/utils/*"],
       "@/enums/*": ["shared/enums/*"],
       "@/types/*": ["shared/types/*"],
+      "@/shared/*": ["shared/*"],
       "@/styles/*": ["styles/*"],
       "@/test-utils/*": ["test-utils/*"]
     },
@@ -36,7 +38,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/shared/components/custom-button/test/custom-button.test.js"
+    "src/shared/components/custom-button/test/custom-button.test.ts",
+    "src/shared/utils/get-date.test.js",
+    "src/shared/utils/get-past-date.test.js",
+    "src/features/register/utils/requests/register-user.test.js"
   ],
   "exclude": ["node_modules"]
 }

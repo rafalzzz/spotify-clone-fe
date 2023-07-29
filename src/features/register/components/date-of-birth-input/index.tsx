@@ -1,6 +1,6 @@
 import { Form, Input, Select, Row, Col } from 'antd';
 
-import { MONTH_OPTIONS } from '@/register/consts/month-options';
+import { MONTH_OPTIONS } from '@/register/consts';
 import { dateOfBirthValidator } from '@/register/utils/validators';
 import './DateOfBirthInput.scss';
 

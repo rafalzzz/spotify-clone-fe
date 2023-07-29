@@ -1,6 +1,6 @@
 import { RuleObject } from 'antd/es/form';
 
-import { hasOnlyLettersAndDigits } from 'shared/consts/regex';
+import { hasOnlyLettersAndDigits } from '@/consts/regex';
 
 const MIN_LENGTH = 2;
 const MAX_LENGTH = 150;

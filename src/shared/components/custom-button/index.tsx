@@ -9,8 +9,17 @@ export const CustomButton = ({
   text,
   onClick,
   role = 'button',
+  disabled = false,
+  testId = '',
 }: CustomButtonProps) => (
-  <Button type={type} htmlType={htmlType} onClick={onClick} role={role}>
+  <Button
+    type={type}
+    htmlType={htmlType}
+    onClick={onClick}
+    role={role}
+    data-testid={testId}
+    disabled={disabled}
+  >
     {text}
   </Button>
 );

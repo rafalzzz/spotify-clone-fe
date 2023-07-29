@@ -16,13 +16,15 @@ export async function registerUser(requestBody: Record<string, string | number |
     },
     agent,
     body: JSON.stringify(requestBody),
-  }).then(async (response) => {
-    if (response.status === 200) {
-      return;
-    }
+  })
+    .then(async (response) => {
+      if (response.status === 200) {
+        return;
+      }
 
-    return await response.json();
-  });
+      return await response.json();
+    })
+    .catch(() => 'Something went wrong');
 
   return response;
 }

@@ -7,5 +7,7 @@ export type CustomButtonProps = {
   text: string;
   key?: number;
   role?: AriaRole;
+  disabled?: boolean;
+  testId?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
 };

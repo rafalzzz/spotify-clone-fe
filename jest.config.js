@@ -24,19 +24,24 @@ module.exports = {
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': `<rootDir>/__mocks__/fileMock.js`,
 
     // Handle module aliases
-    '@/register/(.*)$': '<rootDit>/src/features/register/$1',
+    '@/register/(.*)$': '<rootDir>/src/features/register/$1',
     '@/components/(.*)$': '<rootDir>/src/shared/components/$1',
+    '@/consts/(.*)$': '<rootDir>/src/shared/consts/$1',
     '@/hooks/(.*)$': '<rootDir>/src/shared/hooks/$1',
     '@/utils/(.*)$': '<rootDir>/src/shared/utils/$1',
     '@/enums/(.*)$': '<rootDir>/src/shared/enums/$1',
     '@/types/(.*)$': '<rootDir>/src/shared/types/$1',
-    '@/components/(.*)$': '<rootDir>/components/$1',
+    '@/shared/(.*)$': '<rootDir>/src/shared/$1',
     '@/styles/(.*)$': '<rootDir>/styles/$1',
     '@/test-utils/(.*)$': '<rootDir>/test-utils/$1',
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  coveragePathIgnorePatterns: ['/node_modules/', '<rootDir>/src/shared/types/'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/src/shared/types/',
+    '<rootDir>/src/shared/consts/',
+  ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   transform: {

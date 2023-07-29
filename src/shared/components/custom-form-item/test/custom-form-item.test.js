@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Form } from 'antd';
 import React from 'react';
 
@@ -8,17 +9,20 @@ import { CustomFormItem } from '..';
 
 import '@testing-library/jest-dom';
 
+const textInputPlaceholder = 'Enter text';
+const inputValidator = jest.fn();
+
 const sharedFormItemProps = {
   key: 'text',
   name: 'text',
   label: 'Enter text',
-  rules: [[{ required: true, message: 'Input is required' }]],
+  rules: [{ validator: inputValidator }],
 };
 
 const textInputProps = {
   ...sharedFormItemProps,
   inputProps: {
-    placeholder: 'Enter text',
+    placeholder: textInputPlaceholder,
   },
 };
 
@@ -100,6 +104,22 @@ describe('CustomFormItem', () => {
   });
 
   describe('error handling', () => {
+    it('validates field when input value change', async () => {
+      const mockedInputValue = 'test';
+      inputValidator.mockImplementation((getFieldValue) => () => Promise.resolve());
+
+      const { type, props } = MOCKED_FORM_ITEMS[0];
+      const { getByPlaceholderText, getByText } = renderCustomFormItem(type, props);
+
+      const textInput = getByPlaceholderText(textInputPlaceholder);
+      expect(textInput).toBeInTheDocument();
+
+      await userEvent.type(textInput, mockedInputValue);
+
+      expect(textInput).toHaveValue(mockedInputValue);
+      expect(inputValidator).toHaveBeenCalled();
+    });
+
     it('throws error for invalid input type', () => {
       const invalidInputType = 'invalid_input_type';
       const { props } = MOCKED_FORM_ITEMS[0];

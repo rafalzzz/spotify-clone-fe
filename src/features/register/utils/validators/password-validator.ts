@@ -1,6 +1,6 @@
 import { RuleObject } from 'antd/es/form';
 
-import { hasDigit, hasLowercase, hasSpecialChar, hasUppercase } from 'shared/consts/regex';
+import { hasDigit, hasLowercase, hasSpecialChar, hasUppercase } from '@/consts/regex';
 
 const MIN_LENGTH = 8;
 const MAX_LENGTH = 150;
