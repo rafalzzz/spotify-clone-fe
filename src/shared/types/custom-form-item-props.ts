@@ -14,7 +14,7 @@ export interface ExtendedRadioProps extends RadioProps {
 }
 
 export interface ExtendedCheckboxProps extends CheckboxProps {
-  text: string;
+  label: string;
 }
 
 export type CustomFormItemProps<T = string> = {

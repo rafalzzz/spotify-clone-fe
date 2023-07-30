@@ -265,7 +265,7 @@ exports[`RegisterForm render component without error 1`] = `
                           >
                             <label
                               class=""
-                              for="register_month"
+                              for="register_Month"
                               title=""
                             >
                               <span
@@ -294,15 +294,15 @@ exports[`RegisterForm render component without error 1`] = `
                                       class="ant-select-selection-search"
                                     >
                                       <input
-                                        aria-activedescendant="register_month_list_0"
+                                        aria-activedescendant="register_Month_list_0"
                                         aria-autocomplete="list"
-                                        aria-controls="register_month_list"
+                                        aria-controls="register_Month_list"
                                         aria-expanded="false"
                                         aria-haspopup="listbox"
-                                        aria-owns="register_month_list"
+                                        aria-owns="register_Month_list"
                                         autocomplete="off"
                                         class="ant-select-selection-search-input"
-                                        id="register_month"
+                                        id="register_Month"
                                         readonly=""
                                         role="combobox"
                                         style="opacity: 0;"
@@ -312,9 +312,10 @@ exports[`RegisterForm render component without error 1`] = `
                                       />
                                     </span>
                                     <span
-                                      class="ant-select-selection-item"
-                                      title=""
-                                    />
+                                      class="ant-select-selection-placeholder"
+                                    >
+                                      Month
+                                    </span>
                                   </div>
                                   <span
                                     aria-hidden="true"
@@ -674,16 +675,6 @@ exports[`RegisterForm render component without error 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-lg"
-                    data-testid="clear-form-button"
-                    role="button"
-                    type="reset"
-                  >
-                    <span>
-                      Clear
-                    </span>
-                  </button>
-                  <button
                     class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-primary ant-btn-lg"
                     data-testid="submit-button"
                     role="button"
@@ -962,7 +953,7 @@ exports[`RegisterForm render component without error 1`] = `
                         >
                           <label
                             class=""
-                            for="register_month"
+                            for="register_Month"
                             title=""
                           >
                             <span
@@ -991,15 +982,15 @@ exports[`RegisterForm render component without error 1`] = `
                                     class="ant-select-selection-search"
                                   >
                                     <input
-                                      aria-activedescendant="register_month_list_0"
+                                      aria-activedescendant="register_Month_list_0"
                                       aria-autocomplete="list"
-                                      aria-controls="register_month_list"
+                                      aria-controls="register_Month_list"
                                       aria-expanded="false"
                                       aria-haspopup="listbox"
-                                      aria-owns="register_month_list"
+                                      aria-owns="register_Month_list"
                                       autocomplete="off"
                                       class="ant-select-selection-search-input"
-                                      id="register_month"
+                                      id="register_Month"
                                       readonly=""
                                       role="combobox"
                                       style="opacity: 0;"
@@ -1009,9 +1000,10 @@ exports[`RegisterForm render component without error 1`] = `
                                     />
                                   </span>
                                   <span
-                                    class="ant-select-selection-item"
-                                    title=""
-                                  />
+                                    class="ant-select-selection-placeholder"
+                                  >
+                                    Month
+                                  </span>
                                 </div>
                                 <span
                                   aria-hidden="true"
@@ -1370,16 +1362,6 @@ exports[`RegisterForm render component without error 1`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-lg"
-                  data-testid="clear-form-button"
-                  role="button"
-                  type="reset"
-                >
-                  <span>
-                    Clear
-                  </span>
-                </button>
                 <button
                   class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-primary ant-btn-lg"
                   data-testid="submit-button"

@@ -12,15 +12,9 @@ import { InputType, NonStandardInputType } from '@/enums/input-type';
 import { CustomFormItemProps } from '@/types/custom-form-item-props';
 import { NonStandardItemProps } from '@/types/non-standard-form-item-props';
 
+import { REGISTER_FORM_LABELS } from './form-field-labels';
+import { FORM_FIELD_PLACEHOLDERS } from './form-field-placeholders';
 import { GENDER_OPTIONS } from './gender-options';
-
-const REGISTER_FORM_LABELS = {
-  [RegisterFormKeys.EMAIL]: 'Your e-mail address',
-  [RegisterFormKeys.PASSWORD]: 'Create a password',
-  [RegisterFormKeys.NICKNAME]: 'How should we address you?',
-  [NonStandardInputType.DATE_OF_BIRTH]: 'Enter your date of birth',
-  [RegisterFormKeys.GENDER]: 'Your gender?',
-};
 
 export const FORM_FIELDS: (CustomFormItemProps<RegisterFormKeys> | NonStandardItemProps)[] = [
   {
@@ -30,7 +24,7 @@ export const FORM_FIELDS: (CustomFormItemProps<RegisterFormKeys> | NonStandardIt
     label: REGISTER_FORM_LABELS[RegisterFormKeys.EMAIL],
     rules: [{ validator: emailValidator }],
     inputProps: {
-      placeholder: 'Give me your e-mail address',
+      placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.EMAIL],
     },
   },
   {
@@ -50,7 +44,7 @@ export const FORM_FIELDS: (CustomFormItemProps<RegisterFormKeys> | NonStandardIt
     label: REGISTER_FORM_LABELS[RegisterFormKeys.NICKNAME],
     rules: [{ validator: usernameValidator }],
     inputProps: {
-      placeholder: 'Enter a username',
+      placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.NICKNAME],
     },
   },
   {
@@ -74,7 +68,7 @@ export const FORM_FIELDS: (CustomFormItemProps<RegisterFormKeys> | NonStandardIt
     key: RegisterFormKeys.OFFERS,
     name: RegisterFormKeys.OFFERS,
     checkboxProps: {
-      text: 'I want to receive news and offers from Spotify',
+      label: REGISTER_FORM_LABELS[RegisterFormKeys.OFFERS],
     },
   },
   {
@@ -82,7 +76,7 @@ export const FORM_FIELDS: (CustomFormItemProps<RegisterFormKeys> | NonStandardIt
     key: RegisterFormKeys.SHARE_INFORMATION,
     name: RegisterFormKeys.SHARE_INFORMATION,
     checkboxProps: {
-      text: 'Share my registration information with content providers on Spotify. This information may be used for marketing purposes. Note: According to our Privacy Policy, your data may be sent to a country outside the EEA.',
+      label: REGISTER_FORM_LABELS[RegisterFormKeys.SHARE_INFORMATION],
     },
   },
   {
@@ -91,7 +85,7 @@ export const FORM_FIELDS: (CustomFormItemProps<RegisterFormKeys> | NonStandardIt
     name: RegisterFormKeys.TERMS,
     rules: [{ validator: termsValidator }],
     checkboxProps: {
-      text: 'I accept the Spotify Terms of Use.',
+      label: REGISTER_FORM_LABELS[RegisterFormKeys.TERMS],
     },
   },
 ];

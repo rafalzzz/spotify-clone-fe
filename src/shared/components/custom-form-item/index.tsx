@@ -47,9 +47,9 @@ export const CustomFormItem = ({
           </Radio.Group>
         );
       case InputType.CHECKBOX:
-        const { text } = checkboxProps as ExtendedCheckboxProps;
+        const { label } = checkboxProps as ExtendedCheckboxProps;
 
-        return <Checkbox data-testid={`input-type-${InputType.CHECKBOX}`}>{text}</Checkbox>;
+        return <Checkbox data-testid={`input-type-${InputType.CHECKBOX}`}>{label}</Checkbox>;
       default:
         throw Error(`${inputType} input type does not exist`);
     }
