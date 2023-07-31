@@ -1,6 +1,6 @@
 import { OptionType } from '@/types/custom-form-item-props';
 
-export const GENDER_OPTIONS: readonly OptionType[] = [
+export const GENDER_OPTIONS: OptionType[] = [
   { label: 'Man', value: 1 },
   { label: 'Woman', value: 2 },
   { label: 'Non-binary person', value: 3 },

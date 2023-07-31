@@ -43,6 +43,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/shared/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/styles/**",
             "group": "internal",
             "position": "before"

@@ -1,6 +1,6 @@
 import { OptionType } from '@/types/custom-form-item-props';
 
-export const MONTH_OPTIONS: readonly OptionType[] = [
+export const MONTH_OPTIONS: OptionType[] = [
   { label: 'January', value: 1 },
   { label: 'February', value: 2 },
   { label: 'March', value: 3 },
