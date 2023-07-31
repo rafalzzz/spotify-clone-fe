@@ -18,15 +18,20 @@ export const useRegisterForm = ({ displayError }: useRegisterForm) => {
 
   const onFinish = async (values: Record<RegisterFormKeys, string | number>) => {
     setIsLoading(true);
-    const requestBody = parseRequestBody(values);
-    const response = await registerUser(requestBody);
+    try {
+      const requestBody = parseRequestBody(values);
+      const response = await registerUser(requestBody);
 
-    if (!response) {
-      router.push('/login');
-    }
+      if (!response) {
+        router.push('/login');
+      }
 
-    if (response) {
-      displayError(response as string);
+      if (response) {
+        displayError(response as string);
+      }
+    } catch (error: unknown) {
+      displayError(error as string);
+    } finally {
       setIsLoading(false);
     }
   };
