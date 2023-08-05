@@ -1,25 +1,23 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
-import { parseRequestBody } from '@/register/helpers';
-import { registerUser } from '@/register/utils/requests/register-user';
+import { LoginFormKeys } from '@/login/enums/login-form-keys';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
 
-type UseRegisterFormProps = {
+type UseLoginFormProps = {
   displayError: (description: string) => void;
 };
 
-export const useRegisterForm = ({ displayError }: UseRegisterFormProps) => {
+export const useLoginForm = ({ displayError }: UseLoginFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
-  const onFinish = async (values: Record<RegisterFormKeys, string | number>) => {
+  const onFinish = async (values: Record<LoginFormKeys, string | number>) => {
     setIsLoading(true);
     try {
-      const requestBody = parseRequestBody(values);
+      /* const requestBody = parseRequestBody(values);
       const response = await registerUser(requestBody);
 
       if (!response) {
@@ -28,7 +26,7 @@ export const useRegisterForm = ({ displayError }: UseRegisterFormProps) => {
 
       if (response) {
         displayError(response as string);
-      }
+      } */
     } catch (error: unknown) {
       displayError(error as string);
     } finally {
@@ -42,7 +40,7 @@ export const useRegisterForm = ({ displayError }: UseRegisterFormProps) => {
         key: 1,
         type: 'primary',
         htmlType: 'submit',
-        text: 'Register',
+        text: 'Sign in',
         disabled: isLoading,
         testId: 'submit-button',
       },

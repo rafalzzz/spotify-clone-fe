@@ -17,6 +17,7 @@
     "baseUrl": "src/",
     "paths": {
       "@/register/*": ["features/register/*"],
+      "@/login/*": ["features/login/*"],
       "@/components/*": ["shared/components/*"],
       "@/consts/*": ["shared/consts/*"],
       "@/hooks/*": ["shared/hooks/*"],

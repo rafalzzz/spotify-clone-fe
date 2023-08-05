@@ -4,11 +4,11 @@ import { CustomHeader } from '@/components/custom-header';
 
 import './page.scss';
 
-export default function Home() {
-  return (
-    <main className='main'>
-      <CustomHeader title='Create an account' />
-      <RegisterForm />
-    </main>
-  );
-}
+const Register = () => (
+  <main className='main'>
+    <CustomHeader title='Create an account' />
+    <RegisterForm />
+  </main>
+);
+
+export default Register;
