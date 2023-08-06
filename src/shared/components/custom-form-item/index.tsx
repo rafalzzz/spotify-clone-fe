@@ -1,4 +1,4 @@
-import { Form, Input, Select, Radio, Checkbox } from 'antd';
+import { Form, Input, Select, Radio, Checkbox, Switch } from 'antd';
 
 import { InputType } from '@/enums/input-type';
 
@@ -6,6 +6,7 @@ import {
   CustomFormItemProps,
   ExtendedCheckboxProps,
   ExtendedRadioProps,
+  ExtendedSwitchProps,
 } from '@/types/custom-form-item-props';
 
 import './CustomFormItem.scss';
@@ -19,6 +20,7 @@ export const CustomFormItem = ({
   inputProps,
   radioProps,
   checkboxProps,
+  switchProps,
 }: CustomFormItemProps) => {
   const getFormItemInput = (inputType: InputType) => {
     switch (inputType) {
@@ -47,9 +49,23 @@ export const CustomFormItem = ({
           </Radio.Group>
         );
       case InputType.CHECKBOX:
-        const { label } = checkboxProps as ExtendedCheckboxProps;
+        const { label: checkboxLabel } = checkboxProps as ExtendedCheckboxProps;
 
-        return <Checkbox data-testid={`input-type-${InputType.CHECKBOX}`}>{label}</Checkbox>;
+        return (
+          <Checkbox data-testid={`input-type-${InputType.CHECKBOX}`}>{checkboxLabel}</Checkbox>
+        );
+      case InputType.SWITCH:
+        const { label: switchLabel } = switchProps as ExtendedSwitchProps;
+
+        return (
+          <div className={`input-type-${InputType.SWITCH}`}>
+            <Switch
+              className={`input-type-${InputType.SWITCH}__button`}
+              data-testid={`input-type-${InputType.SWITCH}`}
+            />
+            <span className={`input-type-${InputType.SWITCH}__label`}>{switchLabel}</span>
+          </div>
+        );
       default:
         throw Error(`${inputType} input type does not exist`);
     }

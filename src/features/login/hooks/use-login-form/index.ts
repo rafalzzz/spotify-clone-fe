@@ -38,11 +38,12 @@ export const useLoginForm = ({ displayError }: UseLoginFormProps) => {
     () => [
       {
         key: 1,
-        type: 'primary',
         htmlType: 'submit',
+        shape: 'round',
         text: 'Sign in',
         disabled: isLoading,
         testId: 'submit-button',
+        className: 'login-button',
       },
     ],
     [isLoading],

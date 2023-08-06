@@ -1,3 +1,18 @@
 .register-form {
   width: 400px;
+
+  .ant-btn {
+    width: 200px;
+    height: 56px;
+    border: 1px solid var(--spotify-theme-color);
+    background-color: var(--spotify-theme-color);
+    color: var(--main-text-color);
+    font-size: 1.2rem;
+  }
+
+  .ant-btn-round.ant-btn-default.ant-btn-lg.register-button:hover {
+    border: 1px solid var(--spotify-theme-hover-color);
+    background-color: var(--spotify-theme-hover-color);
+    color: var(--main-text-color);
+  }
 }

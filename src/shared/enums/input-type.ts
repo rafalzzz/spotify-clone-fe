@@ -4,6 +4,7 @@ export enum InputType {
   SELECT = 'select',
   RADIO = 'radio',
   CHECKBOX = 'checkbox',
+  SWITCH = 'switch',
 }
 
 export enum NonStandardInputType {

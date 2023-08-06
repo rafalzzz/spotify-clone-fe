@@ -2,12 +2,15 @@ import { AriaRole } from 'react';
 import { MouseEventHandler } from 'react';
 
 export type CustomButtonProps = {
-  type: 'default' | 'primary' | 'link' | 'text' | 'ghost' | 'dashed' | undefined;
   htmlType: 'reset' | 'submit' | 'button' | undefined;
   text: string;
   key?: number;
+  shape?: 'default' | 'circle' | 'round';
+  type?: 'default' | 'primary' | 'link' | 'text' | 'ghost' | 'dashed';
+  className?: string;
   role?: AriaRole;
   disabled?: boolean;
   testId?: string;
+  width?: string | number;
   onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
 };

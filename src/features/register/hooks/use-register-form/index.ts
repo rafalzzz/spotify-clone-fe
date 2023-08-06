@@ -40,11 +40,12 @@ export const useRegisterForm = ({ displayError }: UseRegisterFormProps) => {
     () => [
       {
         key: 1,
-        type: 'primary',
         htmlType: 'submit',
+        shape: 'round',
         text: 'Register',
         disabled: isLoading,
         testId: 'submit-button',
+        className: 'register-button',
       },
     ],
     [isLoading],

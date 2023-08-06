@@ -30,4 +30,12 @@ export const FORM_FIELDS: (CustomFormItemProps<LoginFormKeys> | NonStandardItemP
       placeholder: LOGIN_FORM_LABELS[LoginFormKeys.PASSWORD],
     },
   },
+  {
+    type: InputType.SWITCH,
+    key: LoginFormKeys.REMEMBER_ME,
+    name: LoginFormKeys.REMEMBER_ME,
+    switchProps: {
+      label: LOGIN_FORM_LABELS[LoginFormKeys.REMEMBER_ME],
+    },
+  },
 ];

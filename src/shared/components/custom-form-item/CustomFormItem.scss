@@ -1,12 +1,12 @@
 .form-item {
   margin-bottom: 5px;
 
-  .ant-form-item-label {
-    padding: 0;
-  }
-
   &__label {
     color: var(--main-text-color);
+  }
+
+  .ant-form-item-label {
+    padding: 0;
   }
 
   .ant-radio-wrapper {
@@ -34,6 +34,33 @@
     .ant-checkbox-checked > .ant-checkbox-inner {
       border-color: var(--secondary-color);
       background-color: var(--secondary-color);
+    }
+  }
+
+  .input-type-switch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    color: var(--main-text-color);
+
+    .ant-switch {
+      background-color: var(--disabled-switch-color);
+
+      &:hover {
+        background-color: var(--disabled-switch-color);
+      }
+
+      &-checked {
+        background-color: var(--spotify-theme-color);
+
+        &:hover {
+          background-color: var(--spotify-theme-color);
+        }
+      }
+    }
+
+    &__label {
+      margin-left: 10px;
     }
   }
 }
