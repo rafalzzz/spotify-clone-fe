@@ -2,11 +2,10 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { Form } from 'antd';
 import { useRouter } from 'next/navigation';
 
-import { INITIAL_VALUES } from '@/register/consts';
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
-import { registerUser } from '@/register/utils/requests/register-user';
+import { INITIAL_VALUES } from '@/login/consts';
+import { loginUser } from '@/login/utils/requests/login-user';
 
-import { useRegisterForm } from '../';
+import { useLoginForm } from '..';
 
 const displayError = jest.fn();
 const mockPush = jest.fn();
@@ -15,8 +14,8 @@ jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
-jest.mock('@/register/utils/requests/register-user', () => ({
-  registerUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
+jest.mock('@/login/utils/requests/login-user', () => ({
+  loginUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
 }));
 
 jest.mock('next/navigation', () => ({
@@ -25,13 +24,13 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
-describe('useRegisterForm', () => {
+describe('useLoginForm', () => {
   afterEach(() => {
-    registerUser.mockReset();
+    loginUser.mockReset();
   });
 
   it('should call push method from useRouter when response return empty string', async () => {
-    const { result, waitForNextUpdate } = renderHook(() => useRegisterForm({ displayError }));
+    const { result, waitForNextUpdate } = renderHook(() => useLoginForm({ displayError }));
 
     expect(mockPush).not.toHaveBeenCalled();
 
@@ -45,8 +44,8 @@ describe('useRegisterForm', () => {
   });
 
   it('should call displayError function when response return error message', async () => {
-    registerUser.mockRejectedValue('Error');
-    const { result, waitForNextUpdate } = renderHook(() => useRegisterForm({ displayError }));
+    loginUser.mockRejectedValue('Error');
+    const { result, waitForNextUpdate } = renderHook(() => useLoginForm({ displayError }));
 
     expect(displayError).not.toHaveBeenCalled();
 
@@ -59,7 +58,7 @@ describe('useRegisterForm', () => {
   });
 
   it('should disable form button while request is pending', async () => {
-    const { result, waitForNextUpdate } = renderHook(() => useRegisterForm({ displayError }));
+    const { result, waitForNextUpdate } = renderHook(() => useLoginForm({ displayError }));
 
     expect(result.current.formButtons[0].disabled).toBe(false);
 

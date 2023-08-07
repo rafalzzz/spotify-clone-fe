@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import * as antdOriginal from 'antd';
 import { Form } from 'antd';
 import React from 'react';
 
@@ -11,6 +12,7 @@ import '@testing-library/jest-dom';
 
 const textInputPlaceholder = 'Enter text';
 const inputValidator = jest.fn();
+const mockSetFieldValue = jest.fn();
 
 const sharedFormItemProps = {
   key: 'text',
@@ -71,12 +73,23 @@ const MOCKED_FORM_ITEMS = [
       },
     },
   },
+  {
+    type: InputType.SWITCH,
+    props: {
+      key: 'text',
+      name: 'text',
+      switchProps: {
+        label: 'Text example',
+      },
+    },
+  },
 ];
 
 const renderCustomFormItem = (type, formItemProps) => {
   const props = {
     type,
     ...formItemProps,
+    setFieldValue: mockSetFieldValue,
   };
 
   return render(

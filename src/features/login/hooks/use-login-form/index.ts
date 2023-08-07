@@ -1,7 +1,8 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
+import { LoginFormValues } from '@/login/types';
+import { loginUser } from '@/login/utils/requests/login-user';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
 
@@ -14,19 +15,19 @@ export const useLoginForm = ({ displayError }: UseLoginFormProps) => {
 
   const router = useRouter();
 
-  const onFinish = async (values: Record<LoginFormKeys, string | number>) => {
+  const onFinish = async (values: LoginFormValues) => {
     setIsLoading(true);
+
     try {
-      /* const requestBody = parseRequestBody(values);
-      const response = await registerUser(requestBody);
+      const response = await loginUser(values);
 
       if (!response) {
-        router.push('/login');
+        router.push('/');
       }
 
       if (response) {
         displayError(response as string);
-      } */
+      }
     } catch (error: unknown) {
       displayError(error as string);
     } finally {

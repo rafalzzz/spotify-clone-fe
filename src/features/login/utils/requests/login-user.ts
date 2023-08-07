@@ -1,14 +1,15 @@
-'use server';
 import https from 'https';
 
 import fetch from 'node-fetch';
+
+import { LoginFormValues } from '@/login/types';
 
 const agent = new https.Agent({
   rejectUnauthorized: false,
 });
 
-export async function loginUser(requestBody: Record<string, string | number | boolean>) {
-  const response = fetch(`${process.env.API_URL}/user`, {
+export async function loginUser(requestBody: LoginFormValues) {
+  const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/login`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

@@ -2,6 +2,8 @@ import https from 'https';
 
 import fetch from 'node-fetch';
 
+import { INITIAL_VALUES } from '@/login/consts';
+
 import { loginUser } from './login-user';
 
 jest.mock('node-fetch');
@@ -22,7 +24,7 @@ describe('loginUser function', () => {
       json: () => Promise.resolve({ message: 'Success' }),
     });
 
-    const result = await loginUser({ name: 'test', email: 'test@example.com' });
+    const result = await loginUser(INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toBeUndefined();
@@ -36,7 +38,7 @@ describe('loginUser function', () => {
       json: () => Promise.resolve(mockResponse),
     });
 
-    const result = await loginUser({ name: 'test', email: 'test@example.com' });
+    const result = await loginUser(INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toEqual(mockResponse);
@@ -45,7 +47,7 @@ describe('loginUser function', () => {
   it('should return error string when fetch throws', async () => {
     fetch.mockRejectedValue(new Error());
 
-    const result = await loginUser({ name: 'test', email: 'test@example.com' });
+    const result = await loginUser(INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toEqual('Something went wrong');

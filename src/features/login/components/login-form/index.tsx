@@ -2,8 +2,8 @@
 import { Form } from 'antd';
 
 import { FORM_FIELDS, INITIAL_VALUES } from '@/login/consts';
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
 import { useLoginForm } from '@/login/hooks/use-login-form';
+import { LoginFormValues } from '@/login/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
@@ -11,10 +11,8 @@ import { CustomFormButtons, CustomFormItem } from '@/shared/components';
 
 import './LoginForm.scss';
 
-export type LoginFormType = Record<LoginFormKeys, string>;
-
 export const LoginForm = () => {
-  const [form] = Form.useForm<LoginFormType>();
+  const [form] = Form.useForm<LoginFormValues>();
   const { displayError, contextHolder } = useDisplayError();
   const { formButtons, onFinish } = useLoginForm({ displayError });
 

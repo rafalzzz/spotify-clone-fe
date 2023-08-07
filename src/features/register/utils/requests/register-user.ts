@@ -1,14 +1,15 @@
-'use server';
 import https from 'https';
 
 import fetch from 'node-fetch';
+
+import { parseRequestBody } from '@/register/helpers';
 
 const agent = new https.Agent({
   rejectUnauthorized: false,
 });
 
-export async function registerUser(requestBody: Record<string, string | number | boolean>) {
-  const response = fetch(`${process.env.API_URL}/user`, {
+export async function registerUser(requestBody: ReturnType<typeof parseRequestBody>) {
+  const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

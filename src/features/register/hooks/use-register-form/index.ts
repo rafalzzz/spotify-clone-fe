@@ -1,8 +1,8 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { parseRequestBody } from '@/register/helpers';
+import { RegisterFormValues } from '@/register/types';
 import { registerUser } from '@/register/utils/requests/register-user';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
@@ -16,7 +16,7 @@ export const useRegisterForm = ({ displayError }: UseRegisterFormProps) => {
 
   const router = useRouter();
 
-  const onFinish = async (values: Record<RegisterFormKeys, string | number>) => {
+  const onFinish = async (values: RegisterFormValues) => {
     setIsLoading(true);
     try {
       const requestBody = parseRequestBody(values);

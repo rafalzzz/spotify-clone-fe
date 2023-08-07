@@ -4,22 +4,15 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
-import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS, REGISTER_FORM_LABELS } from '@/register/consts';
-import { LoginFormKeys } from '@/register/enums/register-form-keys';
-import { useLoginForm } from '@/register/hooks/use-register-form';
-import { registerUser } from '@/register/utils/requests/register-user';
-import {
-  emailValidator,
-  usernameValidator,
-  passwordValidator,
-  genderValidator,
-  termsValidator,
-  dateOfBirthValidator,
-} from '@/register/utils/validators';
+import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS } from '@/login/consts';
+import { LoginFormKeys } from '@/login/enums/login-form-keys';
+import { useLoginForm } from '@/login/hooks/use-login-form';
+import { loginUser } from '@/login/utils/requests/login-user';
+import { emailOrUsernameValidator, passwordValidator } from '@/login/utils/validators';
 
 import { InputType } from '@/enums/input-type';
 
-import { LoginForm } from '../index.js';
+import { LoginForm } from '../';
 
 const MOCKED_BUTTON_TEXT = 'Test Button';
 
@@ -36,7 +29,7 @@ jest.mock('@/login/utils/validators', () => ({
   passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
 }));
 
-jest.mock('@/register/hooks/use-register-form');
+jest.mock('@/login/hooks/use-login-form');
 
 const renderLoginForm = () => render(<LoginForm />);
 
@@ -86,7 +79,7 @@ describe('LoginForm', () => {
         key: LoginFormKeys.EMAIL_OR_USERNAME,
         placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.EMAIL_OR_USERNAME],
         mockedValue: 'Test',
-        validator: emailValidator,
+        validator: emailOrUsernameValidator,
       },
       {
         type: InputType.PASSWORD,

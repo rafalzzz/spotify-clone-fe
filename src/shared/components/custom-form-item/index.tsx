@@ -21,6 +21,7 @@ export const CustomFormItem = ({
   radioProps,
   checkboxProps,
   switchProps,
+  setFieldValue,
 }: CustomFormItemProps) => {
   const getFormItemInput = (inputType: InputType) => {
     switch (inputType) {
@@ -62,6 +63,7 @@ export const CustomFormItem = ({
             <Switch
               className={`input-type-${InputType.SWITCH}__button`}
               data-testid={`input-type-${InputType.SWITCH}`}
+              onChange={(value) => setFieldValue!(name, value)}
             />
             <span className={`input-type-${InputType.SWITCH}__label`}>{switchLabel}</span>
           </div>

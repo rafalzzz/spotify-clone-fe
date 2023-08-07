@@ -5,16 +5,24 @@ exports[`CustomHeader render component without error 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header>
-        <h1>
+      <header
+        class="custom-header"
+      >
+        <h1
+          class="custom-header__text"
+        >
           Test
         </h1>
       </header>
     </div>
   </body>,
   "container": <div>
-    <header>
-      <h1>
+    <header
+      class="custom-header"
+    >
+      <h1
+        class="custom-header__text"
+      >
         Test
       </h1>
     </header>

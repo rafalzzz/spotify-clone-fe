@@ -1,33 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomButton render component without error 1`] = `
+exports[`CustomHyperlink renders component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-lg"
-        data-testid="custom-button"
-        role="button"
-        type="button"
+      <div
+        class="custom-hyperlink test-class"
+        data-testid="custom-hyperlink"
       >
-        <span>
-          Test Button
+        <span
+          class="test-class__text-before"
+        >
+          Before
         </span>
-      </button>
+        Click me
+        <span
+          class="test-class__text-after"
+        >
+          After
+        </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <button
-      class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-lg"
-      data-testid="custom-button"
-      role="button"
-      type="button"
+    <div
+      class="custom-hyperlink test-class"
+      data-testid="custom-hyperlink"
     >
-      <span>
-        Test Button
+      <span
+        class="test-class__text-before"
+      >
+        Before
       </span>
-    </button>
+      Click me
+      <span
+        class="test-class__text-after"
+      >
+        After
+      </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

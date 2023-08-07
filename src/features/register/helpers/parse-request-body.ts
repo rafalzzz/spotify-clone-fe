@@ -1,6 +1,6 @@
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { RegisterFormValues } from '@/register/types';
 
-export const parseRequestBody = (values: Record<RegisterFormKeys, string | number>) => {
+export const parseRequestBody = (values: RegisterFormValues) => {
   const { year, month, day, ...restValues } = values;
 
   const requestBody = {
