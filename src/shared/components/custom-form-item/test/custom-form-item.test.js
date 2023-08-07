@@ -122,9 +122,9 @@ describe('CustomFormItem', () => {
       inputValidator.mockImplementation((getFieldValue) => () => Promise.resolve());
 
       const { type, props } = MOCKED_FORM_ITEMS[0];
-      const { getByPlaceholderText, getByText } = renderCustomFormItem(type, props);
+      const { queryByPlaceholderText, queryByText } = renderCustomFormItem(type, props);
 
-      const textInput = getByPlaceholderText(textInputPlaceholder);
+      const textInput = queryByPlaceholderText(textInputPlaceholder);
       expect(textInput).toBeInTheDocument();
 
       await userEvent.type(textInput, mockedInputValue);

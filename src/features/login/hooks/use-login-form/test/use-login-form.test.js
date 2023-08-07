@@ -24,13 +24,15 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
+const renderUserLoginForm = () => renderHook(() => useLoginForm({ displayError }));
+
 describe('useLoginForm', () => {
   afterEach(() => {
     loginUser.mockReset();
   });
 
   it('should call push method from useRouter when response return empty string', async () => {
-    const { result, waitForNextUpdate } = renderHook(() => useLoginForm({ displayError }));
+    const { result, waitForNextUpdate } = renderUserLoginForm();
 
     expect(mockPush).not.toHaveBeenCalled();
 
@@ -45,7 +47,7 @@ describe('useLoginForm', () => {
 
   it('should call displayError function when response return error message', async () => {
     loginUser.mockRejectedValue('Error');
-    const { result, waitForNextUpdate } = renderHook(() => useLoginForm({ displayError }));
+    const { result, waitForNextUpdate } = renderUserLoginForm();
 
     expect(displayError).not.toHaveBeenCalled();
 
@@ -58,7 +60,7 @@ describe('useLoginForm', () => {
   });
 
   it('should disable form button while request is pending', async () => {
-    const { result, waitForNextUpdate } = renderHook(() => useLoginForm({ displayError }));
+    const { result, waitForNextUpdate } = renderUserLoginForm();
 
     expect(result.current.formButtons[0].disabled).toBe(false);
 

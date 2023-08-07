@@ -92,10 +92,10 @@ describe('LoginForm', () => {
 
     formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
       it(key, async () => {
-        const { getByPlaceholderText } = renderLoginForm();
+        const { queryByPlaceholderText } = renderLoginForm();
 
         const { mockedValue, placeholder } = restProps;
-        const input = getByPlaceholderText(placeholder);
+        const input = queryByPlaceholderText(placeholder);
         expect(input).toBeInTheDocument();
 
         await userEvent.type(input, mockedValue);

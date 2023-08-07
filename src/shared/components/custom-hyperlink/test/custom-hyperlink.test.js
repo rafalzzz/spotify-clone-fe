@@ -32,12 +32,12 @@ const renderCustomHyperlink = () => {
 describe('CustomHyperlink', () => {
   it('renders component without error', () => {
     const screen = renderCustomHyperlink();
-    const { getByTestId, getByText } = screen;
+    const { getByTestId, queryByText } = screen;
 
     expect(getByTestId('custom-hyperlink')).toHaveClass('custom-hyperlink test-class');
-    expect(getByText(textBeforeHyperlink)).toBeInTheDocument();
-    expect(getByText(hyperlinkText)).toBeInTheDocument();
-    expect(getByText(textAfterHyperlink)).toBeInTheDocument();
+    expect(queryByText(textBeforeHyperlink)).toBeInTheDocument();
+    expect(queryByText(hyperlinkText)).toBeInTheDocument();
+    expect(queryByText(textAfterHyperlink)).toBeInTheDocument();
     expect(screen).toMatchSnapshot();
   });
 });

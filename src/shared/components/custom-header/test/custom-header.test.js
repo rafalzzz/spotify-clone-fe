@@ -24,8 +24,8 @@ describe('CustomHeader', () => {
   });
 
   it('renders the correct title', () => {
-    const { getByText } = renderCustomHeader();
-    const header = getByText(MOCKED_HEADER_TITLE);
+    const { queryByText } = renderCustomHeader();
+    const header = queryByText(MOCKED_HEADER_TITLE);
     expect(header).toBeInTheDocument();
   });
 });

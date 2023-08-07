@@ -122,10 +122,10 @@ describe('RegisterForm', () => {
 
     formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
       it(key, async () => {
-        const { getByRole, getByLabelText, getByPlaceholderText } = renderRegisterForm();
+        const { queryByRole, queryByLabelText, queryByPlaceholderText } = renderRegisterForm();
 
         if (type === InputType.CHECKBOX) {
-          const checkbox = getByLabelText(REGISTER_FORM_LABELS[RegisterFormKeys.TERMS]);
+          const checkbox = queryByLabelText(REGISTER_FORM_LABELS[RegisterFormKeys.TERMS]);
 
           await userEvent.click(checkbox);
 
@@ -135,7 +135,7 @@ describe('RegisterForm', () => {
 
         if (type === InputType.TEXT) {
           const { mockedValue, placeholder } = restProps;
-          const input = getByPlaceholderText(placeholder);
+          const input = queryByPlaceholderText(placeholder);
           expect(input).toBeInTheDocument();
 
           await userEvent.type(input, mockedValue);
@@ -145,7 +145,7 @@ describe('RegisterForm', () => {
         }
 
         // Radio input test
-        const options = GENDER_OPTIONS.map(({ label }) => getByLabelText(label));
+        const options = GENDER_OPTIONS.map(({ label }) => queryByLabelText(label));
         options.forEach((option) => expect(option).not.toBeChecked());
 
         await userEvent.click(options[0]);

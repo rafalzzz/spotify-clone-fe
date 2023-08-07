@@ -54,19 +54,19 @@ describe('DateOfBirthInput', () => {
 
     formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
       it(key, async () => {
-        const { getByRole, getByLabelText, getByPlaceholderText } = renderDateOfBirthInput();
+        const { queryByRole, queryByLabelText, queryByPlaceholderText } = renderDateOfBirthInput();
 
         if (type === InputType.SELECT) {
           const { mockedValue } = restProps;
 
-          const select = getByRole('combobox');
+          const select = queryByRole('combobox');
           expect(select).toBeInTheDocument();
 
           await userEvent.click(select);
 
-          const monthOptions = await getByRole('listbox');
+          const monthOptions = await queryByRole('listbox');
 
-          const option = getByRole('option', { name: mockedValue });
+          const option = queryByRole('option', { name: mockedValue });
           await userEvent.click(option);
 
           expect(dateOfBirthValidator).toHaveBeenCalled();
@@ -74,7 +74,7 @@ describe('DateOfBirthInput', () => {
         }
 
         const { mockedValue, placeholder } = restProps;
-        const input = getByPlaceholderText(placeholder);
+        const input = queryByPlaceholderText(placeholder);
         expect(input).toBeInTheDocument();
 
         await userEvent.type(input, mockedValue);
