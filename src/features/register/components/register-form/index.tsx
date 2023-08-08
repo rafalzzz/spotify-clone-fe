@@ -3,8 +3,8 @@ import { Form } from 'antd';
 
 import { DateOfBirthInput } from '@/register/components/date-of-birth-input';
 import { FORM_FIELDS, INITIAL_VALUES } from '@/register/consts';
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { useRegisterForm } from '@/register/hooks/use-register-form';
+import { RegisterFormValues } from '@/register/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
@@ -14,10 +14,8 @@ import { CustomFormButtons, CustomFormItem } from '@/shared/components';
 
 import './RegisterForm.scss';
 
-export type RegisterFormType = Record<RegisterFormKeys, string | number>;
-
 export const RegisterForm = () => {
-  const [form] = Form.useForm<RegisterFormType>();
+  const [form] = Form.useForm<RegisterFormValues>();
   const { displayError, contextHolder } = useDisplayError();
   const { formButtons, onFinish } = useRegisterForm({ displayError });
 

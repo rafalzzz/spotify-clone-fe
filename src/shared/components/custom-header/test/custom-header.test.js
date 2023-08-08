@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 
 import { CustomHeader } from '..';
@@ -24,8 +24,8 @@ describe('CustomHeader', () => {
   });
 
   it('renders the correct title', () => {
-    const { getByText } = renderCustomHeader();
-    const header = getByText(MOCKED_HEADER_TITLE);
+    const { queryByText } = renderCustomHeader();
+    const header = queryByText(MOCKED_HEADER_TITLE);
     expect(header).toBeInTheDocument();
   });
 });

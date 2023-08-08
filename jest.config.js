@@ -25,6 +25,7 @@ module.exports = {
 
     // Handle module aliases
     '@/register/(.*)$': '<rootDir>/src/features/register/$1',
+    '@/login/(.*)$': '<rootDir>/src/features/login/$1',
     '@/components/(.*)$': '<rootDir>/src/shared/components/$1',
     '@/consts/(.*)$': '<rootDir>/src/shared/consts/$1',
     '@/hooks/(.*)$': '<rootDir>/src/shared/hooks/$1',
@@ -39,6 +40,8 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
+    '<rootDir>/src/features/login/types/',
+    '<rootDir>/src/features/register/types/',
     '<rootDir>/src/shared/types/',
     '<rootDir>/src/shared/consts/',
   ],

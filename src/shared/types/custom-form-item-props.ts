@@ -1,5 +1,6 @@
-import { CheckboxProps, InputProps, RadioProps, SelectProps } from 'antd';
+import { CheckboxProps, InputProps, RadioProps, SelectProps, SwitchProps } from 'antd';
 import { Rule } from 'antd/es/form';
+import { NamePath } from 'antd/es/form/interface';
 
 import { InputType, NonStandardInputType } from '@/enums/input-type';
 
@@ -17,6 +18,10 @@ export interface ExtendedCheckboxProps extends CheckboxProps {
   label: string;
 }
 
+export interface ExtendedSwitchProps extends SwitchProps {
+  label: string;
+}
+
 export type CustomFormItemProps<T = string> = {
   type: InputType | NonStandardInputType;
   name: T;
@@ -27,4 +32,6 @@ export type CustomFormItemProps<T = string> = {
   inputProps?: InputProps;
   radioProps?: ExtendedRadioProps;
   checkboxProps?: ExtendedCheckboxProps;
+  switchProps?: ExtendedSwitchProps;
+  setFieldValue?: (name: NamePath, value: string | number | boolean) => void;
 };

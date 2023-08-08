@@ -18,6 +18,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/login/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/components/**",
             "group": "internal",
             "position": "before"
