@@ -12,12 +12,12 @@ import { FORM_FIELD_PLACEHOLDERS } from './form-field-placeholders';
 export const FORM_FIELDS: (CustomFormItemProps<LoginFormKeys> | NonStandardItemProps)[] = [
   {
     type: InputType.TEXT,
-    key: LoginFormKeys.EMAIL_OR_USERNAME,
-    name: LoginFormKeys.EMAIL_OR_USERNAME,
-    label: LOGIN_FORM_LABELS[LoginFormKeys.EMAIL_OR_USERNAME],
+    key: LoginFormKeys.LOGIN,
+    name: LoginFormKeys.LOGIN,
+    label: LOGIN_FORM_LABELS[LoginFormKeys.LOGIN],
     rules: [{ validator: emailOrUsernameValidator }],
     inputProps: {
-      placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.EMAIL_OR_USERNAME],
+      placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.LOGIN],
     },
   },
   {

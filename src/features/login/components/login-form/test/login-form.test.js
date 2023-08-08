@@ -76,8 +76,8 @@ describe('LoginForm', () => {
     const formFieldsWithValidators = [
       {
         type: InputType.TEXT,
-        key: LoginFormKeys.EMAIL_OR_USERNAME,
-        placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.EMAIL_OR_USERNAME],
+        key: LoginFormKeys.LOGIN,
+        placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.LOGIN],
         mockedValue: 'Test',
         validator: emailOrUsernameValidator,
       },

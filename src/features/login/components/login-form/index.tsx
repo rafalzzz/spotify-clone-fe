@@ -26,10 +26,9 @@ export const LoginForm = () => {
         form={form}
         initialValues={INITIAL_VALUES}
         onFinish={onFinish}
-        scrollToFirstError
       >
         {FORM_FIELDS.map(({ key, type, ...restProps }) => (
-          <CustomFormItem key={key} type={type} {...restProps} />
+          <CustomFormItem key={key} type={type} setFieldValue={form.setFieldValue} {...restProps} />
         ))}
         <CustomFormButtons formButtons={formButtons} />
       </Form>
