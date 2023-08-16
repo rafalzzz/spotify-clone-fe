@@ -18,10 +18,12 @@
     "paths": {
       "@/register/*": ["features/register/*"],
       "@/login/*": ["features/login/*"],
+      "@/password-reset/*": ["features/password-reset/*"],
       "@/components/*": ["shared/components/*"],
       "@/consts/*": ["shared/consts/*"],
       "@/hooks/*": ["shared/hooks/*"],
       "@/utils/*": ["shared/utils/*"],
+      "@/validators/*": ["shared/validators/*"],
       "@/enums/*": ["shared/enums/*"],
       "@/types/*": ["shared/types/*"],
       "@/shared/*": ["shared/*"],

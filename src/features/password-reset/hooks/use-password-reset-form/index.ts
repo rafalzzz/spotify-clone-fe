@@ -1,26 +1,26 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { parseRequestBody } from '@/register/helpers';
-import { RegisterFormValues } from '@/register/types';
-import { registerUser } from '@/register/utils/requests/register-user';
+import { LoginFormValues } from '@/login/types';
+
+import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
 import { HookFormProps } from '@/types/hook-form-props';
 
-export const useRegisterForm = ({ displayError }: HookFormProps) => {
+export const usePasswordResetForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
-  const onFinish = async (values: RegisterFormValues) => {
+  const onFinish = async (values: LoginFormValues) => {
     setIsLoading(true);
+
     try {
-      const requestBody = parseRequestBody(values);
-      const response = await registerUser(requestBody);
+      const response = await passwordReset(values);
 
       if (!response) {
-        router.push('/login');
+        router.push('/');
       }
 
       if (response) {
@@ -39,10 +39,10 @@ export const useRegisterForm = ({ displayError }: HookFormProps) => {
         key: 1,
         htmlType: 'submit',
         shape: 'round',
-        text: 'Register',
+        text: 'Send',
         disabled: isLoading,
         testId: 'submit-button',
-        className: 'register-button',
+        className: 'login-button',
       },
     ],
     [isLoading],

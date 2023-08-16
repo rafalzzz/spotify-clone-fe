@@ -5,12 +5,9 @@ import { LoginFormValues } from '@/login/types';
 import { loginUser } from '@/login/utils/requests/login-user';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
+import { HookFormProps } from '@/types/hook-form-props';
 
-type UseLoginFormProps = {
-  displayError: (description: string) => void;
-};
-
-export const useLoginForm = ({ displayError }: UseLoginFormProps) => {
+export const useLoginForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();

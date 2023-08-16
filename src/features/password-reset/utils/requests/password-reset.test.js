@@ -2,7 +2,9 @@ import https from 'https';
 
 import fetch from 'node-fetch';
 
-import { registerUser } from './register-user';
+import { INITIAL_VALUES } from '@/login/consts';
+
+import { passwordReset } from './password-reset';
 
 jest.mock('node-fetch');
 jest.mock('https', () => ({
@@ -11,9 +13,7 @@ jest.mock('https', () => ({
   })),
 }));
 
-const mockRegisterUserValues = { name: 'test', email: 'test@example.com' };
-
-describe('registerUser function', () => {
+describe('passwordReset function', () => {
   beforeEach(() => {
     fetch.mockClear();
   });
@@ -24,7 +24,7 @@ describe('registerUser function', () => {
       json: () => Promise.resolve({ message: 'Success' }),
     });
 
-    const result = await registerUser(mockRegisterUserValues);
+    const result = await passwordReset(INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toBeUndefined();
@@ -38,7 +38,7 @@ describe('registerUser function', () => {
       json: () => Promise.resolve(mockResponse),
     });
 
-    const result = await registerUser(mockRegisterUserValues);
+    const result = await passwordReset(INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toEqual(mockResponse);
@@ -47,7 +47,7 @@ describe('registerUser function', () => {
   it('should return error string when fetch throws', async () => {
     fetch.mockRejectedValue(new Error());
 
-    const result = await registerUser(mockRegisterUserValues);
+    const result = await passwordReset(INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toEqual('Something went wrong');

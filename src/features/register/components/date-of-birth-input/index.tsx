@@ -1,7 +1,7 @@
 import { Form, Input, Select, Row, Col } from 'antd';
 
 import { MONTH_OPTIONS } from '@/register/consts';
-import { REGISTER_FORM_LABELS, FORM_FIELD_PLACEHOLDERS } from '@/register/consts';
+import { FORM_LABELS, FORM_FIELD_PLACEHOLDERS } from '@/register/consts';
 import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { dateOfBirthValidator } from '@/register/utils/validators';
 import './DateOfBirthInput.scss';
@@ -37,9 +37,7 @@ export const DateOfBirthInput = ({ label = '', name }: DateOfBirthInputProps) =>
             name={RegisterFormKeys.DAY}
             className='date-of-birth__input'
             label={
-              <span className='date-of-birth__label'>
-                {REGISTER_FORM_LABELS[RegisterFormKeys.DAY]}
-              </span>
+              <span className='date-of-birth__label'>{FORM_LABELS[RegisterFormKeys.DAY]}</span>
             }
           >
             <Input
@@ -54,9 +52,7 @@ export const DateOfBirthInput = ({ label = '', name }: DateOfBirthInputProps) =>
             // When name is "month" - placeholder disappear
             name={FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.MONTH]}
             label={
-              <span className='date-of-birth__label'>
-                {REGISTER_FORM_LABELS[RegisterFormKeys.MONTH]}
-              </span>
+              <span className='date-of-birth__label'>{FORM_LABELS[RegisterFormKeys.MONTH]}</span>
             }
             className='date-of-birth__input'
           >
@@ -76,9 +72,7 @@ export const DateOfBirthInput = ({ label = '', name }: DateOfBirthInputProps) =>
           <Form.Item
             name={RegisterFormKeys.YEAR}
             label={
-              <span className='date-of-birth__label'>
-                {REGISTER_FORM_LABELS[RegisterFormKeys.YEAR]}
-              </span>
+              <span className='date-of-birth__label'>{FORM_LABELS[RegisterFormKeys.YEAR]}</span>
             }
             className='date-of-birth__input'
           >

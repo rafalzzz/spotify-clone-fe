@@ -2,10 +2,10 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { Form } from 'antd';
 import { useRouter } from 'next/navigation';
 
-import { INITIAL_VALUES } from '@/login/consts';
-import { loginUser } from '@/login/utils/requests/login-user';
+import { INITIAL_VALUES } from '@/password-reset/consts';
+import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
-import { useLoginForm } from '..';
+import { usePasswordResetForm } from '..';
 
 const displayError = jest.fn();
 const mockPush = jest.fn();
@@ -14,8 +14,8 @@ jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
-jest.mock('@/login/utils/requests/login-user', () => ({
-  loginUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
+jest.mock('@/password-reset/utils/requests/password-reset', () => ({
+  passwordReset: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
 }));
 
 jest.mock('next/navigation', () => ({
@@ -24,15 +24,15 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
-const renderUseLoginForm = () => renderHook(() => useLoginForm({ displayError }));
+const renderUsePasswordResetForm = () => renderHook(() => usePasswordResetForm({ displayError }));
 
-describe('useLoginForm', () => {
+describe('usePasswordResetForm', () => {
   afterEach(() => {
-    loginUser.mockReset();
+    passwordReset.mockReset();
   });
 
   it('should call push method from useRouter when response return empty string', async () => {
-    const { result, waitForNextUpdate } = renderUseLoginForm();
+    const { result, waitForNextUpdate } = renderUsePasswordResetForm();
 
     expect(mockPush).not.toHaveBeenCalled();
 
@@ -46,8 +46,8 @@ describe('useLoginForm', () => {
   });
 
   it('should call displayError function when response return error message', async () => {
-    loginUser.mockRejectedValue('Error');
-    const { result, waitForNextUpdate } = renderUseLoginForm();
+    passwordReset.mockRejectedValue('Error');
+    const { result, waitForNextUpdate } = renderUsePasswordResetForm();
 
     expect(displayError).not.toHaveBeenCalled();
 
@@ -60,7 +60,7 @@ describe('useLoginForm', () => {
   });
 
   it('should disable form button while request is pending', async () => {
-    const { result, waitForNextUpdate } = renderUseLoginForm();
+    const { result, waitForNextUpdate } = renderUsePasswordResetForm();
 
     expect(result.current.formButtons[0].disabled).toBe(false);
 

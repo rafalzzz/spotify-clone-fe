@@ -26,10 +26,12 @@ module.exports = {
     // Handle module aliases
     '@/register/(.*)$': '<rootDir>/src/features/register/$1',
     '@/login/(.*)$': '<rootDir>/src/features/login/$1',
+    '@/password-reset/(.*)$': '<rootDir>/src/features/password-reset/$1',
     '@/components/(.*)$': '<rootDir>/src/shared/components/$1',
     '@/consts/(.*)$': '<rootDir>/src/shared/consts/$1',
     '@/hooks/(.*)$': '<rootDir>/src/shared/hooks/$1',
     '@/utils/(.*)$': '<rootDir>/src/shared/utils/$1',
+    '@/validators/(.*)$': '<rootDir>/src/shared/validators/$1',
     '@/enums/(.*)$': '<rootDir>/src/shared/enums/$1',
     '@/types/(.*)$': '<rootDir>/src/shared/types/$1',
     '@/shared/(.*)$': '<rootDir>/src/shared/$1',
@@ -38,13 +40,7 @@ module.exports = {
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-    '<rootDir>/src/features/login/types/',
-    '<rootDir>/src/features/register/types/',
-    '<rootDir>/src/shared/types/',
-    '<rootDir>/src/shared/consts/',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/', '/pages/', '/consts/', '/types/', '/enums/'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   transform: {

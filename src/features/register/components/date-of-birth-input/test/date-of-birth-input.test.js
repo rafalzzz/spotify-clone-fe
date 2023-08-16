@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Form } from 'antd';
 
-import { FORM_FIELD_PLACEHOLDERS, REGISTER_FORM_LABELS } from '@/register/consts';
+import { FORM_FIELD_PLACEHOLDERS, FORM_LABELS } from '@/register/consts';
 import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { dateOfBirthValidator } from '@/register/utils/validators';
 
@@ -20,7 +20,7 @@ const renderDateOfBirthInput = () =>
     <Form>
       <DateOfBirthInput
         name={NonStandardInputType.DATE_OF_BIRTH}
-        label={REGISTER_FORM_LABELS[NonStandardInputType.DATE_OF_BIRTH]}
+        label={FORM_LABELS[NonStandardInputType.DATE_OF_BIRTH]}
       />
     </Form>,
   );

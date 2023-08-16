@@ -20,7 +20,7 @@ exports[`LoginForm render component without error 1`] = `
             >
               <label
                 class=""
-                for="login_emailOrUsername"
+                for="login_login"
                 title=""
               >
                 <span
@@ -42,7 +42,7 @@ exports[`LoginForm render component without error 1`] = `
                   <input
                     class="ant-input ant-input-lg css-dev-only-do-not-override-12upa3x"
                     data-testid="input-type-text"
-                    id="login_emailOrUsername"
+                    id="login_login"
                     placeholder="Email address or username"
                     type="text"
                     value=""
@@ -228,7 +228,7 @@ exports[`LoginForm render component without error 1`] = `
           >
             <label
               class=""
-              for="login_emailOrUsername"
+              for="login_login"
               title=""
             >
               <span
@@ -250,7 +250,7 @@ exports[`LoginForm render component without error 1`] = `
                 <input
                   class="ant-input ant-input-lg css-dev-only-do-not-override-12upa3x"
                   data-testid="input-type-text"
-                  id="login_emailOrUsername"
+                  id="login_login"
                   placeholder="Email address or username"
                   type="text"
                   value=""

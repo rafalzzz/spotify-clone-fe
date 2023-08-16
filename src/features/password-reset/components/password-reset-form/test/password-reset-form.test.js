@@ -4,28 +4,21 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
-import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS } from '@/login/consts';
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
-import { useLoginForm } from '@/login/hooks/use-login-form';
-import { loginUser } from '@/login/utils/requests/login-user';
-import { passwordValidator } from '@/login/utils/validators/password-validator';
+import { FORM_FIELD_PLACEHOLDERS } from '@/password-reset/consts';
+import { PasswordResetFormKeys } from '@/password-reset/enums/password-reset-form-keys';
+import { usePasswordResetForm } from '@/password-reset/hooks/use-password-reset-form';
+import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
 
 import { InputType } from '@/enums/input-type';
 
-import { LoginForm } from '../';
+import { PasswordResetForm } from '..';
 
-const MOCKED_BUTTON_TEXT = 'Test Button';
+jest.mock('@/password-reset/hooks/use-password-reset-form');
 
-jest.mock('@/login/hooks/use-login-form');
-
-jest.mock('@/login/utils/requests/login-user', () => ({
-  registerUser: jest.fn(() => Promise.resolve({ data: {} })),
-}));
-
-jest.mock('@/login/utils/validators/password-validator', () => ({
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+jest.mock('@/password-reset/utils/requests/password-reset', () => ({
+  passwordReset: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 
 jest.mock('@/validators/email-or-username-validator', () => ({
@@ -34,15 +27,13 @@ jest.mock('@/validators/email-or-username-validator', () => ({
     .mockImplementation((getFieldValue) => () => Promise.resolve()),
 }));
 
-jest.mock('@/login/hooks/use-login-form');
-
-const renderLoginForm = () => render(<LoginForm />);
+const renderPasswordResetForm = () => render(<PasswordResetForm />);
 
 const onFinishMock = jest.fn();
 
 describe('LoginForm', () => {
   beforeEach(() => {
-    useLoginForm.mockReturnValue({
+    usePasswordResetForm.mockReturnValue({
       formButtons: [
         {
           key: 1,
@@ -58,12 +49,12 @@ describe('LoginForm', () => {
   });
 
   it('render component without error', () => {
-    const screen = renderLoginForm();
+    const screen = renderPasswordResetForm();
     expect(screen).toMatchSnapshot();
   });
 
   it('should call validators and not call registerUser function when form fields are empty', async () => {
-    const { queryByTestId } = renderLoginForm();
+    const { queryByTestId } = renderPasswordResetForm();
     const submitButton = queryByTestId('submit-button');
     expect(submitButton).toBeInTheDocument();
 
@@ -71,7 +62,6 @@ describe('LoginForm', () => {
 
     // test validators calls
     expect(emailOrUsernameValidator).toHaveBeenCalled();
-    expect(passwordValidator).toHaveBeenCalled();
 
     // test registerUser call
     expect(onFinishMock).not.toHaveBeenCalled();
@@ -81,23 +71,16 @@ describe('LoginForm', () => {
     const formFieldsWithValidators = [
       {
         type: InputType.TEXT,
-        key: LoginFormKeys.LOGIN,
-        placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.LOGIN],
+        key: PasswordResetFormKeys.LOGIN,
+        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetFormKeys.LOGIN],
         mockedValue: 'Test',
         validator: emailOrUsernameValidator,
-      },
-      {
-        type: InputType.PASSWORD,
-        key: LoginFormKeys.PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.PASSWORD],
-        mockedValue: 'Test',
-        validator: passwordValidator,
       },
     ];
 
     formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
       it(key, async () => {
-        const { queryByPlaceholderText } = renderLoginForm();
+        const { queryByPlaceholderText } = renderPasswordResetForm();
 
         const { mockedValue, placeholder } = restProps;
         const input = queryByPlaceholderText(placeholder);

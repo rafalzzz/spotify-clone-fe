@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
-import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS, REGISTER_FORM_LABELS } from '@/register/consts';
+import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS, FORM_LABELS } from '@/register/consts';
 import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { useRegisterForm } from '@/register/hooks/use-register-form';
 import { registerUser } from '@/register/utils/requests/register-user';
@@ -125,7 +125,7 @@ describe('RegisterForm', () => {
         const { queryByRole, queryByLabelText, queryByPlaceholderText } = renderRegisterForm();
 
         if (type === InputType.CHECKBOX) {
-          const checkbox = queryByLabelText(REGISTER_FORM_LABELS[RegisterFormKeys.TERMS]);
+          const checkbox = queryByLabelText(FORM_LABELS[RegisterFormKeys.TERMS]);
 
           await userEvent.click(checkbox);
 
