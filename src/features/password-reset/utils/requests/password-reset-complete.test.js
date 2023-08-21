@@ -2,9 +2,9 @@ import https from 'https';
 
 import fetch from 'node-fetch';
 
-import { PASSWORD_RESET_INITIAL_VALUES } from '@/password-reset/consts';
+import { PASSWORD_RESET_COMPLETE_INITIAL_VALUES } from '@/password-reset/consts';
 
-import { passwordReset } from './password-reset';
+import { passwordResetComplete } from './password-reset-complete';
 
 jest.mock('node-fetch');
 jest.mock('https', () => ({
@@ -13,7 +13,7 @@ jest.mock('https', () => ({
   })),
 }));
 
-describe('passwordReset function', () => {
+describe('passwordResetComplete function', () => {
   beforeEach(() => {
     fetch.mockClear();
   });
@@ -24,21 +24,21 @@ describe('passwordReset function', () => {
       json: () => Promise.resolve({ message: 'Success' }),
     });
 
-    const result = await passwordReset(PASSWORD_RESET_INITIAL_VALUES);
+    const result = await passwordResetComplete(PASSWORD_RESET_COMPLETE_INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toBeUndefined();
   });
 
   it('should return JSON when response status is not 200', async () => {
-    const mockResponse = { message: 'Wrong login' };
+    const mockResponse = { message: 'Password must contain at least 8 characters' };
 
     fetch.mockResolvedValue({
       status: 400,
       json: () => Promise.resolve(mockResponse),
     });
 
-    const result = await passwordReset(PASSWORD_RESET_INITIAL_VALUES);
+    const result = await passwordResetComplete(PASSWORD_RESET_COMPLETE_INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toEqual(mockResponse);
@@ -47,7 +47,7 @@ describe('passwordReset function', () => {
   it('should return error string when fetch throws', async () => {
     fetch.mockRejectedValue(new Error());
 
-    const result = await passwordReset(PASSWORD_RESET_INITIAL_VALUES);
+    const result = await passwordResetComplete(PASSWORD_RESET_COMPLETE_INITIAL_VALUES);
 
     expect(fetch).toHaveBeenCalled();
     expect(result).toEqual('Something went wrong');

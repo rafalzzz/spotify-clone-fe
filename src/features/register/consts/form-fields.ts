@@ -2,10 +2,11 @@ import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import {
   emailValidator,
   usernameValidator,
-  passwordValidator,
   genderValidator,
   termsValidator,
 } from '@/register/utils/validators';
+
+import { passwordValidator } from '@/validators/password-validator';
 
 import { InputType, NonStandardInputType } from '@/enums/input-type';
 

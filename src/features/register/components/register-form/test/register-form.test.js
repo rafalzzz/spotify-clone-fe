@@ -11,11 +11,12 @@ import { registerUser } from '@/register/utils/requests/register-user';
 import {
   emailValidator,
   usernameValidator,
-  passwordValidator,
   genderValidator,
   termsValidator,
   dateOfBirthValidator,
 } from '@/register/utils/validators';
+
+import { passwordValidator } from '@/validators/password-validator';
 
 import { InputType } from '@/enums/input-type';
 
@@ -36,6 +37,10 @@ jest.mock('@/register/utils/validators', () => ({
   passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
   genderValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
   termsValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+}));
+
+jest.mock('@/validators/password-validator', () => ({
+  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
 }));
 
 jest.mock('@/register/hooks/use-register-form');

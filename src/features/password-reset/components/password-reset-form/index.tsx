@@ -1,7 +1,7 @@
 'use client';
 import { Form } from 'antd';
 
-import { FORM_FIELDS, INITIAL_VALUES } from '@/password-reset/consts';
+import { PASSWORD_RESET_FORM_FIELDS, PASSWORD_RESET_INITIAL_VALUES } from '@/password-reset/consts';
 import { usePasswordResetForm } from '@/password-reset/hooks/use-password-reset-form';
 import { PasswordResetFormValues } from '@/password-reset/types';
 
@@ -24,10 +24,10 @@ export const PasswordResetForm = () => {
         layout='vertical'
         size='large'
         form={form}
-        initialValues={INITIAL_VALUES}
+        initialValues={PASSWORD_RESET_INITIAL_VALUES}
         onFinish={onFinish}
       >
-        {FORM_FIELDS.map(({ key, type, ...restProps }) => (
+        {PASSWORD_RESET_FORM_FIELDS.map(({ key, type, ...restProps }) => (
           <CustomFormItem key={key} type={type} setFieldValue={form.setFieldValue} {...restProps} />
         ))}
         <CustomFormButtons formButtons={formButtons} />

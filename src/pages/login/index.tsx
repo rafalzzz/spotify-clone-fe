@@ -1,7 +1,8 @@
 import { Footer } from '@/login/components/footer';
-import { MainContent } from '@/login/components/main-content';
+import { LoginForm } from '@/login/components/login-form';
 
 import { CustomHeader } from '@/components/custom-header';
+import { CustomHyperlink } from '@/components/custom-hyperlink';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
@@ -10,7 +11,14 @@ import './LoginPage.scss';
 const Login = () => (
   <div className='login-page'>
     <CustomHeader title='Sign in to Spotify' />
-    <MainContent />
+    <main className='login-page__content'>
+      <LoginForm />
+      <CustomHyperlink
+        href='/reset-password'
+        hyperlinkText='Do not you remember the password?'
+        className='reset-password-redirection'
+      />
+    </main>
     <hr className='separator' />
     <Footer />
   </div>

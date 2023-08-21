@@ -1,5 +1,5 @@
 import { Footer } from '@/register/components/footer/Footer';
-import { MainContent } from '@/register/components/main-content';
+import { RegisterForm } from '@/register/components/register-form';
 
 import { CustomHeader } from '@/components/custom-header';
 
@@ -8,7 +8,9 @@ import './page.scss';
 const Register = () => (
   <div className='register-page'>
     <CustomHeader title='Create an account' />
-    <MainContent />
+    <main className='register-page__content'>
+      <RegisterForm />
+    </main>
     <Footer />
   </div>
 );

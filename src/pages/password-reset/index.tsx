@@ -1,13 +1,13 @@
-import { MainContent } from '@/password-reset/components/main-content';
+import { PasswordResetForm } from '@/password-reset/components/password-reset-form';
 
 import { CustomHeader, CustomSubheader } from '@/shared/components';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
-import './LoginPage.scss';
+import './PasswordResetPage.scss';
 
 const PasswordReset = () => (
-  <div className='login-page'>
+  <div className='password-reset-page'>
     <CustomHeader title='Password reset' />
     <CustomSubheader
       title={
@@ -17,7 +17,9 @@ const PasswordReset = () => (
         </>
       }
     />
-    <MainContent />
+    <main className='password-reset-page__content'>
+      <PasswordResetForm />
+    </main>
   </div>
 );
 

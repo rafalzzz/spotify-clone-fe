@@ -2,14 +2,14 @@ import https from 'https';
 
 import fetch from 'node-fetch';
 
-import { PasswordResetFormValues } from '@/password-reset/types';
+import { PasswordResetCompleteFormValues } from '@/password-reset/types';
 
 const agent = new https.Agent({
   rejectUnauthorized: false,
 });
 
-export async function passwordReset(requestBody: PasswordResetFormValues) {
-  const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/password-reset`, {
+export async function passwordResetComplete(requestBody: PasswordResetCompleteFormValues) {
+  const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/password-reset/complete`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

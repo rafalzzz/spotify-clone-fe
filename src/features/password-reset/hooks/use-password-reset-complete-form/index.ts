@@ -1,22 +1,22 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { PasswordResetFormValues } from '@/password-reset/types';
-import { passwordReset } from '@/password-reset/utils/requests/password-reset';
+import { PasswordResetCompleteFormValues } from '@/password-reset/types';
+import { passwordResetComplete } from '@/password-reset/utils/requests/password-reset-complete';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
 import { HookFormProps } from '@/types/hook-form-props';
 
-export const usePasswordResetForm = ({ displayError }: HookFormProps) => {
+export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
-  const onFinish = async (values: PasswordResetFormValues) => {
+  const onFinish = async (values: PasswordResetCompleteFormValues) => {
     setIsLoading(true);
 
     try {
-      const response = await passwordReset(values);
+      const response = await passwordResetComplete(values);
 
       if (!response) {
         router.push('/');
