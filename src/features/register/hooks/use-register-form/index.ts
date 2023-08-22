@@ -6,12 +6,9 @@ import { RegisterFormValues } from '@/register/types';
 import { registerUser } from '@/register/utils/requests/register-user';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
+import { HookFormProps } from '@/types/hook-form-props';
 
-type UseRegisterFormProps = {
-  displayError: (description: string) => void;
-};
-
-export const useRegisterForm = ({ displayError }: UseRegisterFormProps) => {
+export const useRegisterForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();

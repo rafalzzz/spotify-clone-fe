@@ -23,6 +23,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/password-reset/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/components/**",
             "group": "internal",
             "position": "before"
@@ -34,6 +39,11 @@
           },
           {
             "pattern": "@/utils/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/validators/**",
             "group": "internal",
             "position": "before"
           },

@@ -2,7 +2,7 @@ import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 
 import { NonStandardInputType } from '@/enums/input-type';
 
-export const REGISTER_FORM_LABELS = {
+export const FORM_LABELS = {
   [RegisterFormKeys.EMAIL]: 'Your e-mail address',
   [RegisterFormKeys.PASSWORD]: 'Create a password',
   [RegisterFormKeys.NICKNAME]: 'How should we address you?',
