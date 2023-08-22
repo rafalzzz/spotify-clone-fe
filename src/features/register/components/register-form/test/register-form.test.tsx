@@ -1,13 +1,11 @@
-import { render } from '@testing-library/react';
+import { Matcher, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS, FORM_LABELS } from '@/register/consts';
 import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { useRegisterForm } from '@/register/hooks/use-register-form';
-import { registerUser } from '@/register/utils/requests/register-user';
 import {
   emailValidator,
   usernameValidator,
@@ -20,9 +18,7 @@ import { passwordValidator } from '@/validators/password-validator';
 
 import { InputType } from '@/enums/input-type';
 
-import { RegisterForm } from '../index.tsx';
-
-const MOCKED_BUTTON_TEXT = 'Test Button';
+import { RegisterForm } from '..';
 
 jest.mock('@/register/hooks/use-register-form');
 
@@ -51,7 +47,7 @@ const onFinishMock = jest.fn();
 
 describe('RegisterForm', () => {
   beforeEach(() => {
-    useRegisterForm.mockReturnValue({
+    (useRegisterForm as jest.Mock).mockReturnValue({
       formButtons: [
         {
           key: 2,
@@ -71,12 +67,12 @@ describe('RegisterForm', () => {
     expect(screen).toMatchSnapshot();
   });
 
-  it('should call validators and not call registerUser function when form fields are empty', async () => {
+  it('should call validators and not call mocked action when form fields are empty', async () => {
     const { queryByTestId } = renderRegisterForm();
     const submitButton = queryByTestId('submit-button');
     expect(submitButton).toBeInTheDocument();
 
-    await userEvent.click(submitButton);
+    await userEvent.click(submitButton as Element);
 
     // test validators calls
     expect(dateOfBirthValidator).toHaveBeenCalled();
@@ -86,7 +82,7 @@ describe('RegisterForm', () => {
     expect(genderValidator).toHaveBeenCalled();
     expect(termsValidator).toHaveBeenCalled();
 
-    // test registerUser call
+    // test mocked function call
     expect(onFinishMock).not.toHaveBeenCalled();
   });
 
@@ -132,7 +128,7 @@ describe('RegisterForm', () => {
         if (type === InputType.CHECKBOX) {
           const checkbox = queryByLabelText(FORM_LABELS[RegisterFormKeys.TERMS]);
 
-          await userEvent.click(checkbox);
+          await userEvent.click(checkbox as Element);
 
           expect(validator).toHaveBeenCalled();
           return;
@@ -140,10 +136,10 @@ describe('RegisterForm', () => {
 
         if (type === InputType.TEXT) {
           const { mockedValue, placeholder } = restProps;
-          const input = queryByPlaceholderText(placeholder);
+          const input = queryByPlaceholderText(placeholder as Matcher);
           expect(input).toBeInTheDocument();
 
-          await userEvent.type(input, mockedValue);
+          await userEvent.type(input as Element, mockedValue as string);
 
           expect(validator).toHaveBeenCalled();
           return;
@@ -153,7 +149,7 @@ describe('RegisterForm', () => {
         const options = GENDER_OPTIONS.map(({ label }) => queryByLabelText(label));
         options.forEach((option) => expect(option).not.toBeChecked());
 
-        await userEvent.click(options[0]);
+        await userEvent.click(options[0] as Element);
 
         options.forEach((option, index) => {
           // first option in array is checked

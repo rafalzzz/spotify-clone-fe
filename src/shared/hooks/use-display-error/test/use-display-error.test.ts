@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { notification } from 'antd';
 import { act } from 'react-test-renderer';
 
-import { useDisplayError } from '../';
+import { useDisplayError } from '..';
 
 jest.mock('antd', () => ({
   notification: {
@@ -15,7 +15,10 @@ describe('useDisplayError', () => {
     const mockNotificationApi = { error: jest.fn() };
     const mockContextHolder = jest.fn();
 
-    notification.useNotification.mockReturnValue([mockNotificationApi, mockContextHolder]);
+    (notification.useNotification as jest.Mock).mockReturnValue([
+      mockNotificationApi,
+      mockContextHolder,
+    ]);
 
     const { result } = renderHook(() => useDisplayError());
 

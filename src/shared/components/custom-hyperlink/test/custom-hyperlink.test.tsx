@@ -6,9 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { CustomHyperlink } from '..';
 
 jest.mock('next/link', () => {
-  return ({ children }) => {
-    return children;
-  };
+  return ({ children }: { children: JSX.Element }) => children;
 });
 
 const textBeforeHyperlink = 'Before';

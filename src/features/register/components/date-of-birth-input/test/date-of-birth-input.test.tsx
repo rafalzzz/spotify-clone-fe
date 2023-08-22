@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { Matcher, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Form } from 'antd';
@@ -9,7 +9,7 @@ import { dateOfBirthValidator } from '@/register/utils/validators';
 
 import { InputType, NonStandardInputType } from '@/enums/input-type';
 
-import { DateOfBirthInput } from '../index.tsx';
+import { DateOfBirthInput } from '..';
 
 jest.mock('@/register/utils/validators', () => ({
   dateOfBirthValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
@@ -52,7 +52,7 @@ describe('DateOfBirthInput', () => {
       },
     ];
 
-    formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
+    formFieldsWithValidators.forEach(({ type, key, ...restProps }) => {
       it(key, async () => {
         const { queryByRole, queryByLabelText, queryByPlaceholderText } = renderDateOfBirthInput();
 
@@ -62,22 +62,22 @@ describe('DateOfBirthInput', () => {
           const select = queryByRole('combobox');
           expect(select).toBeInTheDocument();
 
-          await userEvent.click(select);
+          await userEvent.click(select as Element);
 
           const monthOptions = await queryByRole('listbox');
 
           const option = queryByRole('option', { name: mockedValue });
-          await userEvent.click(option);
+          await userEvent.click(option as Element);
 
           expect(dateOfBirthValidator).toHaveBeenCalled();
           return;
         }
 
         const { mockedValue, placeholder } = restProps;
-        const input = queryByPlaceholderText(placeholder);
+        const input = queryByPlaceholderText(placeholder as Matcher);
         expect(input).toBeInTheDocument();
 
-        await userEvent.type(input, mockedValue);
+        await userEvent.type(input as Element, mockedValue);
 
         expect(dateOfBirthValidator).toHaveBeenCalled();
       });

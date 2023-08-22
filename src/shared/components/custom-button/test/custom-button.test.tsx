@@ -1,17 +1,18 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import '@testing-library/jest-dom';
+
+import { CustomButtonProps } from '@/types/custom-button-props';
 
 import { CustomButton } from '..';
 
 import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
 
-import '@testing-library/jest-dom';
-
 const MOCKED_TEST_ID = 'custom-button';
 const MOCKED_BUTTON_TEXT = 'Test Button';
 
-const renderCustomButton = (additionalProps) => {
+const renderCustomButton = (additionalProps = {}) => {
   const props = {
     ...commonButtonProps,
     testId: MOCKED_TEST_ID,
@@ -19,7 +20,7 @@ const renderCustomButton = (additionalProps) => {
     ...additionalProps,
   };
 
-  return render(<CustomButton {...props} />);
+  return render(<CustomButton {...(props as CustomButtonProps)} />);
 };
 
 describe('CustomButton', () => {
@@ -44,7 +45,7 @@ describe('CustomButton', () => {
     const button = queryByTestId(MOCKED_TEST_ID);
     expect(button).toBeInTheDocument();
 
-    await userEvent.click(button);
+    await userEvent.click(button as Element);
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 

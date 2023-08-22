@@ -1,13 +1,11 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS } from '@/password-reset/consts';
 import { PasswordResetFormKeys } from '@/password-reset/enums/password-reset-form-keys';
 import { usePasswordResetForm } from '@/password-reset/hooks/use-password-reset-form';
-import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
 
@@ -31,15 +29,15 @@ const renderPasswordResetForm = () => render(<PasswordResetForm />);
 
 const onFinishMock = jest.fn();
 
-describe('LoginForm', () => {
+describe('PasswordResetForm', () => {
   beforeEach(() => {
-    usePasswordResetForm.mockReturnValue({
+    (usePasswordResetForm as jest.Mock).mockReturnValue({
       formButtons: [
         {
           key: 1,
           type: 'primary',
           htmlType: 'submit',
-          text: 'Login',
+          text: 'Send',
           disabled: false,
           testId: 'submit-button',
         },
@@ -53,17 +51,17 @@ describe('LoginForm', () => {
     expect(screen).toMatchSnapshot();
   });
 
-  it('should call validators and not call registerUser function when form fields are empty', async () => {
+  it('should call validators and not call mocked action when form fields are empty', async () => {
     const { queryByTestId } = renderPasswordResetForm();
     const submitButton = queryByTestId('submit-button');
     expect(submitButton).toBeInTheDocument();
 
-    await userEvent.click(submitButton);
+    await userEvent.click(submitButton as Element);
 
     // test validators calls
     expect(emailOrUsernameValidator).toHaveBeenCalled();
 
-    // test registerUser call
+    // test mocked function call
     expect(onFinishMock).not.toHaveBeenCalled();
   });
 
@@ -86,7 +84,7 @@ describe('LoginForm', () => {
         const input = queryByPlaceholderText(placeholder);
         expect(input).toBeInTheDocument();
 
-        await userEvent.type(input, mockedValue);
+        await userEvent.type(input as Element, mockedValue);
 
         expect(validator).toHaveBeenCalled();
         return;

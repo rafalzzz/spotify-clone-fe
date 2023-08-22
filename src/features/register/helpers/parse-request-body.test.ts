@@ -1,4 +1,5 @@
 import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { RegisterFormValues } from '@/register/types';
 
 import { parseRequestBody } from './parse-request-body';
 
@@ -20,7 +21,7 @@ describe('parseRequestBody', () => {
       dateOfBirth: '1995-12-31',
     };
 
-    const result = parseRequestBody(values);
+    const result = parseRequestBody(values as RegisterFormValues);
     expect(result).toEqual(expectedRequestBody);
   });
 });

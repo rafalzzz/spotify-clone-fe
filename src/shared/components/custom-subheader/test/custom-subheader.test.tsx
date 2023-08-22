@@ -3,8 +3,6 @@ import React from 'react';
 
 import { CustomSubheader } from '..';
 
-import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
-
 import '@testing-library/jest-dom';
 
 const MOCKED_HEADER_TITLE = 'Test';

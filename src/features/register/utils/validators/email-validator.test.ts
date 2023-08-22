@@ -1,5 +1,3 @@
-import { emailRegex } from '@/consts/regex';
-
 import { emailValidator } from './email-validator';
 
 describe('emailValidator', () => {

@@ -35,8 +35,8 @@ module.exports = {
     '@/enums/(.*)$': '<rootDir>/src/shared/enums/$1',
     '@/types/(.*)$': '<rootDir>/src/shared/types/$1',
     '@/shared/(.*)$': '<rootDir>/src/shared/$1',
-    '@/styles/(.*)$': '<rootDir>/styles/$1',
-    '@/test-utils/(.*)$': '<rootDir>/test-utils/$1',
+    '@/styles/(.*)$': '<rootDir>/src/styles/$1',
+    '@/test-utils/(.*)$': '<rootDir>/src/test-utils/$1',
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],

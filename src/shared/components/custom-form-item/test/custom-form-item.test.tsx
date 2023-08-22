@@ -1,10 +1,11 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import * as antdOriginal from 'antd';
 import { Form } from 'antd';
 import React from 'react';
 
-import { InputType } from '@/enums/input-type';
+import { InputType, NonStandardInputType } from '@/enums/input-type';
+
+import { CustomFormItemProps } from '@/types/custom-form-item-props';
 
 import { CustomFormItem } from '..';
 
@@ -74,6 +75,7 @@ const MOCKED_FORM_ITEMS = [
     },
   },
   {
+    label: 'test',
     type: InputType.SWITCH,
     props: {
       key: 'text',
@@ -85,11 +87,11 @@ const MOCKED_FORM_ITEMS = [
   },
 ];
 
-const renderCustomFormItem = (type, formItemProps) => {
+const renderCustomFormItem = (type: InputType, formItemProps: CustomFormItemProps) => {
   const props = {
-    type,
     ...formItemProps,
     setFieldValue: mockSetFieldValue,
+    type,
   };
 
   return render(
@@ -103,14 +105,14 @@ const renderCustomFormItem = (type, formItemProps) => {
 describe('CustomFormItem', () => {
   it('render component without error', () => {
     const { type, props } = MOCKED_FORM_ITEMS[0];
-    const screen = renderCustomFormItem(type, props);
+    const screen = renderCustomFormItem(type, props as CustomFormItemProps);
     expect(screen).toMatchSnapshot();
   });
 
   describe('render correct input type', () => {
     MOCKED_FORM_ITEMS.forEach(({ type, props }) => {
       it(type, () => {
-        const { queryByTestId } = renderCustomFormItem(type, props);
+        const { queryByTestId } = renderCustomFormItem(type, props as CustomFormItemProps);
         expect(queryByTestId(`input-type-${type}`)).toBeInTheDocument();
       });
     });
@@ -122,12 +124,15 @@ describe('CustomFormItem', () => {
       inputValidator.mockImplementation((getFieldValue) => () => Promise.resolve());
 
       const { type, props } = MOCKED_FORM_ITEMS[0];
-      const { queryByPlaceholderText, queryByText } = renderCustomFormItem(type, props);
+      const { queryByPlaceholderText, queryByText } = renderCustomFormItem(
+        type,
+        props as CustomFormItemProps,
+      );
 
       const textInput = queryByPlaceholderText(textInputPlaceholder);
       expect(textInput).toBeInTheDocument();
 
-      await userEvent.type(textInput, mockedInputValue);
+      await userEvent.type(textInput as Element, mockedInputValue);
 
       expect(textInput).toHaveValue(mockedInputValue);
       expect(inputValidator).toHaveBeenCalled();
@@ -138,13 +143,20 @@ describe('CustomFormItem', () => {
       const { props } = MOCKED_FORM_ITEMS[0];
 
       jest.spyOn(console, 'error');
-      console.error.mockImplementation(() => {});
+      (console.error as jest.Mock).mockImplementation(() => {});
 
       expect(() => {
-        render(<CustomFormItem type={invalidInputType} {...props} />);
+        render(
+          <CustomFormItem
+            {...({
+              ...props,
+              type: invalidInputType as NonStandardInputType,
+            } as CustomFormItemProps)}
+          />,
+        );
       }).toThrowError(`${invalidInputType} input type does not exist`);
 
-      console.error.mockRestore();
+      (console.error as jest.Mock).mockRestore();
     });
   });
 });

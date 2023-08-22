@@ -1,11 +1,10 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { Form } from 'antd';
-import { useRouter } from 'next/navigation';
 
-import { INITIAL_VALUES } from '@/password-reset/consts';
-import { passwordReset } from '@/password-reset/utils/requests/password-reset';
+import { INITIAL_VALUES } from '@/register/consts';
+import { RegisterFormValues } from '@/register/types';
+import { registerUser } from '@/register/utils/requests/register-user';
 
-import { usePasswordResetForm } from '..';
+import { useRegisterForm } from '..';
 
 const displayError = jest.fn();
 const mockPush = jest.fn();
@@ -14,8 +13,8 @@ jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
-jest.mock('@/password-reset/utils/requests/password-reset', () => ({
-  passwordReset: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
+jest.mock('@/register/utils/requests/register-user', () => ({
+  registerUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
 }));
 
 jest.mock('next/navigation', () => ({
@@ -24,20 +23,20 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
-const renderUsePasswordResetForm = () => renderHook(() => usePasswordResetForm({ displayError }));
+const renderUserRegisterForm = () => renderHook(() => useRegisterForm({ displayError }));
 
-describe('usePasswordResetForm', () => {
+describe('useRegisterForm', () => {
   afterEach(() => {
-    passwordReset.mockReset();
+    (registerUser as jest.Mock).mockReset();
   });
 
   it('should call push method from useRouter when response return empty string', async () => {
-    const { result, waitForNextUpdate } = renderUsePasswordResetForm();
+    const { result, waitForNextUpdate } = renderUserRegisterForm();
 
     expect(mockPush).not.toHaveBeenCalled();
 
     act(() => {
-      result.current.onFinish(INITIAL_VALUES);
+      result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
     });
 
     await waitForNextUpdate();
@@ -46,13 +45,13 @@ describe('usePasswordResetForm', () => {
   });
 
   it('should call displayError function when response return error message', async () => {
-    passwordReset.mockRejectedValue('Error');
-    const { result, waitForNextUpdate } = renderUsePasswordResetForm();
+    (registerUser as jest.Mock).mockRejectedValue('Error');
+    const { result, waitForNextUpdate } = renderUserRegisterForm();
 
     expect(displayError).not.toHaveBeenCalled();
 
     await act(async () => {
-      result.current.onFinish(INITIAL_VALUES);
+      result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
       await waitForNextUpdate();
     });
 
@@ -60,12 +59,12 @@ describe('usePasswordResetForm', () => {
   });
 
   it('should disable form button while request is pending', async () => {
-    const { result, waitForNextUpdate } = renderUsePasswordResetForm();
+    const { result, waitForNextUpdate } = renderUserRegisterForm();
 
     expect(result.current.formButtons[0].disabled).toBe(false);
 
     act(() => {
-      result.current.onFinish(INITIAL_VALUES);
+      result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
     });
 
     // Check if the form button is disabled immediately after onFinish is called
