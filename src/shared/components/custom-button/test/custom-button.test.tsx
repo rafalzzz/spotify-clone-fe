@@ -5,9 +5,9 @@ import '@testing-library/jest-dom';
 
 import { CustomButtonProps } from '@/types/custom-button-props';
 
-import { CustomButton } from '..';
-
 import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
+
+import { CustomButton } from '..';
 
 const MOCKED_TEST_ID = 'custom-button';
 const MOCKED_BUTTON_TEXT = 'Test Button';
