@@ -7,14 +7,14 @@ import { PasswordResetFormValues } from '@/password-reset/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
-import { CustomFormButtons, CustomFormItem } from '@/shared/components';
+import { CustomFormItem, SubmitButton } from '@/shared/components';
 
 import './PasswordResetForm.scss';
 
 export const PasswordResetForm = () => {
   const [form] = Form.useForm<PasswordResetFormValues>();
   const { displayError, contextHolder } = useDisplayError();
-  const { formButtons, onFinish } = usePasswordResetForm({ displayError });
+  const { submitButton, onFinish } = usePasswordResetForm({ displayError });
 
   return (
     <>
@@ -30,7 +30,7 @@ export const PasswordResetForm = () => {
         {PASSWORD_RESET_FORM_FIELDS.map(({ key, type, ...restProps }) => (
           <CustomFormItem key={key} type={type} setFieldValue={form.setFieldValue} {...restProps} />
         ))}
-        <CustomFormButtons formButtons={formButtons} />
+        <SubmitButton submitButtonProps={submitButton} />
       </Form>
       {contextHolder}
     </>

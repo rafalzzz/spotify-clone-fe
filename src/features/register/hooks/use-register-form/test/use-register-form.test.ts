@@ -61,20 +61,20 @@ describe('useRegisterForm', () => {
   it('should disable form button while request is pending', async () => {
     const { result, waitForNextUpdate } = renderUserRegisterForm();
 
-    expect(result.current.formButtons[0].disabled).toBe(false);
+    expect(result.current.submitButton.disabled).toBe(false);
 
     act(() => {
       result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
     });
 
     // Check if the form button is disabled immediately after onFinish is called
-    expect(result.current.formButtons[0].disabled).toBe(true);
+    expect(result.current.submitButton.disabled).toBe(true);
 
     await act(async () => {
       await waitForNextUpdate();
     });
 
     // Check if the form button is enabled again after onFinish
-    expect(result.current.formButtons[0].disabled).toBe(false);
+    expect(result.current.submitButton.disabled).toBe(false);
   });
 });

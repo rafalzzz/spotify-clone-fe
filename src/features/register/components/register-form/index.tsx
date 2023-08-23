@@ -10,14 +10,14 @@ import { useDisplayError } from '@/hooks/use-display-error';
 
 import { InputType, NonStandardInputType } from '@/enums/input-type';
 
-import { CustomFormButtons, CustomFormItem } from '@/shared/components';
+import { CustomFormItem, SubmitButton } from '@/shared/components';
 
 import './RegisterForm.scss';
 
 export const RegisterForm = () => {
   const [form] = Form.useForm<RegisterFormValues>();
   const { displayError, contextHolder } = useDisplayError();
-  const { formButtons, onFinish } = useRegisterForm({ displayError });
+  const { submitButton, onFinish } = useRegisterForm({ displayError });
 
   const isStandardInput = (inputType: string) =>
     Object.values(InputType).includes(inputType as InputType);
@@ -39,7 +39,7 @@ export const RegisterForm = () => {
           if (type === NonStandardInputType.DATE_OF_BIRTH)
             return <DateOfBirthInput key={key} {...restProps} />;
         })}
-        <CustomFormButtons formButtons={formButtons} />
+        <SubmitButton submitButtonProps={submitButton} />
       </Form>
       {contextHolder}
     </>

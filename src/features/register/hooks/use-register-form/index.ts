@@ -33,20 +33,17 @@ export const useRegisterForm = ({ displayError }: HookFormProps) => {
     }
   };
 
-  const formButtons: CustomButtonProps[] = useMemo(
-    () => [
-      {
-        key: 1,
-        htmlType: 'submit',
-        shape: 'round',
-        text: 'Register',
-        disabled: isLoading,
-        testId: 'submit-button',
-        className: 'register-button',
-      },
-    ],
+  const submitButton: CustomButtonProps = useMemo(
+    () => ({
+      htmlType: 'submit',
+      shape: 'round',
+      text: 'Register',
+      disabled: isLoading,
+      testId: 'submit-button',
+      className: 'register-button',
+    }),
     [isLoading],
   );
 
-  return { formButtons, onFinish };
+  return { submitButton, onFinish };
 };

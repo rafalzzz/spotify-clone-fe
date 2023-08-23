@@ -4,7 +4,6 @@ import { MouseEventHandler } from 'react';
 export type CustomButtonProps = {
   htmlType: 'reset' | 'submit' | 'button' | undefined;
   text: string;
-  key?: number;
   shape?: 'default' | 'circle' | 'round';
   type?: 'default' | 'primary' | 'link' | 'text' | 'ghost' | 'dashed';
   className?: string;

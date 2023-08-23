@@ -32,16 +32,14 @@ const onFinishMock = jest.fn();
 describe('PasswordResetForm', () => {
   beforeEach(() => {
     (usePasswordResetForm as jest.Mock).mockReturnValue({
-      formButtons: [
-        {
-          key: 1,
-          type: 'primary',
-          htmlType: 'submit',
-          text: 'Send',
-          disabled: false,
-          testId: 'submit-button',
-        },
-      ],
+      submitButton: {
+        key: 1,
+        type: 'primary',
+        htmlType: 'submit',
+        text: 'Send',
+        disabled: false,
+        testId: 'submit-button',
+      },
       onFinish: onFinishMock,
     });
   });

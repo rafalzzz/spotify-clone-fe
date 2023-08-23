@@ -660,7 +660,7 @@ exports[`RegisterForm render component without error 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item form-buttons css-dev-only-do-not-override-12upa3x"
+          class="ant-form-item submit-button css-dev-only-do-not-override-12upa3x"
         >
           <div
             class="ant-row ant-form-item-row css-dev-only-do-not-override-12upa3x"
@@ -1348,7 +1348,7 @@ exports[`RegisterForm render component without error 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item form-buttons css-dev-only-do-not-override-12upa3x"
+        class="ant-form-item submit-button css-dev-only-do-not-override-12upa3x"
       >
         <div
           class="ant-row ant-form-item-row css-dev-only-do-not-override-12upa3x"

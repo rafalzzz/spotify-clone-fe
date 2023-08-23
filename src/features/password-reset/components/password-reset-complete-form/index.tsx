@@ -10,14 +10,14 @@ import { PasswordResetCompleteFormValues } from '@/password-reset/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
-import { CustomFormButtons, CustomFormItem } from '@/shared/components';
+import { CustomFormItem, SubmitButton } from '@/shared/components';
 
 import './PasswordResetCompleteForm.scss';
 
 export const PasswordResetCompleteForm = () => {
   const [form] = Form.useForm<PasswordResetCompleteFormValues>();
   const { displayError, contextHolder } = useDisplayError();
-  const { formButtons, onFinish } = usePasswordResetCompleteForm({ displayError });
+  const { submitButton, onFinish } = usePasswordResetCompleteForm({ displayError });
 
   return (
     <>
@@ -33,7 +33,7 @@ export const PasswordResetCompleteForm = () => {
         {PASSWORD_RESET_COMPLETE_FORM_FIELDS.map(({ key, type, ...restProps }) => (
           <CustomFormItem key={key} type={type} setFieldValue={form.setFieldValue} {...restProps} />
         ))}
-        <CustomFormButtons formButtons={formButtons} />
+        <SubmitButton submitButtonProps={submitButton} />
       </Form>
       {contextHolder}
     </>
