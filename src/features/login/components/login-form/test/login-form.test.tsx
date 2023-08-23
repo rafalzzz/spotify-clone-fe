@@ -43,16 +43,13 @@ const onFinishMock = jest.fn();
 describe('LoginForm', () => {
   beforeEach(() => {
     (useLoginForm as jest.Mock).mockReturnValue({
-      formButtons: [
-        {
-          key: 1,
-          type: 'primary',
-          htmlType: 'submit',
-          text: 'Login',
-          disabled: false,
-          testId: 'submit-button',
-        },
-      ],
+      submitButton: {
+        type: 'primary',
+        htmlType: 'submit',
+        text: 'Login',
+        disabled: false,
+        testId: 'submit-button',
+      },
       onFinish: onFinishMock,
     });
   });

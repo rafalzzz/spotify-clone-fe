@@ -32,20 +32,17 @@ export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) =>
     }
   };
 
-  const formButtons: CustomButtonProps[] = useMemo(
-    () => [
-      {
-        key: 1,
-        htmlType: 'submit',
-        shape: 'round',
-        text: 'Send',
-        disabled: isLoading,
-        testId: 'submit-button',
-        className: 'login-button',
-      },
-    ],
+  const submitButton: CustomButtonProps = useMemo(
+    () => ({
+      htmlType: 'submit',
+      shape: 'round',
+      text: 'Send',
+      disabled: isLoading,
+      testId: 'submit-button',
+      className: 'login-button',
+    }),
     [isLoading],
   );
 
-  return { formButtons, onFinish };
+  return { submitButton, onFinish };
 };
