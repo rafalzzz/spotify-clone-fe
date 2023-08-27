@@ -1,4 +1,4 @@
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 
 import { PasswordResetCompleteFormValues } from '@/password-reset/types';
@@ -10,16 +10,24 @@ import { HookFormProps } from '@/types/hook-form-props';
 export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter();
+  const {
+    query: { token },
+    push,
+  } = useRouter();
 
-  const onFinish = async (values: PasswordResetCompleteFormValues) => {
+  const onFinish = async ({ newPassword }: PasswordResetCompleteFormValues) => {
     setIsLoading(true);
 
+    const requestBody = {
+      password: newPassword,
+    };
+
     try {
-      const response = await passwordResetComplete(values);
+      // token always is defined
+      const response = await passwordResetComplete(token as string, requestBody);
 
       if (!response) {
-        router.push('/');
+        push('/');
       }
 
       if (response) {

@@ -18,9 +18,10 @@ jest.mock('@/password-reset/utils/requests/password-reset-complete', () => ({
   ),
 }));
 
-jest.mock('next/navigation', () => ({
+jest.mock('next/router', () => ({
   useRouter: () => ({
     push: mockPush,
+    query: { token: 'mocked-token' },
   }),
 }));
 

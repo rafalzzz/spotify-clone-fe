@@ -1,13 +1,11 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS } from '@/login/consts';
 import { LoginFormKeys } from '@/login/enums/login-form-keys';
 import { useLoginForm } from '@/login/hooks/use-login-form';
-import { loginUser } from '@/login/utils/requests/login-user';
 import { passwordValidator } from '@/login/utils/validators/password-validator';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
@@ -15,8 +13,6 @@ import { emailOrUsernameValidator } from '@/validators/email-or-username-validat
 import { InputType } from '@/enums/input-type';
 
 import { LoginForm } from '..';
-
-const MOCKED_BUTTON_TEXT = 'Test Button';
 
 jest.mock('@/login/hooks/use-login-form');
 

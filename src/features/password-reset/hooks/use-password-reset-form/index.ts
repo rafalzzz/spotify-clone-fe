@@ -10,7 +10,7 @@ import { HookFormProps } from '@/types/hook-form-props';
 export const usePasswordResetForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter();
+  const { push } = useRouter();
 
   const onFinish = async (values: PasswordResetFormValues) => {
     setIsLoading(true);
@@ -19,7 +19,7 @@ export const usePasswordResetForm = ({ displayError }: HookFormProps) => {
       const response = await passwordReset(values);
 
       if (!response) {
-        router.push('/');
+        push('/');
       }
 
       if (response) {

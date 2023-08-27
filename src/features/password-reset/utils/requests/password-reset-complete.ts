@@ -8,16 +8,19 @@ const agent = new https.Agent({
   rejectUnauthorized: false,
 });
 
-export async function passwordResetComplete(requestBody: PasswordResetCompleteFormValues) {
-  const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/password-reset/complete`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+export async function passwordResetComplete(token: string, requestBody: { password: string }) {
+  const response = fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/password-reset-complete/${token}`,
+    {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      agent,
+      body: JSON.stringify(requestBody),
     },
-    agent,
-    body: JSON.stringify(requestBody),
-  })
+  )
     .then(async (response) => {
       if (response.status === 200) {
         return;
