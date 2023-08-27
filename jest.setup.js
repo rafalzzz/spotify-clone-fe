@@ -9,5 +9,3 @@ beforeAll(() => {
       };
     };
 });
-
-jest.mock('next/router');

@@ -14,9 +14,9 @@ const Login = () => (
     <main className='login-page__content'>
       <LoginForm />
       <CustomHyperlink
-        href='/reset-password'
+        href='/password-reset'
         hyperlinkText='Do not you remember the password?'
-        className='reset-password-redirection'
+        className='password-reset-redirection'
       />
     </main>
     <hr className='separator' />

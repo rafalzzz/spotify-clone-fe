@@ -10,7 +10,7 @@ import { HookFormProps } from '@/types/hook-form-props';
 export const useLoginForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter();
+  const { push } = useRouter();
 
   const onFinish = async (values: LoginFormValues) => {
     setIsLoading(true);
@@ -19,7 +19,7 @@ export const useLoginForm = ({ displayError }: HookFormProps) => {
       const response = await loginUser(values);
 
       if (!response) {
-        router.push('/');
+        push('/');
       }
 
       if (response) {

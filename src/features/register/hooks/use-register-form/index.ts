@@ -11,7 +11,7 @@ import { HookFormProps } from '@/types/hook-form-props';
 export const useRegisterForm = ({ displayError }: HookFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter();
+  const { push } = useRouter();
 
   const onFinish = async (values: RegisterFormValues) => {
     setIsLoading(true);
@@ -20,7 +20,7 @@ export const useRegisterForm = ({ displayError }: HookFormProps) => {
       const response = await registerUser(requestBody);
 
       if (!response) {
-        router.push('/login');
+        push('/login');
       }
 
       if (response) {

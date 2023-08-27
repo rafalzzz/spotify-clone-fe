@@ -58,7 +58,10 @@ export const DateOfBirthInput = ({ label = '', name }: DateOfBirthInputProps) =>
           >
             <Select
               placeholder={FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.MONTH]}
-              onChange={validateInput}
+              onChange={(value) => {
+                validateInput();
+                form.setFieldValue(RegisterFormKeys.MONTH, value);
+              }}
             >
               {MONTH_OPTIONS.map(({ label, value }) => (
                 <Option key={value} value={value} disabled={!value}>

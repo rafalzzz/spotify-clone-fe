@@ -121,7 +121,7 @@ describe('RegisterForm', () => {
 
     formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
       it(key, async () => {
-        const { queryByRole, queryByLabelText, queryByPlaceholderText } = renderRegisterForm();
+        const { queryByLabelText, queryByPlaceholderText } = renderRegisterForm();
 
         if (type === InputType.CHECKBOX) {
           const checkbox = queryByLabelText(FORM_LABELS[RegisterFormKeys.TERMS]);
