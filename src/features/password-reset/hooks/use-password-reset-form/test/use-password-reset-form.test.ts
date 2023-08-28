@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { PASSWORD_RESET_INITIAL_VALUES } from '@/password-reset/consts';
+import { PasswordResetFormKeys } from '@/password-reset/enums';
 import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
 import { usePasswordResetForm } from '..';
@@ -22,6 +22,10 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
+const PASSWORD_RESET_FORM_MOCKED_VALUES = {
+  [PasswordResetFormKeys.LOGIN]: 'mockedLogin',
+};
+
 const renderUsePasswordResetForm = () => renderHook(() => usePasswordResetForm({ displayError }));
 
 describe('usePasswordResetForm', () => {
@@ -35,7 +39,7 @@ describe('usePasswordResetForm', () => {
     expect(mockPush).not.toHaveBeenCalled();
 
     act(() => {
-      result.current.onFinish(PASSWORD_RESET_INITIAL_VALUES);
+      result.current.onFinish(PASSWORD_RESET_FORM_MOCKED_VALUES);
     });
 
     await waitForNextUpdate();
@@ -50,7 +54,7 @@ describe('usePasswordResetForm', () => {
     expect(displayError).not.toHaveBeenCalled();
 
     await act(async () => {
-      result.current.onFinish(PASSWORD_RESET_INITIAL_VALUES);
+      result.current.onFinish(PASSWORD_RESET_FORM_MOCKED_VALUES);
       await waitForNextUpdate();
     });
 
@@ -63,7 +67,7 @@ describe('usePasswordResetForm', () => {
     expect(result.current.submitButton.disabled).toBe(false);
 
     act(() => {
-      result.current.onFinish(PASSWORD_RESET_INITIAL_VALUES);
+      result.current.onFinish(PASSWORD_RESET_FORM_MOCKED_VALUES);
     });
 
     // Check if the form button is disabled immediately after onFinish is called

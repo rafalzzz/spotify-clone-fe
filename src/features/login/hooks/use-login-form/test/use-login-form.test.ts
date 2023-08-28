@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { INITIAL_VALUES } from '@/login/consts';
+import { LoginFormKeys } from '@/login/enums/login-form-keys';
 import { loginUser } from '@/login/utils/requests/login-user';
 
 import { useLoginForm } from '..';
@@ -22,6 +22,12 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
+const LOGIN_FORM_MOCKED_VALUES = {
+  [LoginFormKeys.LOGIN]: 'mockedLogin',
+  [LoginFormKeys.PASSWORD]: 'mockedPassword',
+  [LoginFormKeys.REMEMBER_ME]: false,
+};
+
 const renderUseLoginForm = () => renderHook(() => useLoginForm({ displayError }));
 
 describe('useLoginForm', () => {
@@ -35,7 +41,7 @@ describe('useLoginForm', () => {
     expect(mockPush).not.toHaveBeenCalled();
 
     act(() => {
-      result.current.onFinish(INITIAL_VALUES);
+      result.current.onFinish(LOGIN_FORM_MOCKED_VALUES);
     });
 
     await waitForNextUpdate();
@@ -50,7 +56,7 @@ describe('useLoginForm', () => {
     expect(displayError).not.toHaveBeenCalled();
 
     await act(async () => {
-      result.current.onFinish(INITIAL_VALUES);
+      result.current.onFinish(LOGIN_FORM_MOCKED_VALUES);
       await waitForNextUpdate();
     });
 
@@ -63,7 +69,7 @@ describe('useLoginForm', () => {
     expect(result.current.submitButton.disabled).toBe(false);
 
     act(() => {
-      result.current.onFinish(INITIAL_VALUES);
+      result.current.onFinish(LOGIN_FORM_MOCKED_VALUES);
     });
 
     // Check if the form button is disabled immediately after onFinish is called

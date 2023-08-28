@@ -8,8 +8,6 @@ export const dateOfBirthValidator =
     const month = getFieldValue('month');
     const year = getFieldValue('year');
 
-    console.log({ day, month, year });
-
     if (!isValidDate(Number(year), Number(month), Number(day)) || !day || !month || !year) {
       return Promise.reject('Invalid date');
     }

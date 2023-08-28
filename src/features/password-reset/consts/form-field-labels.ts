@@ -2,6 +2,6 @@ import { PasswordResetFormKeys, PasswordResetCompleteFormKeys } from '@/password
 
 export const FORM_LABELS = {
   [PasswordResetFormKeys.LOGIN]: 'Email address or username',
-  [PasswordResetCompleteFormKeys.NEW_PASSWORD]: 'New password',
-  [PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD]: 'Repeat new password',
+  [PasswordResetCompleteFormKeys.PASSWORD]: 'New password',
+  [PasswordResetCompleteFormKeys.REPEAT_PASSWORD]: 'Repeat new password',
 };
