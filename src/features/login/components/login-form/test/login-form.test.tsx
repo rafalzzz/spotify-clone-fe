@@ -21,13 +21,11 @@ jest.mock('@/login/utils/requests/login-user', () => ({
 }));
 
 jest.mock('@/login/utils/validators/password-validator', () => ({
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  passwordValidator: jest.fn().mockImplementation(() => () => Promise.resolve()),
 }));
 
 jest.mock('@/validators/email-or-username-validator', () => ({
-  emailOrUsernameValidator: jest
-    .fn()
-    .mockImplementation((getFieldValue) => () => Promise.resolve()),
+  emailOrUsernameValidator: jest.fn().mockImplementation(() => () => Promise.resolve()),
 }));
 
 jest.mock('@/login/hooks/use-login-form');

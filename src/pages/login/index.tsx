@@ -1,27 +1,31 @@
 import { Footer } from '@/login/components/footer';
 import { LoginForm } from '@/login/components/login-form';
 
-import { CustomHeader } from '@/components/custom-header';
-import { CustomHyperlink } from '@/components/custom-hyperlink';
+import {
+  CustomHeader,
+  CustomHyperlink,
+  CustomMainContentWrapper,
+  CustomPageWrapper,
+} from '@/shared/components';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 import './LoginPage.scss';
 
 const Login = () => (
-  <div className='login-page'>
+  <CustomPageWrapper>
     <CustomHeader title='Sign in to Spotify' />
-    <main className='login-page__content'>
+    <CustomMainContentWrapper>
       <LoginForm />
       <CustomHyperlink
         href='/password-reset'
         hyperlinkText='Do not you remember the password?'
         className='password-reset-redirection'
       />
-    </main>
+    </CustomMainContentWrapper>
     <hr className='separator' />
     <Footer />
-  </div>
+  </CustomPageWrapper>
 );
 
 export default Login;

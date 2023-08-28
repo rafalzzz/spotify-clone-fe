@@ -5,6 +5,6 @@ export const PASSWORD_RESET_INITIAL_VALUES = {
 };
 
 export const PASSWORD_RESET_COMPLETE_INITIAL_VALUES = {
-  [PasswordResetCompleteFormKeys.NEW_PASSWORD]: '',
-  [PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD]: '',
+  [PasswordResetCompleteFormKeys.PASSWORD]: '',
+  [PasswordResetCompleteFormKeys.REPEAT_PASSWORD]: '',
 };

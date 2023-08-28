@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { INITIAL_VALUES } from '@/register/consts';
-import { RegisterFormValues } from '@/register/types';
+import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { registerUser } from '@/register/utils/requests/register-user';
 
 import { useRegisterForm } from '..';
@@ -23,6 +22,19 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
+const REGISTER_FORM_MOCKED_VALUES = {
+  [RegisterFormKeys.EMAIL]: 'mockedEmail',
+  [RegisterFormKeys.PASSWORD]: 'mockedPassword',
+  [RegisterFormKeys.NICKNAME]: 'mockedNickname',
+  [RegisterFormKeys.DAY]: '01',
+  [RegisterFormKeys.MONTH]: '01',
+  [RegisterFormKeys.YEAR]: '2000',
+  [RegisterFormKeys.GENDER]: 1,
+  [RegisterFormKeys.OFFERS]: 0,
+  [RegisterFormKeys.SHARE_INFORMATION]: 0,
+  [RegisterFormKeys.TERMS]: 0,
+};
+
 const renderUserRegisterForm = () => renderHook(() => useRegisterForm({ displayError }));
 
 describe('useRegisterForm', () => {
@@ -36,7 +48,7 @@ describe('useRegisterForm', () => {
     expect(mockPush).not.toHaveBeenCalled();
 
     act(() => {
-      result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
+      result.current.onFinish(REGISTER_FORM_MOCKED_VALUES);
     });
 
     await waitForNextUpdate();
@@ -51,7 +63,7 @@ describe('useRegisterForm', () => {
     expect(displayError).not.toHaveBeenCalled();
 
     await act(async () => {
-      result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
+      result.current.onFinish(REGISTER_FORM_MOCKED_VALUES);
       await waitForNextUpdate();
     });
 
@@ -64,7 +76,7 @@ describe('useRegisterForm', () => {
     expect(result.current.submitButton.disabled).toBe(false);
 
     act(() => {
-      result.current.onFinish(INITIAL_VALUES as unknown as RegisterFormValues);
+      result.current.onFinish(REGISTER_FORM_MOCKED_VALUES);
     });
 
     // Check if the form button is disabled immediately after onFinish is called

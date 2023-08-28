@@ -73,15 +73,15 @@ describe('PasswordResetCompleteForm', () => {
     const formFieldsWithValidators = [
       {
         type: InputType.PASSWORD,
-        key: PasswordResetCompleteFormKeys.NEW_PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.NEW_PASSWORD],
+        key: PasswordResetCompleteFormKeys.PASSWORD,
+        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.PASSWORD],
         mockedValue: 'Test123!',
         validator: passwordValidator,
       },
       {
         type: InputType.PASSWORD,
-        key: PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD],
+        key: PasswordResetCompleteFormKeys.REPEAT_PASSWORD,
+        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.REPEAT_PASSWORD],
         mockedValue: 'Test123!',
         validator: repeatNewPasswordValidator,
       },

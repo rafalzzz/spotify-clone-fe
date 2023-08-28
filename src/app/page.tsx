@@ -2,17 +2,17 @@ import { Footer } from '@/register/components/footer/Footer';
 import { RegisterForm } from '@/register/components/register-form';
 
 import { CustomHeader } from '@/components/custom-header';
-
-import './page.scss';
+import { CustomMainContentWrapper } from '@/components/custom-main-content-wrapper';
+import { CustomPageWrapper } from '@/components/custom-page-wrapper';
 
 const Register = () => (
-  <div className='register-page'>
+  <CustomPageWrapper>
     <CustomHeader title='Create an account' />
-    <main className='register-page__content'>
+    <CustomMainContentWrapper>
       <RegisterForm />
-    </main>
+    </CustomMainContentWrapper>
     <Footer />
-  </div>
+  </CustomPageWrapper>
 );
 
 export default Register;

@@ -27,22 +27,22 @@ export const PASSWORD_RESET_COMPLETE_FORM_FIELDS: CustomFormItemProps<PasswordRe
   [
     {
       type: InputType.PASSWORD,
-      key: PasswordResetCompleteFormKeys.NEW_PASSWORD,
-      name: PasswordResetCompleteFormKeys.NEW_PASSWORD,
-      label: FORM_LABELS[PasswordResetCompleteFormKeys.NEW_PASSWORD],
+      key: PasswordResetCompleteFormKeys.PASSWORD,
+      name: PasswordResetCompleteFormKeys.PASSWORD,
+      label: FORM_LABELS[PasswordResetCompleteFormKeys.PASSWORD],
       rules: [{ validator: passwordValidator }],
       inputProps: {
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.NEW_PASSWORD],
+        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.PASSWORD],
       },
     },
     {
       type: InputType.PASSWORD,
-      key: PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD,
-      name: PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD,
-      label: FORM_LABELS[PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD],
+      key: PasswordResetCompleteFormKeys.REPEAT_PASSWORD,
+      name: PasswordResetCompleteFormKeys.REPEAT_PASSWORD,
+      label: FORM_LABELS[PasswordResetCompleteFormKeys.REPEAT_PASSWORD],
       rules: [repeatNewPasswordValidator],
       inputProps: {
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.REPEAT_NEW_PASSWORD],
+        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.REPEAT_PASSWORD],
       },
     },
   ];

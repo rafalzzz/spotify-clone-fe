@@ -13,7 +13,7 @@ export const repeatNewPasswordValidator = ({
       return Promise.reject(new Error(`Repeat new password`));
     }
 
-    if (getFieldValue(PasswordResetCompleteFormKeys.NEW_PASSWORD) !== value) {
+    if (getFieldValue(PasswordResetCompleteFormKeys.PASSWORD) !== value) {
       return Promise.reject(new Error('The new password that you entered do not match!'));
     }
 
