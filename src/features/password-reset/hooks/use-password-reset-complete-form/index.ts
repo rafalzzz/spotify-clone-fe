@@ -15,11 +15,11 @@ export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) =>
     push,
   } = useRouter();
 
-  const onFinish = async ({ newPassword }: PasswordResetCompleteFormValues) => {
+  const onFinish = async ({ password }: PasswordResetCompleteFormValues) => {
     setIsLoading(true);
 
     const requestBody = {
-      password: newPassword,
+      password,
     };
 
     try {

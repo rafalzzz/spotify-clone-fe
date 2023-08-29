@@ -10,3 +10,7 @@ export enum RegisterFormKeys {
   SHARE_INFORMATION = 'shareInformation',
   TERMS = 'terms',
 }
+
+export enum RegisterFormAdditionalKeys {
+  DATE_OF_BIRTH = 'dateOfBirth',
+}

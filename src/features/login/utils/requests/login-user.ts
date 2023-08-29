@@ -1,23 +1,11 @@
-import https from 'https';
-
-import fetch from 'node-fetch';
-
 import { LoginFormValues } from '@/login/types';
 
-const agent = new https.Agent({
-  rejectUnauthorized: false,
-});
+import { customRequest } from '@/utils/custom-request';
+
+import { ENDPOINTS } from '@/consts/endpoints';
 
 export async function loginUser(requestBody: LoginFormValues) {
-  const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/login`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    agent,
-    body: JSON.stringify(requestBody),
-  })
+  const response = customRequest({ endpoint: ENDPOINTS.LOGIN_USER, method: 'POST', requestBody })
     .then(async (response) => {
       if (response.status === 200) {
         return;

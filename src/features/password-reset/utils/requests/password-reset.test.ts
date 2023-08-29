@@ -1,55 +1,60 @@
-import https from 'https';
+import { PasswordResetFormKeys } from '@/password-reset/enums';
 
-import fetch from 'node-fetch';
+import { customRequest } from '@/utils/custom-request';
 
-import { PASSWORD_RESET_INITIAL_VALUES } from '@/password-reset/consts';
+import { ENDPOINTS } from '@/consts/endpoints';
 
 import { passwordReset } from './password-reset';
 
-jest.mock('node-fetch');
-jest.mock('https', () => ({
-  Agent: jest.fn().mockImplementation(() => ({
-    rejectUnauthorized: false,
-  })),
-}));
+jest.mock('@/utils/custom-request');
+
+const PASSWORD_RESET_FORM_MOCKED_VALUES = {
+  [PasswordResetFormKeys.LOGIN]: 'mockedLogin',
+};
+
+const MOCKED_RESET_PASSWORD_REQUEST_PROPS = {
+  endpoint: ENDPOINTS.PASSWORD_RESET,
+  method: 'POST',
+  requestBody: PASSWORD_RESET_FORM_MOCKED_VALUES,
+};
 
 describe('passwordReset function', () => {
   beforeEach(() => {
-    (fetch as unknown as jest.Mock).mockClear();
+    (customRequest as jest.Mock).mockClear();
   });
 
   it('should return undefined when response status is 200', async () => {
-    (fetch as unknown as jest.Mock).mockResolvedValue({
+    (customRequest as jest.Mock).mockResolvedValue({
       status: 200,
       json: () => Promise.resolve({ message: 'Success' }),
     });
 
-    const result = await passwordReset(PASSWORD_RESET_INITIAL_VALUES);
+    const result = await passwordReset(PASSWORD_RESET_FORM_MOCKED_VALUES);
 
-    expect(fetch).toHaveBeenCalled();
+    expect(customRequest).toHaveBeenCalledWith(MOCKED_RESET_PASSWORD_REQUEST_PROPS);
     expect(result).toBeUndefined();
   });
 
   it('should return JSON when response status is not 200', async () => {
     const mockResponse = { message: 'Wrong login' };
 
-    (fetch as unknown as jest.Mock).mockResolvedValue({
+    (customRequest as jest.Mock).mockResolvedValue({
       status: 400,
       json: () => Promise.resolve(mockResponse),
     });
 
-    const result = await passwordReset(PASSWORD_RESET_INITIAL_VALUES);
+    const result = await passwordReset(PASSWORD_RESET_FORM_MOCKED_VALUES);
 
-    expect(fetch).toHaveBeenCalled();
+    expect(customRequest).toHaveBeenCalledWith(MOCKED_RESET_PASSWORD_REQUEST_PROPS);
     expect(result).toEqual(mockResponse);
   });
 
   it('should return error string when fetch throws', async () => {
-    (fetch as unknown as jest.Mock).mockRejectedValue(new Error());
+    (customRequest as jest.Mock).mockRejectedValue(new Error());
 
-    const result = await passwordReset(PASSWORD_RESET_INITIAL_VALUES);
+    const result = await passwordReset(PASSWORD_RESET_FORM_MOCKED_VALUES);
 
-    expect(fetch).toHaveBeenCalled();
+    expect(customRequest).toHaveBeenCalledWith(MOCKED_RESET_PASSWORD_REQUEST_PROPS);
     expect(result).toEqual('Something went wrong');
   });
 });

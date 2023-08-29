@@ -31,6 +31,7 @@ module.exports = {
     '@/consts/(.*)$': '<rootDir>/src/shared/consts/$1',
     '@/hooks/(.*)$': '<rootDir>/src/shared/hooks/$1',
     '@/utils/(.*)$': '<rootDir>/src/shared/utils/$1',
+    '@/helpers/(.*)$': '<rootDir>/src/shared/helpers/$1',
     '@/validators/(.*)$': '<rootDir>/src/shared/validators/$1',
     '@/enums/(.*)$': '<rootDir>/src/shared/enums/$1',
     '@/types/(.*)$': '<rootDir>/src/shared/types/$1',
