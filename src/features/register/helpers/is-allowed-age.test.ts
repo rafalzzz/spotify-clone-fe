@@ -1,10 +1,10 @@
-import * as utils from '@/utils/get-date';
-import * as utilsPastDate from '@/utils/get-past-date';
+import * as utils from '@/helpers/get-date';
+import * as utilsPastDate from '@/helpers/get-past-date';
 
 import { isAllowedAge } from './is-allowed-age';
 
-jest.mock('@/utils/get-date');
-jest.mock('@/utils/get-past-date');
+jest.mock('@/helpers/get-date');
+jest.mock('@/helpers/get-past-date');
 
 describe('isAllowedAge', () => {
   afterEach(() => {

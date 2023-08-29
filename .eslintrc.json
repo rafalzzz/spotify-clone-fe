@@ -43,6 +43,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/helpers/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/validators/**",
             "group": "internal",
             "position": "before"

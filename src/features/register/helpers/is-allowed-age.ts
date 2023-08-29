@@ -1,5 +1,5 @@
-import { getDate } from '@/utils/get-date';
-import { getPastDate } from '@/utils/get-past-date';
+import { getDate } from '@/helpers/get-date';
+import { getPastDate } from '@/helpers/get-past-date';
 
 const MIN_ALLOWED_AGE = 12;
 

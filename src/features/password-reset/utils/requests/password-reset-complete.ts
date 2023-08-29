@@ -1,26 +1,13 @@
-import https from 'https';
+import { customRequest } from '@/utils/custom-request';
 
-import fetch from 'node-fetch';
-
-import { PasswordResetCompleteFormValues } from '@/password-reset/types';
-
-const agent = new https.Agent({
-  rejectUnauthorized: false,
-});
+import { ENDPOINTS } from '@/consts/endpoints';
 
 export async function passwordResetComplete(token: string, requestBody: { password: string }) {
-  const response = fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/user/password-reset-complete/${token}`,
-    {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      agent,
-      body: JSON.stringify(requestBody),
-    },
-  )
+  const response = customRequest({
+    endpoint: `${ENDPOINTS.PASSWORD_RESET_COMPLETE}/${token}`,
+    method: 'PUT',
+    requestBody,
+  })
     .then(async (response) => {
       if (response.status === 200) {
         return;
