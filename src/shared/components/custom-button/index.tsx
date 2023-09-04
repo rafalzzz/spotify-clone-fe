@@ -13,11 +13,12 @@ export const CustomButton = ({
   role = 'button',
   disabled = false,
   testId = '',
+  size = 'large',
 }: CustomButtonProps) => (
   <Button
     className={className}
     shape={shape}
-    size='large'
+    size={size}
     type={type}
     htmlType={htmlType}
     onClick={onClick}

@@ -1,0 +1,23 @@
+.nav-buttons {
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+  margin-left: 50px;
+  list-style-type: none;
+
+  &__item {
+    border: none;
+    background-color: var(--nav-button-color);
+    color: var(--navbar-text-color);
+
+    .anticon-left path,
+    .anticon-right path {
+      transition: fill 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+
+  &__item:hover .anticon-left path,
+  &__item:hover .anticon-right path {
+    fill: var(--main-text-color);
+  }
+}

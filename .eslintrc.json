@@ -28,6 +28,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/navigation/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/components/**",
             "group": "internal",
             "position": "before"

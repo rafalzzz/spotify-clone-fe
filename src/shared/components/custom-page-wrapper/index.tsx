@@ -8,7 +8,10 @@ type CustomPageWrapperProps = {
 
 const BASIC_CLASS_NAME = 'custom-page-wrapper';
 
-export const CustomPageWrapper = ({ className, children }: CustomPageWrapperProps) => (
+export const CustomPageWrapper = ({
+  className = 'justify-center',
+  children,
+}: CustomPageWrapperProps) => (
   <div
     className={className ? `${BASIC_CLASS_NAME} ${className}` : BASIC_CLASS_NAME}
     data-testid='custom-page-wrapper'
