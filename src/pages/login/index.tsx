@@ -8,6 +8,8 @@ import {
   CustomPageWrapper,
 } from '@/shared/components';
 
+import { ROUTES } from '@/consts/routes';
+
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 import './LoginPage.scss';
@@ -18,7 +20,7 @@ const Login = () => (
     <CustomMainContentWrapper>
       <LoginForm />
       <CustomHyperlink
-        href='/password-reset'
+        href={ROUTES.PASSWORD_RESET}
         hyperlinkText='Do not you remember the password?'
         className='password-reset-redirection'
       />

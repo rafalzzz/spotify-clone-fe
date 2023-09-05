@@ -12,6 +12,6 @@ export type CustomButtonProps = {
   disabled?: boolean;
   testId?: string;
   width?: string | number;
-  size: SizeType;
+  size?: SizeType;
   onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
 };
