@@ -2,6 +2,7 @@ import { PasswordResetForm } from '@/password-reset/components/password-reset-fo
 
 import {
   CustomHeader,
+  CustomHeadSection,
   CustomMainContentWrapper,
   CustomPageWrapper,
   CustomSubheader,
@@ -11,20 +12,27 @@ import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 
 const PasswordReset = () => (
-  <CustomPageWrapper>
-    <CustomHeader title='Password reset' />
-    <CustomSubheader
-      title={
-        <>
-          Enter your <b>Spotify</b> username or the email address you used to sign up. We will send
-          you an email with your username and a link to reset your password.
-        </>
-      }
+  <>
+    <CustomHeadSection
+      title='Password reset - Spotify'
+      description='Reset your password on Spotify'
+      keywords='Spotify, password reset'
     />
-    <CustomMainContentWrapper>
-      <PasswordResetForm />
-    </CustomMainContentWrapper>
-  </CustomPageWrapper>
+    <CustomPageWrapper>
+      <CustomHeader title='Password reset' />
+      <CustomSubheader
+        title={
+          <>
+            Enter your <b>Spotify</b> username or the email address you used to sign up. We will
+            send you an email with your username and a link to reset your password.
+          </>
+        }
+      />
+      <CustomMainContentWrapper>
+        <PasswordResetForm />
+      </CustomMainContentWrapper>
+    </CustomPageWrapper>
+  </>
 );
 
 export default PasswordReset;

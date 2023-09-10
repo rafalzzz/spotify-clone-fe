@@ -1,17 +1,29 @@
 import { PasswordResetCompleteForm } from '@/password-reset/components/password-reset-complete-form';
 
-import { CustomHeader, CustomMainContentWrapper, CustomPageWrapper } from '@/shared/components';
+import {
+  CustomHeader,
+  CustomHeadSection,
+  CustomMainContentWrapper,
+  CustomPageWrapper,
+} from '@/shared/components';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 
 const PasswordResetComplete = () => (
-  <CustomPageWrapper>
-    <CustomHeader title='Password reset' />
-    <CustomMainContentWrapper>
-      <PasswordResetCompleteForm />
-    </CustomMainContentWrapper>
-  </CustomPageWrapper>
+  <>
+    <CustomHeadSection
+      title='Password change - Spotify'
+      description='Change your password on Spotify'
+      keywords='Spotify, password change'
+    />
+    <CustomPageWrapper>
+      <CustomHeader title='Password reset' />
+      <CustomMainContentWrapper>
+        <PasswordResetCompleteForm />
+      </CustomMainContentWrapper>
+    </CustomPageWrapper>
+  </>
 );
 
 export default PasswordResetComplete;
