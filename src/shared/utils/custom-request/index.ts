@@ -1,17 +1,10 @@
-import https from 'https';
-
-import fetch from 'node-fetch';
-
-const agent = new https.Agent({
-  rejectUnauthorized: false,
-});
-
 type CustomRequestProps = {
   basicUrl?: string;
   endpoint?: string;
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
   headers?: Record<string, string>;
   requestBody?: Record<string, unknown>;
+  allowCookies?: boolean;
 };
 
 export const customRequest = ({
@@ -23,10 +16,11 @@ export const customRequest = ({
     'Content-Type': 'application/json',
   },
   requestBody,
+  allowCookies = false,
 }: CustomRequestProps) =>
   fetch(basicUrl + endpoint, {
     method,
     headers,
-    agent,
     body: JSON.stringify(requestBody),
+    credentials: allowCookies ? 'include' : 'omit',
   });

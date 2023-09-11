@@ -18,6 +18,7 @@ const MOCKED_LOGIN_USER_REQUEST_PROPS = {
   endpoint: ENDPOINTS.LOGIN_USER,
   method: 'POST',
   requestBody: LOGIN_FORM_MOCKED_VALUES,
+  allowCookies: true,
 };
 
 describe('loginUser function', () => {

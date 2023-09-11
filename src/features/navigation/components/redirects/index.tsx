@@ -23,7 +23,7 @@ export const Redirects = () => {
       {
         key: 2,
         className: 'sign-in-button',
-        text: 'Sign up',
+        text: 'Sign in',
         onClick: () => push(ROUTES.LOGIN_USER),
       },
     ],
