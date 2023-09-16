@@ -4,7 +4,8 @@
   justify-content: space-between;
   list-style-type: none;
 
-  &__item {
+  &__item,
+  &__item:disabled {
     border: none;
     background-color: var(--nav-button-color);
     color: var(--navbar-text-color);

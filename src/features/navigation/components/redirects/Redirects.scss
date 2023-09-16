@@ -1,6 +1,7 @@
 .redirects {
   display: flex;
   gap: 15px;
+  list-style-type: none;
 
   &__item {
     border: none;
