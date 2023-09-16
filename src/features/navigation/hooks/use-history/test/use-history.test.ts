@@ -101,7 +101,7 @@ describe('useHistory', () => {
     expect(mockPush).not.toHaveBeenCalledWith();
   });
 
-  it('should update currentPathIndex when the user navigates to the path that is the next path in the array.', async () => {
+  it('should update currentPathIndex when the user navigates to the path that is the next path in the array.', () => {
     mockUsePathname.mockReturnValueOnce(allPaths[2]);
     const { result } = renderUseHistory({ currentPathIndex: 1 });
 
