@@ -8,8 +8,15 @@ import { CustomButton } from '@/components/custom-button';
 
 import './NavButtons.scss';
 
+const INITIAL_STATE = {
+  allPaths: [],
+  currentPathIndex: -1,
+};
+
 export const NavButtons = () => {
-  const { isUndoButtonDisabled, isRedoButtonDisabled, undoHistory, redoHistory } = useHistory();
+  const { isUndoButtonDisabled, isRedoButtonDisabled, undoHistory, redoHistory } = useHistory({
+    initialState: INITIAL_STATE,
+  });
 
   const NAV_BUTTONS = useMemo(
     () => [
