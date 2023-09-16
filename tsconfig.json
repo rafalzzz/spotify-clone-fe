@@ -19,6 +19,7 @@
       "@/register/*": ["features/register/*"],
       "@/login/*": ["features/login/*"],
       "@/password-reset/*": ["features/password-reset/*"],
+      "@/navigation/*": ["features/navigation/*"],
       "@/components/*": ["shared/components/*"],
       "@/consts/*": ["shared/consts/*"],
       "@/hooks/*": ["shared/hooks/*"],

@@ -23,8 +23,8 @@ export const useRegisterForm = ({ displayError }: HookFormProps) => {
         push('/login');
       }
 
-      if (response) {
-        displayError(response as string);
+      if (Array.isArray(response)) {
+        displayError(response[0].errorMessage as string);
       }
     } catch (error: unknown) {
       displayError(error as string);

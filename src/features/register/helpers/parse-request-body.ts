@@ -1,11 +1,12 @@
+import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { RegisterFormValues } from '@/register/types';
 
 export const parseRequestBody = (values: RegisterFormValues) => {
-  const { year, month, day, ...restValues } = values;
-
   const requestBody = {
-    ...restValues,
-    dateOfBirth: `${year}-${month}-${day}`,
+    ...values,
+    dateOfBirth: `${values[RegisterFormKeys.YEAR]}-${values['Month']}-${
+      values[RegisterFormKeys.DAY]
+    }`,
   };
 
   return requestBody;

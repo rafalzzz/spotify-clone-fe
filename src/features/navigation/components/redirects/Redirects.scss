@@ -1,0 +1,36 @@
+.redirects {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+
+  &__item {
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .ant-btn:hover {
+    border: none;
+    outline: none;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+
+  .sign-up-button {
+    background-color: transparent;
+    color: var(--navbar-text-color);
+  }
+
+  .sign-up-button.ant-btn:hover {
+    color: var(--main-text-color);
+  }
+
+  .sign-in-button {
+    background-color: var(--navbar-sign-in-button-background-color);
+    color: var(--navbar-sign-in-button-text-color);
+  }
+
+  .sign-in-button.ant-btn:hover {
+    color: var(--navbar-sign-in-button-text-color);
+  }
+}

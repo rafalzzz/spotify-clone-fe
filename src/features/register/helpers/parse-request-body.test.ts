@@ -10,14 +10,12 @@ describe('parseRequestBody', () => {
       [RegisterFormKeys.PASSWORD]: 'Test123!',
       [RegisterFormKeys.NICKNAME]: 'test',
       [RegisterFormKeys.DAY]: '31',
-      [RegisterFormKeys.MONTH]: '12',
+      Month: '12',
       [RegisterFormKeys.YEAR]: '1995',
     };
 
     const expectedRequestBody = {
-      [RegisterFormKeys.EMAIL]: 'test@test.pl',
-      [RegisterFormKeys.PASSWORD]: 'Test123!',
-      [RegisterFormKeys.NICKNAME]: 'test',
+      ...values,
       dateOfBirth: '1995-12-31',
     };
 
