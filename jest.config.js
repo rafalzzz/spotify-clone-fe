@@ -27,6 +27,7 @@ module.exports = {
     '@/register/(.*)$': '<rootDir>/src/features/register/$1',
     '@/login/(.*)$': '<rootDir>/src/features/login/$1',
     '@/password-reset/(.*)$': '<rootDir>/src/features/password-reset/$1',
+    '@/sidebar/(.*)$': '<rootDir>/src/features/sidebar/$1',
     '@/navigation/(.*)$': '<rootDir>/src/features/navigation/$1',
     '@/components/(.*)$': '<rootDir>/src/shared/components/$1',
     '@/consts/(.*)$': '<rootDir>/src/shared/consts/$1',

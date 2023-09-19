@@ -1,4 +1,4 @@
-'use-client';
+'use client';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { useMemo } from 'react';
 

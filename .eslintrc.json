@@ -28,6 +28,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/sidebar/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/navigation/**",
             "group": "internal",
             "position": "before"
