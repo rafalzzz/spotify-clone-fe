@@ -1,26 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 type useLocalStorageProps = {
   key: string;
-  defaultValue: string | number;
+  defaultValue: string;
 };
 
 export const useLocalStorage = ({ key, defaultValue }: useLocalStorageProps) => {
-  const [value, setValue] = useState(() => {
-    let currentValue;
+  const [currentValue, setCurrentValue] = useState(defaultValue);
 
-    try {
-      currentValue = JSON.parse(localStorage.getItem(key) || String(defaultValue));
-    } catch (error) {
-      currentValue = defaultValue;
-    }
-
-    return currentValue;
-  });
+  const setValue = useCallback(
+    (value: string) => {
+      setCurrentValue(value);
+      localStorage.setItem(key, value);
+    },
+    [key],
+  );
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [value, key]);
+    const savedValue = localStorage.getItem(key);
+    if (savedValue) setCurrentValue(savedValue);
+  }, [key]);
 
-  return [value, setValue];
+  return { value: currentValue, setValue };
 };

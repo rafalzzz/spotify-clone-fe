@@ -1,4 +1,3 @@
-'use client';
 import { useState, useCallback, useEffect, RefObject } from 'react';
 
 import { useLocalStorage } from '@/hooks/use-local-storage';
@@ -8,14 +7,13 @@ type useResizeSidebarProps = {
 };
 
 const SIDEBAR_WIDTH_KEY = 'sidebar-width';
-const SAVED_WIDTH = localStorage.getItem(SIDEBAR_WIDTH_KEY);
-const DEFAULT_WIDTH = 200;
+const DEFAULT_WIDTH = '200';
 
 export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useLocalStorage({
+  const { value: sidebarWidth, setValue: setSidebarWidth } = useLocalStorage({
     key: SIDEBAR_WIDTH_KEY,
-    defaultValue: SAVED_WIDTH || DEFAULT_WIDTH,
+    defaultValue: DEFAULT_WIDTH,
   });
 
   const startResizing = useCallback(() => {
@@ -29,7 +27,9 @@ export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const resize = useCallback(
     (mouseMoveEvent: MouseEvent) => {
       if (isResizing && sidebarRef.current) {
-        setSidebarWidth(mouseMoveEvent.clientX - sidebarRef.current.getBoundingClientRect().left);
+        const width =
+          mouseMoveEvent.clientX - sidebarRef.current.getBoundingClientRect().left ?? DEFAULT_WIDTH;
+        setSidebarWidth(String(width));
       }
     },
     [isResizing, sidebarRef, setSidebarWidth],
