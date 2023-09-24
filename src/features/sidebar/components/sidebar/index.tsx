@@ -14,9 +14,10 @@ export const Sidebar = () => {
       className='sidebar'
       style={{ width: `${sidebarWidth}px` }}
       onMouseDown={(e) => e.preventDefault()}
+      data-testid='sidebar'
     >
       <div className='sidebar__content'>test</div>
-      <div className='sidebar__resizer' onMouseDown={startResizing} />
+      <div className='sidebar__resizer' onMouseDown={startResizing} data-testid='resizer' />
     </div>
   );
 };

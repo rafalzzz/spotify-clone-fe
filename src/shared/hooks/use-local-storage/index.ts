@@ -19,7 +19,8 @@ export const useLocalStorage = ({ key, defaultValue }: useLocalStorageProps) => 
   useEffect(() => {
     const savedValue = localStorage.getItem(key);
     if (savedValue) setCurrentValue(savedValue);
-  }, [key]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return { value: currentValue, setValue };
 };
