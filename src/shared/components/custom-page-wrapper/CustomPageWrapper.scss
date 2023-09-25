@@ -1,16 +1,19 @@
 .custom-page-wrapper {
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  align-items: center;
+  margin: 10px;
 }
 
 .justify-center {
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 20px 0;
 }
 
 .justify-start {
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: start;
   padding: 0;
+  gap: 10px;
 }

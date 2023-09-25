@@ -4,6 +4,7 @@
   height: 70px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 20px;
+  border-radius: var(--custom-border-radius) var(--custom-border-radius) 0 0;
   background-color: var(--landing-page-main-background);
 }
