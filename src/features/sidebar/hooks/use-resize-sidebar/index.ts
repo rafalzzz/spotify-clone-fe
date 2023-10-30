@@ -35,7 +35,7 @@ export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
         if (width < SIDEBAR_MIN_WIDTH) {
           width = SIDEBAR_MIN_WIDTH;
         }
-        
+
         if (width > SIDEBAR_MAX_WIDTH) {
           width = SIDEBAR_MAX_WIDTH;
         }
