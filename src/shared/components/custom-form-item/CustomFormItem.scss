@@ -35,7 +35,33 @@
       border-color: var(--secondary-color);
       background-color: var(--secondary-color);
     }
+
+    &:hover {
+      .ant-checkbox-inner {
+        border-color: var(--secondary-color);
+    }
+
+    .ant-checkbox-checked::after {
+      border: none;
+      content: none;
+      outline: none
+    }
+
+    .ant-checkbox-input:checked {
+      + .ant-checkbox-inner {
+        border-color: var(--secondary-color);
+        background-color: var(--secondary-color);
+      }
+
+      + .ant-checkbox-inner::after {
+        border-color: var(--main-text-color);
+      }
+    }
+    }
   }
+
+
+
 
   .input-type-switch {
     display: flex;
