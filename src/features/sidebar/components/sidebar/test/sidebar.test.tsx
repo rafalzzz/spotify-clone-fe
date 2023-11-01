@@ -28,8 +28,8 @@ describe('Sidebar', () => {
   });
 
   it('render component without error', () => {
-    const { getByText } = renderSidebar();
-    expect(getByText('test')).toBeInTheDocument();
+    const screen = renderSidebar();
+    expect(screen).toMatchSnapshot();
   });
 
   it('should apply the width from useResizeSidebar', () => {

@@ -2,7 +2,10 @@
 import { useRef } from 'react';
 
 import './Sidebar.scss';
+
 import { useResizeSidebar } from '@/sidebar/hooks/use-resize-sidebar';
+
+import { SidebarNavigation } from '../sidebar-navigation';
 
 export const Sidebar = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -16,7 +19,7 @@ export const Sidebar = () => {
       onMouseDown={(e) => e.preventDefault()}
       data-testid='sidebar'
     >
-      <div className='sidebar__content'>test</div>
+      <SidebarNavigation />
       <div className='sidebar__resizer' onMouseDown={startResizing} data-testid='resizer' />
     </div>
   );

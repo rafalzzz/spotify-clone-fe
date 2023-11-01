@@ -22,6 +22,12 @@
         "combined": "^\\.combined-{componentName}-[a-z]+$"
       },
       "utilitySelectors": "^\\.util-[a-z]+$"
-    }
+    },
+    "order/properties-order": [
+      ["display", "position", "width", "height"],
+      {
+        "severity": "warning"
+      }
+    ]
   }
 }
