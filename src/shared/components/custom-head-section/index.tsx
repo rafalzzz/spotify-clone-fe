@@ -4,7 +4,7 @@ type CustomHeadProps = { title: string; icon?: string; description: string; keyw
 
 export const CustomHeadSection = ({
   title,
-  icon = '/spotify.svg',
+  icon = '/spotify.png',
   description,
   keywords,
 }: CustomHeadProps) => (

@@ -8,12 +8,14 @@ type useResizeSidebarProps = {
 
 const SIDEBAR_WIDTH_KEY = 'sidebar-width';
 const DEFAULT_WIDTH = '200';
+const SIDEBAR_MIN_WIDTH = 150;
+const SIDEBAR_MAX_WIDTH = 300;
 
 export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const [isResizing, setIsResizing] = useState(false);
   const { value: sidebarWidth, setValue: setSidebarWidth } = useLocalStorage({
     key: SIDEBAR_WIDTH_KEY,
-    defaultValue: DEFAULT_WIDTH,
+    defaultValue: localStorage?.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH,
   });
 
   const startResizing = useCallback(() => {
@@ -27,8 +29,17 @@ export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const resize = useCallback(
     (mouseMoveEvent: MouseEvent) => {
       if (isResizing && sidebarRef.current) {
-        const width =
+        let width =
           mouseMoveEvent.clientX - sidebarRef.current.getBoundingClientRect().left ?? DEFAULT_WIDTH;
+
+        if (width < SIDEBAR_MIN_WIDTH) {
+          width = SIDEBAR_MIN_WIDTH;
+        }
+
+        if (width > SIDEBAR_MAX_WIDTH) {
+          width = SIDEBAR_MAX_WIDTH;
+        }
+
         setSidebarWidth(String(width));
       }
     },

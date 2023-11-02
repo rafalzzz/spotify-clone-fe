@@ -5,7 +5,7 @@
   max-width: 300px;
   height: calc(100vh - 20px);
   flex-direction: row;
-  background-color: gray;
+  background-color: transparent;
 
   &__content {
     display: flex;
@@ -16,14 +16,15 @@
   }
 
   &__resizer {
-    flex-basis: 6px;
+    flex-basis: 2px;
     flex-grow: 0;
     flex-shrink: 0;
     cursor: col-resize;
     justify-self: flex-end;
     resize: horizontal;
 
-    &:hover {
+    &:hover,
+    &:active {
       width: 3px;
       background: #c1c3c5b4;
     }
