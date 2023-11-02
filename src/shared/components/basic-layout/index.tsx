@@ -12,14 +12,12 @@ type BasicLayoutProps = {
   children: ReactNode;
 };
 
-const BasicLayout = ({ children }: BasicLayoutProps) => (
+export const BasicLayout = ({ children }: BasicLayoutProps) => (
   <CustomPageWrapper className='justify-start'>
     <Sidebar />
-    <div className='basic-layout__content'>
+    <div className='basic-layout'>
       <Navbar />
       {children}
     </div>
   </CustomPageWrapper>
 );
-
-export default BasicLayout;

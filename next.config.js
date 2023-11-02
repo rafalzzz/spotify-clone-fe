@@ -1,13 +1,21 @@
-const StylelintPlugin = require("stylelint-webpack-plugin");
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     serverActions: true,
   },
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.plugins.push(new StylelintPlugin());
     return config;
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'is1-ssl.mzstatic.com',
+      },
+    ],
   },
 };
 

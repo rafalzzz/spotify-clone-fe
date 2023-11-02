@@ -15,5 +15,5 @@
   align-items: flex-start;
   justify-content: start;
   padding: 0;
-  gap: 10px;
+  gap: var(--page-wrapper-gap);
 }

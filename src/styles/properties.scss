@@ -1,5 +1,5 @@
 body {
-  //colors
+  /* colors */
   --secondary-color: #127c37;
   --main-text-color: #fff;
   --disabled-switch-color: #727272;
@@ -11,14 +11,34 @@ body {
   --separator-color: #292929;
   --text-before-hyperlink-color: #a7a7a7;
 
+  /* navbar */
   --nav-button-color: #090909;
   --navbar-text-color: #a5a5a5;
-  --landing-page-main-background: #101010;
   --navbar-sign-in-button-background-color: #fff;
   --navbar-sign-in-button-text-color: #232323;
 
+  /* sidebar-navigation */
   --sidebar-navigation-background-color: #121212;
 
-  //border-radius
+  /* basic-layout */
+  --basic-layout-gradient: linear-gradient(45deg, rgba(18, 18, 18, 1) 0%, rgba(33, 33, 33, 1) 100%);
+
+  /*section */
+  --section-secondary-text-color: #b3b3b3;
+
+  /* section-item */
+  --section-item-hover-background: linear-gradient(
+    45deg,
+    rgba(29, 29, 29, 1) 0%,
+    rgba(57, 57, 57, 1) 100%
+  );
+  --section-item-background: linear-gradient(
+    45deg,
+    rgba(19, 19, 19, 1) 0%,
+    rgba(21, 21, 21, 1) 100%
+  );
+
+  /*border-radius */
   --custom-border-radius: 10px;
+  --page-wrapper-gap: 10px;
 }

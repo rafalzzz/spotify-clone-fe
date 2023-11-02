@@ -1,0 +1,38 @@
+.custom-section {
+  width: 100%;
+  margin: 20px 0;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      text-decoration: none;
+      color: var(--main-text-color);
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    &__redirection {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--section-secondary-text-color);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+  }
+}

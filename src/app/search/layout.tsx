@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import BasicLayout from '@/components/basic-layout';
+import { BasicLayout } from '@/components/basic-layout';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
