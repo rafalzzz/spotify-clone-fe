@@ -1,16 +1,14 @@
-'use client';
 import Link from 'next/link';
-
-import { CustomSectionItem } from '../custom-section-item';
 
 import './CustomSection.scss';
 
 type CustomSectionProps = {
   title: string;
   redirectionUrl: string;
+  children: JSX.Element;
 };
 
-export const CustomSection = ({ title, redirectionUrl }: CustomSectionProps) => (
+export const CustomSection = ({ title, redirectionUrl, children }: CustomSectionProps) => (
   <section className='custom-section'>
     <div className='custom-section__header'>
       <header>
@@ -22,10 +20,6 @@ export const CustomSection = ({ title, redirectionUrl }: CustomSectionProps) => 
         Show all
       </Link>
     </div>
-    <ul className='custom-section__items'>
-      <li>
-        <CustomSectionItem />
-      </li>
-    </ul>
+    {children}
   </section>
 );

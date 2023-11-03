@@ -21,6 +21,7 @@
       "@/password-reset/*": ["features/password-reset/*"],
       "@/sidebar/*": ["features/sidebar/*"],
       "@/navigation/*": ["features/navigation/*"],
+      "@/landing-page/*": ["features/landing-page/*"],
       "@/components/*": ["shared/components/*"],
       "@/consts/*": ["shared/consts/*"],
       "@/hooks/*": ["shared/hooks/*"],

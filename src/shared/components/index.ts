@@ -8,5 +8,8 @@ export { CustomHyperlink } from './custom-hyperlink';
 export { CustomMainContentWrapper } from './custom-main-content-wrapper';
 export { CustomPageWrapper } from './custom-page-wrapper';
 export { CustomSection } from './custom-section';
+export { CustomSectionItem } from './custom-section-item';
 export { CustomSubheader } from './custom-subheader';
+export { CustomTooltip } from './custom-tooltip';
+export { MusicTrackInformations } from './music-track-informations';
 export { SubmitButton } from './submit-button';

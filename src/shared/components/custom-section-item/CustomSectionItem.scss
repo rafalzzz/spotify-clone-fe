@@ -1,17 +1,14 @@
 .custom-section-item {
   display: flex;
-  width: 200px;
+  min-width: 150px;
+  max-width: 200px;
+  height: 100%;
   padding: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background: var(--section-item-background);
   border-radius: var(--custom-border-radius);
-
-  &:hover {
-    background: var(--section-item-hover-background);
-    cursor: pointer;
-  }
 
   &__image {
     position: relative;
@@ -20,7 +17,6 @@
   }
 
   &__play-button {
-    z-index: 100;
     display: flex;
     position: absolute;
     width: 45px;
@@ -28,16 +24,21 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    bottom: 15px;
-    right: 15px;
+    bottom: 5px;
+    right: 10px;
     background-color: var(--spotify-theme-color);
     outline: none;
     border: none;
     font-size: 2rem;
     padding-left: 2px;
+    opacity: 0;
+    transition:
+      bottom 0.3s ease,
+      opacity 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
+      transform-origin: center;
       cursor: pointer;
     }
 
@@ -46,34 +47,44 @@
     }
   }
 
-  &__play-icon {
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-  }
-
   &__informations {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
-  }
 
-  &__text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
+    &__text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-.artist {
-  font-weight: 500;
-  margin-top: 5px;
-  color: var(--section-secondary-text-color);
-  width: fit-content;
+      &__artists {
+        display: flex;
+        list-style-type: none;
+      }
+
+      &--fit-content {
+        font-weight: 500;
+        margin-top: 5px;
+        color: var(--section-secondary-text-color);
+        width: fit-content;
+        max-width: 100%;
+
+        &:hover {
+          color: var(--main-text-color);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 
   &:hover {
-    color: var(--main-text-color);
-    text-decoration: underline;
+    background: var(--section-item-hover-background);
+    cursor: pointer;
+
+    .custom-section-item__play-button {
+      opacity: 1;
+      bottom: 15px;
+    }
   }
 }

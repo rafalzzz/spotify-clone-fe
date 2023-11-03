@@ -1,5 +1,6 @@
 .custom-section {
   width: 100%;
+  height: auto;
   margin: 20px 0;
 
   &__header {
@@ -31,8 +32,11 @@
   }
 
   &__items {
-    display: flex;
-    list-style-type: none;
+    display: grid;
     margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
   }
 }
