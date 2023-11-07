@@ -1,3 +1,5 @@
+jest.mock('antd');
+
 beforeAll(() => {
   window.matchMedia =
     window.matchMedia ||

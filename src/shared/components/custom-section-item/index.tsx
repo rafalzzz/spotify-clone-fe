@@ -19,7 +19,11 @@ export const CustomSectionItem = ({ imageUrl, children, onClick }: CustomSection
         height={100}
         style={{ height: '100%', width: '100%' }}
       />
-      <button className='custom-section-item__play-button' onClick={onClick}>
+      <button
+        className='custom-section-item__play-button'
+        onClick={onClick}
+        data-testid='custom-section-item-play-button'
+      >
         <CaretRightOutlined />
       </button>
     </div>

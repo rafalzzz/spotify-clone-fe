@@ -6,15 +6,22 @@ type CustomTooltipProps = {
   children: JSX.Element;
   mouseEnterDelay?: number;
   placement?: TooltipPlacement;
+  testId?: string;
 };
 
 export const CustomTooltip = ({
   title,
   mouseEnterDelay = 0.5,
   placement = 'right',
+  testId = '',
   children,
 }: CustomTooltipProps) => (
-  <Tooltip mouseEnterDelay={mouseEnterDelay} placement={placement} title={title}>
+  <Tooltip
+    mouseEnterDelay={mouseEnterDelay}
+    placement={placement}
+    title={title}
+    data-testId={testId}
+  >
     {children}
   </Tooltip>
 );
