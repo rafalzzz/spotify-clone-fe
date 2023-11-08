@@ -4,7 +4,7 @@ const GRID_GAP = 20;
 const MIN_ITEM_WIDTH = 150;
 
 export const useCalculateSectionItemsAmount = () => {
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLUListElement | null>(null);
   const [sectionItemsCount, setSectionItemsCount] = useState(1);
 
   const handleObserver = useCallback(() => {
@@ -15,12 +15,14 @@ export const useCalculateSectionItemsAmount = () => {
       setSectionItemsCount(itemsCount);
     });
 
+    const { observe, disconnect } = resizeObserver;
+
     if (elementRef.current) {
-      resizeObserver.observe(elementRef.current);
+      observe(elementRef.current);
     }
 
     return () => {
-      resizeObserver.disconnect();
+      disconnect();
     };
   }, []);
 

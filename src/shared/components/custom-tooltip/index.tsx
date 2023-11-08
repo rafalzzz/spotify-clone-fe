@@ -20,7 +20,7 @@ export const CustomTooltip = ({
     mouseEnterDelay={mouseEnterDelay}
     placement={placement}
     title={title}
-    data-testId={testId}
+    data-testid={testId}
   >
     {children}
   </Tooltip>
