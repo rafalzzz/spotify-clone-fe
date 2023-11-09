@@ -21,11 +21,17 @@ jest.mock('@/login/utils/requests/login-user', () => ({
 }));
 
 jest.mock('@/login/utils/validators/password-validator', () => ({
-  passwordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  passwordValidator: jest.fn().mockImplementation((_: unknown, value) => {
+    if (!value) return Promise.reject();
+    return Promise.resolve();
+  }),
 }));
 
 jest.mock('@/validators/email-or-username-validator', () => ({
-  emailOrUsernameValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  emailOrUsernameValidator: jest.fn().mockImplementation((_: unknown, value) => {
+    if (!value) return Promise.reject();
+    return Promise.resolve();
+  }),
 }));
 
 jest.mock('@/login/hooks/use-login-form');

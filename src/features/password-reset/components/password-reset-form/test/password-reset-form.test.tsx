@@ -21,7 +21,10 @@ jest.mock('@/password-reset/utils/requests/password-reset', () => ({
 }));
 
 jest.mock('@/validators/email-or-username-validator', () => ({
-  emailOrUsernameValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  emailOrUsernameValidator: jest.fn().mockImplementation((_: unknown, value) => {
+    if (!value) return Promise.reject();
+    return Promise.resolve();
+  }),
 }));
 
 const renderPasswordResetForm = () => render(<PasswordResetForm />);

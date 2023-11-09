@@ -16,16 +16,27 @@ import { PasswordResetCompleteForm } from '..';
 
 jest.mock('@/password-reset/hooks/use-password-reset-complete-form');
 
+jest.mock('@/password-reset/utils/requests/password-reset-complete', () => ({
+  passwordResetComplete: jest.fn(() => Promise.resolve({ data: {} })),
+}));
+
 jest.mock('@/shared/validators', () => ({
-  passwordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  passwordValidator: jest.fn().mockImplementation((_: unknown, value) => {
+    if (!value) return Promise.reject();
+    return Promise.resolve();
+  }),
 }));
 
 jest.mock('@/password-reset/utils/validators/repeat-new-password-validator', () => ({
-  repeatNewPasswordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
-}));
+  repeatNewPasswordValidator: jest.fn().mockReturnValue({
+    validator(_: unknown, value: string) {
+      if (!value) {
+        return Promise.reject(new Error(`Repeat new password`));
+      }
 
-jest.mock('@/password-reset/utils/requests/password-reset-complete', () => ({
-  passwordResetComplete: jest.fn(() => Promise.resolve({ data: {} })),
+      return Promise.resolve();
+    },
+  }),
 }));
 
 const renderPasswordResetCompleteForm = () => render(<PasswordResetCompleteForm />);
