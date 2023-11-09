@@ -12,8 +12,16 @@ import { CustomFormItem } from '..';
 import '@testing-library/jest-dom';
 
 const textInputPlaceholder = 'Enter text';
-const inputValidator = jest.fn();
 const mockSetFieldValue = jest.fn();
+const inputValidator = jest.fn((_, value) => {
+  return new Promise((resolve, reject) => {
+    if (!value) {
+      resolve(true);
+    } else {
+      reject(new Error('Invalid input'));
+    }
+  });
+});
 
 const sharedFormItemProps = {
   key: 'text',
@@ -121,13 +129,16 @@ describe('CustomFormItem', () => {
   describe('error handling', () => {
     it('validates field when input value change', async () => {
       const mockedInputValue = 'test';
-      inputValidator.mockImplementation((getFieldValue) => () => Promise.resolve());
+      inputValidator.mockImplementation((_, value) => {
+        if (value === 'test1') {
+          return Promise.resolve();
+        } else {
+          return Promise.reject(new Error('Invalid input'));
+        }
+      });
 
       const { type, props } = MOCKED_FORM_ITEMS[0];
-      const { queryByPlaceholderText, queryByText } = renderCustomFormItem(
-        type,
-        props as CustomFormItemProps,
-      );
+      const { queryByPlaceholderText } = renderCustomFormItem(type, props as CustomFormItemProps);
 
       const textInput = queryByPlaceholderText(textInputPlaceholder);
       expect(textInput).toBeInTheDocument();

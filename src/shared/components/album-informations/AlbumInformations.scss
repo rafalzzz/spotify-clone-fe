@@ -1,4 +1,4 @@
-.music-track-informations {
+.album-informations {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -10,9 +10,26 @@
     text-overflow: ellipsis;
   }
 
+  &__wrapper {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__release-date {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--section-secondary-text-color);
+  }
+
+  &__separator {
+    padding: 0 2px;
+    color: var(--section-secondary-text-color);
+  }
+
   &__artist {
     font-weight: 500;
-    margin-top: 5px;
     width: fit-content;
     max-width: 100%;
     font-size: 0.85rem;

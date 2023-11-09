@@ -36,6 +36,7 @@ describe('MusicTrackInformations', () => {
     const { queryByTestId } = renderMusicTrackInformations();
 
     const artistElement = queryByTestId(ARTIST_NAME_TEST_ID);
+    console.log({ artistElement });
     expect(artistElement).toHaveTextContent(FIRST_ARTIST_NAME);
   });
 

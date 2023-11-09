@@ -1,3 +1,4 @@
+export { AlbumInformations } from './album-informations';
 export { BasicLayout } from './basic-layout';
 export { CustomButton } from './custom-button';
 export { CustomContentWrapper } from './custom-content-wrapper';

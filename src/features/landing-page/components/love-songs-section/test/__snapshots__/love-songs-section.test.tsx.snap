@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LatestSongsSection render component without error 1`] = `
+exports[`LoveSongsSection render component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -81,7 +81,6 @@ exports[`LatestSongsSection render component without error 1`] = `
               >
                 <div
                   data-testid="music-track-informations-track-name-tooltip"
-                  mouseenterdelay="0.5"
                   placement="right"
                 >
                   <h4
@@ -96,15 +95,18 @@ exports[`LatestSongsSection render component without error 1`] = `
                 </div>
                 <div
                   data-testid="music-track-informations-artist-name-tooltip"
-                  mouseenterdelay="0.5"
                   placement="right"
                 >
-                  <h5
+                  <a
                     class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
+                    href="/artist/test_artist"
                   >
-                    Test_Artist
-                  </h5>
+                    <span
+                      data-testid="music-track-informations-artist-name"
+                    >
+                      Test_Artist
+                    </span>
+                  </a>
                   <span>
                     Test_Artist
                   </span>
@@ -160,7 +162,6 @@ exports[`LatestSongsSection render component without error 1`] = `
               >
                 <div
                   data-testid="music-track-informations-track-name-tooltip"
-                  mouseenterdelay="0.5"
                   placement="right"
                 >
                   <h4
@@ -175,15 +176,18 @@ exports[`LatestSongsSection render component without error 1`] = `
                 </div>
                 <div
                   data-testid="music-track-informations-artist-name-tooltip"
-                  mouseenterdelay="0.5"
                   placement="right"
                 >
-                  <h5
+                  <a
                     class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
+                    href="/artist/test_artist"
                   >
-                    Test_Artist
-                  </h5>
+                    <span
+                      data-testid="music-track-informations-artist-name"
+                    >
+                      Test_Artist
+                    </span>
+                  </a>
                   <span>
                     Test_Artist
                   </span>
@@ -239,7 +243,6 @@ exports[`LatestSongsSection render component without error 1`] = `
               >
                 <div
                   data-testid="music-track-informations-track-name-tooltip"
-                  mouseenterdelay="0.5"
                   placement="right"
                 >
                   <h4
@@ -254,15 +257,18 @@ exports[`LatestSongsSection render component without error 1`] = `
                 </div>
                 <div
                   data-testid="music-track-informations-artist-name-tooltip"
-                  mouseenterdelay="0.5"
                   placement="right"
                 >
-                  <h5
+                  <a
                     class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
+                    href="/artist/test_artist"
                   >
-                    Test_Artist
-                  </h5>
+                    <span
+                      data-testid="music-track-informations-artist-name"
+                    >
+                      Test_Artist
+                    </span>
+                  </a>
                   <span>
                     Test_Artist
                   </span>
@@ -351,7 +357,6 @@ exports[`LatestSongsSection render component without error 1`] = `
             >
               <div
                 data-testid="music-track-informations-track-name-tooltip"
-                mouseenterdelay="0.5"
                 placement="right"
               >
                 <h4
@@ -366,15 +371,18 @@ exports[`LatestSongsSection render component without error 1`] = `
               </div>
               <div
                 data-testid="music-track-informations-artist-name-tooltip"
-                mouseenterdelay="0.5"
                 placement="right"
               >
-                <h5
+                <a
                   class="music-track-informations__text music-track-informations__artist"
-                  data-testid="music-track-informations-artist-name"
+                  href="/artist/test_artist"
                 >
-                  Test_Artist
-                </h5>
+                  <span
+                    data-testid="music-track-informations-artist-name"
+                  >
+                    Test_Artist
+                  </span>
+                </a>
                 <span>
                   Test_Artist
                 </span>
@@ -430,7 +438,6 @@ exports[`LatestSongsSection render component without error 1`] = `
             >
               <div
                 data-testid="music-track-informations-track-name-tooltip"
-                mouseenterdelay="0.5"
                 placement="right"
               >
                 <h4
@@ -445,15 +452,18 @@ exports[`LatestSongsSection render component without error 1`] = `
               </div>
               <div
                 data-testid="music-track-informations-artist-name-tooltip"
-                mouseenterdelay="0.5"
                 placement="right"
               >
-                <h5
+                <a
                   class="music-track-informations__text music-track-informations__artist"
-                  data-testid="music-track-informations-artist-name"
+                  href="/artist/test_artist"
                 >
-                  Test_Artist
-                </h5>
+                  <span
+                    data-testid="music-track-informations-artist-name"
+                  >
+                    Test_Artist
+                  </span>
+                </a>
                 <span>
                   Test_Artist
                 </span>
@@ -509,7 +519,6 @@ exports[`LatestSongsSection render component without error 1`] = `
             >
               <div
                 data-testid="music-track-informations-track-name-tooltip"
-                mouseenterdelay="0.5"
                 placement="right"
               >
                 <h4
@@ -524,15 +533,18 @@ exports[`LatestSongsSection render component without error 1`] = `
               </div>
               <div
                 data-testid="music-track-informations-artist-name-tooltip"
-                mouseenterdelay="0.5"
                 placement="right"
               >
-                <h5
+                <a
                   class="music-track-informations__text music-track-informations__artist"
-                  data-testid="music-track-informations-artist-name"
+                  href="/artist/test_artist"
                 >
-                  Test_Artist
-                </h5>
+                  <span
+                    data-testid="music-track-informations-artist-name"
+                  >
+                    Test_Artist
+                  </span>
+                </a>
                 <span>
                   Test_Artist
                 </span>

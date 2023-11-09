@@ -1,6 +1,6 @@
-let lastInstance: MockResizeObser | null = null;
+let lastInstance: MockResizeObserver | null = null;
 
-class MockResizeObser {
+class MockResizeObserver {
   observe = jest.fn();
   unobserve = jest.fn();
   disconnect = jest.fn();
@@ -12,7 +12,7 @@ class MockResizeObser {
   }
 
   mockTrigger(entries: ResizeObserverEntry[]) {
-    this.callback(entries, this as unknown as MockResizeObser);
+    this.callback(entries, this as unknown as MockResizeObserver);
   }
 }
 
@@ -20,6 +20,6 @@ function resetMock() {
   lastInstance = null;
 }
 
-global.ResizeObserver = MockResizeObser;
+global.ResizeObserver = MockResizeObserver;
 
-export { MockResizeObser, lastInstance, resetMock };
+export { MockResizeObserver, lastInstance, resetMock };

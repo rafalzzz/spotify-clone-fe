@@ -35,6 +35,7 @@ module.exports = {
     '@/hooks/(.*)$': '<rootDir>/src/shared/hooks/$1',
     '@/utils/(.*)$': '<rootDir>/src/shared/utils/$1',
     '@/helpers/(.*)$': '<rootDir>/src/shared/helpers/$1',
+    '@/server-actions/(.*)$': '<rootDir>/src/shared/server-actions/$1',
     '@/validators/(.*)$': '<rootDir>/src/shared/validators/$1',
     '@/enums/(.*)$': '<rootDir>/src/shared/enums/$1',
     '@/types/(.*)$': '<rootDir>/src/shared/types/$1',
@@ -44,7 +45,14 @@ module.exports = {
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/pages/', '/consts/', '/types/', '/enums/'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/pages/',
+    '/consts/',
+    '/types/',
+    '/enums/',
+    '/server-actions/',
+  ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   transform: {

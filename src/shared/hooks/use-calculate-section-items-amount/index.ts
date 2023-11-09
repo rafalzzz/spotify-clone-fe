@@ -15,14 +15,12 @@ export const useCalculateSectionItemsAmount = () => {
       setSectionItemsCount(itemsCount);
     });
 
-    const { observe, disconnect } = resizeObserver;
-
     if (elementRef.current) {
-      observe(elementRef.current);
+      resizeObserver.observe(elementRef.current);
     }
 
     return () => {
-      disconnect();
+      resizeObserver.disconnect();
     };
   }, []);
 

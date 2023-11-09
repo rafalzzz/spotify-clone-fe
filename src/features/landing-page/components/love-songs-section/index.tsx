@@ -5,7 +5,7 @@ import { MusicTrack } from '@/types/music-track';
 
 import { CustomSection, CustomSectionItem, MusicTrackInformations } from '@/shared/components';
 
-export const LatestSongsSection = ({ songs }: { songs: MusicTrack[] }) => {
+export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => {
   const { elementRef, sectionItemsCount } = useCalculateSectionItemsAmount();
 
   return (

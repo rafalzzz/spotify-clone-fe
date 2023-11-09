@@ -17,13 +17,11 @@ import { PasswordResetCompleteForm } from '..';
 jest.mock('@/password-reset/hooks/use-password-reset-complete-form');
 
 jest.mock('@/shared/validators', () => ({
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  passwordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
 }));
 
 jest.mock('@/password-reset/utils/validators/repeat-new-password-validator', () => ({
-  repeatNewPasswordValidator: jest
-    .fn()
-    .mockImplementation((getFieldValue) => () => Promise.resolve()),
+  repeatNewPasswordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
 }));
 
 jest.mock('@/password-reset/utils/requests/password-reset-complete', () => ({

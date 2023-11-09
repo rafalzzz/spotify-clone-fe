@@ -27,16 +27,16 @@ jest.mock('@/register/utils/requests/register-user', () => ({
 }));
 
 jest.mock('@/register/utils/validators', () => ({
-  dateOfBirthValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  emailValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  usernameValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  genderValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  termsValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  dateOfBirthValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  emailValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  usernameValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  passwordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  genderValidator: jest.fn().mockImplementation(() => Promise.resolve()),
+  termsValidator: jest.fn().mockImplementation(() => Promise.resolve()),
 }));
 
 jest.mock('@/validators/password-validator', () => ({
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  passwordValidator: jest.fn().mockImplementation(() => Promise.resolve()),
 }));
 
 jest.mock('@/register/hooks/use-register-form');

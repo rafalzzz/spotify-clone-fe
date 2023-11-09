@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { MockResizeObser, resetMock, lastInstance } from '@/test-utils/resize-observer-mock';
+import { MockResizeObserver, resetMock, lastInstance } from '@/test-utils/resize-observer-mock';
 
 import { useCalculateSectionItemsAmount } from '..';
 
@@ -29,7 +29,7 @@ describe('useCalculateSectionItemsAmount', () => {
     });
 
     act(() => {
-      const mockResizeObserver = new MockResizeObser(() => {});
+      const mockResizeObserver = new MockResizeObserver(() => {});
 
       const contentRect = {
         bottom: 0,
