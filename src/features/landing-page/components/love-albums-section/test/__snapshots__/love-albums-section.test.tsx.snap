@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoveSongsSection render component without error 1`] = `
+exports[`LoveAlbumsSection render component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -15,17 +15,17 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section__header__title"
               data-testid="custom-section-header"
-              href="/love-songs"
+              href="/love-albums"
             >
               <h2>
-                Love songs
+                Love albums
               </h2>
             </a>
           </header>
           <a
             class="custom-section__header__redirection"
             data-testid="custom-section-show-all-items"
-            href="/love-songs"
+            href="/love-albums"
           >
             Show all
           </a>
@@ -77,38 +77,53 @@ exports[`LoveSongsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="music-track-informations"
+                class="album-informations"
               >
                 <div
-                  data-testid="music-track-informations-track-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
                   <h4
-                    class="music-track-informations__text"
-                    data-testid="music-track-informations-track-name"
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
-                    TestTrack
+                    CollectionName
                   </h4>
                   <span>
-                    TestTrack
+                    CollectionName
                   </span>
                 </div>
                 <div
-                  data-testid="music-track-informations-artist-name-tooltip"
-                  placement="right"
+                  class="album-informations__wrapper"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
                   >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,38 +172,53 @@ exports[`LoveSongsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="music-track-informations"
+                class="album-informations"
               >
                 <div
-                  data-testid="music-track-informations-track-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
                   <h4
-                    class="music-track-informations__text"
-                    data-testid="music-track-informations-track-name"
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
-                    TestTrack
+                    CollectionName
                   </h4>
                   <span>
-                    TestTrack
+                    CollectionName
                   </span>
                 </div>
                 <div
-                  data-testid="music-track-informations-artist-name-tooltip"
-                  placement="right"
+                  class="album-informations__wrapper"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
                   >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -237,38 +267,53 @@ exports[`LoveSongsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="music-track-informations"
+                class="album-informations"
               >
                 <div
-                  data-testid="music-track-informations-track-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
                   <h4
-                    class="music-track-informations__text"
-                    data-testid="music-track-informations-track-name"
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
-                    TestTrack
+                    CollectionName
                   </h4>
                   <span>
-                    TestTrack
+                    CollectionName
                   </span>
                 </div>
                 <div
-                  data-testid="music-track-informations-artist-name-tooltip"
-                  placement="right"
+                  class="album-informations__wrapper"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
                   >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -288,17 +333,17 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section__header__title"
             data-testid="custom-section-header"
-            href="/love-songs"
+            href="/love-albums"
           >
             <h2>
-              Love songs
+              Love albums
             </h2>
           </a>
         </header>
         <a
           class="custom-section__header__redirection"
           data-testid="custom-section-show-all-items"
-          href="/love-songs"
+          href="/love-albums"
         >
           Show all
         </a>
@@ -350,38 +395,53 @@ exports[`LoveSongsSection render component without error 1`] = `
               </button>
             </div>
             <div
-              class="music-track-informations"
+              class="album-informations"
             >
               <div
-                data-testid="music-track-informations-track-name-tooltip"
+                data-testid="album-informations-collection-name-tooltip"
                 placement="right"
               >
                 <h4
-                  class="music-track-informations__text"
-                  data-testid="music-track-informations-track-name"
+                  class="album-informations__text"
+                  data-testid="album-informations-collection-name"
                 >
-                  TestTrack
+                  CollectionName
                 </h4>
                 <span>
-                  TestTrack
+                  CollectionName
                 </span>
               </div>
               <div
-                data-testid="music-track-informations-artist-name-tooltip"
-                placement="right"
+                class="album-informations__wrapper"
               >
-                <a
-                  class="music-track-informations__text music-track-informations__artist"
-                  data-testid="music-track-informations-artist-name"
-                  href="/artist/test_artist"
+                <span
+                  class="album-informations__release-date"
+                  data-testid="album-informations-release-date"
                 >
+                  2020
+                </span>
+                <span
+                  class="album-informations__separator"
+                >
+                  •
+                </span>
+                <div
+                  data-testid="album-informations-artist-name-tooltip"
+                  placement="right"
+                >
+                  <a
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
+                    href="/artist/test_artist"
+                  >
+                    <span>
+                      Test_Artist
+                    </span>
+                  </a>
                   <span>
                     Test_Artist
                   </span>
-                </a>
-                <span>
-                  Test_Artist
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -430,38 +490,53 @@ exports[`LoveSongsSection render component without error 1`] = `
               </button>
             </div>
             <div
-              class="music-track-informations"
+              class="album-informations"
             >
               <div
-                data-testid="music-track-informations-track-name-tooltip"
+                data-testid="album-informations-collection-name-tooltip"
                 placement="right"
               >
                 <h4
-                  class="music-track-informations__text"
-                  data-testid="music-track-informations-track-name"
+                  class="album-informations__text"
+                  data-testid="album-informations-collection-name"
                 >
-                  TestTrack
+                  CollectionName
                 </h4>
                 <span>
-                  TestTrack
+                  CollectionName
                 </span>
               </div>
               <div
-                data-testid="music-track-informations-artist-name-tooltip"
-                placement="right"
+                class="album-informations__wrapper"
               >
-                <a
-                  class="music-track-informations__text music-track-informations__artist"
-                  data-testid="music-track-informations-artist-name"
-                  href="/artist/test_artist"
+                <span
+                  class="album-informations__release-date"
+                  data-testid="album-informations-release-date"
                 >
+                  2020
+                </span>
+                <span
+                  class="album-informations__separator"
+                >
+                  •
+                </span>
+                <div
+                  data-testid="album-informations-artist-name-tooltip"
+                  placement="right"
+                >
+                  <a
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
+                    href="/artist/test_artist"
+                  >
+                    <span>
+                      Test_Artist
+                    </span>
+                  </a>
                   <span>
                     Test_Artist
                   </span>
-                </a>
-                <span>
-                  Test_Artist
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -510,38 +585,53 @@ exports[`LoveSongsSection render component without error 1`] = `
               </button>
             </div>
             <div
-              class="music-track-informations"
+              class="album-informations"
             >
               <div
-                data-testid="music-track-informations-track-name-tooltip"
+                data-testid="album-informations-collection-name-tooltip"
                 placement="right"
               >
                 <h4
-                  class="music-track-informations__text"
-                  data-testid="music-track-informations-track-name"
+                  class="album-informations__text"
+                  data-testid="album-informations-collection-name"
                 >
-                  TestTrack
+                  CollectionName
                 </h4>
                 <span>
-                  TestTrack
+                  CollectionName
                 </span>
               </div>
               <div
-                data-testid="music-track-informations-artist-name-tooltip"
-                placement="right"
+                class="album-informations__wrapper"
               >
-                <a
-                  class="music-track-informations__text music-track-informations__artist"
-                  data-testid="music-track-informations-artist-name"
-                  href="/artist/test_artist"
+                <span
+                  class="album-informations__release-date"
+                  data-testid="album-informations-release-date"
                 >
+                  2020
+                </span>
+                <span
+                  class="album-informations__separator"
+                >
+                  •
+                </span>
+                <div
+                  data-testid="album-informations-artist-name-tooltip"
+                  placement="right"
+                >
+                  <a
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
+                    href="/artist/test_artist"
+                  >
+                    <span>
+                      Test_Artist
+                    </span>
+                  </a>
                   <span>
                     Test_Artist
                   </span>
-                </a>
-                <span>
-                  Test_Artist
-                </span>
+                </div>
               </div>
             </div>
           </div>

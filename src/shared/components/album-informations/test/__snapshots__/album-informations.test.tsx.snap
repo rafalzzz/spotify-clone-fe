@@ -1,81 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MusicTrackInformations renders component without error 1`] = `
+exports[`AlbumInformations renders component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="music-track-informations"
+        class="album-informations"
       >
         <div
-          data-testid="music-track-informations-track-name-tooltip"
+          data-testid="album-informations-collection-name-tooltip"
           placement="right"
         >
           <h4
-            class="music-track-informations__text"
-            data-testid="music-track-informations-track-name"
+            class="album-informations__text"
+            data-testid="album-informations-collection-name"
           >
-            Mocked title
+            Mocked album name
           </h4>
           <span>
-            Mocked title
+            Mocked album name
           </span>
         </div>
         <div
-          data-testid="music-track-informations-artist-name-tooltip"
-          placement="right"
+          class="album-informations__wrapper"
         >
-          <a
-            class="music-track-informations__text music-track-informations__artist"
-            data-testid="music-track-informations-artist-name"
-            href="/artist/mocked first artist name"
+          <span
+            class="album-informations__release-date"
+            data-testid="album-informations-release-date"
           >
-            <span>
-              Mocked First Artist Name
-            </span>
-          </a>
-          <span>
-            Mocked First Artist Name
+            2020
           </span>
+          <span
+            class="album-informations__separator"
+          >
+            •
+          </span>
+          <div
+            data-testid="album-informations-artist-name-tooltip"
+            placement="right"
+          >
+            <a
+              class="album-informations__text album-informations__artist"
+              data-testid="album-informations-artist-name"
+              href="/artist/mocked artist name"
+            >
+              <span>
+                Mocked artist name
+              </span>
+            </a>
+            <span>
+              Mocked artist name
+            </span>
+          </div>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="music-track-informations"
+      class="album-informations"
     >
       <div
-        data-testid="music-track-informations-track-name-tooltip"
+        data-testid="album-informations-collection-name-tooltip"
         placement="right"
       >
         <h4
-          class="music-track-informations__text"
-          data-testid="music-track-informations-track-name"
+          class="album-informations__text"
+          data-testid="album-informations-collection-name"
         >
-          Mocked title
+          Mocked album name
         </h4>
         <span>
-          Mocked title
+          Mocked album name
         </span>
       </div>
       <div
-        data-testid="music-track-informations-artist-name-tooltip"
-        placement="right"
+        class="album-informations__wrapper"
       >
-        <a
-          class="music-track-informations__text music-track-informations__artist"
-          data-testid="music-track-informations-artist-name"
-          href="/artist/mocked first artist name"
+        <span
+          class="album-informations__release-date"
+          data-testid="album-informations-release-date"
         >
-          <span>
-            Mocked First Artist Name
-          </span>
-        </a>
-        <span>
-          Mocked First Artist Name
+          2020
         </span>
+        <span
+          class="album-informations__separator"
+        >
+          •
+        </span>
+        <div
+          data-testid="album-informations-artist-name-tooltip"
+          placement="right"
+        >
+          <a
+            class="album-informations__text album-informations__artist"
+            data-testid="album-informations-artist-name"
+            href="/artist/mocked artist name"
+          >
+            <span>
+              Mocked artist name
+            </span>
+          </a>
+          <span>
+            Mocked artist name
+          </span>
+        </div>
       </div>
     </div>
   </div>,
