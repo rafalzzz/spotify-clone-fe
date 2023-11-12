@@ -12,7 +12,7 @@
     list-style-type: none;
 
     li {
-      padding: 10px 20px;
+      padding: 10px var(--custom-padding-value);
 
       .sidebar-navigation-item {
         color: var(--text-before-hyperlink-color);

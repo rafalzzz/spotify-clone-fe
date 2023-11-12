@@ -1,9 +1,8 @@
 .sidebar {
   display: flex;
-  width: 300px;
-  min-width: 150px;
-  max-width: 300px;
-  height: calc(100vh - 20px);
+  min-width: var(--min-sidebar-width);
+  max-width: var(--max-sidebar-width);
+  height: calc(100vh - var(--custom-padding-value));
   flex-direction: row;
   background-color: transparent;
 
@@ -16,7 +15,7 @@
   }
 
   &__resizer {
-    flex-basis: 2px;
+    flex-basis: 3px;
     flex-grow: 0;
     flex-shrink: 0;
     cursor: col-resize;

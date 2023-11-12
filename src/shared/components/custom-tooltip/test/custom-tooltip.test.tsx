@@ -25,7 +25,7 @@ describe('CustomTooltip', () => {
     expect(queryByText(CHILD_CONTENT)).toBeInTheDocument();
   });
 
-  it('renders with correct data-testId attribute when testId prop is provided', () => {
+  it('renders with correct data-testid attribute when testId prop is provided', () => {
     const MOCKED_TOOLTIP_TEST_ID = 'custom-tooltip-test';
     const { queryByTestId } = renderCustomTooltip({ testId: MOCKED_TOOLTIP_TEST_ID });
 
