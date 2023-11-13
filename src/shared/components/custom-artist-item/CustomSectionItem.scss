@@ -1,0 +1,18 @@
+.custom-artist-item {
+  display: flex;
+  min-width: 150px;
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 200px;
+  padding: var(--custom-padding-value);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--section-item-background);
+  border-radius: var(--custom-border-radius);
+
+  &:hover {
+    background: var(--section-item-hover-background);
+    cursor: pointer;
+  }
+}

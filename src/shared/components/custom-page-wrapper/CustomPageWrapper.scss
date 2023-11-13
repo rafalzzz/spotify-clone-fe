@@ -1,6 +1,8 @@
 .custom-page-wrapper {
   display: flex;
   margin: 10px;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .justify-center {
@@ -8,7 +10,6 @@
   align-items: center;
   justify-content: center;
   padding: var(--custom-padding-value) 0;
-  height: 100vh;
 }
 
 .justify-start {
@@ -17,4 +18,5 @@
   justify-content: start;
   padding: 0;
   gap: var(--page-wrapper-gap);
+  height: 100%;
 }

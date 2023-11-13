@@ -1,7 +1,6 @@
 .basic-layout {
   display: flex;
   width: 100%;
-  height: calc(100vh - 2 * var(--page-wrapper-gap));
   flex-direction: column;
   border-radius: var(--custom-border-radius);
   background: var(--basic-layout-gradient);
