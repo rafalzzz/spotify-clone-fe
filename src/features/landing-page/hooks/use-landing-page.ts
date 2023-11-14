@@ -1,10 +1,28 @@
-import { getLatestAlbums, getLatestSongs } from '../server-actions';
+import { fetchMusicData } from '@/server-actions/fetch-music-data';
 
 export const useLandingPage = async () => {
-  const latestSongs = getLatestSongs();
-  const latestAlbums = getLatestAlbums();
+  const getLoveSongs = fetchMusicData({
+    term: 'love',
+    entity: 'musicTrack',
+    limit: 15,
+    errorMessage: 'Failed to fetch songs',
+  });
 
-  const [songs, albums] = await Promise.all([latestSongs, latestAlbums]);
+  const getLoveAlbums = fetchMusicData({
+    term: 'love',
+    entity: 'album',
+    limit: 15,
+    errorMessage: 'Failed to fetch albums',
+  });
 
-  return { songs, albums };
+  const getDiscJockeys = fetchMusicData({
+    term: 'dj',
+    entity: 'musicArtist',
+    limit: 15,
+    errorMessage: 'Failed to fetch Disc Jokecys',
+  });
+
+  const [songs, albums, artists] = await Promise.all([getLoveSongs, getLoveAlbums, getDiscJockeys]);
+
+  return { songs, albums, artists };
 };

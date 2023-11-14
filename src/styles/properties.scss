@@ -11,13 +11,18 @@ body {
   --separator-color: #292929;
   --text-before-hyperlink-color: #a7a7a7;
 
+  /* shared */
+  --custom-padding-value: 20px;
+
   /* navbar */
   --nav-button-color: #090909;
   --navbar-text-color: #a5a5a5;
   --navbar-sign-in-button-background-color: #fff;
   --navbar-sign-in-button-text-color: #232323;
 
-  /* sidebar-navigation */
+  /* sidebar */
+  --min-sidebar-width: 150px;
+  --max-sidebar-width: 300px;
   --sidebar-navigation-background-color: #121212;
 
   /* basic-layout */

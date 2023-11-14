@@ -27,16 +27,35 @@ jest.mock('@/register/utils/requests/register-user', () => ({
 }));
 
 jest.mock('@/register/utils/validators', () => ({
-  dateOfBirthValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  emailValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  usernameValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  genderValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
-  termsValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  dateOfBirthValidator: jest.fn().mockImplementation(() => {
+    return () => {
+      const day = '';
+      const month = '';
+      const year = '';
+
+      const isValidDate = () => true;
+      const isAllowedAge = () => true;
+
+      if (!isValidDate() || !day || !month || !year) {
+        return Promise.reject('Invalid date');
+      }
+
+      if (!isAllowedAge()) {
+        return Promise.reject('Account permitted for individuals over the age of 12');
+      }
+
+      return Promise.resolve();
+    };
+  }),
+  emailValidator: jest.fn(() => Promise.resolve()),
+  usernameValidator: jest.fn(() => Promise.resolve()),
+  passwordValidator: jest.fn(() => Promise.resolve()),
+  genderValidator: jest.fn(() => Promise.resolve()),
+  termsValidator: jest.fn(() => Promise.resolve()),
 }));
 
 jest.mock('@/validators/password-validator', () => ({
-  passwordValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  passwordValidator: jest.fn(() => Promise.resolve()),
 }));
 
 jest.mock('@/register/hooks/use-register-form');

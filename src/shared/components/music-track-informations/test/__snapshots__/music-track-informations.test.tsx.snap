@@ -10,7 +10,6 @@ exports[`MusicTrackInformations renders component without error 1`] = `
       >
         <div
           data-testid="music-track-informations-track-name-tooltip"
-          mouseenterdelay="0.5"
           placement="right"
         >
           <h4
@@ -25,15 +24,17 @@ exports[`MusicTrackInformations renders component without error 1`] = `
         </div>
         <div
           data-testid="music-track-informations-artist-name-tooltip"
-          mouseenterdelay="0.5"
           placement="right"
         >
-          <h5
+          <a
             class="music-track-informations__text music-track-informations__artist"
             data-testid="music-track-informations-artist-name"
+            href="/artist/mocked first artist name"
           >
-            Mocked First Artist Name
-          </h5>
+            <span>
+              Mocked First Artist Name
+            </span>
+          </a>
           <span>
             Mocked First Artist Name
           </span>
@@ -47,7 +48,6 @@ exports[`MusicTrackInformations renders component without error 1`] = `
     >
       <div
         data-testid="music-track-informations-track-name-tooltip"
-        mouseenterdelay="0.5"
         placement="right"
       >
         <h4
@@ -62,15 +62,17 @@ exports[`MusicTrackInformations renders component without error 1`] = `
       </div>
       <div
         data-testid="music-track-informations-artist-name-tooltip"
-        mouseenterdelay="0.5"
         placement="right"
       >
-        <h5
+        <a
           class="music-track-informations__text music-track-informations__artist"
           data-testid="music-track-informations-artist-name"
+          href="/artist/mocked first artist name"
         >
-          Mocked First Artist Name
-        </h5>
+          <span>
+            Mocked First Artist Name
+          </span>
+        </a>
         <span>
           Mocked First Artist Name
         </span>

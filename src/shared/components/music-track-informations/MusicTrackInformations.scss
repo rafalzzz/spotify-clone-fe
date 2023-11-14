@@ -13,9 +13,11 @@
   &__artist {
     font-weight: 500;
     margin-top: 5px;
-    color: var(--section-secondary-text-color);
     width: fit-content;
     max-width: 100%;
+    font-size: 0.85rem;
+    color: var(--section-secondary-text-color);
+    text-decoration: none;
 
     &:hover {
       color: var(--main-text-color);

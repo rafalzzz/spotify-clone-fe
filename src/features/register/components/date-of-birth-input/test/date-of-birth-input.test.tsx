@@ -12,7 +12,26 @@ import { InputType, NonStandardInputType } from '@/enums/input-type';
 import { DateOfBirthInput } from '..';
 
 jest.mock('@/register/utils/validators', () => ({
-  dateOfBirthValidator: jest.fn().mockImplementation((getFieldValue) => () => Promise.resolve()),
+  dateOfBirthValidator: jest.fn().mockImplementation(() => {
+    return () => {
+      const day = '';
+      const month = '';
+      const year = '';
+
+      const isValidDate = () => true;
+      const isAllowedAge = () => true;
+
+      if (!isValidDate() || !day || !month || !year) {
+        return Promise.reject('Invalid date');
+      }
+
+      if (!isAllowedAge()) {
+        return Promise.reject('Account permitted for individuals over the age of 12');
+      }
+
+      return Promise.resolve();
+    };
+  }),
 }));
 
 const renderDateOfBirthInput = () =>

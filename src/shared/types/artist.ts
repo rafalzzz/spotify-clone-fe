@@ -1,20 +1,10 @@
-export interface Album {
+export interface Artist {
+  amgArtistId: number;
   artistId: number;
+  artistLinkUrl: string;
   artistName: string;
-  artworkUrl60: string;
-  artworkUrl100: string;
-  collectionCensoredName: string;
-  collectionExplicitness: string;
-  collectionId: number;
-  collectionName: string;
-  collectionPrice: number;
-  collectionType: string;
-  collectionViewUrl: string;
-  copyright: string;
-  country: string;
-  currency: string;
+  artistType: string;
+  primaryGenreId: number;
   primaryGenreName: string;
-  releaseDate: string;
-  trackCount: number;
   wrapperType: string;
 }

@@ -35,8 +35,10 @@
     display: grid;
     margin-top: 20px;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 20px;
-    padding: 0;
+    grid-template-rows: auto;
+    grid-auto-rows: 0;
+    gap: 0 var(--custom-padding-value);
+    overflow: hidden;
     list-style: none;
   }
 }

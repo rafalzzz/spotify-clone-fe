@@ -28,6 +28,7 @@ const REGISTER_FORM_MOCKED_VALUES = {
   [RegisterFormKeys.NICKNAME]: 'mockedNickname',
   [RegisterFormKeys.DAY]: '01',
   [RegisterFormKeys.MONTH]: '01',
+  Month: '01',
   [RegisterFormKeys.YEAR]: '2000',
   [RegisterFormKeys.GENDER]: 1,
   [RegisterFormKeys.OFFERS]: 0,

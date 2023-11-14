@@ -7,7 +7,6 @@ exports[`CustomTooltip renders component without error 1`] = `
     <div>
       <div
         data-testid=""
-        mouseenterdelay="0.5"
         placement="right"
       >
         <div>
@@ -22,7 +21,6 @@ exports[`CustomTooltip renders component without error 1`] = `
   "container": <div>
     <div
       data-testid=""
-      mouseenterdelay="0.5"
       placement="right"
     >
       <div>

@@ -1,3 +1,7 @@
+import Link from 'next/link';
+
+import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
+
 import { CustomTooltip } from '../custom-tooltip';
 
 import './MusicTrackInformations.scss';
@@ -21,12 +25,13 @@ export const MusicTrackInformations = ({ trackName, artistName }: MusicTrackInfo
         </h4>
       </CustomTooltip>
       <CustomTooltip title={mainArtist} testId='music-track-informations-artist-name-tooltip'>
-        <h5
+        <Link
+          href={generateArtistRedirectionPath(mainArtist)}
           className='music-track-informations__text music-track-informations__artist'
           data-testid='music-track-informations-artist-name'
         >
-          {mainArtist}
-        </h5>
+          <span>{mainArtist}</span>
+        </Link>
       </CustomTooltip>
     </div>
   );

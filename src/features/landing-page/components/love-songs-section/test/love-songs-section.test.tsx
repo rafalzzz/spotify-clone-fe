@@ -1,14 +1,8 @@
 import { render } from '@testing-library/react';
 
-import { useCalculateSectionItemsAmount } from '@/hooks/use-calculate-section-items-amount';
-
 import { MusicTrack } from '@/types/music-track';
 
-import { LatestSongsSection } from '../';
-
-jest.mock('@/hooks/use-calculate-section-items-amount', () => ({
-  useCalculateSectionItemsAmount: jest.fn(),
-}));
+import { LoveSongsSection } from '..';
 
 const mockSongs = [
   {
@@ -49,25 +43,11 @@ const mockSongs = [
   },
 ];
 
-const renderLatestSongsSection = () =>
-  render(<LatestSongsSection songs={mockSongs as MusicTrack[]} />);
+const renderLoveSongsSection = () => render(<LoveSongsSection songs={mockSongs as MusicTrack[]} />);
 
-describe('LatestSongsSection', () => {
-  beforeAll(() => {
-    (useCalculateSectionItemsAmount as jest.Mock).mockReturnValue({
-      elementRef: jest.fn(),
-      sectionItemsCount: 3,
-    });
-  });
-
+describe('LoveSongsSection', () => {
   it('render component without error', () => {
-    const screen = renderLatestSongsSection();
+    const screen = renderLoveSongsSection();
     expect(screen).toMatchSnapshot();
-  });
-
-  it('displays the correct number of songs', () => {
-    const screen = renderLatestSongsSection();
-
-    expect(screen.getAllByRole('listitem').length).toBe(3);
   });
 });

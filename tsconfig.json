@@ -27,6 +27,7 @@
       "@/hooks/*": ["shared/hooks/*"],
       "@/utils/*": ["shared/utils/*"],
       "@/helpers/*": ["shared/helpers/*"],
+      "@/server-actions/*": ["shared/server-actions/*"],
       "@/validators/*": ["shared/validators/*"],
       "@/enums/*": ["shared/enums/*"],
       "@/types/*": ["shared/types/*"],
