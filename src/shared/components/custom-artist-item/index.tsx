@@ -12,6 +12,7 @@ export const CustomArtistItem = ({ artistName }: CustomSectionArtistProps) => (
   <div className='custom-artist-item'>
     <Link
       href={generateArtistRedirectionPath(artistName)}
+      className='custom-artist-item__artist'
       data-testid='custom-artist-item-artist-name'
     >
       <div>{artistName}</div>
