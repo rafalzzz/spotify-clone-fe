@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistsSection render component without error 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="custom-section"
+      >
+        <div
+          class="custom-section__header"
+        >
+          <header>
+            <a
+              class="custom-section__header__title"
+              data-testid="custom-section-header"
+              href="/most-famous-djs"
+            >
+              <h2>
+                Most Popular DJs
+              </h2>
+            </a>
+          </header>
+          <a
+            class="custom-section__header__redirection"
+            data-testid="custom-section-show-all-items"
+            href="/most-famous-djs"
+          >
+            Show all
+          </a>
+        </div>
+        <ul
+          class="custom-section__items"
+        >
+          <li>
+            <div
+              class="custom-artist-item"
+            >
+              <a
+                data-testid="custom-artist-item-artist-name"
+                href="/artist/test_artist1"
+              >
+                <div>
+                  Test_Artist1
+                </div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div
+              class="custom-artist-item"
+            >
+              <a
+                data-testid="custom-artist-item-artist-name"
+                href="/artist/test_artist2"
+              >
+                <div>
+                  Test_Artist2
+                </div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div
+              class="custom-artist-item"
+            >
+              <a
+                data-testid="custom-artist-item-artist-name"
+                href="/artist/test_artist3"
+              >
+                <div>
+                  Test_Artist3
+                </div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div
+              class="custom-artist-item"
+            >
+              <a
+                data-testid="custom-artist-item-artist-name"
+                href="/artist/test_artist4"
+              >
+                <div>
+                  Test_Artist4
+                </div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div
+              class="custom-artist-item"
+            >
+              <a
+                data-testid="custom-artist-item-artist-name"
+                href="/artist/test_artist5"
+              >
+                <div>
+                  Test_Artist5
+                </div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div
+              class="custom-artist-item"
+            >
+              <a
+                data-testid="custom-artist-item-artist-name"
+                href="/artist/test_artist6"
+              >
+                <div>
+                  Test_Artist6
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="custom-section"
+    >
+      <div
+        class="custom-section__header"
+      >
+        <header>
+          <a
+            class="custom-section__header__title"
+            data-testid="custom-section-header"
+            href="/most-famous-djs"
+          >
+            <h2>
+              Most Popular DJs
+            </h2>
+          </a>
+        </header>
+        <a
+          class="custom-section__header__redirection"
+          data-testid="custom-section-show-all-items"
+          href="/most-famous-djs"
+        >
+          Show all
+        </a>
+      </div>
+      <ul
+        class="custom-section__items"
+      >
+        <li>
+          <div
+            class="custom-artist-item"
+          >
+            <a
+              data-testid="custom-artist-item-artist-name"
+              href="/artist/test_artist1"
+            >
+              <div>
+                Test_Artist1
+              </div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div
+            class="custom-artist-item"
+          >
+            <a
+              data-testid="custom-artist-item-artist-name"
+              href="/artist/test_artist2"
+            >
+              <div>
+                Test_Artist2
+              </div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div
+            class="custom-artist-item"
+          >
+            <a
+              data-testid="custom-artist-item-artist-name"
+              href="/artist/test_artist3"
+            >
+              <div>
+                Test_Artist3
+              </div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div
+            class="custom-artist-item"
+          >
+            <a
+              data-testid="custom-artist-item-artist-name"
+              href="/artist/test_artist4"
+            >
+              <div>
+                Test_Artist4
+              </div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div
+            class="custom-artist-item"
+          >
+            <a
+              data-testid="custom-artist-item-artist-name"
+              href="/artist/test_artist5"
+            >
+              <div>
+                Test_Artist5
+              </div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div
+            class="custom-artist-item"
+          >
+            <a
+              data-testid="custom-artist-item-artist-name"
+              href="/artist/test_artist6"
+            >
+              <div>
+                Test_Artist6
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
