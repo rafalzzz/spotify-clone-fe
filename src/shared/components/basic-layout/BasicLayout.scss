@@ -1,5 +1,8 @@
 .basic-layout {
-  &__content {
-    flex: 1;
-  }
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-radius: var(--custom-border-radius);
+  background: var(--basic-layout-gradient);
+  padding: 0 10px 10px 0;
 }

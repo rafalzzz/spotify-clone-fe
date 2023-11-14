@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { BasicLayout } from '@/components/basic-layout';
+
 import Favicon from '/public/favicon.ico';
 
 import '@/styles/globals.scss';
@@ -15,7 +17,9 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang='en'>
-    <body className={inter.className}>{children}</body>
+    <body className={inter.className}>
+      <BasicLayout>{children}</BasicLayout>
+    </body>
   </html>
 );
 

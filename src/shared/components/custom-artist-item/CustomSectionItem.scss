@@ -1,0 +1,28 @@
+.custom-artist-item {
+  display: flex;
+  min-width: 150px;
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 200px;
+  padding: var(--custom-padding-value);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--section-item-background);
+  border-radius: var(--custom-border-radius);
+
+  &:hover {
+    background: var(--section-item-hover-background);
+    cursor: pointer;
+  }
+
+  &__artist {
+    font-weight: 500;
+    margin-top: 5px;
+    width: fit-content;
+    max-width: 100%;
+    font-size: 0.85rem;
+    color: var(--section-secondary-text-color);
+    text-decoration: none;
+  }
+}

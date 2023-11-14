@@ -8,18 +8,27 @@ type useLocalStorageProps = {
 export const useLocalStorage = ({ key, defaultValue }: useLocalStorageProps) => {
   const [currentValue, setCurrentValue] = useState(defaultValue);
 
+  const isLocalStorageAvailable = typeof window !== 'undefined';
+
   const setValue = useCallback(
     (value: string) => {
       setCurrentValue(value);
-      localStorage.setItem(key, value);
+
+      if (isLocalStorageAvailable) {
+        localStorage.setItem(key, value);
+      }
     },
-    [key],
+    [key, isLocalStorageAvailable],
   );
 
-  useEffect(() => {
-    const savedValue = localStorage.getItem(key);
-    if (savedValue) setCurrentValue(savedValue);
-  }, [key]);
+  const getSavedValue = useCallback(() => {
+    if (isLocalStorageAvailable) {
+      const savedValue = localStorage.getItem(key);
+      if (savedValue) setCurrentValue(savedValue);
+    }
+  }, [key, isLocalStorageAvailable]);
+
+  useEffect(getSavedValue, [getSavedValue]);
 
   return { value: currentValue, setValue };
 };

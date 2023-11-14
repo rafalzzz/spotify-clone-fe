@@ -1,0 +1,44 @@
+.custom-section {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      text-decoration: none;
+      color: var(--main-text-color);
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    &__redirection {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--section-secondary-text-color);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: auto;
+    grid-auto-rows: 0;
+    gap: 0 var(--custom-padding-value);
+    overflow: hidden;
+    list-style: none;
+  }
+}

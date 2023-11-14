@@ -1,0 +1,44 @@
+.album-informations {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+
+  &__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__wrapper {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__release-date {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--section-secondary-text-color);
+  }
+
+  &__separator {
+    padding: 0 2px;
+    color: var(--section-secondary-text-color);
+  }
+
+  &__artist {
+    font-weight: 500;
+    width: fit-content;
+    max-width: 100%;
+    font-size: 0.85rem;
+    color: var(--section-secondary-text-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--main-text-color);
+      text-decoration: underline;
+    }
+  }
+}
