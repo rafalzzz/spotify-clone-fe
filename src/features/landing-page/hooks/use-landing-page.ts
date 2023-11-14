@@ -15,7 +15,14 @@ export const useLandingPage = async () => {
     errorMessage: 'Failed to fetch albums',
   });
 
-  const [songs, albums] = await Promise.all([getLoveSongs, getLoveAlbums]);
+  const getDiscJockeys = fetchMusicData({
+    term: 'dj',
+    entity: 'musicArtist',
+    limit: 15,
+    errorMessage: 'Failed to fetch Disc Jokecys',
+  });
 
-  return { songs, albums };
+  const [songs, albums, artists] = await Promise.all([getLoveSongs, getLoveAlbums, getDiscJockeys]);
+
+  return { songs, albums, artists };
 };

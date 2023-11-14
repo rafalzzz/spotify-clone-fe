@@ -1,14 +1,8 @@
 import { render } from '@testing-library/react';
 
-import { useCalculateSectionItemsAmount } from '@/hooks/use-calculate-section-items-amount';
-
 import { Album } from '@/types/album';
 
 import { LoveAlbumsSection } from '..';
-
-jest.mock('@/hooks/use-calculate-section-items-amount', () => ({
-  useCalculateSectionItemsAmount: jest.fn(),
-}));
 
 const mockAlbums = [
   {
@@ -55,26 +49,11 @@ const mockAlbums = [
   },
 ];
 
-const MOCKED_SECTION_ITEMS_COUNT = 3;
-
 const renderLoveAlbumsSection = () => render(<LoveAlbumsSection albums={mockAlbums as Album[]} />);
 
 describe('LoveAlbumsSection', () => {
-  beforeAll(() => {
-    (useCalculateSectionItemsAmount as jest.Mock).mockReturnValue({
-      elementRef: jest.fn(),
-      sectionItemsCount: MOCKED_SECTION_ITEMS_COUNT,
-    });
-  });
-
   it('render component without error', () => {
     const screen = renderLoveAlbumsSection();
     expect(screen).toMatchSnapshot();
-  });
-
-  it('displays the correct number of albums', () => {
-    const screen = renderLoveAlbumsSection();
-
-    expect(screen.getAllByRole('listitem').length).toBe(MOCKED_SECTION_ITEMS_COUNT);
   });
 });

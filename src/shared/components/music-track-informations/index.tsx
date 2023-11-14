@@ -28,7 +28,7 @@ export const MusicTrackInformations = ({ trackName, artistName }: MusicTrackInfo
         <Link
           href={generateArtistRedirectionPath(mainArtist)}
           className='music-track-informations__text music-track-informations__artist'
-          data-testId='music-track-informations-artist-name'
+          data-testid='music-track-informations-artist-name'
         >
           <span>{mainArtist}</span>
         </Link>

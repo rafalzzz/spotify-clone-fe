@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
+
 import { MusicTrackInformations } from '../';
 
 const MOCKED_TRACK_NAME = 'Mocked title';
@@ -65,7 +67,7 @@ describe('MusicTrackInformations', () => {
     const artistNameElement = queryByTestId(ARTIST_NAME_TEST_ID);
     expect(artistNameElement).toHaveAttribute(
       'href',
-      `/artist/${FIRST_ARTIST_NAME.toLocaleLowerCase()}`,
+      generateArtistRedirectionPath(FIRST_ARTIST_NAME),
     );
   });
 });

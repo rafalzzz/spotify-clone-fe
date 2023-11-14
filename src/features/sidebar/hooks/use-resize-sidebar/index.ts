@@ -2,14 +2,20 @@ import { useState, useCallback, useEffect, RefObject } from 'react';
 
 import { useLocalStorage } from '@/hooks/use-local-storage';
 
+import { getScssVariable } from '@/utils/get-scss-variable';
+
 type useResizeSidebarProps = {
   sidebarRef: RefObject<HTMLDivElement>;
 };
 
 const SIDEBAR_WIDTH_KEY = 'sidebar-width';
 const DEFAULT_WIDTH = '200';
-const SIDEBAR_MIN_WIDTH = 150;
-const SIDEBAR_MAX_WIDTH = 300;
+
+const SIDEBAR_MIN_WIDTH_SCSS_VARIABLE = getScssVariable('--min-sidebar-width');
+const SIDEBAR_MAX_WIDTH_SCSS_VARIABLE = getScssVariable('--max-sidebar-width');
+
+const SIDEBAR_MIN_WIDTH = parseInt(SIDEBAR_MIN_WIDTH_SCSS_VARIABLE, 10);
+const SIDEBAR_MAX_WIDTH = parseInt(SIDEBAR_MAX_WIDTH_SCSS_VARIABLE, 10);
 
 export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const [isResizing, setIsResizing] = useState(false);
