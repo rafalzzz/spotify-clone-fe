@@ -47,37 +47,6 @@
     }
   }
 
-  &__informations {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-
-    &__text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      &__artists {
-        display: flex;
-        list-style-type: none;
-      }
-
-      &--fit-content {
-        font-weight: 500;
-        margin-top: 5px;
-        color: var(--section-secondary-text-color);
-        width: fit-content;
-        max-width: 100%;
-
-        &:hover {
-          color: var(--main-text-color);
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
   &:hover {
     background: var(--section-item-hover-background);
     cursor: pointer;
