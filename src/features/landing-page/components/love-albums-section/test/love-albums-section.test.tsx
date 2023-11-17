@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Album } from '@/types/album';
+import { Album } from '@/shared/interfaces/album';
 
 import { LoveAlbumsSection } from '..';
 

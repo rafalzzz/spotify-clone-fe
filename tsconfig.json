@@ -30,6 +30,7 @@
       "@/server-actions/*": ["shared/server-actions/*"],
       "@/validators/*": ["shared/validators/*"],
       "@/enums/*": ["shared/enums/*"],
+      "@/interfaces/*": ["shared/interfaces/*"],
       "@/types/*": ["shared/types/*"],
       "@/shared/*": ["shared/*"],
       "@/styles/*": ["styles/*"],

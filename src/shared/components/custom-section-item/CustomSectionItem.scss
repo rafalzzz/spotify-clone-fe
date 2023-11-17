@@ -17,7 +17,7 @@
   }
 
   &__play-button {
-    display: flex;
+    display: none;
     position: absolute;
     width: 45px;
     height: 45px;
@@ -29,12 +29,14 @@
     background-color: var(--spotify-theme-color);
     outline: none;
     border: none;
+    visibility: hidden;
     font-size: 2rem;
     padding-left: 2px;
     opacity: 0;
     transition:
-      bottom 0.3s ease,
-      opacity 0.3s ease;
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      bottom 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
@@ -52,6 +54,8 @@
     cursor: pointer;
 
     .custom-section-item__play-button {
+      display: flex;
+      visibility: visible;
       opacity: 1;
       bottom: 15px;
     }

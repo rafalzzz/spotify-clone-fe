@@ -5,33 +5,35 @@ exports[`CustomArtistItem renders component without error 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="custom-artist-item"
+      <a
+        class="custom-artist-item__artist"
+        data-testid="custom-artist-item-artist-name"
+        href="/artist/mocked artist name"
       >
-        <a
-          data-testid="custom-artist-item-artist-name"
-          href="/artist/mocked artist name"
+        <div
+          class="custom-artist-item"
         >
           <div>
             Mocked artist name
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="custom-artist-item"
+    <a
+      class="custom-artist-item__artist"
+      data-testid="custom-artist-item-artist-name"
+      href="/artist/mocked artist name"
     >
-      <a
-        data-testid="custom-artist-item-artist-name"
-        href="/artist/mocked artist name"
+      <div
+        class="custom-artist-item"
       >
         <div>
           Mocked artist name
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

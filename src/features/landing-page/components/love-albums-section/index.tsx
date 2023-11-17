@@ -1,8 +1,7 @@
 'use client';
 
-import { Album } from '@/types/album';
-
 import { CustomSection, CustomSectionItem, AlbumInformations } from '@/shared/components';
+import { Album } from '@/shared/interfaces/album';
 
 export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
   <CustomSection title='Love albums' redirectionUrl='/love-albums'>

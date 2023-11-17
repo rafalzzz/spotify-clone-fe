@@ -1,8 +1,7 @@
 'use client';
 
-import { MusicTrack } from '@/types/music-track';
-
 import { CustomSection, CustomSectionItem, MusicTrackInformations } from '@/shared/components';
+import { MusicTrack } from '@/shared/interfaces/music-track';
 
 export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
   <CustomSection title='Love songs' redirectionUrl='/love-songs'>
