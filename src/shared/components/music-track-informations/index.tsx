@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
+import { getMainArtist } from '@/utils/get-main-artist';
 
 import { CustomTooltip } from '../custom-tooltip';
 
@@ -12,7 +13,7 @@ type MusicTrackInformationsProps = {
 };
 
 export const MusicTrackInformations = ({ trackName, artistName }: MusicTrackInformationsProps) => {
-  const mainArtist = artistName.split(',')[0];
+  const mainArtist = getMainArtist(artistName);
 
   return (
     <div className='music-track-informations'>

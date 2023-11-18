@@ -10,6 +10,11 @@
   background: var(--section-item-background);
   border-radius: var(--custom-border-radius);
 
+  &__redirection {
+    text-decoration: none;
+    color: var(--section-secondary-text-color);
+  }
+
   &__image {
     position: relative;
     width: 100%;

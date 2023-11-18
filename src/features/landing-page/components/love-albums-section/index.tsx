@@ -10,6 +10,7 @@ export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
         {albums.map(({ collectionId, artworkUrl100, collectionName, releaseDate, artistName }) => (
           <li key={collectionId}>
             <CustomSectionItem
+              collectionName={collectionName}
               imageUrl={artworkUrl100}
               onClick={() => {
                 // TODO - add play song action

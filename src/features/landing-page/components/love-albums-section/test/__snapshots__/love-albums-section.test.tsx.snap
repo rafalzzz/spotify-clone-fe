@@ -34,574 +34,610 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           class="custom-section__items"
         >
           <li>
-            <div
-              class="custom-section-item"
+            <a
+              class="custom-section-item__redirection"
+              data-testid="custom-section-item-redirection"
+              href="/album/collectionname"
             >
               <div
-                class="custom-section-item__image"
-              >
-                <img
-                  alt="image"
-                  data-nimg="1"
-                  decoding="async"
-                  height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                  style="color: transparent; height: 100%; width: 100%;"
-                  width="100"
-                />
-                <button
-                  class="custom-section-item__play-button"
-                  data-testid="custom-section-item-play-button"
-                >
-                  <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="caret-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 1024 1024"
-                      width="1em"
-                    >
-                      <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="album-informations"
+                class="custom-section-item"
               >
                 <div
-                  data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
+                  class="custom-section-item__image"
                 >
-                  <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                  <img
+                    alt="image"
+                    data-nimg="1"
+                    decoding="async"
+                    height="100"
+                    loading="lazy"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    style="color: transparent; height: 100%; width: 100%;"
+                    width="100"
+                  />
+                  <button
+                    class="custom-section-item__play-button"
+                    data-testid="custom-section-item-play-button"
                   >
-                    CollectionName
-                  </h4>
-                  <span>
-                    CollectionName
-                  </span>
+                    <span
+                      aria-label="caret-right"
+                      class="anticon anticon-caret-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="caret-right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-informations"
                 >
-                  <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
-                  >
-                    2020
-                  </span>
-                  <span
-                    class="album-informations__separator"
-                  >
-                    •
-                  </span>
                   <div
-                    data-testid="album-informations-artist-name-tooltip"
+                    data-testid="album-informations-collection-name-tooltip"
                     placement="right"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <h4
+                      class="album-informations__text"
+                      data-testid="album-informations-collection-name"
                     >
+                      CollectionName
+                    </h4>
+                    <span>
+                      CollectionName
+                    </span>
+                  </div>
+                  <div
+                    class="album-informations__wrapper"
+                  >
+                    <span
+                      class="album-informations__release-date"
+                      data-testid="album-informations-release-date"
+                    >
+                      2020
+                    </span>
+                    <span
+                      class="album-informations__separator"
+                    >
+                      •
+                    </span>
+                    <div
+                      data-testid="album-informations-artist-name-tooltip"
+                      placement="right"
+                    >
+                      <a
+                        class="album-informations__text album-informations__artist"
+                        data-testid="album-informations-artist-name"
+                        href="/artist/test_artist"
+                      >
+                        <span>
+                          Test_Artist
+                        </span>
+                      </a>
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
           <li>
-            <div
-              class="custom-section-item"
+            <a
+              class="custom-section-item__redirection"
+              data-testid="custom-section-item-redirection"
+              href="/album/collectionname"
             >
               <div
-                class="custom-section-item__image"
-              >
-                <img
-                  alt="image"
-                  data-nimg="1"
-                  decoding="async"
-                  height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                  style="color: transparent; height: 100%; width: 100%;"
-                  width="100"
-                />
-                <button
-                  class="custom-section-item__play-button"
-                  data-testid="custom-section-item-play-button"
-                >
-                  <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="caret-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 1024 1024"
-                      width="1em"
-                    >
-                      <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="album-informations"
+                class="custom-section-item"
               >
                 <div
-                  data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
+                  class="custom-section-item__image"
                 >
-                  <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                  <img
+                    alt="image"
+                    data-nimg="1"
+                    decoding="async"
+                    height="100"
+                    loading="lazy"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    style="color: transparent; height: 100%; width: 100%;"
+                    width="100"
+                  />
+                  <button
+                    class="custom-section-item__play-button"
+                    data-testid="custom-section-item-play-button"
                   >
-                    CollectionName
-                  </h4>
-                  <span>
-                    CollectionName
-                  </span>
+                    <span
+                      aria-label="caret-right"
+                      class="anticon anticon-caret-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="caret-right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-informations"
                 >
-                  <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
-                  >
-                    2020
-                  </span>
-                  <span
-                    class="album-informations__separator"
-                  >
-                    •
-                  </span>
                   <div
-                    data-testid="album-informations-artist-name-tooltip"
+                    data-testid="album-informations-collection-name-tooltip"
                     placement="right"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <h4
+                      class="album-informations__text"
+                      data-testid="album-informations-collection-name"
                     >
+                      CollectionName
+                    </h4>
+                    <span>
+                      CollectionName
+                    </span>
+                  </div>
+                  <div
+                    class="album-informations__wrapper"
+                  >
+                    <span
+                      class="album-informations__release-date"
+                      data-testid="album-informations-release-date"
+                    >
+                      2020
+                    </span>
+                    <span
+                      class="album-informations__separator"
+                    >
+                      •
+                    </span>
+                    <div
+                      data-testid="album-informations-artist-name-tooltip"
+                      placement="right"
+                    >
+                      <a
+                        class="album-informations__text album-informations__artist"
+                        data-testid="album-informations-artist-name"
+                        href="/artist/test_artist"
+                      >
+                        <span>
+                          Test_Artist
+                        </span>
+                      </a>
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
           <li>
-            <div
-              class="custom-section-item"
+            <a
+              class="custom-section-item__redirection"
+              data-testid="custom-section-item-redirection"
+              href="/album/collectionname"
             >
               <div
-                class="custom-section-item__image"
-              >
-                <img
-                  alt="image"
-                  data-nimg="1"
-                  decoding="async"
-                  height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                  style="color: transparent; height: 100%; width: 100%;"
-                  width="100"
-                />
-                <button
-                  class="custom-section-item__play-button"
-                  data-testid="custom-section-item-play-button"
-                >
-                  <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="caret-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 1024 1024"
-                      width="1em"
-                    >
-                      <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="album-informations"
+                class="custom-section-item"
               >
                 <div
-                  data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
+                  class="custom-section-item__image"
                 >
-                  <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                  <img
+                    alt="image"
+                    data-nimg="1"
+                    decoding="async"
+                    height="100"
+                    loading="lazy"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    style="color: transparent; height: 100%; width: 100%;"
+                    width="100"
+                  />
+                  <button
+                    class="custom-section-item__play-button"
+                    data-testid="custom-section-item-play-button"
                   >
-                    CollectionName
-                  </h4>
-                  <span>
-                    CollectionName
-                  </span>
+                    <span
+                      aria-label="caret-right"
+                      class="anticon anticon-caret-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="caret-right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-informations"
                 >
-                  <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
-                  >
-                    2020
-                  </span>
-                  <span
-                    class="album-informations__separator"
-                  >
-                    •
-                  </span>
                   <div
-                    data-testid="album-informations-artist-name-tooltip"
+                    data-testid="album-informations-collection-name-tooltip"
                     placement="right"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <h4
+                      class="album-informations__text"
+                      data-testid="album-informations-collection-name"
                     >
+                      CollectionName
+                    </h4>
+                    <span>
+                      CollectionName
+                    </span>
+                  </div>
+                  <div
+                    class="album-informations__wrapper"
+                  >
+                    <span
+                      class="album-informations__release-date"
+                      data-testid="album-informations-release-date"
+                    >
+                      2020
+                    </span>
+                    <span
+                      class="album-informations__separator"
+                    >
+                      •
+                    </span>
+                    <div
+                      data-testid="album-informations-artist-name-tooltip"
+                      placement="right"
+                    >
+                      <a
+                        class="album-informations__text album-informations__artist"
+                        data-testid="album-informations-artist-name"
+                        href="/artist/test_artist"
+                      >
+                        <span>
+                          Test_Artist
+                        </span>
+                      </a>
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
           <li>
-            <div
-              class="custom-section-item"
+            <a
+              class="custom-section-item__redirection"
+              data-testid="custom-section-item-redirection"
+              href="/album/collectionname"
             >
               <div
-                class="custom-section-item__image"
-              >
-                <img
-                  alt="image"
-                  data-nimg="1"
-                  decoding="async"
-                  height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                  style="color: transparent; height: 100%; width: 100%;"
-                  width="100"
-                />
-                <button
-                  class="custom-section-item__play-button"
-                  data-testid="custom-section-item-play-button"
-                >
-                  <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="caret-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 1024 1024"
-                      width="1em"
-                    >
-                      <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="album-informations"
+                class="custom-section-item"
               >
                 <div
-                  data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
+                  class="custom-section-item__image"
                 >
-                  <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                  <img
+                    alt="image"
+                    data-nimg="1"
+                    decoding="async"
+                    height="100"
+                    loading="lazy"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    style="color: transparent; height: 100%; width: 100%;"
+                    width="100"
+                  />
+                  <button
+                    class="custom-section-item__play-button"
+                    data-testid="custom-section-item-play-button"
                   >
-                    CollectionName
-                  </h4>
-                  <span>
-                    CollectionName
-                  </span>
+                    <span
+                      aria-label="caret-right"
+                      class="anticon anticon-caret-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="caret-right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-informations"
                 >
-                  <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
-                  >
-                    2020
-                  </span>
-                  <span
-                    class="album-informations__separator"
-                  >
-                    •
-                  </span>
                   <div
-                    data-testid="album-informations-artist-name-tooltip"
+                    data-testid="album-informations-collection-name-tooltip"
                     placement="right"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <h4
+                      class="album-informations__text"
+                      data-testid="album-informations-collection-name"
                     >
+                      CollectionName
+                    </h4>
+                    <span>
+                      CollectionName
+                    </span>
+                  </div>
+                  <div
+                    class="album-informations__wrapper"
+                  >
+                    <span
+                      class="album-informations__release-date"
+                      data-testid="album-informations-release-date"
+                    >
+                      2020
+                    </span>
+                    <span
+                      class="album-informations__separator"
+                    >
+                      •
+                    </span>
+                    <div
+                      data-testid="album-informations-artist-name-tooltip"
+                      placement="right"
+                    >
+                      <a
+                        class="album-informations__text album-informations__artist"
+                        data-testid="album-informations-artist-name"
+                        href="/artist/test_artist"
+                      >
+                        <span>
+                          Test_Artist
+                        </span>
+                      </a>
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
           <li>
-            <div
-              class="custom-section-item"
+            <a
+              class="custom-section-item__redirection"
+              data-testid="custom-section-item-redirection"
+              href="/album/collectionname"
             >
               <div
-                class="custom-section-item__image"
-              >
-                <img
-                  alt="image"
-                  data-nimg="1"
-                  decoding="async"
-                  height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                  style="color: transparent; height: 100%; width: 100%;"
-                  width="100"
-                />
-                <button
-                  class="custom-section-item__play-button"
-                  data-testid="custom-section-item-play-button"
-                >
-                  <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="caret-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 1024 1024"
-                      width="1em"
-                    >
-                      <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="album-informations"
+                class="custom-section-item"
               >
                 <div
-                  data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
+                  class="custom-section-item__image"
                 >
-                  <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                  <img
+                    alt="image"
+                    data-nimg="1"
+                    decoding="async"
+                    height="100"
+                    loading="lazy"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    style="color: transparent; height: 100%; width: 100%;"
+                    width="100"
+                  />
+                  <button
+                    class="custom-section-item__play-button"
+                    data-testid="custom-section-item-play-button"
                   >
-                    CollectionName
-                  </h4>
-                  <span>
-                    CollectionName
-                  </span>
+                    <span
+                      aria-label="caret-right"
+                      class="anticon anticon-caret-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="caret-right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-informations"
                 >
-                  <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
-                  >
-                    2020
-                  </span>
-                  <span
-                    class="album-informations__separator"
-                  >
-                    •
-                  </span>
                   <div
-                    data-testid="album-informations-artist-name-tooltip"
+                    data-testid="album-informations-collection-name-tooltip"
                     placement="right"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <h4
+                      class="album-informations__text"
+                      data-testid="album-informations-collection-name"
                     >
+                      CollectionName
+                    </h4>
+                    <span>
+                      CollectionName
+                    </span>
+                  </div>
+                  <div
+                    class="album-informations__wrapper"
+                  >
+                    <span
+                      class="album-informations__release-date"
+                      data-testid="album-informations-release-date"
+                    >
+                      2020
+                    </span>
+                    <span
+                      class="album-informations__separator"
+                    >
+                      •
+                    </span>
+                    <div
+                      data-testid="album-informations-artist-name-tooltip"
+                      placement="right"
+                    >
+                      <a
+                        class="album-informations__text album-informations__artist"
+                        data-testid="album-informations-artist-name"
+                        href="/artist/test_artist"
+                      >
+                        <span>
+                          Test_Artist
+                        </span>
+                      </a>
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
           <li>
-            <div
-              class="custom-section-item"
+            <a
+              class="custom-section-item__redirection"
+              data-testid="custom-section-item-redirection"
+              href="/album/collectionname"
             >
               <div
-                class="custom-section-item__image"
-              >
-                <img
-                  alt="image"
-                  data-nimg="1"
-                  decoding="async"
-                  height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                  style="color: transparent; height: 100%; width: 100%;"
-                  width="100"
-                />
-                <button
-                  class="custom-section-item__play-button"
-                  data-testid="custom-section-item-play-button"
-                >
-                  <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="caret-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="0 0 1024 1024"
-                      width="1em"
-                    >
-                      <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="album-informations"
+                class="custom-section-item"
               >
                 <div
-                  data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
+                  class="custom-section-item__image"
                 >
-                  <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                  <img
+                    alt="image"
+                    data-nimg="1"
+                    decoding="async"
+                    height="100"
+                    loading="lazy"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    style="color: transparent; height: 100%; width: 100%;"
+                    width="100"
+                  />
+                  <button
+                    class="custom-section-item__play-button"
+                    data-testid="custom-section-item-play-button"
                   >
-                    CollectionName
-                  </h4>
-                  <span>
-                    CollectionName
-                  </span>
+                    <span
+                      aria-label="caret-right"
+                      class="anticon anticon-caret-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="caret-right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-informations"
                 >
-                  <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
-                  >
-                    2020
-                  </span>
-                  <span
-                    class="album-informations__separator"
-                  >
-                    •
-                  </span>
                   <div
-                    data-testid="album-informations-artist-name-tooltip"
+                    data-testid="album-informations-collection-name-tooltip"
                     placement="right"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <h4
+                      class="album-informations__text"
+                      data-testid="album-informations-collection-name"
                     >
+                      CollectionName
+                    </h4>
+                    <span>
+                      CollectionName
+                    </span>
+                  </div>
+                  <div
+                    class="album-informations__wrapper"
+                  >
+                    <span
+                      class="album-informations__release-date"
+                      data-testid="album-informations-release-date"
+                    >
+                      2020
+                    </span>
+                    <span
+                      class="album-informations__separator"
+                    >
+                      •
+                    </span>
+                    <div
+                      data-testid="album-informations-artist-name-tooltip"
+                      placement="right"
+                    >
+                      <a
+                        class="album-informations__text album-informations__artist"
+                        data-testid="album-informations-artist-name"
+                        href="/artist/test_artist"
+                      >
+                        <span>
+                          Test_Artist
+                        </span>
+                      </a>
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
       </section>
@@ -637,574 +673,610 @@ exports[`LoveAlbumsSection render component without error 1`] = `
         class="custom-section__items"
       >
         <li>
-          <div
-            class="custom-section-item"
+          <a
+            class="custom-section-item__redirection"
+            data-testid="custom-section-item-redirection"
+            href="/album/collectionname"
           >
             <div
-              class="custom-section-item__image"
-            >
-              <img
-                alt="image"
-                data-nimg="1"
-                decoding="async"
-                height="100"
-                loading="lazy"
-                src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                style="color: transparent; height: 100%; width: 100%;"
-                width="100"
-              />
-              <button
-                class="custom-section-item__play-button"
-                data-testid="custom-section-item-play-button"
-              >
-                <span
-                  aria-label="caret-right"
-                  class="anticon anticon-caret-right"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="caret-right"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div
-              class="album-informations"
+              class="custom-section-item"
             >
               <div
-                data-testid="album-informations-collection-name-tooltip"
-                placement="right"
+                class="custom-section-item__image"
               >
-                <h4
-                  class="album-informations__text"
-                  data-testid="album-informations-collection-name"
+                <img
+                  alt="image"
+                  data-nimg="1"
+                  decoding="async"
+                  height="100"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  style="color: transparent; height: 100%; width: 100%;"
+                  width="100"
+                />
+                <button
+                  class="custom-section-item__play-button"
+                  data-testid="custom-section-item-play-button"
                 >
-                  CollectionName
-                </h4>
-                <span>
-                  CollectionName
-                </span>
+                  <span
+                    aria-label="caret-right"
+                    class="anticon anticon-caret-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="caret-right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="album-informations__wrapper"
+                class="album-informations"
               >
-                <span
-                  class="album-informations__release-date"
-                  data-testid="album-informations-release-date"
-                >
-                  2020
-                </span>
-                <span
-                  class="album-informations__separator"
-                >
-                  •
-                </span>
                 <div
-                  data-testid="album-informations-artist-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
-                  <a
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
-                    href="/artist/test_artist"
+                  <h4
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
+                    CollectionName
+                  </h4>
+                  <span>
+                    CollectionName
+                  </span>
+                </div>
+                <div
+                  class="album-informations__wrapper"
+                >
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
+                  >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
         <li>
-          <div
-            class="custom-section-item"
+          <a
+            class="custom-section-item__redirection"
+            data-testid="custom-section-item-redirection"
+            href="/album/collectionname"
           >
             <div
-              class="custom-section-item__image"
-            >
-              <img
-                alt="image"
-                data-nimg="1"
-                decoding="async"
-                height="100"
-                loading="lazy"
-                src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                style="color: transparent; height: 100%; width: 100%;"
-                width="100"
-              />
-              <button
-                class="custom-section-item__play-button"
-                data-testid="custom-section-item-play-button"
-              >
-                <span
-                  aria-label="caret-right"
-                  class="anticon anticon-caret-right"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="caret-right"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div
-              class="album-informations"
+              class="custom-section-item"
             >
               <div
-                data-testid="album-informations-collection-name-tooltip"
-                placement="right"
+                class="custom-section-item__image"
               >
-                <h4
-                  class="album-informations__text"
-                  data-testid="album-informations-collection-name"
+                <img
+                  alt="image"
+                  data-nimg="1"
+                  decoding="async"
+                  height="100"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  style="color: transparent; height: 100%; width: 100%;"
+                  width="100"
+                />
+                <button
+                  class="custom-section-item__play-button"
+                  data-testid="custom-section-item-play-button"
                 >
-                  CollectionName
-                </h4>
-                <span>
-                  CollectionName
-                </span>
+                  <span
+                    aria-label="caret-right"
+                    class="anticon anticon-caret-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="caret-right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="album-informations__wrapper"
+                class="album-informations"
               >
-                <span
-                  class="album-informations__release-date"
-                  data-testid="album-informations-release-date"
-                >
-                  2020
-                </span>
-                <span
-                  class="album-informations__separator"
-                >
-                  •
-                </span>
                 <div
-                  data-testid="album-informations-artist-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
-                  <a
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
-                    href="/artist/test_artist"
+                  <h4
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
+                    CollectionName
+                  </h4>
+                  <span>
+                    CollectionName
+                  </span>
+                </div>
+                <div
+                  class="album-informations__wrapper"
+                >
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
+                  >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
         <li>
-          <div
-            class="custom-section-item"
+          <a
+            class="custom-section-item__redirection"
+            data-testid="custom-section-item-redirection"
+            href="/album/collectionname"
           >
             <div
-              class="custom-section-item__image"
-            >
-              <img
-                alt="image"
-                data-nimg="1"
-                decoding="async"
-                height="100"
-                loading="lazy"
-                src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                style="color: transparent; height: 100%; width: 100%;"
-                width="100"
-              />
-              <button
-                class="custom-section-item__play-button"
-                data-testid="custom-section-item-play-button"
-              >
-                <span
-                  aria-label="caret-right"
-                  class="anticon anticon-caret-right"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="caret-right"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div
-              class="album-informations"
+              class="custom-section-item"
             >
               <div
-                data-testid="album-informations-collection-name-tooltip"
-                placement="right"
+                class="custom-section-item__image"
               >
-                <h4
-                  class="album-informations__text"
-                  data-testid="album-informations-collection-name"
+                <img
+                  alt="image"
+                  data-nimg="1"
+                  decoding="async"
+                  height="100"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  style="color: transparent; height: 100%; width: 100%;"
+                  width="100"
+                />
+                <button
+                  class="custom-section-item__play-button"
+                  data-testid="custom-section-item-play-button"
                 >
-                  CollectionName
-                </h4>
-                <span>
-                  CollectionName
-                </span>
+                  <span
+                    aria-label="caret-right"
+                    class="anticon anticon-caret-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="caret-right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="album-informations__wrapper"
+                class="album-informations"
               >
-                <span
-                  class="album-informations__release-date"
-                  data-testid="album-informations-release-date"
-                >
-                  2020
-                </span>
-                <span
-                  class="album-informations__separator"
-                >
-                  •
-                </span>
                 <div
-                  data-testid="album-informations-artist-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
-                  <a
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
-                    href="/artist/test_artist"
+                  <h4
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
+                    CollectionName
+                  </h4>
+                  <span>
+                    CollectionName
+                  </span>
+                </div>
+                <div
+                  class="album-informations__wrapper"
+                >
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
+                  >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
         <li>
-          <div
-            class="custom-section-item"
+          <a
+            class="custom-section-item__redirection"
+            data-testid="custom-section-item-redirection"
+            href="/album/collectionname"
           >
             <div
-              class="custom-section-item__image"
-            >
-              <img
-                alt="image"
-                data-nimg="1"
-                decoding="async"
-                height="100"
-                loading="lazy"
-                src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                style="color: transparent; height: 100%; width: 100%;"
-                width="100"
-              />
-              <button
-                class="custom-section-item__play-button"
-                data-testid="custom-section-item-play-button"
-              >
-                <span
-                  aria-label="caret-right"
-                  class="anticon anticon-caret-right"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="caret-right"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div
-              class="album-informations"
+              class="custom-section-item"
             >
               <div
-                data-testid="album-informations-collection-name-tooltip"
-                placement="right"
+                class="custom-section-item__image"
               >
-                <h4
-                  class="album-informations__text"
-                  data-testid="album-informations-collection-name"
+                <img
+                  alt="image"
+                  data-nimg="1"
+                  decoding="async"
+                  height="100"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  style="color: transparent; height: 100%; width: 100%;"
+                  width="100"
+                />
+                <button
+                  class="custom-section-item__play-button"
+                  data-testid="custom-section-item-play-button"
                 >
-                  CollectionName
-                </h4>
-                <span>
-                  CollectionName
-                </span>
+                  <span
+                    aria-label="caret-right"
+                    class="anticon anticon-caret-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="caret-right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="album-informations__wrapper"
+                class="album-informations"
               >
-                <span
-                  class="album-informations__release-date"
-                  data-testid="album-informations-release-date"
-                >
-                  2020
-                </span>
-                <span
-                  class="album-informations__separator"
-                >
-                  •
-                </span>
                 <div
-                  data-testid="album-informations-artist-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
-                  <a
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
-                    href="/artist/test_artist"
+                  <h4
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
+                    CollectionName
+                  </h4>
+                  <span>
+                    CollectionName
+                  </span>
+                </div>
+                <div
+                  class="album-informations__wrapper"
+                >
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
+                  >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
         <li>
-          <div
-            class="custom-section-item"
+          <a
+            class="custom-section-item__redirection"
+            data-testid="custom-section-item-redirection"
+            href="/album/collectionname"
           >
             <div
-              class="custom-section-item__image"
-            >
-              <img
-                alt="image"
-                data-nimg="1"
-                decoding="async"
-                height="100"
-                loading="lazy"
-                src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                style="color: transparent; height: 100%; width: 100%;"
-                width="100"
-              />
-              <button
-                class="custom-section-item__play-button"
-                data-testid="custom-section-item-play-button"
-              >
-                <span
-                  aria-label="caret-right"
-                  class="anticon anticon-caret-right"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="caret-right"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div
-              class="album-informations"
+              class="custom-section-item"
             >
               <div
-                data-testid="album-informations-collection-name-tooltip"
-                placement="right"
+                class="custom-section-item__image"
               >
-                <h4
-                  class="album-informations__text"
-                  data-testid="album-informations-collection-name"
+                <img
+                  alt="image"
+                  data-nimg="1"
+                  decoding="async"
+                  height="100"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  style="color: transparent; height: 100%; width: 100%;"
+                  width="100"
+                />
+                <button
+                  class="custom-section-item__play-button"
+                  data-testid="custom-section-item-play-button"
                 >
-                  CollectionName
-                </h4>
-                <span>
-                  CollectionName
-                </span>
+                  <span
+                    aria-label="caret-right"
+                    class="anticon anticon-caret-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="caret-right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="album-informations__wrapper"
+                class="album-informations"
               >
-                <span
-                  class="album-informations__release-date"
-                  data-testid="album-informations-release-date"
-                >
-                  2020
-                </span>
-                <span
-                  class="album-informations__separator"
-                >
-                  •
-                </span>
                 <div
-                  data-testid="album-informations-artist-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
-                  <a
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
-                    href="/artist/test_artist"
+                  <h4
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
+                    CollectionName
+                  </h4>
+                  <span>
+                    CollectionName
+                  </span>
+                </div>
+                <div
+                  class="album-informations__wrapper"
+                >
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
+                  >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
         <li>
-          <div
-            class="custom-section-item"
+          <a
+            class="custom-section-item__redirection"
+            data-testid="custom-section-item-redirection"
+            href="/album/collectionname"
           >
             <div
-              class="custom-section-item__image"
-            >
-              <img
-                alt="image"
-                data-nimg="1"
-                decoding="async"
-                height="100"
-                loading="lazy"
-                src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
-                style="color: transparent; height: 100%; width: 100%;"
-                width="100"
-              />
-              <button
-                class="custom-section-item__play-button"
-                data-testid="custom-section-item-play-button"
-              >
-                <span
-                  aria-label="caret-right"
-                  class="anticon anticon-caret-right"
-                  role="img"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="caret-right"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 1024 1024"
-                    width="1em"
-                  >
-                    <path
-                      d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div
-              class="album-informations"
+              class="custom-section-item"
             >
               <div
-                data-testid="album-informations-collection-name-tooltip"
-                placement="right"
+                class="custom-section-item__image"
               >
-                <h4
-                  class="album-informations__text"
-                  data-testid="album-informations-collection-name"
+                <img
+                  alt="image"
+                  data-nimg="1"
+                  decoding="async"
+                  height="100"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  style="color: transparent; height: 100%; width: 100%;"
+                  width="100"
+                />
+                <button
+                  class="custom-section-item__play-button"
+                  data-testid="custom-section-item-play-button"
                 >
-                  CollectionName
-                </h4>
-                <span>
-                  CollectionName
-                </span>
+                  <span
+                    aria-label="caret-right"
+                    class="anticon anticon-caret-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="caret-right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="album-informations__wrapper"
+                class="album-informations"
               >
-                <span
-                  class="album-informations__release-date"
-                  data-testid="album-informations-release-date"
-                >
-                  2020
-                </span>
-                <span
-                  class="album-informations__separator"
-                >
-                  •
-                </span>
                 <div
-                  data-testid="album-informations-artist-name-tooltip"
+                  data-testid="album-informations-collection-name-tooltip"
                   placement="right"
                 >
-                  <a
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
-                    href="/artist/test_artist"
+                  <h4
+                    class="album-informations__text"
+                    data-testid="album-informations-collection-name"
                   >
+                    CollectionName
+                  </h4>
+                  <span>
+                    CollectionName
+                  </span>
+                </div>
+                <div
+                  class="album-informations__wrapper"
+                >
+                  <span
+                    class="album-informations__release-date"
+                    data-testid="album-informations-release-date"
+                  >
+                    2020
+                  </span>
+                  <span
+                    class="album-informations__separator"
+                  >
+                    •
+                  </span>
+                  <div
+                    data-testid="album-informations-artist-name-tooltip"
+                    placement="right"
+                  >
+                    <a
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
+                      href="/artist/test_artist"
+                    >
+                      <span>
+                        Test_Artist
+                      </span>
+                    </a>
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
       </ul>
     </section>

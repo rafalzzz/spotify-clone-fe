@@ -1,42 +1,65 @@
 import { CaretRightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef } from 'react';
 
 import { useIsImageVisible } from '@/hooks/use-is-image-visible';
 
+import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
+import { getMainArtist } from '@/utils/get-main-artist';
+
 import './CustomSectionItem.scss';
 
 type CustomSectionItemProps = {
+  collectionName: string;
   imageUrl: string;
   children: JSX.Element;
   onClick: () => void;
 };
 
-export const CustomSectionItem = ({ imageUrl, children, onClick }: CustomSectionItemProps) => {
+export const CustomSectionItem = ({
+  collectionName,
+  imageUrl,
+  children,
+  onClick,
+}: CustomSectionItemProps) => {
   const ref = useRef(null);
   const isImageVisible = useIsImageVisible({ ref });
 
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('click');
+    onClick();
+  };
+
   return (
-    <div className='custom-section-item'>
-      <div className='custom-section-item__image' ref={ref}>
-        <Image
-          src={imageUrl}
-          alt='image'
-          width={100}
-          height={100}
-          style={{ height: '100%', width: '100%' }}
-        />
-        {isImageVisible && (
-          <button
-            className='custom-section-item__play-button'
-            onClick={onClick}
-            data-testid='custom-section-item-play-button'
-          >
-            <CaretRightOutlined />
-          </button>
-        )}
+    <Link
+      href={generateAlbumRedirectionPath(collectionName)}
+      className='custom-section-item__redirection'
+      data-testid='custom-section-item-redirection'
+    >
+      <div className='custom-section-item'>
+        <div className='custom-section-item__image' ref={ref}>
+          <Image
+            src={imageUrl}
+            alt='image'
+            width={100}
+            height={100}
+            style={{ height: '100%', width: '100%' }}
+          />
+          {isImageVisible && (
+            <button
+              className='custom-section-item__play-button'
+              onClick={handleClick}
+              data-testid='custom-section-item-play-button'
+            >
+              <CaretRightOutlined />
+            </button>
+          )}
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </Link>
   );
 };

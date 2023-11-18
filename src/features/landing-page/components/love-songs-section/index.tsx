@@ -7,9 +7,10 @@ export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
   <CustomSection title='Love songs' redirectionUrl='/love-songs'>
     {
       <ul className='custom-section__items'>
-        {songs.map(({ trackId, artworkUrl100, trackName, artistName }) => (
+        {songs.map(({ trackId, artworkUrl100, trackName, artistName, collectionName }) => (
           <li key={trackId}>
             <CustomSectionItem
+              collectionName={collectionName}
               imageUrl={artworkUrl100}
               onClick={() => {
                 // TODO - add play song action
