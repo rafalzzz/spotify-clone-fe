@@ -1,39 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomArtistItem renders component without error 1`] = `
+exports[`CustomArtistItemLoader renders component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <a
-        class="custom-artist-item"
-        data-testid="custom-artist-item-redirection"
-        href="/artist/mocked artist name"
+      <div
+        class="custom-artist-item-loader"
       >
         <div
-          class="custom-artist-item__wrapper"
-        >
-          <div>
-            Mocked artist name
-          </div>
-        </div>
-      </a>
+          class="custom-artist-item-loader__skeleton-text"
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
-    <a
-      class="custom-artist-item"
-      data-testid="custom-artist-item-redirection"
-      href="/artist/mocked artist name"
+    <div
+      class="custom-artist-item-loader"
     >
       <div
-        class="custom-artist-item__wrapper"
-      >
-        <div>
-          Mocked artist name
-        </div>
-      </div>
-    </a>
+        class="custom-artist-item-loader__skeleton-text"
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

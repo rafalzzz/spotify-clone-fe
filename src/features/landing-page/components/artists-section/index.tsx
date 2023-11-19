@@ -1,8 +1,7 @@
 'use client';
 
-import { Artist } from '@/types/artist';
-
 import { CustomSection, CustomArtistItem } from '@/shared/components';
+import { Artist } from '@/shared/interfaces/artist';
 
 export const ArtistsSection = ({ artists }: { artists: Artist[] }) => (
   <CustomSection title='Most Popular DJs' redirectionUrl='/most-famous-djs'>

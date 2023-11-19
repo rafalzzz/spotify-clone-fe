@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { MusicTrack } from '@/types/music-track';
+import { MusicTrack } from '@/shared/interfaces/music-track';
 
 import { LoveSongsSection } from '..';
 
@@ -10,36 +10,42 @@ const mockSongs = [
     artworkUrl100: '/some-image-url1.jpg',
     trackName: 'TestTrack',
     artistName: 'Test_Artist',
+    collectionName: 'collectionName',
   },
   {
     trackId: 2,
     artworkUrl100: '/some-image-url1.jpg',
     trackName: 'TestTrack',
     artistName: 'Test_Artist',
+    collectionName: 'collectionName',
   },
   {
     trackId: 3,
     artworkUrl100: '/some-image-url1.jpg',
     trackName: 'TestTrack',
     artistName: 'Test_Artist',
+    collectionName: 'collectionName',
   },
   {
     trackId: 4,
     artworkUrl100: '/some-image-url1.jpg',
     trackName: 'TestTrack',
     artistName: 'Test_Artist',
+    collectionName: 'collectionName',
   },
   {
     trackId: 5,
     artworkUrl100: '/some-image-url1.jpg',
     trackName: 'TestTrack',
     artistName: 'Test_Artist',
+    collectionName: 'collectionName',
   },
   {
     trackId: 6,
     artworkUrl100: '/some-image-url1.jpg',
     trackName: 'TestTrack',
     artistName: 'Test_Artist',
+    collectionName: 'collectionName',
   },
 ];
 

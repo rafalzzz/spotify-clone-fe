@@ -10,6 +10,11 @@
   background: var(--section-item-background);
   border-radius: var(--custom-border-radius);
 
+  &__redirection {
+    text-decoration: none;
+    color: var(--section-secondary-text-color);
+  }
+
   &__image {
     position: relative;
     width: 100%;
@@ -17,7 +22,7 @@
   }
 
   &__play-button {
-    display: flex;
+    display: none;
     position: absolute;
     width: 45px;
     height: 45px;
@@ -29,12 +34,14 @@
     background-color: var(--spotify-theme-color);
     outline: none;
     border: none;
+    visibility: hidden;
     font-size: 2rem;
     padding-left: 2px;
     opacity: 0;
     transition:
-      bottom 0.3s ease,
-      opacity 0.3s ease;
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      bottom 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
@@ -47,42 +54,13 @@
     }
   }
 
-  &__informations {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-
-    &__text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      &__artists {
-        display: flex;
-        list-style-type: none;
-      }
-
-      &--fit-content {
-        font-weight: 500;
-        margin-top: 5px;
-        color: var(--section-secondary-text-color);
-        width: fit-content;
-        max-width: 100%;
-
-        &:hover {
-          color: var(--main-text-color);
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
   &:hover {
     background: var(--section-item-hover-background);
     cursor: pointer;
 
     .custom-section-item__play-button {
+      display: flex;
+      visibility: visible;
       opacity: 1;
       bottom: 15px;
     }

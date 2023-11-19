@@ -34,88 +34,94 @@ exports[`ArtistsSection render component without error 1`] = `
           class="custom-section__items"
         >
           <li>
-            <div
+            <a
               class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
+              href="/artist/test_artist1"
             >
-              <a
-                data-testid="custom-artist-item-artist-name"
-                href="/artist/test_artist1"
+              <div
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist1
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
           <li>
-            <div
+            <a
               class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
+              href="/artist/test_artist2"
             >
-              <a
-                data-testid="custom-artist-item-artist-name"
-                href="/artist/test_artist2"
+              <div
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist2
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
           <li>
-            <div
+            <a
               class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
+              href="/artist/test_artist3"
             >
-              <a
-                data-testid="custom-artist-item-artist-name"
-                href="/artist/test_artist3"
+              <div
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist3
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
           <li>
-            <div
+            <a
               class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
+              href="/artist/test_artist4"
             >
-              <a
-                data-testid="custom-artist-item-artist-name"
-                href="/artist/test_artist4"
+              <div
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist4
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
           <li>
-            <div
+            <a
               class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
+              href="/artist/test_artist5"
             >
-              <a
-                data-testid="custom-artist-item-artist-name"
-                href="/artist/test_artist5"
+              <div
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist5
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
           <li>
-            <div
+            <a
               class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
+              href="/artist/test_artist6"
             >
-              <a
-                data-testid="custom-artist-item-artist-name"
-                href="/artist/test_artist6"
+              <div
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist6
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
         </ul>
       </section>
@@ -151,88 +157,94 @@ exports[`ArtistsSection render component without error 1`] = `
         class="custom-section__items"
       >
         <li>
-          <div
+          <a
             class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
+            href="/artist/test_artist1"
           >
-            <a
-              data-testid="custom-artist-item-artist-name"
-              href="/artist/test_artist1"
+            <div
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist1
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </li>
         <li>
-          <div
+          <a
             class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
+            href="/artist/test_artist2"
           >
-            <a
-              data-testid="custom-artist-item-artist-name"
-              href="/artist/test_artist2"
+            <div
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist2
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </li>
         <li>
-          <div
+          <a
             class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
+            href="/artist/test_artist3"
           >
-            <a
-              data-testid="custom-artist-item-artist-name"
-              href="/artist/test_artist3"
+            <div
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist3
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </li>
         <li>
-          <div
+          <a
             class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
+            href="/artist/test_artist4"
           >
-            <a
-              data-testid="custom-artist-item-artist-name"
-              href="/artist/test_artist4"
+            <div
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist4
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </li>
         <li>
-          <div
+          <a
             class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
+            href="/artist/test_artist5"
           >
-            <a
-              data-testid="custom-artist-item-artist-name"
-              href="/artist/test_artist5"
+            <div
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist5
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </li>
         <li>
-          <div
+          <a
             class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
+            href="/artist/test_artist6"
           >
-            <a
-              data-testid="custom-artist-item-artist-name"
-              href="/artist/test_artist6"
+            <div
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist6
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </li>
       </ul>
     </section>
