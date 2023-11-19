@@ -1,39 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomArtistItem renders component without error 1`] = `
+exports[`CustomSectionItemLoader renders component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <a
-        class="custom-artist-item"
-        data-testid="custom-artist-item-redirection"
-        href="/artist/mocked artist name"
+      <div
+        class="custom-section-item-loader"
       >
         <div
-          class="custom-artist-item__wrapper"
+          class="custom-section-item-loader__image"
+        />
+        <div
+          class="custom-section-item-loader__skeleton-text__container"
         >
-          <div>
-            Mocked artist name
-          </div>
+          <div
+            class="custom-section-item-loader__skeleton-text__header"
+          />
+          <div
+            class="custom-section-item-loader__skeleton-text__subheader"
+          />
         </div>
-      </a>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <a
-      class="custom-artist-item"
-      data-testid="custom-artist-item-redirection"
-      href="/artist/mocked artist name"
+    <div
+      class="custom-section-item-loader"
     >
       <div
-        class="custom-artist-item__wrapper"
+        class="custom-section-item-loader__image"
+      />
+      <div
+        class="custom-section-item-loader__skeleton-text__container"
       >
-        <div>
-          Mocked artist name
-        </div>
+        <div
+          class="custom-section-item-loader__skeleton-text__header"
+        />
+        <div
+          class="custom-section-item-loader__skeleton-text__subheader"
+        />
       </div>
-    </a>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

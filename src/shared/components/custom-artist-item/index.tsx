@@ -11,10 +11,10 @@ type CustomSectionArtistProps = Pick<Artist, 'artistName'>;
 export const CustomArtistItem = ({ artistName }: CustomSectionArtistProps) => (
   <Link
     href={generateArtistRedirectionPath(artistName)}
-    className='custom-artist-item__artist'
-    data-testid='custom-artist-item-artist-name'
+    className='custom-artist-item'
+    data-testid='custom-artist-item-redirection'
   >
-    <div className='custom-artist-item'>
+    <div className='custom-artist-item__wrapper'>
       <div>{artistName}</div>
     </div>
   </Link>

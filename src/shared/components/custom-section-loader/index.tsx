@@ -1,12 +1,14 @@
-'use client';
-
-import { CustomSectionItemLoader } from '@/shared/components';
+'use server';
 
 import './CustomSectionLoader.scss';
 
 const ITEMS_IDS = Array.from({ length: 15 }, (_, i) => i + 1);
 
-export const CustomSectionLoader = () => (
+type CustomSectionLoaderProps = {
+  SectionItemLoader: () => JSX.Element;
+};
+
+export const CustomSectionLoader = ({ SectionItemLoader }: CustomSectionLoaderProps) => (
   <section className='custom-section-loader'>
     <div className='custom-section-loader__header'>
       <div className='custom-section-loader__header__title' />
@@ -16,7 +18,7 @@ export const CustomSectionLoader = () => (
       <ul className='custom-section-loader__items'>
         {ITEMS_IDS.map((id) => (
           <li key={id}>
-            <CustomSectionItemLoader />
+            <SectionItemLoader />
           </li>
         ))}
       </ul>

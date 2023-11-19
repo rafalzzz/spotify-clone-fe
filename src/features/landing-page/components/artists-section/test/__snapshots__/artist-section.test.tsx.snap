@@ -35,12 +35,12 @@ exports[`ArtistsSection render component without error 1`] = `
         >
           <li>
             <a
-              class="custom-artist-item__artist"
-              data-testid="custom-artist-item-artist-name"
+              class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
               href="/artist/test_artist1"
             >
               <div
-                class="custom-artist-item"
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist1
@@ -50,12 +50,12 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item__artist"
-              data-testid="custom-artist-item-artist-name"
+              class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
               href="/artist/test_artist2"
             >
               <div
-                class="custom-artist-item"
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist2
@@ -65,12 +65,12 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item__artist"
-              data-testid="custom-artist-item-artist-name"
+              class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
               href="/artist/test_artist3"
             >
               <div
-                class="custom-artist-item"
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist3
@@ -80,12 +80,12 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item__artist"
-              data-testid="custom-artist-item-artist-name"
+              class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
               href="/artist/test_artist4"
             >
               <div
-                class="custom-artist-item"
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist4
@@ -95,12 +95,12 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item__artist"
-              data-testid="custom-artist-item-artist-name"
+              class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
               href="/artist/test_artist5"
             >
               <div
-                class="custom-artist-item"
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist5
@@ -110,12 +110,12 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item__artist"
-              data-testid="custom-artist-item-artist-name"
+              class="custom-artist-item"
+              data-testid="custom-artist-item-redirection"
               href="/artist/test_artist6"
             >
               <div
-                class="custom-artist-item"
+                class="custom-artist-item__wrapper"
               >
                 <div>
                   Test_Artist6
@@ -158,12 +158,12 @@ exports[`ArtistsSection render component without error 1`] = `
       >
         <li>
           <a
-            class="custom-artist-item__artist"
-            data-testid="custom-artist-item-artist-name"
+            class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
             href="/artist/test_artist1"
           >
             <div
-              class="custom-artist-item"
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist1
@@ -173,12 +173,12 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item__artist"
-            data-testid="custom-artist-item-artist-name"
+            class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
             href="/artist/test_artist2"
           >
             <div
-              class="custom-artist-item"
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist2
@@ -188,12 +188,12 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item__artist"
-            data-testid="custom-artist-item-artist-name"
+            class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
             href="/artist/test_artist3"
           >
             <div
-              class="custom-artist-item"
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist3
@@ -203,12 +203,12 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item__artist"
-            data-testid="custom-artist-item-artist-name"
+            class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
             href="/artist/test_artist4"
           >
             <div
-              class="custom-artist-item"
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist4
@@ -218,12 +218,12 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item__artist"
-            data-testid="custom-artist-item-artist-name"
+            class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
             href="/artist/test_artist5"
           >
             <div
-              class="custom-artist-item"
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist5
@@ -233,12 +233,12 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item__artist"
-            data-testid="custom-artist-item-artist-name"
+            class="custom-artist-item"
+            data-testid="custom-artist-item-redirection"
             href="/artist/test_artist6"
           >
             <div
-              class="custom-artist-item"
+              class="custom-artist-item__wrapper"
             >
               <div>
                 Test_Artist6
