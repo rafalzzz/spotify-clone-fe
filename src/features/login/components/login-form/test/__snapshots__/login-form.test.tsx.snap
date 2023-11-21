@@ -152,6 +152,7 @@ exports[`LoginForm render component without error 1`] = `
                       class="ant-switch input-type-switch__button css-dev-only-do-not-override-12upa3x"
                       data-testid="input-type-switch"
                       role="switch"
+                      title="Remember me"
                       type="button"
                     >
                       <div
@@ -360,6 +361,7 @@ exports[`LoginForm render component without error 1`] = `
                     class="ant-switch input-type-switch__button css-dev-only-do-not-override-12upa3x"
                     data-testid="input-type-switch"
                     role="switch"
+                    title="Remember me"
                     type="button"
                   >
                     <div

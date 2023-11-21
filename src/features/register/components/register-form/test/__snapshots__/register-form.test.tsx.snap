@@ -265,7 +265,7 @@ exports[`RegisterForm render component without error 1`] = `
                           >
                             <label
                               class=""
-                              for="register_Month"
+                              for="register_month"
                               title=""
                             >
                               <span
@@ -294,15 +294,15 @@ exports[`RegisterForm render component without error 1`] = `
                                       class="ant-select-selection-search"
                                     >
                                       <input
-                                        aria-activedescendant="register_Month_list_0"
+                                        aria-activedescendant="register_month_list_0"
                                         aria-autocomplete="list"
-                                        aria-controls="register_Month_list"
+                                        aria-controls="register_month_list"
                                         aria-expanded="false"
                                         aria-haspopup="listbox"
-                                        aria-owns="register_Month_list"
+                                        aria-owns="register_month_list"
                                         autocomplete="off"
                                         class="ant-select-selection-search-input"
-                                        id="register_Month"
+                                        id="register_month"
                                         readonly=""
                                         role="combobox"
                                         style="opacity: 0;"
@@ -953,7 +953,7 @@ exports[`RegisterForm render component without error 1`] = `
                         >
                           <label
                             class=""
-                            for="register_Month"
+                            for="register_month"
                             title=""
                           >
                             <span
@@ -982,15 +982,15 @@ exports[`RegisterForm render component without error 1`] = `
                                     class="ant-select-selection-search"
                                   >
                                     <input
-                                      aria-activedescendant="register_Month_list_0"
+                                      aria-activedescendant="register_month_list_0"
                                       aria-autocomplete="list"
-                                      aria-controls="register_Month_list"
+                                      aria-controls="register_month_list"
                                       aria-expanded="false"
                                       aria-haspopup="listbox"
-                                      aria-owns="register_Month_list"
+                                      aria-owns="register_month_list"
                                       autocomplete="off"
                                       class="ant-select-selection-search-input"
-                                      id="register_Month"
+                                      id="register_month"
                                       readonly=""
                                       role="combobox"
                                       style="opacity: 0;"

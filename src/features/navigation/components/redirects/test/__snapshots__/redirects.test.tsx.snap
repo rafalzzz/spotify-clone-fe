@@ -8,8 +8,30 @@ exports[`Redirects render component without error 1`] = `
       <ul
         class="redirects"
       >
-        <li />
-        <li />
+        <li>
+          <button
+            class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-round ant-btn-default ant-btn-lg redirects__item sign-up-button"
+            data-testid="redirection-to-registration"
+            role="button"
+            type="button"
+          >
+            <span>
+              Sign up
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-round ant-btn-default ant-btn-lg redirects__item sign-in-button"
+            data-testid="redirection-to-login"
+            role="button"
+            type="button"
+          >
+            <span>
+              Sign in
+            </span>
+          </button>
+        </li>
       </ul>
     </div>
   </body>,
@@ -17,8 +39,30 @@ exports[`Redirects render component without error 1`] = `
     <ul
       class="redirects"
     >
-      <li />
-      <li />
+      <li>
+        <button
+          class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-round ant-btn-default ant-btn-lg redirects__item sign-up-button"
+          data-testid="redirection-to-registration"
+          role="button"
+          type="button"
+        >
+          <span>
+            Sign up
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-round ant-btn-default ant-btn-lg redirects__item sign-in-button"
+          data-testid="redirection-to-login"
+          role="button"
+          type="button"
+        >
+          <span>
+            Sign in
+          </span>
+        </button>
+      </li>
     </ul>
   </div>,
   "debug": [Function],

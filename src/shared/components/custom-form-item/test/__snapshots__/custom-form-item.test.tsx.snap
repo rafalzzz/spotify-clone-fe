@@ -4,9 +4,105 @@ exports[`CustomFormItem render component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-12upa3x"
+      >
+        <div
+          class="ant-form-item form-item css-dev-only-do-not-override-12upa3x"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-12upa3x"
+          >
+            <div
+              class="ant-col ant-form-item-label css-dev-only-do-not-override-12upa3x"
+            >
+              <label
+                class=""
+                for="text"
+                title=""
+              >
+                <span
+                  class="form-item__label"
+                >
+                  Enter text
+                </span>
+              </label>
+            </div>
+            <div
+              class="ant-col ant-form-item-control css-dev-only-do-not-override-12upa3x"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <input
+                    class="ant-input css-dev-only-do-not-override-12upa3x"
+                    data-testid="input-type-text"
+                    id="text"
+                    placeholder="Enter text"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-12upa3x"
+    >
+      <div
+        class="ant-form-item form-item css-dev-only-do-not-override-12upa3x"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-12upa3x"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-12upa3x"
+          >
+            <label
+              class=""
+              for="text"
+              title=""
+            >
+              <span
+                class="form-item__label"
+              >
+                Enter text
+              </span>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-12upa3x"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-12upa3x"
+                  data-testid="input-type-text"
+                  id="text"
+                  placeholder="Enter text"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

@@ -4,9 +4,31 @@ exports[`CustomButton render component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-lg"
+        data-testid="custom-button"
+        role="button"
+        type="button"
+      >
+        <span>
+          Test Button
+        </span>
+      </button>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-lg"
+      data-testid="custom-button"
+      role="button"
+      type="button"
+    >
+      <span>
+        Test Button
+      </span>
+    </button>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
