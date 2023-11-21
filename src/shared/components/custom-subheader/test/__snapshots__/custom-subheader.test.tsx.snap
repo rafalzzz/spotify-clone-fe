@@ -8,11 +8,11 @@ exports[`CustomSubheader render component without error 1`] = `
       <header
         class="custom-subheader"
       >
-        <h5
+        <h2
           class="custom-subheader__text"
         >
           Test
-        </h5>
+        </h2>
       </header>
     </div>
   </body>,
@@ -20,11 +20,11 @@ exports[`CustomSubheader render component without error 1`] = `
     <header
       class="custom-subheader"
     >
-      <h5
+      <h2
         class="custom-subheader__text"
       >
         Test
-      </h5>
+      </h2>
     </header>
   </div>,
   "debug": [Function],
