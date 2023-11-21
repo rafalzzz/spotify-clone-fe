@@ -40,9 +40,4 @@ const Login = () => (
   </>
 );
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  context.res.setHeader('Cache-Control', 'public, max-age=3600');
-  return { props: {} };
-}
-
 export default Login;
