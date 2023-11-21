@@ -49,19 +49,15 @@ export const DateOfBirthInput = ({ label = '', name }: DateOfBirthInputProps) =>
         </Col>
         <Col span={14} offset={1}>
           <Form.Item
-            // When name is "Month" - placeholder disappear
-            name={FORM_LABELS[RegisterFormKeys.MONTH]}
+            name={RegisterFormKeys.MONTH}
             label={
               <span className='date-of-birth__label'>{FORM_LABELS[RegisterFormKeys.MONTH]}</span>
             }
             className='date-of-birth__input'
           >
             <Select
-              placeholder={'Month'}
-              onChange={(value) => {
-                validateInput();
-                form.setFieldValue('month', value);
-              }}
+              placeholder={FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.MONTH]}
+              onChange={validateInput}
             >
               {MONTH_OPTIONS.map(({ label, value }) => (
                 <Option key={value} value={value} disabled={!value}>

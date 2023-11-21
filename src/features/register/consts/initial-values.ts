@@ -5,7 +5,7 @@ export const INITIAL_VALUES = {
   [RegisterFormKeys.PASSWORD]: '',
   [RegisterFormKeys.NICKNAME]: '',
   [RegisterFormKeys.DAY]: '',
-  [RegisterFormKeys.MONTH]: '',
+  [RegisterFormKeys.MONTH]: undefined,
   [RegisterFormKeys.YEAR]: '',
   [RegisterFormKeys.GENDER]: undefined,
   [RegisterFormKeys.OFFERS]: false,

@@ -1,3 +1,5 @@
+import { GetServerSidePropsContext } from 'next';
+
 import { Footer } from '@/register/components/footer/Footer';
 import { RegisterForm } from '@/register/components/register-form';
 
@@ -27,5 +29,10 @@ const Register = () => (
     </CustomPageWrapper>
   </>
 );
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  context.res.setHeader('Cache-Control', 'public, max-age=3600');
+  return { props: {} };
+}
 
 export default Register;

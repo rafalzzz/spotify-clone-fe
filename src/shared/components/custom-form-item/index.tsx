@@ -64,6 +64,7 @@ export const CustomFormItem = ({
               className={`input-type-${InputType.SWITCH}__button`}
               data-testid={`input-type-${InputType.SWITCH}`}
               onChange={(value) => setFieldValue!(name, value)}
+              title={switchLabel}
             />
             <span className={`input-type-${InputType.SWITCH}__label`}>{switchLabel}</span>
           </div>

@@ -1,3 +1,5 @@
+import { GetServerSidePropsContext } from 'next';
+
 import { Footer } from '@/login/components/footer';
 import { LoginForm } from '@/login/components/login-form';
 
@@ -37,5 +39,10 @@ const Login = () => (
     </CustomPageWrapper>
   </>
 );
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  context.res.setHeader('Cache-Control', 'public, max-age=3600');
+  return { props: {} };
+}
 
 export default Login;
