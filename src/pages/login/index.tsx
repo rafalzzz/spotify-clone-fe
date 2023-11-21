@@ -1,3 +1,5 @@
+import { GetServerSidePropsContext } from 'next';
+
 import { Footer } from '@/login/components/footer';
 import { LoginForm } from '@/login/components/login-form';
 

@@ -3,15 +3,15 @@
 import { CustomSection, CustomSectionItem, AlbumInformations } from '@/shared/components';
 import { Album } from '@/shared/interfaces/album';
 
-export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
+const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
   <CustomSection title='Love albums' redirectionUrl='/love-albums'>
     {
       <ul className='custom-section__items'>
-        {albums.map(({ collectionId, artworkUrl100, collectionName, releaseDate, artistName }) => (
+        {albums.map(({ collectionId, artworkUrl60, collectionName, releaseDate, artistName }) => (
           <li key={collectionId}>
             <CustomSectionItem
               collectionName={collectionName}
-              imageUrl={artworkUrl100}
+              imageUrl={artworkUrl60}
               onClick={() => {
                 // TODO - add play song action
               }}
@@ -28,3 +28,5 @@ export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
     }
   </CustomSection>
 );
+
+export default LoveAlbumsSection;

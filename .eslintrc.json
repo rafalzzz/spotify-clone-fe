@@ -48,6 +48,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/server-components/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/server-actions/**",
             "group": "internal",
             "position": "before"

@@ -1,3 +1,5 @@
+const path = require('path');
+
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
@@ -7,6 +9,7 @@ const nextConfig = {
   },
   webpack: (config) => {
     config.plugins.push(new StylelintPlugin());
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src/');
     return config;
   },
   images: {

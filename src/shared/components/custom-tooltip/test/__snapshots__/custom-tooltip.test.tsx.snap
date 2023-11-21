@@ -6,8 +6,9 @@ exports[`CustomTooltip renders component without error 1`] = `
   "baseElement": <body>
     <div>
       <div
+        data-mouseenterdelay="0.5"
+        data-placement="right"
         data-testid=""
-        placement="right"
       >
         <div>
           Hover over me
@@ -20,8 +21,9 @@ exports[`CustomTooltip renders component without error 1`] = `
   </body>,
   "container": <div>
     <div
+      data-mouseenterdelay="0.5"
+      data-placement="right"
       data-testid=""
-      placement="right"
     >
       <div>
         Hover over me

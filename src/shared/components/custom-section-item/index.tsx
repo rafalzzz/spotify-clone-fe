@@ -6,7 +6,6 @@ import { useRef } from 'react';
 import { useIsImageVisible } from '@/hooks/use-is-image-visible';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
-import { getMainArtist } from '@/utils/get-main-artist';
 
 import './CustomSectionItem.scss';
 
@@ -43,10 +42,12 @@ export const CustomSectionItem = ({
         <div className='custom-section-item__image' ref={ref}>
           <Image
             src={imageUrl}
-            alt='image'
             width={100}
             height={100}
             style={{ height: '100%', width: '100%' }}
+            alt='image'
+            loading='lazy'
+            decoding='async'
           />
           {isImageVisible && (
             <button

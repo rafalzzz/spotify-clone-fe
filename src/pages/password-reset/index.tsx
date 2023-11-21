@@ -1,8 +1,8 @@
 import { PasswordResetForm } from '@/password-reset/components/password-reset-form';
 
 import {
-  CustomHeader,
   CustomHeadSection,
+  CustomHeader,
   CustomMainContentWrapper,
   CustomPageWrapper,
   CustomSubheader,
@@ -28,9 +28,7 @@ const PasswordReset = () => (
           </>
         }
       />
-      <CustomMainContentWrapper>
-        <PasswordResetForm />
-      </CustomMainContentWrapper>
+      <CustomMainContentWrapper>{<PasswordResetForm />}</CustomMainContentWrapper>
     </CustomPageWrapper>
   </>
 );

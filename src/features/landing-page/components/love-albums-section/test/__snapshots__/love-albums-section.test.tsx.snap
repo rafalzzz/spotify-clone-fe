@@ -85,8 +85,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -113,8 +114,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -186,8 +188,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -214,8 +217,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -287,8 +291,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -315,8 +320,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -388,8 +394,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -416,8 +423,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -489,8 +497,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -517,8 +526,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -590,8 +600,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -618,8 +629,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -724,8 +736,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -752,8 +765,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -825,8 +839,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -853,8 +868,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -926,8 +942,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -954,8 +971,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -1027,8 +1045,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -1055,8 +1074,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -1128,8 +1148,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -1156,8 +1177,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -1229,8 +1251,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -1257,8 +1280,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"

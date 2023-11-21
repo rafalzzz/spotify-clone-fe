@@ -31,6 +31,7 @@ module.exports = {
     '@/navigation/(.*)$': '<rootDir>/src/features/navigation/$1',
     '@/landing-page/(.*)$': '<rootDir>/src/features/landing-page/$1',
     '@/components/(.*)$': '<rootDir>/src/shared/components/$1',
+    '@/server-components/(.*)$': '<rootDir>/src/shared/server-components/$1',
     '@/consts/(.*)$': '<rootDir>/src/shared/consts/$1',
     '@/hooks/(.*)$': '<rootDir>/src/shared/hooks/$1',
     '@/utils/(.*)$': '<rootDir>/src/shared/utils/$1',

@@ -23,6 +23,7 @@
       "@/navigation/*": ["features/navigation/*"],
       "@/landing-page/*": ["features/landing-page/*"],
       "@/components/*": ["shared/components/*"],
+      "@/server-components/*": ["shared/server-components/*"],
       "@/consts/*": ["shared/consts/*"],
       "@/hooks/*": ["shared/hooks/*"],
       "@/utils/*": ["shared/utils/*"],
@@ -52,7 +53,8 @@
     "src/shared/utils/get-past-date.test.ts",
     "src/features/register/utils/requests/register-user.test.ts",
     "src/shared/components/custom-hyperlink/test/custom-hyperlink.test.tsx",
-    "src/features/password-reset/utils/validators/repeat-new-password-validator.test.ts"
+    "src/features/password-reset/utils/validators/repeat-new-password-validator.test.ts",
+    "__mocks__/antd/lib/tooltip/index.jsx"
   ],
   "exclude": ["node_modules"]
 }

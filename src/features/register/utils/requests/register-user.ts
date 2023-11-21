@@ -1,3 +1,5 @@
+'use client';
+
 import { parseRequestBody } from '@/register/helpers';
 
 import { customRequest } from '@/utils/custom-request';

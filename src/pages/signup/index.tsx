@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import { Footer } from '@/register/components/footer/Footer';
 import { RegisterForm } from '@/register/components/register-form';
 

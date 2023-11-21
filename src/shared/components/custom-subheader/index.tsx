@@ -8,6 +8,6 @@ type CustomSubheaderProps = {
 
 export const CustomSubheader = ({ title }: CustomSubheaderProps) => (
   <header className='custom-subheader'>
-    <h5 className='custom-subheader__text'>{title}</h5>
+    <h2 className='custom-subheader__text'>{title}</h2>
   </header>
 );

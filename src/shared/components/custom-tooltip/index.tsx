@@ -1,5 +1,4 @@
-import { Tooltip } from 'antd';
-import { TooltipPlacement } from 'antd/es/tooltip';
+import Tooltip, { TooltipPlacement } from 'antd/lib/tooltip';
 
 type CustomTooltipProps = {
   title: string;
