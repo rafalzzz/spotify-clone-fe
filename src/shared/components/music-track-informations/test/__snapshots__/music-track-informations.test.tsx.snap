@@ -9,8 +9,9 @@ exports[`MusicTrackInformations renders component without error 1`] = `
         class="music-track-informations"
       >
         <div
+          data-mouseenterdelay="0.5"
+          data-placement="right"
           data-testid="music-track-informations-track-name-tooltip"
-          placement="right"
         >
           <h4
             class="music-track-informations__text"
@@ -23,8 +24,9 @@ exports[`MusicTrackInformations renders component without error 1`] = `
           </span>
         </div>
         <div
+          data-mouseenterdelay="0.5"
+          data-placement="right"
           data-testid="music-track-informations-artist-name-tooltip"
-          placement="right"
         >
           <a
             class="music-track-informations__text music-track-informations__artist"
@@ -47,8 +49,9 @@ exports[`MusicTrackInformations renders component without error 1`] = `
       class="music-track-informations"
     >
       <div
+        data-mouseenterdelay="0.5"
+        data-placement="right"
         data-testid="music-track-informations-track-name-tooltip"
-        placement="right"
       >
         <h4
           class="music-track-informations__text"
@@ -61,8 +64,9 @@ exports[`MusicTrackInformations renders component without error 1`] = `
         </span>
       </div>
       <div
+        data-mouseenterdelay="0.5"
+        data-placement="right"
         data-testid="music-track-informations-artist-name-tooltip"
-        placement="right"
       >
         <a
           class="music-track-informations__text music-track-informations__artist"

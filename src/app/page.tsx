@@ -1,15 +1,21 @@
+import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-import { ArtistsSection, LoveAlbumsSection, LoveSongsSection } from '@/landing-page/components';
 import { useLandingPage } from '@/landing-page/hooks/use-landing-page';
 
-import { CustomArtistItemLoader } from '@/components/custom-artist-item-loader';
-import { CustomContentWrapper } from '@/components/custom-content-wrapper';
-import { CustomSectionItemLoader } from '@/components/custom-section-item-loader';
-import { CustomSectionLoader } from '@/components/custom-section-loader';
+import {
+  CustomArtistItemLoader,
+  CustomContentWrapper,
+  CustomSectionItemLoader,
+  CustomSectionLoader,
+} from '@/shared/server-components';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
+
+const ArtistsSection = dynamic(() => import('@/landing-page/components/artists-section'));
+const LoveAlbumsSection = dynamic(() => import('@/landing-page/components/love-albums-section'));
+const LoveSongsSection = dynamic(() => import('@/landing-page/components/love-songs-section'));
 
 const LandingPage = async () => {
   const { songs, albums, artists } = await useLandingPage();

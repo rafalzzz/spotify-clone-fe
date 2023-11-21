@@ -50,9 +50,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-nimg="1"
                     decoding="async"
                     height="100"
-                    loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    loading="eager"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -85,8 +85,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -113,8 +114,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -151,9 +153,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-nimg="1"
                     decoding="async"
                     height="100"
-                    loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    loading="eager"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -186,8 +188,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -214,8 +217,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -252,9 +256,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-nimg="1"
                     decoding="async"
                     height="100"
-                    loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    loading="eager"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -287,8 +291,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -315,8 +320,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -353,9 +359,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-nimg="1"
                     decoding="async"
                     height="100"
-                    loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    loading="eager"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -388,8 +394,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -416,8 +423,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -454,9 +462,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-nimg="1"
                     decoding="async"
                     height="100"
-                    loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    loading="eager"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -489,8 +497,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -517,8 +526,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -555,9 +565,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-nimg="1"
                     decoding="async"
                     height="100"
-                    loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    loading="eager"
+                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -590,8 +600,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   class="album-informations"
                 >
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-collection-name-tooltip"
-                    placement="right"
                   >
                     <h4
                       class="album-informations__text"
@@ -618,8 +629,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                       •
                     </span>
                     <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
                       data-testid="album-informations-artist-name-tooltip"
-                      placement="right"
                     >
                       <a
                         class="album-informations__text album-informations__artist"
@@ -689,9 +701,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  loading="eager"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -724,8 +736,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -752,8 +765,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -790,9 +804,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  loading="eager"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -825,8 +839,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -853,8 +868,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -891,9 +907,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  loading="eager"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -926,8 +942,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -954,8 +971,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -992,9 +1010,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  loading="eager"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -1027,8 +1045,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -1055,8 +1074,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -1093,9 +1113,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  loading="eager"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -1128,8 +1148,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -1156,8 +1177,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"
@@ -1194,9 +1216,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="100"
-                  loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  loading="eager"
+                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30"
+                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=30 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=30 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -1229,8 +1251,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 class="album-informations"
               >
                 <div
+                  data-mouseenterdelay="0.5"
+                  data-placement="right"
                   data-testid="album-informations-collection-name-tooltip"
-                  placement="right"
                 >
                   <h4
                     class="album-informations__text"
@@ -1257,8 +1280,9 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     •
                   </span>
                   <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
                     data-testid="album-informations-artist-name-tooltip"
-                    placement="right"
                   >
                     <a
                       class="album-informations__text album-informations__artist"

@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { Album } from '@/shared/interfaces/album';
 
-import { LoveAlbumsSection } from '..';
+import LoveAlbumsSection from '..';
 
 const mockAlbums = [
   {

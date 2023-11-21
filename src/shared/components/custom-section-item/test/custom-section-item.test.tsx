@@ -64,7 +64,7 @@ describe('CustomSectionItem', () => {
     const { queryByAltText } = renderCustomSectionItem();
     expect(queryByAltText('image')).toHaveAttribute(
       'src',
-      `/_next/image?url=%2F${MOCKED_IMAGE_URL.replace('/', '')}&w=256&q=75`,
+      `/_next/image?url=%2F${MOCKED_IMAGE_URL.replace('/', '')}&w=256&q=30`,
     );
   });
 });
