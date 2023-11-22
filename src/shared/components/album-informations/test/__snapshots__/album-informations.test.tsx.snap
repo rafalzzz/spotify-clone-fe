@@ -37,24 +37,23 @@ exports[`AlbumInformations renders component without error 1`] = `
           >
             •
           </span>
-          <div
-            data-mouseenterdelay="0.5"
-            data-placement="right"
-            data-testid="album-informations-artist-name-tooltip"
+          <button
+            class="album-informations__text album-informations__artist"
+            data-testid="album-informations-artist-name"
           >
-            <a
-              class="album-informations__text album-informations__artist"
-              data-testid="album-informations-artist-name"
-              href="/artist/mocked artist name"
+            <div
+              data-mouseenterdelay="0.5"
+              data-placement="right"
+              data-testid="album-informations-artist-name-tooltip"
             >
               <span>
                 Mocked artist name
               </span>
-            </a>
-            <span>
-              Mocked artist name
-            </span>
-          </div>
+              <span>
+                Mocked artist name
+              </span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -92,24 +91,23 @@ exports[`AlbumInformations renders component without error 1`] = `
         >
           •
         </span>
-        <div
-          data-mouseenterdelay="0.5"
-          data-placement="right"
-          data-testid="album-informations-artist-name-tooltip"
+        <button
+          class="album-informations__text album-informations__artist"
+          data-testid="album-informations-artist-name"
         >
-          <a
-            class="album-informations__text album-informations__artist"
-            data-testid="album-informations-artist-name"
-            href="/artist/mocked artist name"
+          <div
+            data-mouseenterdelay="0.5"
+            data-placement="right"
+            data-testid="album-informations-artist-name-tooltip"
           >
             <span>
               Mocked artist name
             </span>
-          </a>
-          <span>
-            Mocked artist name
-          </span>
-        </div>
+            <span>
+              Mocked artist name
+            </span>
+          </div>
+        </button>
       </div>
     </div>
   </div>,

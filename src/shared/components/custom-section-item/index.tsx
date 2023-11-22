@@ -1,3 +1,5 @@
+'use client';
+
 import { CaretRightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';

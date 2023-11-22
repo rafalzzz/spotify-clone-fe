@@ -3,7 +3,7 @@
 import { CustomSection, CustomSectionItem, AlbumInformations } from '@/shared/components';
 import { Album } from '@/shared/interfaces/album';
 
-const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
+export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
   <CustomSection title='Love albums' redirectionUrl='/love-albums'>
     {
       <ul className='custom-section__items'>
@@ -28,5 +28,3 @@ const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
     }
   </CustomSection>
 );
-
-export default LoveAlbumsSection;

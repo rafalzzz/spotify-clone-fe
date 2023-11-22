@@ -1,9 +1,8 @@
-import { render, fireEvent } from '@testing-library/react';
-import React from 'react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 
 import { useResizeSidebar } from '@/sidebar/hooks/use-resize-sidebar';
 
-import { Sidebar } from '../';
+import Sidebar from '../';
 
 import '@testing-library/jest-dom/extend-expect';
 
@@ -27,22 +26,27 @@ describe('Sidebar', () => {
     }));
   });
 
-  it('render component without error', () => {
-    const screen = renderSidebar();
-    expect(screen).toMatchSnapshot();
+  it('render component without error', async () => {
+    await waitFor(() => {
+      const screen = renderSidebar();
+      expect(screen).toMatchSnapshot();
+    });
   });
 
-  it('should apply the width from useResizeSidebar', () => {
-    const { queryByTestId } = renderSidebar();
-    const sidebarElement = queryByTestId('sidebar');
-    expect(sidebarElement?.style.width).toBe(`${sidebarWidthMock}px`);
+  it('should apply the width from useResizeSidebar', async () => {
+    await waitFor(() => {
+      const { queryByTestId } = renderSidebar();
+      const sidebarElement = queryByTestId('sidebar');
+      expect(sidebarElement?.style.width).toBe(`${sidebarWidthMock}px`);
+    });
   });
 
-  it('should call startResizing when the resizer is clicked', () => {
-    const { queryByTestId } = renderSidebar();
-    const resizerElement = queryByTestId('resizer');
-
-    fireEvent.mouseDown(resizerElement as HTMLElement);
-    expect(startResizingMock).toHaveBeenCalled();
+  it('should call startResizing when the resizer is clicked', async () => {
+    await waitFor(() => {
+      const { queryByTestId } = renderSidebar();
+      const resizerElement = queryByTestId('resizer');
+      fireEvent.mouseDown(resizerElement as HTMLElement);
+      expect(startResizingMock).toHaveBeenCalled();
+    });
   });
 });

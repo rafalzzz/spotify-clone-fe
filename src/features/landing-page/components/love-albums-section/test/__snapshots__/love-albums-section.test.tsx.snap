@@ -113,24 +113,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     >
                       •
                     </span>
-                    <div
-                      data-mouseenterdelay="0.5"
-                      data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                    <button
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
                     >
-                      <a
-                        class="album-informations__text album-informations__artist"
-                        data-testid="album-informations-artist-name"
-                        href="/artist/test_artist"
+                      <div
+                        data-mouseenterdelay="0.5"
+                        data-placement="right"
+                        data-testid="album-informations-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
                         </span>
-                      </a>
-                      <span>
-                        Test_Artist
-                      </span>
-                    </div>
+                        <span>
+                          Test_Artist
+                        </span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -216,24 +215,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     >
                       •
                     </span>
-                    <div
-                      data-mouseenterdelay="0.5"
-                      data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                    <button
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
                     >
-                      <a
-                        class="album-informations__text album-informations__artist"
-                        data-testid="album-informations-artist-name"
-                        href="/artist/test_artist"
+                      <div
+                        data-mouseenterdelay="0.5"
+                        data-placement="right"
+                        data-testid="album-informations-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
                         </span>
-                      </a>
-                      <span>
-                        Test_Artist
-                      </span>
-                    </div>
+                        <span>
+                          Test_Artist
+                        </span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -319,24 +317,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     >
                       •
                     </span>
-                    <div
-                      data-mouseenterdelay="0.5"
-                      data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                    <button
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
                     >
-                      <a
-                        class="album-informations__text album-informations__artist"
-                        data-testid="album-informations-artist-name"
-                        href="/artist/test_artist"
+                      <div
+                        data-mouseenterdelay="0.5"
+                        data-placement="right"
+                        data-testid="album-informations-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
                         </span>
-                      </a>
-                      <span>
-                        Test_Artist
-                      </span>
-                    </div>
+                        <span>
+                          Test_Artist
+                        </span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -422,24 +419,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     >
                       •
                     </span>
-                    <div
-                      data-mouseenterdelay="0.5"
-                      data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                    <button
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
                     >
-                      <a
-                        class="album-informations__text album-informations__artist"
-                        data-testid="album-informations-artist-name"
-                        href="/artist/test_artist"
+                      <div
+                        data-mouseenterdelay="0.5"
+                        data-placement="right"
+                        data-testid="album-informations-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
                         </span>
-                      </a>
-                      <span>
-                        Test_Artist
-                      </span>
-                    </div>
+                        <span>
+                          Test_Artist
+                        </span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -525,24 +521,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     >
                       •
                     </span>
-                    <div
-                      data-mouseenterdelay="0.5"
-                      data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                    <button
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
                     >
-                      <a
-                        class="album-informations__text album-informations__artist"
-                        data-testid="album-informations-artist-name"
-                        href="/artist/test_artist"
+                      <div
+                        data-mouseenterdelay="0.5"
+                        data-placement="right"
+                        data-testid="album-informations-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
                         </span>
-                      </a>
-                      <span>
-                        Test_Artist
-                      </span>
-                    </div>
+                        <span>
+                          Test_Artist
+                        </span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -628,24 +623,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     >
                       •
                     </span>
-                    <div
-                      data-mouseenterdelay="0.5"
-                      data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                    <button
+                      class="album-informations__text album-informations__artist"
+                      data-testid="album-informations-artist-name"
                     >
-                      <a
-                        class="album-informations__text album-informations__artist"
-                        data-testid="album-informations-artist-name"
-                        href="/artist/test_artist"
+                      <div
+                        data-mouseenterdelay="0.5"
+                        data-placement="right"
+                        data-testid="album-informations-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
                         </span>
-                      </a>
-                      <span>
-                        Test_Artist
-                      </span>
-                    </div>
+                        <span>
+                          Test_Artist
+                        </span>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -764,24 +758,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   >
                     •
                   </span>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="album-informations-artist-name-tooltip"
+                  <button
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="album-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -867,24 +860,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   >
                     •
                   </span>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="album-informations-artist-name-tooltip"
+                  <button
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="album-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -970,24 +962,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   >
                     •
                   </span>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="album-informations-artist-name-tooltip"
+                  <button
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="album-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1073,24 +1064,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   >
                     •
                   </span>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="album-informations-artist-name-tooltip"
+                  <button
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="album-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1176,24 +1166,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   >
                     •
                   </span>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="album-informations-artist-name-tooltip"
+                  <button
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="album-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1279,24 +1268,23 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   >
                     •
                   </span>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="album-informations-artist-name-tooltip"
+                  <button
+                    class="album-informations__text album-informations__artist"
+                    data-testid="album-informations-artist-name"
                   >
-                    <a
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="album-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>

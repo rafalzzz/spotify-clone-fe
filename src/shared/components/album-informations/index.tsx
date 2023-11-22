@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
@@ -17,7 +17,13 @@ export const AlbumInformations = ({
   releaseDate,
   artistName,
 }: AlbumInformationsProps) => {
+  const router = useRouter();
   const releaseYear = releaseDate.split('-')[0];
+
+  const handleArtistClick = () => {
+    const path = generateArtistRedirectionPath(artistName);
+    router.push(path);
+  };
 
   return (
     <div className='album-informations'>
@@ -34,15 +40,15 @@ export const AlbumInformations = ({
           {releaseYear}
         </span>
         <span className='album-informations__separator'>&#x2022;</span>
-        <CustomTooltip title={artistName} testId='album-informations-artist-name-tooltip'>
-          <Link
-            href={generateArtistRedirectionPath(artistName)}
-            className='album-informations__text album-informations__artist'
-            data-testid='album-informations-artist-name'
-          >
+        <button
+          className='album-informations__text album-informations__artist'
+          data-testid='album-informations-artist-name'
+          onClick={handleArtistClick}
+        >
+          <CustomTooltip title={artistName} testId='album-informations-artist-name-tooltip'>
             <span>{artistName}</span>
-          </Link>
-        </CustomTooltip>
+          </CustomTooltip>
+        </button>
       </div>
     </div>
   );

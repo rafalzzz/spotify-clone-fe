@@ -3,7 +3,7 @@
 import { CustomSection, CustomArtistItem } from '@/shared/components';
 import { Artist } from '@/shared/interfaces/artist';
 
-const ArtistsSection = ({ artists }: { artists: Artist[] }) => (
+export const ArtistsSection = ({ artists }: { artists: Artist[] }) => (
   <CustomSection title='Most Popular DJs' redirectionUrl='/most-famous-djs'>
     {
       <ul className='custom-section__items'>
@@ -16,5 +16,3 @@ const ArtistsSection = ({ artists }: { artists: Artist[] }) => (
     }
   </CustomSection>
 );
-
-export default ArtistsSection;

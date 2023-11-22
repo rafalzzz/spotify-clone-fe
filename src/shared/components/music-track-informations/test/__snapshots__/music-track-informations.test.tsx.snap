@@ -23,24 +23,23 @@ exports[`MusicTrackInformations renders component without error 1`] = `
             Mocked title
           </span>
         </div>
-        <div
-          data-mouseenterdelay="0.5"
-          data-placement="right"
-          data-testid="music-track-informations-artist-name-tooltip"
+        <button
+          class="music-track-informations__text music-track-informations__artist"
+          data-testid="music-track-informations-artist-name"
         >
-          <a
-            class="music-track-informations__text music-track-informations__artist"
-            data-testid="music-track-informations-artist-name"
-            href="/artist/mocked first artist name"
+          <div
+            data-mouseenterdelay="0.5"
+            data-placement="right"
+            data-testid="music-track-informations-artist-name-tooltip"
           >
             <span>
               Mocked First Artist Name
             </span>
-          </a>
-          <span>
-            Mocked First Artist Name
-          </span>
-        </div>
+            <span>
+              Mocked First Artist Name
+            </span>
+          </div>
+        </button>
       </div>
     </div>
   </body>,
@@ -63,24 +62,23 @@ exports[`MusicTrackInformations renders component without error 1`] = `
           Mocked title
         </span>
       </div>
-      <div
-        data-mouseenterdelay="0.5"
-        data-placement="right"
-        data-testid="music-track-informations-artist-name-tooltip"
+      <button
+        class="music-track-informations__text music-track-informations__artist"
+        data-testid="music-track-informations-artist-name"
       >
-        <a
-          class="music-track-informations__text music-track-informations__artist"
-          data-testid="music-track-informations-artist-name"
-          href="/artist/mocked first artist name"
+        <div
+          data-mouseenterdelay="0.5"
+          data-placement="right"
+          data-testid="music-track-informations-artist-name-tooltip"
         >
           <span>
             Mocked First Artist Name
           </span>
-        </a>
-        <span>
-          Mocked First Artist Name
-        </span>
-      </div>
+          <span>
+            Mocked First Artist Name
+          </span>
+        </div>
+      </button>
     </div>
   </div>,
   "debug": [Function],

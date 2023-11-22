@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { BasicLayout } from '@/components/basic-layout';
+import { BasicLayout } from '@/landing-page/components/basic-layout';
 
 import Favicon from '/public/favicon.ico';
 

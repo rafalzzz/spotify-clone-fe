@@ -2,29 +2,26 @@ import { useState, useCallback, useEffect, RefObject } from 'react';
 
 import { useLocalStorage } from '@/hooks/use-local-storage';
 
-import { getScssVariable } from '@/utils/get-scss-variable';
+import { isWindowDefined } from '@/utils/is-window-defined';
+
+import SIDEBAR_SETTINGS from '@/configs/sidebar-settings';
+
+const { DEFAULT_WIDTH, SIDEBAR_MIN_WIDTH, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH_KEY } = SIDEBAR_SETTINGS;
 
 type useResizeSidebarProps = {
   sidebarRef: RefObject<HTMLDivElement>;
 };
 
-const SIDEBAR_WIDTH_KEY = 'sidebar-width';
-const DEFAULT_WIDTH = '200';
-
-const SIDEBAR_MIN_WIDTH_SCSS_VARIABLE = getScssVariable('--min-sidebar-width') ?? '150';
-const SIDEBAR_MAX_WIDTH_SCSS_VARIABLE = getScssVariable('--max-sidebar-width') ?? '400';
-
-const SIDEBAR_MIN_WIDTH = parseInt(SIDEBAR_MIN_WIDTH_SCSS_VARIABLE, 10);
-const SIDEBAR_MAX_WIDTH = parseInt(SIDEBAR_MAX_WIDTH_SCSS_VARIABLE, 10);
-
 export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const [isResizing, setIsResizing] = useState(false);
+
+  const defaultValue = isWindowDefined()
+    ? localStorage.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH
+    : DEFAULT_WIDTH;
+
   const { value: sidebarWidth, setValue: setSidebarWidth } = useLocalStorage({
     key: SIDEBAR_WIDTH_KEY,
-    defaultValue:
-      typeof window !== 'undefined'
-        ? localStorage.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH
-        : DEFAULT_WIDTH,
+    defaultValue: defaultValue as string,
   });
 
   const startResizing = useCallback(() => {

@@ -21,8 +21,6 @@ body {
   --navbar-sign-in-button-text-color: #232323;
 
   /* sidebar */
-  --min-sidebar-width: 150px;
-  --max-sidebar-width: 300px;
   --sidebar-navigation-background-color: #121212;
 
   /* basic-layout */
@@ -34,6 +32,7 @@ body {
   /* section-item */
   --section-item-hover-background: linear-gradient(45deg, rgb(73, 73, 73) 0%, rgb(60, 60, 60) 100%);
   --section-item-background: linear-gradient(45deg, rgb(53, 53, 53) 0%, rgb(30, 30, 30) 100%);
+  --section-item-play-button-color: #1ed760;
 
   /*border-radius */
   --custom-border-radius: 10px;
