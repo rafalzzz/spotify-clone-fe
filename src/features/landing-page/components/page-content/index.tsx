@@ -16,9 +16,6 @@ import {
   CustomSectionLoader,
 } from '@/shared/server-components';
 
-import '@/styles/globals.scss';
-import '@/styles/properties.scss';
-
 const PageContent = ({
   songs,
   albums,
