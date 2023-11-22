@@ -11,11 +11,11 @@ type useResizeSidebarProps = {
 const SIDEBAR_WIDTH_KEY = 'sidebar-width';
 const DEFAULT_WIDTH = '200';
 
-const SIDEBAR_MIN_WIDTH_SCSS_VARIABLE = getScssVariable('--min-sidebar-width');
-const SIDEBAR_MAX_WIDTH_SCSS_VARIABLE = getScssVariable('--max-sidebar-width');
+const SIDEBAR_MIN_WIDTH_SCSS_VARIABLE = getScssVariable('--min-sidebar-width') ?? '150';
+const SIDEBAR_MAX_WIDTH_SCSS_VARIABLE = getScssVariable('--max-sidebar-width') ?? '400';
 
-const SIDEBAR_MIN_WIDTH = parseInt(SIDEBAR_MIN_WIDTH_SCSS_VARIABLE ?? '150', 10);
-const SIDEBAR_MAX_WIDTH = parseInt(SIDEBAR_MAX_WIDTH_SCSS_VARIABLE ?? '400', 10);
+const SIDEBAR_MIN_WIDTH = parseInt(SIDEBAR_MIN_WIDTH_SCSS_VARIABLE, 10);
+const SIDEBAR_MAX_WIDTH = parseInt(SIDEBAR_MAX_WIDTH_SCSS_VARIABLE, 10);
 
 export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const [isResizing, setIsResizing] = useState(false);
@@ -23,7 +23,7 @@ export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
     key: SIDEBAR_WIDTH_KEY,
     defaultValue:
       typeof window !== 'undefined'
-        ? (localStorage.getItem(SIDEBAR_WIDTH_KEY) as string)
+        ? localStorage.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH
         : DEFAULT_WIDTH,
   });
 
