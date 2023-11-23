@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { MusicTrack } from '@/shared/interfaces/music-track';
 
-import LoveSongsSection from '..';
+import { LoveSongsSection } from '..';
 
 const mockSongs = [
   {

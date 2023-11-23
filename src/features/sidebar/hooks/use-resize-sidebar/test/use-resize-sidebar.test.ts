@@ -3,24 +3,16 @@ import { RefObject } from 'react';
 
 import { useResizeSidebar } from '../';
 
-const DEFAULT_WIDTH = '200';
-const MIN_WIDTH = 150;
-const MAX_WIDTH = 400;
+const DEFAULT_WIDTH = 200;
+const SIDEBAR_MIN_WIDTH = 150;
+const SIDEBAR_MAX_WIDTH = 400;
 
 const mockSetValue = jest.fn();
 jest.mock('@/hooks/use-local-storage', () => ({
   useLocalStorage: jest.fn(() => ({
-    value: DEFAULT_WIDTH,
+    value: String(DEFAULT_WIDTH),
     setValue: mockSetValue,
   })),
-}));
-
-jest.mock('@/utils/get-scss-variable', () => ({
-  getScssVariable: (variable: string) => {
-    if (variable === '--min-sidebar-width') return `${MIN_WIDTH}px`;
-    if (variable === '--max-sidebar-width') return `${MAX_WIDTH}px`;
-    return null;
-  },
 }));
 
 const renderUseLoginForm = (sidebarRef = { current: null } as RefObject<HTMLDivElement>) =>
@@ -104,13 +96,13 @@ describe('useResizeSidebar', () => {
       result.current.startResizing();
     });
 
-    const mouseMoveEvent = new MouseEvent('mousemove', { clientX: MIN_WIDTH - 50 });
+    const mouseMoveEvent = new MouseEvent('mousemove', { clientX: SIDEBAR_MIN_WIDTH - 50 });
 
     act(() => {
       window.dispatchEvent(mouseMoveEvent);
     });
 
-    expect(mockSetValue).toHaveBeenCalledWith(String(MIN_WIDTH));
+    expect(mockSetValue).toHaveBeenCalledWith(String(SIDEBAR_MIN_WIDTH));
   });
 
   it('should not allow the sidebar width to exceed the maximum width', () => {
@@ -126,12 +118,12 @@ describe('useResizeSidebar', () => {
       result.current.startResizing();
     });
 
-    const mouseMoveEvent = new MouseEvent('mousemove', { clientX: MAX_WIDTH + 50 });
+    const mouseMoveEvent = new MouseEvent('mousemove', { clientX: SIDEBAR_MAX_WIDTH + 50 });
 
     act(() => {
       window.dispatchEvent(mouseMoveEvent);
     });
 
-    expect(mockSetValue).toHaveBeenCalledWith(String(MAX_WIDTH));
+    expect(mockSetValue).toHaveBeenCalledWith(String(SIDEBAR_MAX_WIDTH));
   });
 });

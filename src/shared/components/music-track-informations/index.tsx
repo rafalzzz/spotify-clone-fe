@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 import { getMainArtist } from '@/utils/get-main-artist';
@@ -13,7 +13,15 @@ type MusicTrackInformationsProps = {
 };
 
 export const MusicTrackInformations = ({ trackName, artistName }: MusicTrackInformationsProps) => {
+  const router = useRouter();
   const mainArtist = getMainArtist(artistName);
+
+  const handleArtistClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const path = generateArtistRedirectionPath(mainArtist);
+    router.push(path);
+  };
 
   return (
     <div className='music-track-informations'>
@@ -25,15 +33,15 @@ export const MusicTrackInformations = ({ trackName, artistName }: MusicTrackInfo
           {trackName}
         </h4>
       </CustomTooltip>
-      <CustomTooltip title={mainArtist} testId='music-track-informations-artist-name-tooltip'>
-        <Link
-          href={generateArtistRedirectionPath(mainArtist)}
-          className='music-track-informations__text music-track-informations__artist'
-          data-testid='music-track-informations-artist-name'
-        >
+      <button
+        className='music-track-informations__text music-track-informations__artist'
+        data-testid='music-track-informations-artist-name'
+        onClick={handleArtistClick}
+      >
+        <CustomTooltip title={mainArtist} testId='music-track-informations-artist-name-tooltip'>
           <span>{mainArtist}</span>
-        </Link>
-      </CustomTooltip>
+        </CustomTooltip>
+      </button>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-import { Sidebar } from '@/sidebar/components/sidebar';
+import Sidebar from '@/sidebar/components/sidebar';
 
-import { Navbar } from '@/navigation/components/navbar';
+import Navbar from '@/navigation/components/navbar';
 
 import { CustomPageWrapper } from '@/components/custom-page-wrapper';
 

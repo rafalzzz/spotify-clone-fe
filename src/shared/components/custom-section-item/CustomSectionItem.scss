@@ -22,7 +22,6 @@
   }
 
   &__play-button {
-    display: none;
     position: absolute;
     width: 45px;
     height: 45px;
@@ -31,7 +30,7 @@
     border-radius: 50%;
     bottom: 5px;
     right: 10px;
-    background-color: var(--spotify-theme-color);
+    background-color: var(--section-item-play-button-color);
     outline: none;
     border: none;
     visibility: hidden;

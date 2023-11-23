@@ -5,10 +5,6 @@ import { MOCKED_NAVIGATION_ITEMS } from '@/sidebar/consts/mocked-navigation-item
 
 import { useSidebarNavigation } from '../';
 
-jest.mock('next/navigation', () => ({
-  usePathname: jest.fn(),
-}));
-
 type ResultType = { current: { sidebarNavigationItems: typeof MOCKED_NAVIGATION_ITEMS } };
 
 const renderUseSidebarNavigation = () => renderHook(() => useSidebarNavigation());

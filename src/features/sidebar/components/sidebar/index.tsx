@@ -1,4 +1,5 @@
 'use client';
+import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 
 import './Sidebar.scss';
@@ -7,7 +8,7 @@ import { useResizeSidebar } from '@/sidebar/hooks/use-resize-sidebar';
 
 import { SidebarNavigation } from '../sidebar-navigation';
 
-export const Sidebar = () => {
+const Sidebar = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const { sidebarWidth, startResizing } = useResizeSidebar({ sidebarRef });
 
@@ -24,3 +25,5 @@ export const Sidebar = () => {
     </div>
   );
 };
+
+export default dynamic(() => Promise.resolve(Sidebar), { ssr: false });

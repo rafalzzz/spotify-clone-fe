@@ -1,5 +1,6 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { useRouter } from 'next/navigation';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
@@ -15,10 +16,22 @@ const ARTIST_NAME_TEST_ID = 'music-track-informations-artist-name';
 const TRACK_NAME_TOOLTIP_TEST_ID = 'music-track-informations-track-name-tooltip';
 const ARTIST_NAME_TOOLTIP_TEST_ID = 'music-track-informations-artist-name-tooltip';
 
+const mockPush = jest.fn();
+
+beforeEach(() => {
+  (useRouter as jest.Mock).mockImplementation(() => ({
+    push: mockPush,
+  }));
+});
+
 const renderMusicTrackInformations = () =>
   render(<MusicTrackInformations trackName={MOCKED_TRACK_NAME} artistName={MOCKED_ARTIST_NAME} />);
 
 describe('MusicTrackInformations', () => {
+  beforeEach(() => {
+    mockPush.mockClear();
+  });
+
   it('renders component without error', () => {
     const screen = renderMusicTrackInformations();
     expect(screen).toMatchSnapshot();
@@ -61,13 +74,13 @@ describe('MusicTrackInformations', () => {
     expect(tooltipTitle).toBeInTheDocument();
   });
 
-  it('artist redirection have correct path', () => {
+  it('navigates to the correct path when artist name is clicked', () => {
     const { queryByTestId } = renderMusicTrackInformations();
-
     const artistNameElement = queryByTestId(ARTIST_NAME_TEST_ID);
-    expect(artistNameElement).toHaveAttribute(
-      'href',
-      generateArtistRedirectionPath(FIRST_ARTIST_NAME),
-    );
+
+    fireEvent.click(artistNameElement as Element);
+
+    const expectedPath = generateArtistRedirectionPath(FIRST_ARTIST_NAME);
+    expect(mockPush).toHaveBeenCalledWith(expectedPath);
   });
 });

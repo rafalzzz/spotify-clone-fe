@@ -1,4 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
+import { useRouter } from 'next/navigation';
 
 import { LoginFormKeys } from '@/login/enums/login-form-keys';
 import { loginUser } from '@/login/utils/requests/login-user';
@@ -8,18 +9,18 @@ import { useLoginForm } from '..';
 const displayError = jest.fn();
 const mockPush = jest.fn();
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(() => ({
+    push: mockPush,
+  })),
+}));
+
 jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
 jest.mock('@/login/utils/requests/login-user', () => ({
   loginUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
-}));
-
-jest.mock('next/navigation', () => ({
-  useRouter: () => ({
-    push: mockPush,
-  }),
 }));
 
 const LOGIN_FORM_MOCKED_VALUES = {

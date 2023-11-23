@@ -1,7 +1,5 @@
 .sidebar {
   display: flex;
-  min-width: var(--min-sidebar-width);
-  max-width: var(--max-sidebar-width);
   height: calc(100vh - var(--custom-padding-value));
   flex-direction: row;
   background-color: transparent;

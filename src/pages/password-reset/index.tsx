@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 import { PasswordResetForm } from '@/password-reset/components/password-reset-form';
 
 import {
@@ -33,4 +35,4 @@ const PasswordReset = () => (
   </>
 );
 
-export default PasswordReset;
+export default dynamic(() => Promise.resolve(PasswordReset), { ssr: false });

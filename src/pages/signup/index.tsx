@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 import { Footer } from '@/register/components/footer/Footer';
 import { RegisterForm } from '@/register/components/register-form';
 
@@ -28,4 +30,4 @@ const Register = () => (
   </>
 );
 
-export default Register;
+export default dynamic(() => Promise.resolve(Register), { ssr: false });

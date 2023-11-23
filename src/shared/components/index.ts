@@ -1,5 +1,4 @@
 export { AlbumInformations } from './album-informations';
-export { BasicLayout } from './basic-layout';
 export { CustomArtistItem } from './custom-artist-item';
 export { CustomButton } from './custom-button';
 export { CustomFormItem } from './custom-form-item';

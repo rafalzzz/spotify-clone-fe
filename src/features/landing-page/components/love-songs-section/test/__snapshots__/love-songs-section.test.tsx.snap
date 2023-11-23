@@ -99,24 +99,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                       TestTrack
                     </span>
                   </div>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="music-track-informations-artist-name-tooltip"
+                  <button
+                    class="music-track-informations__text music-track-informations__artist"
+                    data-testid="music-track-informations-artist-name"
                   >
-                    <a
-                      class="music-track-informations__text music-track-informations__artist"
-                      data-testid="music-track-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </a>
@@ -187,24 +186,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                       TestTrack
                     </span>
                   </div>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="music-track-informations-artist-name-tooltip"
+                  <button
+                    class="music-track-informations__text music-track-informations__artist"
+                    data-testid="music-track-informations-artist-name"
                   >
-                    <a
-                      class="music-track-informations__text music-track-informations__artist"
-                      data-testid="music-track-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </a>
@@ -275,24 +273,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                       TestTrack
                     </span>
                   </div>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="music-track-informations-artist-name-tooltip"
+                  <button
+                    class="music-track-informations__text music-track-informations__artist"
+                    data-testid="music-track-informations-artist-name"
                   >
-                    <a
-                      class="music-track-informations__text music-track-informations__artist"
-                      data-testid="music-track-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </a>
@@ -363,24 +360,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                       TestTrack
                     </span>
                   </div>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="music-track-informations-artist-name-tooltip"
+                  <button
+                    class="music-track-informations__text music-track-informations__artist"
+                    data-testid="music-track-informations-artist-name"
                   >
-                    <a
-                      class="music-track-informations__text music-track-informations__artist"
-                      data-testid="music-track-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </a>
@@ -451,24 +447,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                       TestTrack
                     </span>
                   </div>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="music-track-informations-artist-name-tooltip"
+                  <button
+                    class="music-track-informations__text music-track-informations__artist"
+                    data-testid="music-track-informations-artist-name"
                   >
-                    <a
-                      class="music-track-informations__text music-track-informations__artist"
-                      data-testid="music-track-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </a>
@@ -539,24 +534,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                       TestTrack
                     </span>
                   </div>
-                  <div
-                    data-mouseenterdelay="0.5"
-                    data-placement="right"
-                    data-testid="music-track-informations-artist-name-tooltip"
+                  <button
+                    class="music-track-informations__text music-track-informations__artist"
+                    data-testid="music-track-informations-artist-name"
                   >
-                    <a
-                      class="music-track-informations__text music-track-informations__artist"
-                      data-testid="music-track-informations-artist-name"
-                      href="/artist/test_artist"
+                    <div
+                      data-mouseenterdelay="0.5"
+                      data-placement="right"
+                      data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
                       </span>
-                    </a>
-                    <span>
-                      Test_Artist
-                    </span>
-                  </div>
+                      <span>
+                        Test_Artist
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </a>
@@ -660,24 +654,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                     TestTrack
                   </span>
                 </div>
-                <div
-                  data-mouseenterdelay="0.5"
-                  data-placement="right"
-                  data-testid="music-track-informations-artist-name-tooltip"
+                <button
+                  class="music-track-informations__text music-track-informations__artist"
+                  data-testid="music-track-informations-artist-name"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
+                    data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
-                </div>
+                    <span>
+                      Test_Artist
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </a>
@@ -748,24 +741,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                     TestTrack
                   </span>
                 </div>
-                <div
-                  data-mouseenterdelay="0.5"
-                  data-placement="right"
-                  data-testid="music-track-informations-artist-name-tooltip"
+                <button
+                  class="music-track-informations__text music-track-informations__artist"
+                  data-testid="music-track-informations-artist-name"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
+                    data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
-                </div>
+                    <span>
+                      Test_Artist
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </a>
@@ -836,24 +828,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                     TestTrack
                   </span>
                 </div>
-                <div
-                  data-mouseenterdelay="0.5"
-                  data-placement="right"
-                  data-testid="music-track-informations-artist-name-tooltip"
+                <button
+                  class="music-track-informations__text music-track-informations__artist"
+                  data-testid="music-track-informations-artist-name"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
+                    data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
-                </div>
+                    <span>
+                      Test_Artist
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </a>
@@ -924,24 +915,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                     TestTrack
                   </span>
                 </div>
-                <div
-                  data-mouseenterdelay="0.5"
-                  data-placement="right"
-                  data-testid="music-track-informations-artist-name-tooltip"
+                <button
+                  class="music-track-informations__text music-track-informations__artist"
+                  data-testid="music-track-informations-artist-name"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
+                    data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
-                </div>
+                    <span>
+                      Test_Artist
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </a>
@@ -1012,24 +1002,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                     TestTrack
                   </span>
                 </div>
-                <div
-                  data-mouseenterdelay="0.5"
-                  data-placement="right"
-                  data-testid="music-track-informations-artist-name-tooltip"
+                <button
+                  class="music-track-informations__text music-track-informations__artist"
+                  data-testid="music-track-informations-artist-name"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
+                    data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
-                </div>
+                    <span>
+                      Test_Artist
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </a>
@@ -1100,24 +1089,23 @@ exports[`LoveSongsSection render component without error 1`] = `
                     TestTrack
                   </span>
                 </div>
-                <div
-                  data-mouseenterdelay="0.5"
-                  data-placement="right"
-                  data-testid="music-track-informations-artist-name-tooltip"
+                <button
+                  class="music-track-informations__text music-track-informations__artist"
+                  data-testid="music-track-informations-artist-name"
                 >
-                  <a
-                    class="music-track-informations__text music-track-informations__artist"
-                    data-testid="music-track-informations-artist-name"
-                    href="/artist/test_artist"
+                  <div
+                    data-mouseenterdelay="0.5"
+                    data-placement="right"
+                    data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
                       Test_Artist
                     </span>
-                  </a>
-                  <span>
-                    Test_Artist
-                  </span>
-                </div>
+                    <span>
+                      Test_Artist
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </a>

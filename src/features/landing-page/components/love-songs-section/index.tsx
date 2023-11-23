@@ -3,7 +3,7 @@
 import { CustomSection, CustomSectionItem, MusicTrackInformations } from '@/shared/components';
 import { MusicTrack } from '@/shared/interfaces/music-track';
 
-const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
+export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
   <CustomSection title='Love songs' redirectionUrl='/love-songs'>
     {
       <ul className='custom-section__items'>
@@ -24,5 +24,3 @@ const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
     }
   </CustomSection>
 );
-
-export default LoveSongsSection;
