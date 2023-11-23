@@ -16,7 +16,7 @@ import {
   CustomSectionLoader,
 } from '@/shared/server-components';
 
-const PageContent = ({
+const MainContent = ({
   songs,
   albums,
   artists,
@@ -39,4 +39,4 @@ const PageContent = ({
   </CustomContentWrapper>
 );
 
-export default dynamic(() => Promise.resolve(PageContent), { ssr: false });
+export default dynamic(() => Promise.resolve(MainContent), { ssr: false });

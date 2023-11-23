@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Artist } from '@/shared/interfaces/artist';
+import { Artist } from '@/interfaces/artist';
 
 import { ArtistsSection } from '..';
 

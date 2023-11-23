@@ -1,4 +1,4 @@
-import { GetServerSidePropsContext } from 'next';
+import dynamic from 'next/dynamic';
 
 import { Footer } from '@/login/components/footer';
 import { LoginForm } from '@/login/components/login-form';
@@ -40,4 +40,4 @@ const Login = () => (
   </>
 );
 
-export default Login;
+export default dynamic(() => Promise.resolve(Login), { ssr: false });

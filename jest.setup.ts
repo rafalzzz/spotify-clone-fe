@@ -2,11 +2,6 @@ import { MockResizeObserver } from '@/interfaces/mock-resize-observer';
 
 jest.mock('antd');
 
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
-  usePathname: jest.fn(),
-}));
-
 beforeAll(() => {
   window.matchMedia =
     window.matchMedia ||
