@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import Sidebar from '@/sidebar/components/sidebar';
 
-import Navbar from '@/navigation/components/navbar';
+import MusicPlayerContainer from '@/music-player/components/music-player-container';
 
-import { CustomPageWrapper } from '@/components/custom-page-wrapper';
+import Navbar from '@/navigation/components/navbar';
 
 import './BasicLayout.scss';
 
@@ -13,11 +13,12 @@ type BasicLayoutProps = {
 };
 
 export const BasicLayout = ({ children }: BasicLayoutProps) => (
-  <CustomPageWrapper className='justify-start'>
+  <div className='basic-layout'>
     <Sidebar />
-    <div className='basic-layout'>
+    <div className='basic-layout__content'>
       <Navbar />
       {children}
     </div>
-  </CustomPageWrapper>
+    <MusicPlayerContainer />
+  </div>
 );
