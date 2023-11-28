@@ -27,6 +27,8 @@ export const CustomSectionItem = ({
   const ref = useRef(null);
   const isImageVisible = useIsImageVisible({ ref });
 
+  console.log({ imageUrl });
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();

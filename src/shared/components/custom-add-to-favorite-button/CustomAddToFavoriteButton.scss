@@ -1,0 +1,32 @@
+.custom-add-to-favorite-button {
+  background-color: transparent;
+  border: none;
+
+  .anticon-heart {
+    font-size: 1.2rem;
+  }
+
+  /* disabling antd onClick effect */
+  > div:first-child {
+    display: none;
+  }
+
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+    transition: none;
+  }
+
+  &--active {
+    .anticon-heart {
+      color: var(--section-item-play-button-color);
+    }
+  }
+
+  &--inactive {
+    .anticon-heart {
+      color: var(--section-secondary-text-color);
+    }
+  }
+}

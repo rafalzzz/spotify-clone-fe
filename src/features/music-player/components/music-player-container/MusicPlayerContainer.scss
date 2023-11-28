@@ -1,4 +1,8 @@
 .music-player-container {
   grid-area: footer;
-  background-color: red;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--music-player-background-color);
 }
