@@ -28,7 +28,9 @@ export const NowPlayedTrack = () => {
         decoding='async'
       />
       <div className='now-played-track__informations'>
-        <span className='now-played-track__title'>Just give me a reason</span>
+        <div className='now-played-track__title-container'>
+          <span className='now-played-track__title'>Just give me a reason and one one more...</span>
+        </div>
         <Link
           href={generateArtistRedirectionPath('P!nk')}
           className='now-played-track__artist'
