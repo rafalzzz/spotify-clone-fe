@@ -64,21 +64,21 @@ exports[`MainContent render component without error 1`] = `
                   data-testid="custom-section-item-play-button"
                 >
                   <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
+                    aria-label="play-circle"
+                    class="anticon anticon-play-circle antd-icon"
                     role="img"
                   >
                     <svg
                       aria-hidden="true"
-                      data-icon="caret-right"
+                      data-icon="play-circle"
                       fill="currentColor"
                       focusable="false"
                       height="1em"
-                      viewBox="0 0 1024 1024"
+                      viewBox="64 64 896 896"
                       width="1em"
                     >
                       <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm144.1 454.9L437.7 677.8a8.02 8.02 0 01-12.7-6.5V353.7a8 8 0 0112.7-6.5L656.1 506a7.9 7.9 0 010 12.9z"
                       />
                     </svg>
                   </span>
@@ -181,21 +181,21 @@ exports[`MainContent render component without error 1`] = `
                   data-testid="custom-section-item-play-button"
                 >
                   <span
-                    aria-label="caret-right"
-                    class="anticon anticon-caret-right"
+                    aria-label="play-circle"
+                    class="anticon anticon-play-circle antd-icon"
                     role="img"
                   >
                     <svg
                       aria-hidden="true"
-                      data-icon="caret-right"
+                      data-icon="play-circle"
                       fill="currentColor"
                       focusable="false"
                       height="1em"
-                      viewBox="0 0 1024 1024"
+                      viewBox="64 64 896 896"
                       width="1em"
                     >
                       <path
-                        d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm144.1 454.9L437.7 677.8a8.02 8.02 0 01-12.7-6.5V353.7a8 8 0 0112.7-6.5L656.1 506a7.9 7.9 0 010 12.9z"
                       />
                     </svg>
                   </span>

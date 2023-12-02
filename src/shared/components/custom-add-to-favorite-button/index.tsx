@@ -28,7 +28,7 @@ export const CustomAddToFavoriteButton = ({
     htmlType='button'
     onClick={onClick}
     role='button'
-    data-testid='custom-add-to-favorite-button-button'
+    data-testid='custom-add-to-favorite-button'
     disabled={disabled}
     ghost
   >
