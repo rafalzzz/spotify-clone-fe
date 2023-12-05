@@ -33,6 +33,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/footer/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/navigation/**",
             "group": "internal",
             "position": "before"

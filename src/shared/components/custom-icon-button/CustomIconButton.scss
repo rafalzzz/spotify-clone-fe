@@ -1,0 +1,74 @@
+.custom-icon-button {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+
+  .anticon {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .svg-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .svg-icon-path,
+  .anticon > svg > path {
+    fill: var(--player-button-color);
+    color: var(--player-button-color);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .svg-icon-path {
+      fill: var(--player-button-hover-color);
+      color: var(--player-button-hover-color);
+    }
+
+    .anticon > svg {
+      transform: scale(1.1);
+
+      path {
+        fill: var(--player-button-hover-active-color);
+        color: var(--player-button-hover-active-color);
+      }
+    }
+  }
+
+  &--active {
+    .svg-icon-path,
+    .anticon > svg > path {
+      fill: var(--player-button-active-color);
+      color: var(--player-button-active-color);
+    }
+
+    &:hover {
+      .svg-icon-path {
+        fill: var(--player-button-hover-active-color);
+        color: var(--player-button-hover-active-color);
+      }
+
+      .anticon > svg {
+        transform: scale(1.1);
+
+        path {
+          fill: var(--player-button-hover-active-color);
+          color: var(--player-button-hover-active-color);
+        }
+      }
+    }
+  }
+}

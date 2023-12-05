@@ -1,4 +1,5 @@
 export { AlbumInformations } from './album-informations';
+export { CustomAddToFavoriteButton } from './custom-add-to-favorite-button';
 export { CustomArtistItem } from './custom-artist-item';
 export { CustomButton } from './custom-button';
 export { CustomFormItem } from './custom-form-item';

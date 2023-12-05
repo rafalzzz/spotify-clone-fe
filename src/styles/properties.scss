@@ -34,7 +34,30 @@ body {
   --section-item-background: linear-gradient(45deg, rgb(53, 53, 53) 0%, rgb(30, 30, 30) 100%);
   --section-item-play-button-color: #1ed760;
 
-  /*border-radius */
+  /* border-radius */
   --custom-border-radius: 10px;
   --page-wrapper-gap: 10px;
+
+  /*footer */
+  --footer-background-color: #000;
+  --footer-height: 100px;
+  --music-title-container-max-width: 150px;
+
+  --player-button-color: #b3b3b3;
+  --player-button-hover-color: #ffffff;
+  --player-button-active-color: #1ed76080;
+  --player-button-hover-active-color: #1ed760;
+
+  --timer-font-color: #b3b3b3;
+
+  --progress-bar-box-shadow: 0.2px 0.2px 1px #000000, 0px 0px 0.2px #0d0d0d;
+  --progress-bar-background-color: #868686;
+  --progress-bar-border: 0.2px solid #010101;
+
+  --progress-bar-slider-thumb-color: #b3b3b3;
+  --progress-bar-slider-thumb-secondary-color: #535353;
+  --progress-bar-slider-thumb-box-shadow: -410px 0 0 408px #b3b3b3;
+
+  --progress-bar-slider-hover-thumb-color: #1db954;
+  --progress-bar-slider-hover-thumb-box-shadow: -410px 0 0 408px #1db954;
 }

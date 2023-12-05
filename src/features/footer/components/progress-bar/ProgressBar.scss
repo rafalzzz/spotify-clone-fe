@@ -1,0 +1,87 @@
+.progress-bar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex: 1;
+
+  &__input {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background-color: var(--progress-bar-slider-thumb-secondary-color);
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  &__span-thumb {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 4px;
+  }
+
+  &__input::-webkit-slider-thumb {
+    position: relative;
+    width: 4px;
+    height: 4px;
+    -webkit-appearance: none;
+    z-index: 9;
+    background: var(--progress-bar-slider-thumb-color);
+    border-radius: 50%;
+    box-shadow: var(--progress-bar-slider-thumb-box-shadow);
+    cursor: pointer;
+    border: 0;
+  }
+
+  &__input::-moz-range-thumb {
+    width: 4px;
+    height: 4px;
+    background: var(--progress-bar-slider-thumb-color);
+    border-radius: 50%;
+    box-shadow: var(--progress-bar-slider-thumb-box-shadow);
+    cursor: pointer;
+    border: 0;
+  }
+
+  &__input::-moz-range-track {
+    background-color: var(--progress-bar-slider-thumb-secondary-color);
+  }
+
+  &__input::-moz-range-progress {
+    background-color: var(--progress-bar-slider-thumb-color);
+    height: 4px;
+  }
+
+  &__input::-ms-fill-upper {
+    background-color: var(--progress-bar-slider-thumb-secondary-color);
+  }
+
+  &__input::-ms-fill-lower {
+    background-color: var(--progress-bar-slider-thumb-color);
+  }
+
+  &:hover {
+    .progress-bar__input::-webkit-slider-thumb {
+      background: var(--progress-bar-slider-hover-thumb-color);
+      box-shadow: var(--progress-bar-slider-hover-thumb-box-shadow);
+    }
+
+    .progress-bar__input::-moz-range-thumb {
+      background: var(--progress-bar-slider-hover-thumb-color);
+      box-shadow: var(--progress-bar-slider-hover-thumb-box-shadow);
+    }
+
+    .progress-bar__span-thumb {
+      background: var(--progress-bar-slider-hover-thumb-color) !important;
+      opacity: 1 !important;
+    }
+  }
+}

@@ -2,8 +2,6 @@ import { useState, useCallback, useEffect, RefObject } from 'react';
 
 import { useLocalStorage } from '@/hooks/use-local-storage';
 
-import { isWindowDefined } from '@/utils/is-window-defined';
-
 import SIDEBAR_SETTINGS from '@/configs/sidebar-settings';
 
 const { DEFAULT_WIDTH, SIDEBAR_MIN_WIDTH, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH_KEY } = SIDEBAR_SETTINGS;
@@ -15,9 +13,7 @@ type useResizeSidebarProps = {
 export const useResizeSidebar = ({ sidebarRef }: useResizeSidebarProps) => {
   const [isResizing, setIsResizing] = useState(false);
 
-  const defaultValue = isWindowDefined()
-    ? localStorage.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH
-    : DEFAULT_WIDTH;
+  const defaultValue = localStorage.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH;
 
   const { value: sidebarWidth, setValue: setSidebarWidth } = useLocalStorage({
     key: SIDEBAR_WIDTH_KEY,

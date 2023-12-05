@@ -6,7 +6,7 @@ exports[`CustomPageWrapper render component without error 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="custom-page-wrapper mocked-class-name"
+        class="custom-page-wrapper"
         data-testid="custom-page-wrapper"
       >
         <div>
@@ -17,7 +17,7 @@ exports[`CustomPageWrapper render component without error 1`] = `
   </body>,
   "container": <div>
     <div
-      class="custom-page-wrapper mocked-class-name"
+      class="custom-page-wrapper"
       data-testid="custom-page-wrapper"
     >
       <div>

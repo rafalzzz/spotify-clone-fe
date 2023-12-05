@@ -23,24 +23,23 @@
 
   &__play-button {
     position: absolute;
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     bottom: 5px;
     right: 10px;
-    background-color: var(--section-item-play-button-color);
+    background-color: #fff;
     outline: none;
     border: none;
     visibility: hidden;
-    font-size: 2rem;
-    padding-left: 2px;
     opacity: 0;
     transition:
       opacity 0.3s ease,
       visibility 0.3s ease,
-      bottom 0.3s ease;
+      bottom 0.3s ease,
+      transform 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
@@ -48,8 +47,10 @@
       cursor: pointer;
     }
 
-    .anticon {
-      color: #000;
+    .anticon > svg {
+      width: 45px;
+      height: 45px;
+      color: var(--section-item-play-button-color);
     }
   }
 

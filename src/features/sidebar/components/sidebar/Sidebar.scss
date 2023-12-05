@@ -1,8 +1,9 @@
 .sidebar {
+  grid-area: nav;
   display: flex;
-  height: calc(100vh - var(--custom-padding-value));
   flex-direction: row;
   background-color: transparent;
+  padding: var(--page-wrapper-gap) 0 0 var(--page-wrapper-gap);
 
   &__content {
     display: flex;

@@ -1,6 +1,6 @@
 'use client';
 
-import { CaretRightOutlined } from '@ant-design/icons';
+import { PlayCircleFilled } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
@@ -57,7 +57,7 @@ export const CustomSectionItem = ({
               onClick={handleClick}
               data-testid='custom-section-item-play-button'
             >
-              <CaretRightOutlined />
+              <PlayCircleFilled className='antd-icon' />
             </button>
           )}
         </div>

@@ -1,8 +1,17 @@
 .basic-layout {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  border-radius: var(--custom-border-radius);
-  background: var(--basic-layout-gradient);
-  padding: 0 10px 10px 0;
+  display: grid;
+  grid-template-areas:
+    'nav main'
+    'footer footer';
+  grid-template-rows: 1fr 100px;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+  margin: 0;
+
+  &__content {
+    grid-area: main;
+    background: var(--basic-layout-gradient);
+    margin: var(--page-wrapper-gap) var(--page-wrapper-gap) var(--page-wrapper-gap) 5px;
+    border-radius: var(--custom-border-radius);
+  }
 }
