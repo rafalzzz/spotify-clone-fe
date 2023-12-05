@@ -20,7 +20,7 @@
       "@/login/*": ["features/login/*"],
       "@/password-reset/*": ["features/password-reset/*"],
       "@/sidebar/*": ["features/sidebar/*"],
-      "@/music-player/*": ["features/music-player/*"],
+      "@/footer/*": ["features/footer/*"],
       "@/navigation/*": ["features/navigation/*"],
       "@/landing-page/*": ["features/landing-page/*"],
       "@/components/*": ["shared/components/*"],

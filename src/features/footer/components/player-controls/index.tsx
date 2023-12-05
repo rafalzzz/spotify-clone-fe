@@ -3,14 +3,14 @@
 import React from 'react';
 
 import './PlayerControls.scss';
+import { MusicProgressBar } from '../music-progress-bar';
 import { PlayerButtons } from '../player-buttons';
-import { ProgressBar } from '../progress-bar';
 
 export const PlayerControls = () => {
   return (
     <div className='player-controls'>
       <PlayerButtons />
-      <ProgressBar />
+      <MusicProgressBar />
     </div>
   );
 };

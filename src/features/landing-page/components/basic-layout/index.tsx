@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import Sidebar from '@/sidebar/components/sidebar';
 
-import MusicPlayerContainer from '@/music-player/components/music-player-container';
+import FooterContainer from '@/footer/components/footer-container';
 
 import Navbar from '@/navigation/components/navbar';
 
@@ -19,6 +19,6 @@ export const BasicLayout = ({ children }: BasicLayoutProps) => (
       <Navbar />
       {children}
     </div>
-    <MusicPlayerContainer />
+    <FooterContainer />
   </div>
 );

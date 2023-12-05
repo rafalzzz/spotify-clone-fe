@@ -33,7 +33,7 @@
             "position": "before"
           },
           {
-            "pattern": "@/music-player/**",
+            "pattern": "@/footer/**",
             "group": "internal",
             "position": "before"
           },

@@ -1,9 +1,9 @@
-.music-player-container {
+.footer-container {
   grid-area: footer;
   display: flex;
   padding: 0 20px;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--music-player-background-color);
+  background-color: var(--footer-background-color);
   gap: 20px;
 }
