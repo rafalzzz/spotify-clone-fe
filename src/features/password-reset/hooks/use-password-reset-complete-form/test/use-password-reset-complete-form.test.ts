@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { PasswordResetCompleteFormKeys } from '@/password-reset/enums';
+import { EPasswordResetCompleteForm } from '@/password-reset/types';
 import { passwordResetComplete } from '@/password-reset/utils/requests/password-reset-complete';
 
 import { usePasswordResetCompleteForm } from '..';
@@ -26,8 +26,8 @@ jest.mock('next/router', () => ({
 }));
 
 const PASSWORD_RESET_COMPLETE_FORM_MOCKED_VALUES = {
-  [PasswordResetCompleteFormKeys.PASSWORD]: 'mockedPassword',
-  [PasswordResetCompleteFormKeys.REPEAT_PASSWORD]: 'mockedPassword',
+  [EPasswordResetCompleteForm.PASSWORD]: 'mockedPassword',
+  [EPasswordResetCompleteForm.REPEAT_PASSWORD]: 'mockedPassword',
 };
 
 const renderUsePasswordResetForm = () =>

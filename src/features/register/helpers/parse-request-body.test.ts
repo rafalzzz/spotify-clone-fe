@@ -9,7 +9,7 @@ describe('parseRequestBody', () => {
       [ERegisterFormKeys.PASSWORD]: 'Test123!',
       [ERegisterFormKeys.NICKNAME]: 'test',
       [ERegisterFormKeys.DAY]: '31',
-      Month: '12',
+      month: '12',
       [ERegisterFormKeys.YEAR]: '1995',
     };
 

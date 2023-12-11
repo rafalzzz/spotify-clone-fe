@@ -2,10 +2,10 @@ import { PlayCircleFilled } from '@ant-design/icons';
 
 import { CustomIconButton } from '@/components/custom-icon-button';
 
-import LoopIcon from 'icons/loop';
-import MixIcon from 'icons/mix';
-import NextIcon from 'icons/next';
-import PrevIcon from 'icons/prev';
+import LoopIcon from '@/icons/loop';
+import MixIcon from '@/icons/mix';
+import NextIcon from '@/icons/next';
+import PrevIcon from '@/icons/prev';
 
 import './PlayerButtons.scss';
 

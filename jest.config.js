@@ -44,6 +44,7 @@ module.exports = {
     '@/interfaces/(.*)$': '<rootDir>/src/shared/interfaces/$1',
     '@/types/(.*)$': '<rootDir>/src/shared/types/$1',
     '@/shared/(.*)$': '<rootDir>/src/shared/$1',
+    '@/icons/(.*)$': '<rootDir>/src/icons/$1',
     '@/styles/(.*)$': '<rootDir>/src/styles/$1',
     '@/test-utils/(.*)$': '<rootDir>/src/test-utils/$1',
   },

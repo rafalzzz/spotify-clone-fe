@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 import Sidebar from '@/sidebar/components/sidebar';
 
 import FooterContainer from '@/footer/components/footer-container';
