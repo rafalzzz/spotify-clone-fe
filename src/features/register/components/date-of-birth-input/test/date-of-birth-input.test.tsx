@@ -7,7 +7,7 @@ import { FORM_FIELD_PLACEHOLDERS, FORM_LABELS } from '@/register/consts';
 import { ERegisterFormKeys } from '@/register/types';
 import { dateOfBirthValidator } from '@/register/utils/validators';
 
-import { InputType, NonStandardInputType } from '@/enums/input-type';
+import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
 import { DateOfBirthInput } from '..';
 
@@ -38,8 +38,8 @@ const renderDateOfBirthInput = () =>
   render(
     <Form>
       <DateOfBirthInput
-        name={NonStandardInputType.DATE_OF_BIRTH}
-        label={FORM_LABELS[NonStandardInputType.DATE_OF_BIRTH]}
+        name={ENonStandardInputType.DATE_OF_BIRTH}
+        label={FORM_LABELS[ENonStandardInputType.DATE_OF_BIRTH]}
       />
     </Form>,
   );
@@ -53,18 +53,18 @@ describe('DateOfBirthInput', () => {
   describe('should call validateFieldsMock when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.TEXT,
+        type: EInputType.TEXT,
         key: ERegisterFormKeys.DAY,
         placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.DAY],
         mockedValue: '1',
       },
       {
-        type: InputType.SELECT,
+        type: EInputType.SELECT,
         key: ERegisterFormKeys.MONTH,
         mockedValue: 'January',
       },
       {
-        type: InputType.TEXT,
+        type: EInputType.TEXT,
         key: ERegisterFormKeys.YEAR,
         placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.YEAR],
         mockedValue: '2000',
@@ -75,7 +75,7 @@ describe('DateOfBirthInput', () => {
       it(key, async () => {
         const { queryByRole, queryByLabelText, queryByPlaceholderText } = renderDateOfBirthInput();
 
-        if (type === InputType.SELECT) {
+        if (type === EInputType.SELECT) {
           const { mockedValue } = restProps;
 
           const select = queryByRole('combobox');

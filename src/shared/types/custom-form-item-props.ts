@@ -2,16 +2,16 @@ import { CheckboxProps, InputProps, RadioProps, SelectProps, SwitchProps } from 
 import { Rule } from 'antd/es/form';
 import { NamePath } from 'antd/es/form/interface';
 
-import { InputType, NonStandardInputType } from '@/enums/input-type';
+import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
-export type OptionType = { label: string; value: string | number };
+export type TOptionType = { label: string; value: string | number };
 
 export interface ExtendedSelectProps extends SelectProps {
-  options: OptionType[];
+  options: TOptionType[];
 }
 
 export interface ExtendedRadioProps extends RadioProps {
-  options: OptionType[];
+  options: TOptionType[];
 }
 
 export interface ExtendedCheckboxProps extends CheckboxProps {
@@ -23,7 +23,7 @@ export interface ExtendedSwitchProps extends SwitchProps {
 }
 
 export type TCustomFormItem<T = string> = {
-  type: InputType | NonStandardInputType;
+  type: EInputType | ENonStandardInputType;
   name: T;
   label?: string;
   rules?: Rule[];

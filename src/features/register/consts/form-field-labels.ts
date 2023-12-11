@@ -1,4 +1,4 @@
-import { NonStandardInputType } from '@/enums/input-type';
+import { ENonStandardInputType } from '@/enums/input-type';
 
 import { ERegisterFormKeys } from '../types';
 
@@ -6,7 +6,7 @@ export const FORM_LABELS = {
   [ERegisterFormKeys.EMAIL]: 'Your e-mail address',
   [ERegisterFormKeys.PASSWORD]: 'Create a password',
   [ERegisterFormKeys.NICKNAME]: 'How should we address you?',
-  [NonStandardInputType.DATE_OF_BIRTH]: 'Enter your date of birth',
+  [ENonStandardInputType.DATE_OF_BIRTH]: 'Enter your date of birth',
   [ERegisterFormKeys.DAY]: 'Day',
   [ERegisterFormKeys.MONTH]: 'Month',
   [ERegisterFormKeys.YEAR]: 'Year',

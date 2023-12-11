@@ -10,7 +10,7 @@ import { passwordValidator } from '@/login/utils/validators/password-validator';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { LoginForm } from '..';
 
@@ -77,14 +77,14 @@ describe('LoginForm', () => {
   describe('should call validator when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.TEXT,
+        type: EInputType.TEXT,
         key: ELoginFormKeys.LOGIN,
         placeholder: FORM_FIELD_PLACEHOLDERS[ELoginFormKeys.LOGIN],
         mockedValue: 'Test',
         validator: emailOrUsernameValidator,
       },
       {
-        type: InputType.PASSWORD,
+        type: EInputType.PASSWORD,
         key: ELoginFormKeys.PASSWORD,
         placeholder: FORM_FIELD_PLACEHOLDERS[ELoginFormKeys.PASSWORD],
         mockedValue: 'Test',

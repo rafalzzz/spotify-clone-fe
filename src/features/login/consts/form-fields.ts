@@ -2,19 +2,19 @@ import { passwordValidator } from '@/login/utils/validators/password-validator';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { TCustomFormItem } from '@/types/custom-form-item-props';
-import { NonStandardItemProps } from '@/types/non-standard-form-item-props';
+import { TNonStandardItemProps } from '@/types/non-standard-form-item-props';
 
 import { ELoginFormKeys } from '../types';
 
 import { FORM_LABELS } from './form-field-labels';
 import { FORM_FIELD_PLACEHOLDERS } from './form-field-placeholders';
 
-export const FORM_FIELDS: (TCustomFormItem<ELoginFormKeys> | NonStandardItemProps)[] = [
+export const FORM_FIELDS: (TCustomFormItem<ELoginFormKeys> | TNonStandardItemProps)[] = [
   {
-    type: InputType.TEXT,
+    type: EInputType.TEXT,
     key: ELoginFormKeys.LOGIN,
     name: ELoginFormKeys.LOGIN,
     label: FORM_LABELS[ELoginFormKeys.LOGIN],
@@ -24,7 +24,7 @@ export const FORM_FIELDS: (TCustomFormItem<ELoginFormKeys> | NonStandardItemProp
     },
   },
   {
-    type: InputType.PASSWORD,
+    type: EInputType.PASSWORD,
     key: ELoginFormKeys.PASSWORD,
     name: ELoginFormKeys.PASSWORD,
     label: FORM_LABELS[ELoginFormKeys.PASSWORD],
@@ -34,7 +34,7 @@ export const FORM_FIELDS: (TCustomFormItem<ELoginFormKeys> | NonStandardItemProp
     },
   },
   {
-    type: InputType.SWITCH,
+    type: EInputType.SWITCH,
     key: ELoginFormKeys.REMEMBER_ME,
     name: ELoginFormKeys.REMEMBER_ME,
     switchProps: {

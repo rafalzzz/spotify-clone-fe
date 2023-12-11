@@ -8,7 +8,7 @@ import { TRegisterForm } from '@/register/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
-import { InputType, NonStandardInputType } from '@/enums/input-type';
+import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
 import { CustomFormItem, SubmitButton } from '@/shared/components';
 
@@ -20,7 +20,7 @@ export const RegisterForm = () => {
   const { submitButton, onFinish } = useRegisterForm({ displayError });
 
   const isStandardInput = (inputType: string) =>
-    Object.values(InputType).includes(inputType as InputType);
+    Object.values(EInputType).includes(inputType as EInputType);
 
   return (
     <>
@@ -36,7 +36,7 @@ export const RegisterForm = () => {
       >
         {FORM_FIELDS.map(({ key, type, ...restProps }) => {
           if (isStandardInput(type)) return <CustomFormItem key={key} type={type} {...restProps} />;
-          if (type === NonStandardInputType.DATE_OF_BIRTH)
+          if (type === ENonStandardInputType.DATE_OF_BIRTH)
             return <DateOfBirthInput key={key} {...restProps} />;
         })}
         <SubmitButton submitButtonProps={submitButton} />

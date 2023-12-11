@@ -8,7 +8,7 @@ import { PasswordResetCompleteFormKeys } from '@/password-reset/enums/password-r
 import { usePasswordResetCompleteForm } from '@/password-reset/hooks/use-password-reset-complete-form';
 import { repeatNewPasswordValidator } from '@/password-reset/utils/validators/repeat-new-password-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { passwordValidator } from '@/shared/validators';
 
@@ -81,14 +81,14 @@ describe('PasswordResetCompleteForm', () => {
   describe('should call validator when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.PASSWORD,
+        type: EInputType.PASSWORD,
         key: PasswordResetCompleteFormKeys.PASSWORD,
         placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.PASSWORD],
         mockedValue: 'Test123!',
         validator: passwordValidator,
       },
       {
-        type: InputType.PASSWORD,
+        type: EInputType.PASSWORD,
         key: PasswordResetCompleteFormKeys.REPEAT_PASSWORD,
         placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.REPEAT_PASSWORD],
         mockedValue: 'Test123!',

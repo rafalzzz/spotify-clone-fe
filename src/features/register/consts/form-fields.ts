@@ -7,10 +7,10 @@ import {
 
 import { passwordValidator } from '@/validators/password-validator';
 
-import { InputType, NonStandardInputType } from '@/enums/input-type';
+import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
 import { TCustomFormItem } from '@/types/custom-form-item-props';
-import { NonStandardItemProps } from '@/types/non-standard-form-item-props';
+import { TNonStandardItemProps } from '@/types/non-standard-form-item-props';
 
 import { ERegisterFormKeys } from '../types';
 
@@ -18,9 +18,9 @@ import { FORM_LABELS } from './form-field-labels';
 import { FORM_FIELD_PLACEHOLDERS } from './form-field-placeholders';
 import { GENDER_OPTIONS } from './gender-options';
 
-export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemProps)[] = [
+export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | TNonStandardItemProps)[] = [
   {
-    type: InputType.TEXT,
+    type: EInputType.TEXT,
     key: ERegisterFormKeys.EMAIL,
     name: ERegisterFormKeys.EMAIL,
     label: FORM_LABELS[ERegisterFormKeys.EMAIL],
@@ -30,7 +30,7 @@ export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemP
     },
   },
   {
-    type: InputType.PASSWORD,
+    type: EInputType.PASSWORD,
     key: ERegisterFormKeys.PASSWORD,
     name: ERegisterFormKeys.PASSWORD,
     label: FORM_LABELS[ERegisterFormKeys.PASSWORD],
@@ -40,7 +40,7 @@ export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemP
     },
   },
   {
-    type: InputType.TEXT,
+    type: EInputType.TEXT,
     key: ERegisterFormKeys.NICKNAME,
     name: ERegisterFormKeys.NICKNAME,
     label: FORM_LABELS[ERegisterFormKeys.NICKNAME],
@@ -50,13 +50,13 @@ export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemP
     },
   },
   {
-    type: NonStandardInputType.DATE_OF_BIRTH,
-    key: NonStandardInputType.DATE_OF_BIRTH,
-    name: NonStandardInputType.DATE_OF_BIRTH,
-    label: FORM_LABELS[NonStandardInputType.DATE_OF_BIRTH],
+    type: ENonStandardInputType.DATE_OF_BIRTH,
+    key: ENonStandardInputType.DATE_OF_BIRTH,
+    name: ENonStandardInputType.DATE_OF_BIRTH,
+    label: FORM_LABELS[ENonStandardInputType.DATE_OF_BIRTH],
   },
   {
-    type: InputType.RADIO,
+    type: EInputType.RADIO,
     key: ERegisterFormKeys.GENDER,
     name: ERegisterFormKeys.GENDER,
     label: FORM_LABELS[ERegisterFormKeys.GENDER],
@@ -66,7 +66,7 @@ export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemP
     },
   },
   {
-    type: InputType.CHECKBOX,
+    type: EInputType.CHECKBOX,
     key: ERegisterFormKeys.OFFERS,
     name: ERegisterFormKeys.OFFERS,
     checkboxProps: {
@@ -74,7 +74,7 @@ export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemP
     },
   },
   {
-    type: InputType.CHECKBOX,
+    type: EInputType.CHECKBOX,
     key: ERegisterFormKeys.SHARE_INFORMATION,
     name: ERegisterFormKeys.SHARE_INFORMATION,
     checkboxProps: {
@@ -82,7 +82,7 @@ export const FORM_FIELDS: (TCustomFormItem<ERegisterFormKeys> | NonStandardItemP
     },
   },
   {
-    type: InputType.CHECKBOX,
+    type: EInputType.CHECKBOX,
     key: ERegisterFormKeys.TERMS,
     name: ERegisterFormKeys.TERMS,
     rules: [{ validator: termsValidator }],

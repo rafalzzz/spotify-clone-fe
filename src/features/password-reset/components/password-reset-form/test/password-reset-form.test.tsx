@@ -9,7 +9,7 @@ import { EPasswordResetFormKeys } from '@/password-reset/types';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { PasswordResetForm } from '..';
 
@@ -67,7 +67,7 @@ describe('PasswordResetForm', () => {
   describe('should call validator when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.TEXT,
+        type: EInputType.TEXT,
         key: EPasswordResetFormKeys.LOGIN,
         placeholder: FORM_FIELD_PLACEHOLDERS[EPasswordResetFormKeys.LOGIN],
         mockedValue: 'Test',

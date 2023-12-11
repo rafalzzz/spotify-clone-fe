@@ -16,7 +16,7 @@ import {
 
 import { passwordValidator } from '@/validators/password-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { RegisterForm } from '..';
 
@@ -106,33 +106,33 @@ describe('RegisterForm', () => {
   describe('should call validator when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.TEXT,
+        type: EInputType.TEXT,
         key: ERegisterFormKeys.EMAIL,
         placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.EMAIL],
         mockedValue: 'Test',
         validator: emailValidator,
       },
       {
-        type: InputType.PASSWORD,
+        type: EInputType.PASSWORD,
         key: ERegisterFormKeys.PASSWORD,
         placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.PASSWORD],
         mockedValue: 'Test',
         validator: passwordValidator,
       },
       {
-        type: InputType.TEXT,
+        type: EInputType.TEXT,
         key: ERegisterFormKeys.NICKNAME,
         placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.NICKNAME],
         mockedValue: 'Test',
         validator: usernameValidator,
       },
       {
-        type: InputType.RADIO,
+        type: EInputType.RADIO,
         key: ERegisterFormKeys.GENDER,
         validator: genderValidator,
       },
       {
-        type: InputType.CHECKBOX,
+        type: EInputType.CHECKBOX,
         key: ERegisterFormKeys.TERMS,
         validator: termsValidator,
       },
@@ -142,7 +142,7 @@ describe('RegisterForm', () => {
       it(key, async () => {
         const { queryByLabelText, queryByPlaceholderText } = renderRegisterForm();
 
-        if (type === InputType.CHECKBOX) {
+        if (type === EInputType.CHECKBOX) {
           const checkbox = queryByLabelText(FORM_LABELS[ERegisterFormKeys.TERMS]);
 
           await userEvent.click(checkbox as Element);
@@ -151,7 +151,7 @@ describe('RegisterForm', () => {
           return;
         }
 
-        if (type === InputType.TEXT) {
+        if (type === EInputType.TEXT) {
           const { mockedValue, placeholder } = restProps;
           const input = queryByPlaceholderText(placeholder as Matcher);
           expect(input).toBeInTheDocument();

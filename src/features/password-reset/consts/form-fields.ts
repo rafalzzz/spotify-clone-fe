@@ -1,6 +1,6 @@
 import { repeatNewPasswordValidator } from '@/password-reset/utils/validators/repeat-new-password-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { TCustomFormItem } from '@/types/custom-form-item-props';
 
@@ -13,7 +13,7 @@ import { FORM_FIELD_PLACEHOLDERS } from './form-field-placeholders';
 
 export const PASSWORD_RESET_FORM_FIELDS: TCustomFormItem<EPasswordResetFormKeys>[] = [
   {
-    type: InputType.TEXT,
+    type: EInputType.TEXT,
     key: EPasswordResetFormKeys.LOGIN,
     name: EPasswordResetFormKeys.LOGIN,
     label: FORM_LABELS[EPasswordResetFormKeys.LOGIN],
@@ -26,7 +26,7 @@ export const PASSWORD_RESET_FORM_FIELDS: TCustomFormItem<EPasswordResetFormKeys>
 
 export const PASSWORD_RESET_COMPLETE_FORM_FIELDS: TCustomFormItem<EPasswordResetCompleteForm>[] = [
   {
-    type: InputType.PASSWORD,
+    type: EInputType.PASSWORD,
     key: EPasswordResetCompleteForm.PASSWORD,
     name: EPasswordResetCompleteForm.PASSWORD,
     label: FORM_LABELS[EPasswordResetCompleteForm.PASSWORD],
@@ -36,7 +36,7 @@ export const PASSWORD_RESET_COMPLETE_FORM_FIELDS: TCustomFormItem<EPasswordReset
     },
   },
   {
-    type: InputType.PASSWORD,
+    type: EInputType.PASSWORD,
     key: EPasswordResetCompleteForm.REPEAT_PASSWORD,
     name: EPasswordResetCompleteForm.REPEAT_PASSWORD,
     label: FORM_LABELS[EPasswordResetCompleteForm.REPEAT_PASSWORD],

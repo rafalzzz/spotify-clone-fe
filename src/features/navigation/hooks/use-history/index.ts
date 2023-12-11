@@ -51,14 +51,14 @@ const historyReducer = (state: TCountState, action: TCountAction) => {
 
 const DISABLED_UNDO_BUTTON_INDEX_VALUES = [-1, 0];
 
-type UseHistoryProps = {
+type TUseHistory = {
   initialState: {
     allPaths: string[];
     currentPathIndex: number;
   };
 };
 
-export const useHistory = ({ initialState }: UseHistoryProps) => {
+export const useHistory = ({ initialState }: TUseHistory) => {
   const [state, dispatch] = useReducer(historyReducer, initialState);
   const { push } = useRouter();
   const pathname = usePathname();

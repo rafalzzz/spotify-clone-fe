@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { Form } from 'antd';
 import React from 'react';
 
-import { InputType, NonStandardInputType } from '@/enums/input-type';
+import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
 import { TCustomFormItem } from '@/types/custom-form-item-props';
 
@@ -44,15 +44,15 @@ const MOCKED_OPTIONS = [
 
 const MOCKED_FORM_ITEMS = [
   {
-    type: InputType.TEXT,
+    type: EInputType.TEXT,
     props: textInputProps,
   },
   {
-    type: InputType.PASSWORD,
+    type: EInputType.PASSWORD,
     props: textInputProps,
   },
   {
-    type: InputType.SELECT,
+    type: EInputType.SELECT,
     props: {
       ...sharedFormItemProps,
       selectProps: {
@@ -61,7 +61,7 @@ const MOCKED_FORM_ITEMS = [
     },
   },
   {
-    type: InputType.RADIO,
+    type: EInputType.RADIO,
     props: {
       ...sharedFormItemProps,
       radioProps: {
@@ -73,7 +73,7 @@ const MOCKED_FORM_ITEMS = [
     },
   },
   {
-    type: InputType.CHECKBOX,
+    type: EInputType.CHECKBOX,
     props: {
       key: 'text',
       name: 'text',
@@ -84,7 +84,7 @@ const MOCKED_FORM_ITEMS = [
   },
   {
     label: 'test',
-    type: InputType.SWITCH,
+    type: EInputType.SWITCH,
     props: {
       key: 'text',
       name: 'text',
@@ -95,7 +95,7 @@ const MOCKED_FORM_ITEMS = [
   },
 ];
 
-const renderCustomFormItem = (type: InputType, formItemProps: TCustomFormItem) => {
+const renderCustomFormItem = (type: EInputType, formItemProps: TCustomFormItem) => {
   const props = {
     ...formItemProps,
     setFieldValue: mockSetFieldValue,
@@ -161,7 +161,7 @@ describe('CustomFormItem', () => {
           <CustomFormItem
             {...({
               ...props,
-              type: invalidInputType as NonStandardInputType,
+              type: invalidInputType as ENonStandardInputType,
             } as TCustomFormItem)}
           />,
         );
