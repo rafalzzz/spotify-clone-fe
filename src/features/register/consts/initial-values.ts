@@ -1,14 +1,14 @@
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { ERegisterFormKeys } from '../types';
 
 export const INITIAL_VALUES = {
-  [RegisterFormKeys.EMAIL]: '',
-  [RegisterFormKeys.PASSWORD]: '',
-  [RegisterFormKeys.NICKNAME]: '',
-  [RegisterFormKeys.DAY]: '',
-  [RegisterFormKeys.MONTH]: undefined,
-  [RegisterFormKeys.YEAR]: '',
-  [RegisterFormKeys.GENDER]: undefined,
-  [RegisterFormKeys.OFFERS]: false,
-  [RegisterFormKeys.SHARE_INFORMATION]: false,
-  [RegisterFormKeys.TERMS]: false,
+  [ERegisterFormKeys.EMAIL]: '',
+  [ERegisterFormKeys.PASSWORD]: '',
+  [ERegisterFormKeys.NICKNAME]: '',
+  [ERegisterFormKeys.DAY]: '',
+  [ERegisterFormKeys.MONTH]: undefined,
+  [ERegisterFormKeys.YEAR]: '',
+  [ERegisterFormKeys.GENDER]: undefined,
+  [ERegisterFormKeys.OFFERS]: false,
+  [ERegisterFormKeys.SHARE_INFORMATION]: false,
+  [ERegisterFormKeys.TERMS]: false,
 };

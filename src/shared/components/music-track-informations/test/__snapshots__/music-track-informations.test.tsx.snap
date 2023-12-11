@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MusicTrackInformations renders component without error 1`] = `
+exports[`MusicTrackInformation renders component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 import './CustomSection.scss';
 
-type CustomSectionProps = {
+type TCustomSection = {
   title: string;
   redirectionUrl: string;
   children: JSX.Element;
 };
 
-export const CustomSection = ({ title, redirectionUrl, children }: CustomSectionProps) => (
+export const CustomSection = ({ title, redirectionUrl, children }: TCustomSection) => (
   <section className='custom-section'>
     <div className='custom-section__header'>
       <header>

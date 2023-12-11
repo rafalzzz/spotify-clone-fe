@@ -1,13 +1,13 @@
 import { NamePath } from 'antd/es/form/interface';
 
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { isAllowedAge, isValidDate } from '@/register/helpers';
+import { ERegisterFormKeys } from '@/register/types';
 
 export const dateOfBirthValidator =
   (getFieldValue: (name: NamePath) => string | undefined) => () => {
-    const day = getFieldValue(RegisterFormKeys.DAY);
-    const month = getFieldValue(RegisterFormKeys.MONTH);
-    const year = getFieldValue(RegisterFormKeys.YEAR);
+    const day = getFieldValue(ERegisterFormKeys.DAY);
+    const month = getFieldValue(ERegisterFormKeys.MONTH);
+    const year = getFieldValue(ERegisterFormKeys.YEAR);
 
     if (!isValidDate(Number(year), Number(month), Number(day)) || !day || !month || !year) {
       return Promise.reject('Invalid date');

@@ -1,18 +1,18 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { LoginFormValues } from '@/login/types';
+import { TLoginForm } from '@/login/types';
 import { loginUser } from '@/login/utils/requests/login-user';
 
-import { CustomButtonProps } from '@/types/custom-button-props';
-import { HookFormProps } from '@/types/hook-form-props';
+import { TCustomButton } from '@/types/custom-button-props';
+import { THookForm } from '@/types/hook-form-props';
 
-export const useLoginForm = ({ displayError }: HookFormProps) => {
+export const useLoginForm = ({ displayError }: THookForm) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { push } = useRouter();
 
-  const onFinish = async (values: LoginFormValues) => {
+  const onFinish = async (values: TLoginForm) => {
     setIsLoading(true);
 
     try {
@@ -32,7 +32,7 @@ export const useLoginForm = ({ displayError }: HookFormProps) => {
     }
   };
 
-  const submitButton: CustomButtonProps = useMemo(
+  const submitButton: TCustomButton = useMemo(
     () => ({
       htmlType: 'submit',
       shape: 'round',

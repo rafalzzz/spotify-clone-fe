@@ -1,4 +1,4 @@
-import { PasswordResetCompleteFormKeys } from '@/password-reset/enums';
+import { EPasswordResetCompleteForm } from '@/password-reset/types';
 
 import { customRequest } from '@/utils/custom-request';
 
@@ -11,8 +11,8 @@ jest.mock('@/utils/custom-request');
 const MOCKED_TOKEN = 'mockedToken';
 
 const PASSWORD_RESET_COMPLETE_FORM_MOCKED_VALUES = {
-  [PasswordResetCompleteFormKeys.PASSWORD]: 'mockedPassword',
-  [PasswordResetCompleteFormKeys.REPEAT_PASSWORD]: 'mockedPassword',
+  [EPasswordResetCompleteForm.PASSWORD]: 'mockedPassword',
+  [EPasswordResetCompleteForm.REPEAT_PASSWORD]: 'mockedPassword',
 };
 
 const MOCKED_RESET_PASSWORD_COMPLETE_REQUEST_PROPS = {

@@ -4,8 +4,8 @@ import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS, GENDER_OPTIONS, FORM_LABELS } from '@/register/consts';
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
 import { useRegisterForm } from '@/register/hooks/use-register-form';
+import { ERegisterFormKeys } from '@/register/types';
 import {
   emailValidator,
   usernameValidator,
@@ -107,33 +107,33 @@ describe('RegisterForm', () => {
     const formFieldsWithValidators = [
       {
         type: InputType.TEXT,
-        key: RegisterFormKeys.EMAIL,
-        placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.EMAIL],
+        key: ERegisterFormKeys.EMAIL,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.EMAIL],
         mockedValue: 'Test',
         validator: emailValidator,
       },
       {
         type: InputType.PASSWORD,
-        key: RegisterFormKeys.PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.PASSWORD],
+        key: ERegisterFormKeys.PASSWORD,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.PASSWORD],
         mockedValue: 'Test',
         validator: passwordValidator,
       },
       {
         type: InputType.TEXT,
-        key: RegisterFormKeys.NICKNAME,
-        placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.NICKNAME],
+        key: ERegisterFormKeys.NICKNAME,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.NICKNAME],
         mockedValue: 'Test',
         validator: usernameValidator,
       },
       {
         type: InputType.RADIO,
-        key: RegisterFormKeys.GENDER,
+        key: ERegisterFormKeys.GENDER,
         validator: genderValidator,
       },
       {
         type: InputType.CHECKBOX,
-        key: RegisterFormKeys.TERMS,
+        key: ERegisterFormKeys.TERMS,
         validator: termsValidator,
       },
     ];
@@ -143,7 +143,7 @@ describe('RegisterForm', () => {
         const { queryByLabelText, queryByPlaceholderText } = renderRegisterForm();
 
         if (type === InputType.CHECKBOX) {
-          const checkbox = queryByLabelText(FORM_LABELS[RegisterFormKeys.TERMS]);
+          const checkbox = queryByLabelText(FORM_LABELS[ERegisterFormKeys.TERMS]);
 
           await userEvent.click(checkbox as Element);
 

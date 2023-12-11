@@ -2,11 +2,11 @@ import React from 'react';
 
 import './CustomSubheader.scss';
 
-type CustomSubheaderProps = {
+type TCustomSubheader = {
   title: string | JSX.Element;
 };
 
-export const CustomSubheader = ({ title }: CustomSubheaderProps) => (
+export const CustomSubheader = ({ title }: TCustomSubheader) => (
   <header className='custom-subheader'>
     <h2 className='custom-subheader__text'>{title}</h2>
   </header>

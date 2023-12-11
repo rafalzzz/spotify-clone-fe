@@ -1,4 +1,4 @@
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
+import { ELoginFormKeys } from '@/login/types';
 
 import { customRequest } from '@/utils/custom-request';
 
@@ -9,9 +9,9 @@ import { loginUser } from './login-user';
 jest.mock('@/utils/custom-request');
 
 const LOGIN_FORM_MOCKED_VALUES = {
-  [LoginFormKeys.LOGIN]: 'mockedLogin',
-  [LoginFormKeys.PASSWORD]: 'mockedPassword',
-  [LoginFormKeys.REMEMBER_ME]: false,
+  [ELoginFormKeys.LOGIN]: 'mockedLogin',
+  [ELoginFormKeys.PASSWORD]: 'mockedPassword',
+  [ELoginFormKeys.REMEMBER_ME]: false,
 };
 
 const MOCKED_LOGIN_USER_REQUEST_PROPS = {

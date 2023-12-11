@@ -11,7 +11,7 @@ import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection
 
 import './CustomSectionItem.scss';
 
-type CustomSectionItemProps = {
+type TCustomSectionItem = {
   collectionName: string;
   imageUrl: string;
   children: JSX.Element;
@@ -23,7 +23,7 @@ export const CustomSectionItem = ({
   imageUrl,
   children,
   onClick,
-}: CustomSectionItemProps) => {
+}: TCustomSectionItem) => {
   const ref = useRef(null);
   const isImageVisible = useIsImageVisible({ ref });
 

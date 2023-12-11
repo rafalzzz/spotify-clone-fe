@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { Form } from 'antd';
 
 import { FORM_FIELD_PLACEHOLDERS, FORM_LABELS } from '@/register/consts';
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { ERegisterFormKeys } from '@/register/types';
 import { dateOfBirthValidator } from '@/register/utils/validators';
 
 import { InputType, NonStandardInputType } from '@/enums/input-type';
@@ -54,19 +54,19 @@ describe('DateOfBirthInput', () => {
     const formFieldsWithValidators = [
       {
         type: InputType.TEXT,
-        key: RegisterFormKeys.DAY,
-        placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.DAY],
+        key: ERegisterFormKeys.DAY,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.DAY],
         mockedValue: '1',
       },
       {
         type: InputType.SELECT,
-        key: RegisterFormKeys.MONTH,
+        key: ERegisterFormKeys.MONTH,
         mockedValue: 'January',
       },
       {
         type: InputType.TEXT,
-        key: RegisterFormKeys.YEAR,
-        placeholder: FORM_FIELD_PLACEHOLDERS[RegisterFormKeys.YEAR],
+        key: ERegisterFormKeys.YEAR,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ERegisterFormKeys.YEAR],
         mockedValue: '2000',
       },
     ];

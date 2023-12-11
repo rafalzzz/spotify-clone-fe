@@ -1,12 +1,12 @@
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { ERegisterFormKeys } from '../types';
 
 import { FORM_LABELS } from './form-field-labels';
 
 export const FORM_FIELD_PLACEHOLDERS = {
-  [RegisterFormKeys.EMAIL]: 'Give me your e-mail address',
-  [RegisterFormKeys.PASSWORD]: FORM_LABELS[RegisterFormKeys.PASSWORD],
-  [RegisterFormKeys.NICKNAME]: 'Enter a username',
-  [RegisterFormKeys.DAY]: 'DD',
-  [RegisterFormKeys.MONTH]: 'Month',
-  [RegisterFormKeys.YEAR]: 'RRRR',
+  [ERegisterFormKeys.EMAIL]: 'Give me your e-mail address',
+  [ERegisterFormKeys.PASSWORD]: FORM_LABELS[ERegisterFormKeys.PASSWORD],
+  [ERegisterFormKeys.NICKNAME]: 'Enter a username',
+  [ERegisterFormKeys.DAY]: 'DD',
+  [ERegisterFormKeys.MONTH]: 'Month',
+  [ERegisterFormKeys.YEAR]: 'RRRR',
 };

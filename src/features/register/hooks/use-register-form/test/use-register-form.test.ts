@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
+import { ERegisterFormKeys } from '@/register/types';
 import { registerUser } from '@/register/utils/requests/register-user';
 
 import { useRegisterForm } from '..';
@@ -23,17 +23,17 @@ jest.mock('next/navigation', () => ({
 }));
 
 const REGISTER_FORM_MOCKED_VALUES = {
-  [RegisterFormKeys.EMAIL]: 'mockedEmail',
-  [RegisterFormKeys.PASSWORD]: 'mockedPassword',
-  [RegisterFormKeys.NICKNAME]: 'mockedNickname',
-  [RegisterFormKeys.DAY]: '01',
-  [RegisterFormKeys.MONTH]: '01',
+  [ERegisterFormKeys.EMAIL]: 'mockedEmail',
+  [ERegisterFormKeys.PASSWORD]: 'mockedPassword',
+  [ERegisterFormKeys.NICKNAME]: 'mockedNickname',
+  [ERegisterFormKeys.DAY]: '01',
+  [ERegisterFormKeys.MONTH]: '01',
   Month: '01',
-  [RegisterFormKeys.YEAR]: '2000',
-  [RegisterFormKeys.GENDER]: 1,
-  [RegisterFormKeys.OFFERS]: 0,
-  [RegisterFormKeys.SHARE_INFORMATION]: 0,
-  [RegisterFormKeys.TERMS]: 0,
+  [ERegisterFormKeys.YEAR]: '2000',
+  [ERegisterFormKeys.GENDER]: 1,
+  [ERegisterFormKeys.OFFERS]: 0,
+  [ERegisterFormKeys.SHARE_INFORMATION]: 0,
+  [ERegisterFormKeys.TERMS]: 0,
 };
 
 const renderUserRegisterForm = () => renderHook(() => useRegisterForm({ displayError }));

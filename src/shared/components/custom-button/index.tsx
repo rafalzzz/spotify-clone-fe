@@ -1,7 +1,7 @@
 import { Button } from 'antd';
 import React from 'react';
 
-import { CustomButtonProps } from '@/types/custom-button-props';
+import { TCustomButton } from '@/types/custom-button-props';
 
 export const CustomButton = ({
   htmlType,
@@ -14,7 +14,7 @@ export const CustomButton = ({
   disabled = false,
   testId = '',
   size = 'large',
-}: CustomButtonProps) => (
+}: TCustomButton) => (
   <Button
     className={className}
     shape={shape}

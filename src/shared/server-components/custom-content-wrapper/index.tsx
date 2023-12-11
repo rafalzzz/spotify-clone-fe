@@ -2,10 +2,10 @@ import { ReactNode } from 'react';
 
 import './CustomContentWrapper.scss';
 
-type CustomContentWrapper = {
+type TCustomContentWrapper = {
   children: ReactNode;
 };
 
-export const CustomContentWrapper = ({ children }: CustomContentWrapper) => (
+export const CustomContentWrapper = ({ children }: TCustomContentWrapper) => (
   <main className='custom-content-wrapper'>{children}</main>
 );

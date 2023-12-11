@@ -4,10 +4,7 @@ import { Suspense } from 'react';
 import { ArtistsSection } from '@/landing-page/components/artists-section';
 import { LoveAlbumsSection } from '@/landing-page/components/love-albums-section';
 import { LoveSongsSection } from '@/landing-page/components/love-songs-section';
-
-import { Album } from '@/interfaces/album';
-import { Artist } from '@/interfaces/artist';
-import { MusicTrack } from '@/interfaces/music-track';
+import { TMainContent } from '@/landing-page/types/types';
 
 import {
   CustomArtistItemLoader,
@@ -16,15 +13,7 @@ import {
   CustomSectionLoader,
 } from '@/shared/server-components';
 
-const MainContent = ({
-  songs,
-  albums,
-  artists,
-}: {
-  songs: MusicTrack[];
-  albums: Album[];
-  artists: Artist[];
-}) => (
+const MainContent = ({ songs, albums, artists }: TMainContent) => (
   <CustomContentWrapper>
     <h1>Welcome</h1>
     <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>

@@ -1,7 +1,7 @@
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
+import { ELoginFormKeys } from '../types';
 
 export const INITIAL_VALUES = {
-  [LoginFormKeys.LOGIN]: '',
-  [LoginFormKeys.PASSWORD]: '',
-  [LoginFormKeys.REMEMBER_ME]: false,
+  [ELoginFormKeys.LOGIN]: '',
+  [ELoginFormKeys.PASSWORD]: '',
+  [ELoginFormKeys.REMEMBER_ME]: false,
 };

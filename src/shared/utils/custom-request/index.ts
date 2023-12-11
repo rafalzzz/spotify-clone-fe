@@ -1,4 +1,4 @@
-type CustomRequestProps = {
+type TCustomRequest = {
   basicUrl?: string;
   endpoint?: string;
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -17,7 +17,7 @@ export const customRequest = ({
   },
   requestBody,
   allowCookies = false,
-}: CustomRequestProps) =>
+}: TCustomRequest) =>
   fetch(basicUrl + endpoint, {
     method,
     headers,

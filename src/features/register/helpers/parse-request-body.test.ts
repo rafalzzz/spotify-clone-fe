@@ -1,17 +1,16 @@
-import { RegisterFormKeys } from '@/register/enums/register-form-keys';
-import { RegisterFormValues } from '@/register/types';
+import { ERegisterFormKeys, TRegisterForm } from '@/register/types';
 
 import { parseRequestBody } from './parse-request-body';
 
 describe('parseRequestBody', () => {
   it('should correctly parse the request body', () => {
     const values = {
-      [RegisterFormKeys.EMAIL]: 'test@test.pl',
-      [RegisterFormKeys.PASSWORD]: 'Test123!',
-      [RegisterFormKeys.NICKNAME]: 'test',
-      [RegisterFormKeys.DAY]: '31',
+      [ERegisterFormKeys.EMAIL]: 'test@test.pl',
+      [ERegisterFormKeys.PASSWORD]: 'Test123!',
+      [ERegisterFormKeys.NICKNAME]: 'test',
+      [ERegisterFormKeys.DAY]: '31',
       Month: '12',
-      [RegisterFormKeys.YEAR]: '1995',
+      [ERegisterFormKeys.YEAR]: '1995',
     };
 
     const expectedRequestBody = {
@@ -19,7 +18,7 @@ describe('parseRequestBody', () => {
       dateOfBirth: '1995-12-31',
     };
 
-    const result = parseRequestBody(values as RegisterFormValues);
+    const result = parseRequestBody(values as TRegisterForm);
     expect(result).toEqual(expectedRequestBody);
   });
 });

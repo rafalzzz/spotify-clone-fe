@@ -1,6 +1,6 @@
 import Tooltip, { TooltipPlacement } from 'antd/lib/tooltip';
 
-type CustomTooltipProps = {
+type TCustomTooltip = {
   title: string;
   children: JSX.Element;
   mouseEnterDelay?: number;
@@ -14,7 +14,7 @@ export const CustomTooltip = ({
   placement = 'right',
   testId = '',
   children,
-}: CustomTooltipProps) => (
+}: TCustomTooltip) => (
   <Tooltip
     mouseEnterDelay={mouseEnterDelay}
     placement={placement}

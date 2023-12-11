@@ -1,10 +1,10 @@
-import { PasswordResetFormKeys, PasswordResetCompleteFormKeys } from '@/password-reset/enums';
+import { EPasswordResetCompleteForm, EPasswordResetFormKeys } from '../types';
 
 export const PASSWORD_RESET_INITIAL_VALUES = {
-  [PasswordResetFormKeys.LOGIN]: '',
+  [EPasswordResetFormKeys.LOGIN]: '',
 };
 
 export const PASSWORD_RESET_COMPLETE_INITIAL_VALUES = {
-  [PasswordResetCompleteFormKeys.PASSWORD]: '',
-  [PasswordResetCompleteFormKeys.REPEAT_PASSWORD]: '',
+  [EPasswordResetCompleteForm.PASSWORD]: '',
+  [EPasswordResetCompleteForm.REPEAT_PASSWORD]: '',
 };

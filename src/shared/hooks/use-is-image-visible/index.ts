@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback, RefObject } from 'react';
 
-type UseIsImageVisibleProps = {
+type TUseIsImageVisible = {
   ref: RefObject<HTMLDivElement>;
 };
 
-export const useIsImageVisible = ({ ref }: UseIsImageVisibleProps) => {
+export const useIsImageVisible = ({ ref }: TUseIsImageVisible) => {
   const [isImageVisible, setIsImageVisible] = useState(true);
 
   const handleImageHeight = useCallback(() => {

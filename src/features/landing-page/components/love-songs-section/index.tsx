@@ -1,6 +1,6 @@
 'use client';
 
-import { CustomSection, CustomSectionItem, MusicTrackInformations } from '@/shared/components';
+import { CustomSection, CustomSectionItem, MusicTrackInformation } from '@/shared/components';
 import { MusicTrack } from '@/shared/interfaces/music-track';
 
 export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
@@ -16,7 +16,7 @@ export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => (
                 // TODO - add play song action
               }}
             >
-              <MusicTrackInformations trackName={trackName} artistName={artistName} />
+              <MusicTrackInformation trackName={trackName} artistName={artistName} />
             </CustomSectionItem>
           </li>
         ))}

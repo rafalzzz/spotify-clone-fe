@@ -4,7 +4,7 @@ import { Form } from 'antd';
 import { DateOfBirthInput } from '@/register/components/date-of-birth-input';
 import { FORM_FIELDS, INITIAL_VALUES } from '@/register/consts';
 import { useRegisterForm } from '@/register/hooks/use-register-form';
-import { RegisterFormValues } from '@/register/types';
+import { TRegisterForm } from '@/register/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
@@ -15,7 +15,7 @@ import { CustomFormItem, SubmitButton } from '@/shared/components';
 import './RegisterForm.scss';
 
 export const RegisterForm = () => {
-  const [form] = Form.useForm<RegisterFormValues>();
+  const [form] = Form.useForm<TRegisterForm>();
   const { displayError, contextHolder } = useDisplayError();
   const { submitButton, onFinish } = useRegisterForm({ displayError });
 

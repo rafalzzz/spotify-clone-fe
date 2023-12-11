@@ -6,9 +6,9 @@ import { Artist } from '@/shared/interfaces/artist';
 
 import './CustomSectionItem.scss';
 
-type CustomSectionArtistProps = Pick<Artist, 'artistName'>;
+type TCustomArtistSection = Pick<Artist, 'artistName'>;
 
-export const CustomArtistItem = ({ artistName }: CustomSectionArtistProps) => (
+export const CustomArtistItem = ({ artistName }: TCustomArtistSection) => (
   <Link
     href={generateArtistRedirectionPath(artistName)}
     className='custom-artist-item'

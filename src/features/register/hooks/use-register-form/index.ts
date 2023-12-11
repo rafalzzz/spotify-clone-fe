@@ -2,18 +2,18 @@ import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
 import { parseRequestBody } from '@/register/helpers';
-import { RegisterFormValues } from '@/register/types';
+import { TRegisterForm } from '@/register/types';
 import { registerUser } from '@/register/utils/requests/register-user';
 
-import { CustomButtonProps } from '@/types/custom-button-props';
-import { HookFormProps } from '@/types/hook-form-props';
+import { TCustomButton } from '@/types/custom-button-props';
+import { THookForm } from '@/types/hook-form-props';
 
-export const useRegisterForm = ({ displayError }: HookFormProps) => {
+export const useRegisterForm = ({ displayError }: THookForm) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { push } = useRouter();
 
-  const onFinish = async (values: RegisterFormValues) => {
+  const onFinish = async (values: TRegisterForm) => {
     setIsLoading(true);
     try {
       const requestBody = parseRequestBody(values);
@@ -33,7 +33,7 @@ export const useRegisterForm = ({ displayError }: HookFormProps) => {
     }
   };
 
-  const submitButton: CustomButtonProps = useMemo(
+  const submitButton: TCustomButton = useMemo(
     () => ({
       htmlType: 'submit',
       shape: 'round',

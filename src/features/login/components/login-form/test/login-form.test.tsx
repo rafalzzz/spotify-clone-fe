@@ -4,8 +4,8 @@ import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS } from '@/login/consts';
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
 import { useLoginForm } from '@/login/hooks/use-login-form';
+import { ELoginFormKeys } from '@/login/types';
 import { passwordValidator } from '@/login/utils/validators/password-validator';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
@@ -78,15 +78,15 @@ describe('LoginForm', () => {
     const formFieldsWithValidators = [
       {
         type: InputType.TEXT,
-        key: LoginFormKeys.LOGIN,
-        placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.LOGIN],
+        key: ELoginFormKeys.LOGIN,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ELoginFormKeys.LOGIN],
         mockedValue: 'Test',
         validator: emailOrUsernameValidator,
       },
       {
         type: InputType.PASSWORD,
-        key: LoginFormKeys.PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[LoginFormKeys.PASSWORD],
+        key: ELoginFormKeys.PASSWORD,
+        placeholder: FORM_FIELD_PLACEHOLDERS[ELoginFormKeys.PASSWORD],
         mockedValue: 'Test',
         validator: passwordValidator,
       },

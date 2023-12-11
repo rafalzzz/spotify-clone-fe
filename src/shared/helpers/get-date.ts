@@ -1,11 +1,11 @@
-type IsCreatedDateCorrectProps = {
+type TIsCreatedDateCorrect = {
   year: number;
   month: number;
   day: number;
   createdDate: Date;
 };
 
-const isCreatedDateCorrect = ({ year, month, day, createdDate }: IsCreatedDateCorrectProps) =>
+const isCreatedDateCorrect = ({ year, month, day, createdDate }: TIsCreatedDateCorrect) =>
   createdDate.getFullYear() === year &&
   createdDate.getMonth() === month - 1 &&
   createdDate.getDate() === day;

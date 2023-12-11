@@ -1,4 +1,4 @@
-import { PasswordResetFormKeys } from '@/password-reset/enums';
+import { EPasswordResetFormKeys } from '@/password-reset/types';
 
 import { customRequest } from '@/utils/custom-request';
 
@@ -9,7 +9,7 @@ import { passwordReset } from './password-reset';
 jest.mock('@/utils/custom-request');
 
 const PASSWORD_RESET_FORM_MOCKED_VALUES = {
-  [PasswordResetFormKeys.LOGIN]: 'mockedLogin',
+  [EPasswordResetFormKeys.LOGIN]: 'mockedLogin',
 };
 
 const MOCKED_RESET_PASSWORD_REQUEST_PROPS = {

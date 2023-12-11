@@ -3,7 +3,7 @@ import { Form, Input, Select, Radio, Checkbox, Switch } from 'antd';
 import { InputType } from '@/enums/input-type';
 
 import {
-  CustomFormItemProps,
+  TCustomFormItem,
   ExtendedCheckboxProps,
   ExtendedRadioProps,
   ExtendedSwitchProps,
@@ -22,7 +22,7 @@ export const CustomFormItem = ({
   checkboxProps,
   switchProps,
   setFieldValue,
-}: CustomFormItemProps) => {
+}: TCustomFormItem) => {
   const getFormItemInput = (inputType: InputType) => {
     switch (inputType) {
       case InputType.TEXT:

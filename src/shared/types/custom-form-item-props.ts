@@ -22,7 +22,7 @@ export interface ExtendedSwitchProps extends SwitchProps {
   label: string;
 }
 
-export type CustomFormItemProps<T = string> = {
+export type TCustomFormItem<T = string> = {
   type: InputType | NonStandardInputType;
   name: T;
   label?: string;

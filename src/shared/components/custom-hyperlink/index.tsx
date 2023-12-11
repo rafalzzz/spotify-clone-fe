@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import './CustomHyperlink.scss';
 
-type HyperlinkProps = {
+type TCustomHyperlink = {
   href: string;
   hyperlinkText: string;
   textBeforeHyperlink?: string;
@@ -16,7 +16,7 @@ export const CustomHyperlink = ({
   hyperlinkText = '',
   textAfterHyperlink = '',
   className = '',
-}: HyperlinkProps) => (
+}: TCustomHyperlink) => (
   <div className={`custom-hyperlink ${className}`} data-testid='custom-hyperlink'>
     <span className={`${className}__text-before`}>{textBeforeHyperlink}</span>
     <Link
