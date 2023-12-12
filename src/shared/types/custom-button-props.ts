@@ -2,7 +2,7 @@ import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { AriaRole, ReactNode } from 'react';
 import { MouseEventHandler } from 'react';
 
-export type CustomButtonProps = {
+export type TCustomButton = {
   htmlType: 'reset' | 'submit' | 'button' | undefined;
   text: ReactNode;
   shape?: 'default' | 'circle' | 'round';

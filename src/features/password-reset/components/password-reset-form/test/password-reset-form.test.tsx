@@ -1,16 +1,15 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS } from '@/password-reset/consts';
-import { PasswordResetFormKeys } from '@/password-reset/enums/password-reset-form-keys';
 import { usePasswordResetForm } from '@/password-reset/hooks/use-password-reset-form';
+import { EPasswordResetFormKeys } from '@/password-reset/types';
 
 import { emailOrUsernameValidator } from '@/validators/email-or-username-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { PasswordResetForm } from '..';
 
@@ -68,9 +67,9 @@ describe('PasswordResetForm', () => {
   describe('should call validator when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.TEXT,
-        key: PasswordResetFormKeys.LOGIN,
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetFormKeys.LOGIN],
+        type: EInputType.TEXT,
+        key: EPasswordResetFormKeys.LOGIN,
+        placeholder: FORM_FIELD_PLACEHOLDERS[EPasswordResetFormKeys.LOGIN],
         mockedValue: 'Test',
         validator: emailOrUsernameValidator,
       },

@@ -103,6 +103,11 @@
             "position": "before"
           },
           {
+            "pattern": "@/icons/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/configs/**",
             "group": "internal",
             "position": "before"

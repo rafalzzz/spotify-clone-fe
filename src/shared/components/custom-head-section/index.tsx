@@ -1,13 +1,13 @@
 import Head from 'next/head';
 
-type CustomHeadProps = { title: string; icon?: string; description: string; keywords: string };
+type TCustomHeadSection = { title: string; icon?: string; description: string; keywords: string };
 
 export const CustomHeadSection = ({
   title,
   icon = '/spotify.png',
   description,
   keywords,
-}: CustomHeadProps) => (
+}: TCustomHeadSection) => (
   <Head>
     <title>{title}</title>
     <link rel='icon' href={icon} type='image/svg+xml' />

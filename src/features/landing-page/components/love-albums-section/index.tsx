@@ -1,9 +1,10 @@
 'use client';
 
-import { CustomSection, CustomSectionItem, AlbumInformations } from '@/shared/components';
-import { Album } from '@/shared/interfaces/album';
+import { TLoveAlbumsSection } from '@/landing-page/types/types';
 
-export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
+import { CustomSection, CustomSectionItem, AlbumInformation } from '@/shared/components';
+
+export const LoveAlbumsSection = ({ albums }: TLoveAlbumsSection) => (
   <CustomSection title='Love albums' redirectionUrl='/love-albums'>
     {
       <ul className='custom-section__items'>
@@ -16,7 +17,7 @@ export const LoveAlbumsSection = ({ albums }: { albums: Album[] }) => (
                 // TODO - add play song action
               }}
             >
-              <AlbumInformations
+              <AlbumInformation
                 collectionName={collectionName}
                 releaseDate={releaseDate}
                 artistName={artistName}

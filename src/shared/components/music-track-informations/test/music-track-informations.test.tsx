@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
-import { MusicTrackInformations } from '../';
+import { MusicTrackInformation } from '../';
 
 const MOCKED_TRACK_NAME = 'Mocked title';
 
@@ -24,21 +24,21 @@ beforeEach(() => {
   }));
 });
 
-const renderMusicTrackInformations = () =>
-  render(<MusicTrackInformations trackName={MOCKED_TRACK_NAME} artistName={MOCKED_ARTIST_NAME} />);
+const renderMusicTrackInformation = () =>
+  render(<MusicTrackInformation trackName={MOCKED_TRACK_NAME} artistName={MOCKED_ARTIST_NAME} />);
 
-describe('MusicTrackInformations', () => {
+describe('MusicTrackInformation', () => {
   beforeEach(() => {
     mockPush.mockClear();
   });
 
   it('renders component without error', () => {
-    const screen = renderMusicTrackInformations();
+    const screen = renderMusicTrackInformation();
     expect(screen).toMatchSnapshot();
   });
 
   it('renders the track name and main artist name', () => {
-    const { queryByTestId } = renderMusicTrackInformations();
+    const { queryByTestId } = renderMusicTrackInformation();
 
     const trackNameElement = queryByTestId(TRACK_NAME_TEST_ID);
     const artistNameElement = queryByTestId(ARTIST_NAME_TEST_ID);
@@ -48,14 +48,14 @@ describe('MusicTrackInformations', () => {
   });
 
   it('displays only the main artist when multiple artists are given', () => {
-    const { queryByTestId } = renderMusicTrackInformations();
+    const { queryByTestId } = renderMusicTrackInformation();
 
     const artistNameElement = queryByTestId(ARTIST_NAME_TEST_ID);
     expect(artistNameElement).toHaveTextContent(FIRST_ARTIST_NAME);
   });
 
   it('passes track name to the track tooltip', () => {
-    const { queryByTestId, queryByText } = renderMusicTrackInformations();
+    const { queryByTestId, queryByText } = renderMusicTrackInformation();
 
     const trackNameTooltip = queryByTestId(TRACK_NAME_TOOLTIP_TEST_ID);
     expect(trackNameTooltip).toBeInTheDocument();
@@ -65,7 +65,7 @@ describe('MusicTrackInformations', () => {
   });
 
   it('passes main artist name to the artist tooltip', () => {
-    const { queryByTestId } = renderMusicTrackInformations();
+    const { queryByTestId } = renderMusicTrackInformation();
 
     const artistNameTooltip = queryByTestId(ARTIST_NAME_TOOLTIP_TEST_ID);
     expect(artistNameTooltip).toBeInTheDocument();
@@ -75,7 +75,7 @@ describe('MusicTrackInformations', () => {
   });
 
   it('navigates to the correct path when artist name is clicked', () => {
-    const { queryByTestId } = renderMusicTrackInformations();
+    const { queryByTestId } = renderMusicTrackInformation();
     const artistNameElement = queryByTestId(ARTIST_NAME_TEST_ID);
 
     fireEvent.click(artistNameElement as Element);

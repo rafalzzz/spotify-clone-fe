@@ -1,8 +1,8 @@
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
+import { ELoginFormKeys } from '../types';
 
 import { FORM_LABELS } from './form-field-labels';
 
 export const FORM_FIELD_PLACEHOLDERS = {
-  [LoginFormKeys.LOGIN]: FORM_LABELS[LoginFormKeys.LOGIN],
-  [LoginFormKeys.PASSWORD]: FORM_LABELS[LoginFormKeys.PASSWORD],
+  [ELoginFormKeys.LOGIN]: FORM_LABELS[ELoginFormKeys.LOGIN],
+  [ELoginFormKeys.PASSWORD]: FORM_LABELS[ELoginFormKeys.PASSWORD],
 };

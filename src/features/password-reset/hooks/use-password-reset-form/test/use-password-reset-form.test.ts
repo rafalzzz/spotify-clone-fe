@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { PasswordResetFormKeys } from '@/password-reset/enums';
+import { EPasswordResetFormKeys } from '@/password-reset/types';
 import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
 import { usePasswordResetForm } from '..';
@@ -23,7 +23,7 @@ jest.mock('next/navigation', () => ({
 }));
 
 const PASSWORD_RESET_FORM_MOCKED_VALUES = {
-  [PasswordResetFormKeys.LOGIN]: 'mockedLogin',
+  [EPasswordResetFormKeys.LOGIN]: 'mockedLogin',
 };
 
 const renderUsePasswordResetForm = () => renderHook(() => usePasswordResetForm({ displayError }));

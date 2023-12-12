@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useRouter } from 'next/navigation';
 
-import { LoginFormKeys } from '@/login/enums/login-form-keys';
+import { ELoginFormKeys } from '@/login/types';
 import { loginUser } from '@/login/utils/requests/login-user';
 
 import { useLoginForm } from '..';
@@ -24,9 +23,9 @@ jest.mock('@/login/utils/requests/login-user', () => ({
 }));
 
 const LOGIN_FORM_MOCKED_VALUES = {
-  [LoginFormKeys.LOGIN]: 'mockedLogin',
-  [LoginFormKeys.PASSWORD]: 'mockedPassword',
-  [LoginFormKeys.REMEMBER_ME]: false,
+  [ELoginFormKeys.LOGIN]: 'mockedLogin',
+  [ELoginFormKeys.PASSWORD]: 'mockedPassword',
+  [ELoginFormKeys.REMEMBER_ME]: false,
 };
 
 const renderUseLoginForm = () => renderHook(() => useLoginForm({ displayError }));

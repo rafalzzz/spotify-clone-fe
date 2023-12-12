@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 
-import { PasswordResetCompleteFormValues } from '@/password-reset/types';
+import { TPasswordResetCompleteForm } from '@/password-reset/types';
 import { passwordResetComplete } from '@/password-reset/utils/requests/password-reset-complete';
 
-import { CustomButtonProps } from '@/types/custom-button-props';
-import { HookFormProps } from '@/types/hook-form-props';
+import { TCustomButton } from '@/types/custom-button-props';
+import { THookForm } from '@/types/hook-form-props';
 
-export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) => {
+export const usePasswordResetCompleteForm = ({ displayError }: THookForm) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -15,7 +15,7 @@ export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) =>
     push,
   } = useRouter();
 
-  const onFinish = async ({ password }: PasswordResetCompleteFormValues) => {
+  const onFinish = async ({ password }: TPasswordResetCompleteForm) => {
     setIsLoading(true);
 
     const requestBody = {
@@ -40,7 +40,7 @@ export const usePasswordResetCompleteForm = ({ displayError }: HookFormProps) =>
     }
   };
 
-  const submitButton: CustomButtonProps = useMemo(
+  const submitButton: TCustomButton = useMemo(
     () => ({
       htmlType: 'submit',
       shape: 'round',

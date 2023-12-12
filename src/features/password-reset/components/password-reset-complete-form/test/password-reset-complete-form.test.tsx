@@ -4,11 +4,11 @@ import React from 'react';
 import '@testing-library/jest-dom';
 
 import { FORM_FIELD_PLACEHOLDERS } from '@/password-reset/consts';
-import { PasswordResetCompleteFormKeys } from '@/password-reset/enums/password-reset-complete-form-keys';
 import { usePasswordResetCompleteForm } from '@/password-reset/hooks/use-password-reset-complete-form';
+import { EPasswordResetCompleteForm } from '@/password-reset/types';
 import { repeatNewPasswordValidator } from '@/password-reset/utils/validators/repeat-new-password-validator';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import { passwordValidator } from '@/shared/validators';
 
@@ -81,16 +81,16 @@ describe('PasswordResetCompleteForm', () => {
   describe('should call validator when input value change', () => {
     const formFieldsWithValidators = [
       {
-        type: InputType.PASSWORD,
-        key: PasswordResetCompleteFormKeys.PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.PASSWORD],
+        type: EInputType.PASSWORD,
+        key: EPasswordResetCompleteForm.PASSWORD,
+        placeholder: FORM_FIELD_PLACEHOLDERS[EPasswordResetCompleteForm.PASSWORD],
         mockedValue: 'Test123!',
         validator: passwordValidator,
       },
       {
-        type: InputType.PASSWORD,
-        key: PasswordResetCompleteFormKeys.REPEAT_PASSWORD,
-        placeholder: FORM_FIELD_PLACEHOLDERS[PasswordResetCompleteFormKeys.REPEAT_PASSWORD],
+        type: EInputType.PASSWORD,
+        key: EPasswordResetCompleteForm.REPEAT_PASSWORD,
+        placeholder: FORM_FIELD_PLACEHOLDERS[EPasswordResetCompleteForm.REPEAT_PASSWORD],
         mockedValue: 'Test123!',
         validator: repeatNewPasswordValidator,
       },

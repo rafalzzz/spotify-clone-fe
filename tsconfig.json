@@ -36,6 +36,7 @@
       "@/interfaces/*": ["shared/interfaces/*"],
       "@/types/*": ["shared/types/*"],
       "@/shared/*": ["shared/*"],
+      "@/icons/*": ["icons/*"],
       "@/styles/*": ["styles/*"],
       "@/test-utils/*": ["test-utils/*"]
     },

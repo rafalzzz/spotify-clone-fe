@@ -5,14 +5,14 @@ import { getMainArtist } from '@/utils/get-main-artist';
 
 import { CustomTooltip } from '../custom-tooltip';
 
-import './MusicTrackInformations.scss';
+import './MusicTrackInformation.scss';
 
-type MusicTrackInformationsProps = {
+type MusicTrackInformationProps = {
   trackName: string;
   artistName: string;
 };
 
-export const MusicTrackInformations = ({ trackName, artistName }: MusicTrackInformationsProps) => {
+export const MusicTrackInformation = ({ trackName, artistName }: MusicTrackInformationProps) => {
   const router = useRouter();
   const mainArtist = getMainArtist(artistName);
 

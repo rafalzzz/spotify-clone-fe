@@ -1,4 +1,4 @@
-export { AlbumInformations } from './album-informations';
+export { AlbumInformation } from './album-information';
 export { CustomAddToFavoriteButton } from './custom-add-to-favorite-button';
 export { CustomArtistItem } from './custom-artist-item';
 export { CustomButton } from './custom-button';
@@ -12,5 +12,5 @@ export { CustomSection } from './custom-section';
 export { CustomSectionItem } from './custom-section-item';
 export { CustomSubheader } from './custom-subheader';
 export { CustomTooltip } from './custom-tooltip';
-export { MusicTrackInformations } from './music-track-informations';
+export { MusicTrackInformation } from './music-track-informations';
 export { SubmitButton } from './submit-button';

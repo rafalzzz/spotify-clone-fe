@@ -1,10 +1,10 @@
-import { LoginFormValues } from '@/login/types';
+import { TLoginForm } from '@/login/types';
 
 import { customRequest } from '@/utils/custom-request';
 
 import { ENDPOINTS } from '@/consts/endpoints';
 
-export async function loginUser(requestBody: LoginFormValues) {
+export async function loginUser(requestBody: TLoginForm) {
   const response = customRequest({
     endpoint: ENDPOINTS.LOGIN_USER,
     method: 'POST',

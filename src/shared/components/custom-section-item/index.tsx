@@ -5,13 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 
-import { useIsImageVisible } from '@/hooks/use-is-image-visible';
-
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
 import './CustomSectionItem.scss';
 
-type CustomSectionItemProps = {
+type TCustomSectionItem = {
   collectionName: string;
   imageUrl: string;
   children: JSX.Element;
@@ -23,9 +21,8 @@ export const CustomSectionItem = ({
   imageUrl,
   children,
   onClick,
-}: CustomSectionItemProps) => {
+}: TCustomSectionItem) => {
   const ref = useRef(null);
-  const isImageVisible = useIsImageVisible({ ref });
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -51,15 +48,13 @@ export const CustomSectionItem = ({
             loading='lazy'
             decoding='async'
           />
-          {isImageVisible && (
-            <button
-              className='custom-section-item__play-button'
-              onClick={handleClick}
-              data-testid='custom-section-item-play-button'
-            >
-              <PlayCircleFilled className='antd-icon' />
-            </button>
-          )}
+          <button
+            className='custom-section-item__play-button'
+            onClick={handleClick}
+            data-testid='custom-section-item-play-button'
+          >
+            <PlayCircleFilled className='antd-icon' />
+          </button>
         </div>
         {children}
       </div>

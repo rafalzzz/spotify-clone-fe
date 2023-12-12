@@ -1,4 +1,4 @@
-export enum InputType {
+export enum EInputType {
   TEXT = 'text',
   PASSWORD = 'password',
   SELECT = 'select',
@@ -7,6 +7,6 @@ export enum InputType {
   SWITCH = 'switch',
 }
 
-export enum NonStandardInputType {
+export enum ENonStandardInputType {
   DATE_OF_BIRTH = 'dateOfBirth',
 }

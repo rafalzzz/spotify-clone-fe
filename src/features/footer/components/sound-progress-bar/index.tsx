@@ -2,7 +2,7 @@
 
 import { CustomIconButton } from '@/components/custom-icon-button';
 
-import SoundIcon from 'icons/sound';
+import SoundIcon from '@/icons/sound';
 
 import { ProgressBar } from '../progress-bar';
 

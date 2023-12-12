@@ -82,16 +82,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </button>
                 </div>
                 <div
-                  class="album-informations"
+                  class="album-information"
                 >
                   <div
                     data-mouseenterdelay="0.5"
                     data-placement="right"
-                    data-testid="album-informations-collection-name-tooltip"
+                    data-testid="album-information-collection-name-tooltip"
                   >
                     <h4
-                      class="album-informations__text"
-                      data-testid="album-informations-collection-name"
+                      class="album-information__text"
+                      data-testid="album-information-collection-name"
                     >
                       CollectionName
                     </h4>
@@ -100,27 +100,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     </span>
                   </div>
                   <div
-                    class="album-informations__wrapper"
+                    class="album-information__wrapper"
                   >
                     <span
-                      class="album-informations__release-date"
-                      data-testid="album-informations-release-date"
+                      class="album-information__release-date"
+                      data-testid="album-information-release-date"
                     >
                       2020
                     </span>
                     <span
-                      class="album-informations__separator"
+                      class="album-information__separator"
                     >
                       •
                     </span>
                     <button
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
+                      class="album-information__text album-information__artist"
+                      data-testid="album-information-artist-name"
                     >
                       <div
                         data-mouseenterdelay="0.5"
                         data-placement="right"
-                        data-testid="album-informations-artist-name-tooltip"
+                        data-testid="album-information-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
@@ -184,16 +184,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </button>
                 </div>
                 <div
-                  class="album-informations"
+                  class="album-information"
                 >
                   <div
                     data-mouseenterdelay="0.5"
                     data-placement="right"
-                    data-testid="album-informations-collection-name-tooltip"
+                    data-testid="album-information-collection-name-tooltip"
                   >
                     <h4
-                      class="album-informations__text"
-                      data-testid="album-informations-collection-name"
+                      class="album-information__text"
+                      data-testid="album-information-collection-name"
                     >
                       CollectionName
                     </h4>
@@ -202,27 +202,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     </span>
                   </div>
                   <div
-                    class="album-informations__wrapper"
+                    class="album-information__wrapper"
                   >
                     <span
-                      class="album-informations__release-date"
-                      data-testid="album-informations-release-date"
+                      class="album-information__release-date"
+                      data-testid="album-information-release-date"
                     >
                       2020
                     </span>
                     <span
-                      class="album-informations__separator"
+                      class="album-information__separator"
                     >
                       •
                     </span>
                     <button
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
+                      class="album-information__text album-information__artist"
+                      data-testid="album-information-artist-name"
                     >
                       <div
                         data-mouseenterdelay="0.5"
                         data-placement="right"
-                        data-testid="album-informations-artist-name-tooltip"
+                        data-testid="album-information-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
@@ -286,16 +286,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </button>
                 </div>
                 <div
-                  class="album-informations"
+                  class="album-information"
                 >
                   <div
                     data-mouseenterdelay="0.5"
                     data-placement="right"
-                    data-testid="album-informations-collection-name-tooltip"
+                    data-testid="album-information-collection-name-tooltip"
                   >
                     <h4
-                      class="album-informations__text"
-                      data-testid="album-informations-collection-name"
+                      class="album-information__text"
+                      data-testid="album-information-collection-name"
                     >
                       CollectionName
                     </h4>
@@ -304,27 +304,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     </span>
                   </div>
                   <div
-                    class="album-informations__wrapper"
+                    class="album-information__wrapper"
                   >
                     <span
-                      class="album-informations__release-date"
-                      data-testid="album-informations-release-date"
+                      class="album-information__release-date"
+                      data-testid="album-information-release-date"
                     >
                       2020
                     </span>
                     <span
-                      class="album-informations__separator"
+                      class="album-information__separator"
                     >
                       •
                     </span>
                     <button
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
+                      class="album-information__text album-information__artist"
+                      data-testid="album-information-artist-name"
                     >
                       <div
                         data-mouseenterdelay="0.5"
                         data-placement="right"
-                        data-testid="album-informations-artist-name-tooltip"
+                        data-testid="album-information-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
@@ -388,16 +388,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </button>
                 </div>
                 <div
-                  class="album-informations"
+                  class="album-information"
                 >
                   <div
                     data-mouseenterdelay="0.5"
                     data-placement="right"
-                    data-testid="album-informations-collection-name-tooltip"
+                    data-testid="album-information-collection-name-tooltip"
                   >
                     <h4
-                      class="album-informations__text"
-                      data-testid="album-informations-collection-name"
+                      class="album-information__text"
+                      data-testid="album-information-collection-name"
                     >
                       CollectionName
                     </h4>
@@ -406,27 +406,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     </span>
                   </div>
                   <div
-                    class="album-informations__wrapper"
+                    class="album-information__wrapper"
                   >
                     <span
-                      class="album-informations__release-date"
-                      data-testid="album-informations-release-date"
+                      class="album-information__release-date"
+                      data-testid="album-information-release-date"
                     >
                       2020
                     </span>
                     <span
-                      class="album-informations__separator"
+                      class="album-information__separator"
                     >
                       •
                     </span>
                     <button
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
+                      class="album-information__text album-information__artist"
+                      data-testid="album-information-artist-name"
                     >
                       <div
                         data-mouseenterdelay="0.5"
                         data-placement="right"
-                        data-testid="album-informations-artist-name-tooltip"
+                        data-testid="album-information-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
@@ -490,16 +490,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </button>
                 </div>
                 <div
-                  class="album-informations"
+                  class="album-information"
                 >
                   <div
                     data-mouseenterdelay="0.5"
                     data-placement="right"
-                    data-testid="album-informations-collection-name-tooltip"
+                    data-testid="album-information-collection-name-tooltip"
                   >
                     <h4
-                      class="album-informations__text"
-                      data-testid="album-informations-collection-name"
+                      class="album-information__text"
+                      data-testid="album-information-collection-name"
                     >
                       CollectionName
                     </h4>
@@ -508,27 +508,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     </span>
                   </div>
                   <div
-                    class="album-informations__wrapper"
+                    class="album-information__wrapper"
                   >
                     <span
-                      class="album-informations__release-date"
-                      data-testid="album-informations-release-date"
+                      class="album-information__release-date"
+                      data-testid="album-information-release-date"
                     >
                       2020
                     </span>
                     <span
-                      class="album-informations__separator"
+                      class="album-information__separator"
                     >
                       •
                     </span>
                     <button
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
+                      class="album-information__text album-information__artist"
+                      data-testid="album-information-artist-name"
                     >
                       <div
                         data-mouseenterdelay="0.5"
                         data-placement="right"
-                        data-testid="album-informations-artist-name-tooltip"
+                        data-testid="album-information-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
@@ -592,16 +592,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </button>
                 </div>
                 <div
-                  class="album-informations"
+                  class="album-information"
                 >
                   <div
                     data-mouseenterdelay="0.5"
                     data-placement="right"
-                    data-testid="album-informations-collection-name-tooltip"
+                    data-testid="album-information-collection-name-tooltip"
                   >
                     <h4
-                      class="album-informations__text"
-                      data-testid="album-informations-collection-name"
+                      class="album-information__text"
+                      data-testid="album-information-collection-name"
                     >
                       CollectionName
                     </h4>
@@ -610,27 +610,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     </span>
                   </div>
                   <div
-                    class="album-informations__wrapper"
+                    class="album-information__wrapper"
                   >
                     <span
-                      class="album-informations__release-date"
-                      data-testid="album-informations-release-date"
+                      class="album-information__release-date"
+                      data-testid="album-information-release-date"
                     >
                       2020
                     </span>
                     <span
-                      class="album-informations__separator"
+                      class="album-information__separator"
                     >
                       •
                     </span>
                     <button
-                      class="album-informations__text album-informations__artist"
-                      data-testid="album-informations-artist-name"
+                      class="album-information__text album-information__artist"
+                      data-testid="album-information-artist-name"
                     >
                       <div
                         data-mouseenterdelay="0.5"
                         data-placement="right"
-                        data-testid="album-informations-artist-name-tooltip"
+                        data-testid="album-information-artist-name-tooltip"
                       >
                         <span>
                           Test_Artist
@@ -727,16 +727,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="album-informations"
+                class="album-information"
               >
                 <div
                   data-mouseenterdelay="0.5"
                   data-placement="right"
-                  data-testid="album-informations-collection-name-tooltip"
+                  data-testid="album-information-collection-name-tooltip"
                 >
                   <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                    class="album-information__text"
+                    data-testid="album-information-collection-name"
                   >
                     CollectionName
                   </h4>
@@ -745,27 +745,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </span>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-information__wrapper"
                 >
                   <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
+                    class="album-information__release-date"
+                    data-testid="album-information-release-date"
                   >
                     2020
                   </span>
                   <span
-                    class="album-informations__separator"
+                    class="album-information__separator"
                   >
                     •
                   </span>
                   <button
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
+                    class="album-information__text album-information__artist"
+                    data-testid="album-information-artist-name"
                   >
                     <div
                       data-mouseenterdelay="0.5"
                       data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                      data-testid="album-information-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
@@ -829,16 +829,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="album-informations"
+                class="album-information"
               >
                 <div
                   data-mouseenterdelay="0.5"
                   data-placement="right"
-                  data-testid="album-informations-collection-name-tooltip"
+                  data-testid="album-information-collection-name-tooltip"
                 >
                   <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                    class="album-information__text"
+                    data-testid="album-information-collection-name"
                   >
                     CollectionName
                   </h4>
@@ -847,27 +847,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </span>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-information__wrapper"
                 >
                   <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
+                    class="album-information__release-date"
+                    data-testid="album-information-release-date"
                   >
                     2020
                   </span>
                   <span
-                    class="album-informations__separator"
+                    class="album-information__separator"
                   >
                     •
                   </span>
                   <button
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
+                    class="album-information__text album-information__artist"
+                    data-testid="album-information-artist-name"
                   >
                     <div
                       data-mouseenterdelay="0.5"
                       data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                      data-testid="album-information-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
@@ -931,16 +931,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="album-informations"
+                class="album-information"
               >
                 <div
                   data-mouseenterdelay="0.5"
                   data-placement="right"
-                  data-testid="album-informations-collection-name-tooltip"
+                  data-testid="album-information-collection-name-tooltip"
                 >
                   <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                    class="album-information__text"
+                    data-testid="album-information-collection-name"
                   >
                     CollectionName
                   </h4>
@@ -949,27 +949,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </span>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-information__wrapper"
                 >
                   <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
+                    class="album-information__release-date"
+                    data-testid="album-information-release-date"
                   >
                     2020
                   </span>
                   <span
-                    class="album-informations__separator"
+                    class="album-information__separator"
                   >
                     •
                   </span>
                   <button
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
+                    class="album-information__text album-information__artist"
+                    data-testid="album-information-artist-name"
                   >
                     <div
                       data-mouseenterdelay="0.5"
                       data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                      data-testid="album-information-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
@@ -1033,16 +1033,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="album-informations"
+                class="album-information"
               >
                 <div
                   data-mouseenterdelay="0.5"
                   data-placement="right"
-                  data-testid="album-informations-collection-name-tooltip"
+                  data-testid="album-information-collection-name-tooltip"
                 >
                   <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                    class="album-information__text"
+                    data-testid="album-information-collection-name"
                   >
                     CollectionName
                   </h4>
@@ -1051,27 +1051,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </span>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-information__wrapper"
                 >
                   <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
+                    class="album-information__release-date"
+                    data-testid="album-information-release-date"
                   >
                     2020
                   </span>
                   <span
-                    class="album-informations__separator"
+                    class="album-information__separator"
                   >
                     •
                   </span>
                   <button
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
+                    class="album-information__text album-information__artist"
+                    data-testid="album-information-artist-name"
                   >
                     <div
                       data-mouseenterdelay="0.5"
                       data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                      data-testid="album-information-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
@@ -1135,16 +1135,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="album-informations"
+                class="album-information"
               >
                 <div
                   data-mouseenterdelay="0.5"
                   data-placement="right"
-                  data-testid="album-informations-collection-name-tooltip"
+                  data-testid="album-information-collection-name-tooltip"
                 >
                   <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                    class="album-information__text"
+                    data-testid="album-information-collection-name"
                   >
                     CollectionName
                   </h4>
@@ -1153,27 +1153,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </span>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-information__wrapper"
                 >
                   <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
+                    class="album-information__release-date"
+                    data-testid="album-information-release-date"
                   >
                     2020
                   </span>
                   <span
-                    class="album-informations__separator"
+                    class="album-information__separator"
                   >
                     •
                   </span>
                   <button
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
+                    class="album-information__text album-information__artist"
+                    data-testid="album-information-artist-name"
                   >
                     <div
                       data-mouseenterdelay="0.5"
                       data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                      data-testid="album-information-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist
@@ -1237,16 +1237,16 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                 </button>
               </div>
               <div
-                class="album-informations"
+                class="album-information"
               >
                 <div
                   data-mouseenterdelay="0.5"
                   data-placement="right"
-                  data-testid="album-informations-collection-name-tooltip"
+                  data-testid="album-information-collection-name-tooltip"
                 >
                   <h4
-                    class="album-informations__text"
-                    data-testid="album-informations-collection-name"
+                    class="album-information__text"
+                    data-testid="album-information-collection-name"
                   >
                     CollectionName
                   </h4>
@@ -1255,27 +1255,27 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   </span>
                 </div>
                 <div
-                  class="album-informations__wrapper"
+                  class="album-information__wrapper"
                 >
                   <span
-                    class="album-informations__release-date"
-                    data-testid="album-informations-release-date"
+                    class="album-information__release-date"
+                    data-testid="album-information-release-date"
                   >
                     2020
                   </span>
                   <span
-                    class="album-informations__separator"
+                    class="album-information__separator"
                   >
                     •
                   </span>
                   <button
-                    class="album-informations__text album-informations__artist"
-                    data-testid="album-informations-artist-name"
+                    class="album-information__text album-information__artist"
+                    data-testid="album-information-artist-name"
                   >
                     <div
                       data-mouseenterdelay="0.5"
                       data-placement="right"
-                      data-testid="album-informations-artist-name-tooltip"
+                      data-testid="album-information-artist-name-tooltip"
                     >
                       <span>
                         Test_Artist

@@ -4,19 +4,19 @@ import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirecti
 
 import { CustomTooltip } from '../custom-tooltip';
 
-import './AlbumInformations.scss';
+import './AlbumInformation.scss';
 
-type AlbumInformationsProps = {
+type TAlbumInformation = {
   collectionName: string;
   releaseDate: string;
   artistName: string;
 };
 
-export const AlbumInformations = ({
+export const AlbumInformation = ({
   collectionName,
   releaseDate,
   artistName,
-}: AlbumInformationsProps) => {
+}: TAlbumInformation) => {
   const router = useRouter();
   const releaseYear = releaseDate.split('-')[0];
 
@@ -26,26 +26,26 @@ export const AlbumInformations = ({
   };
 
   return (
-    <div className='album-informations'>
-      <CustomTooltip title={collectionName} testId='album-informations-collection-name-tooltip'>
-        <h4 className='album-informations__text' data-testid='album-informations-collection-name'>
+    <div className='album-information'>
+      <CustomTooltip title={collectionName} testId='album-information-collection-name-tooltip'>
+        <h4 className='album-information__text' data-testid='album-information-collection-name'>
           {collectionName}
         </h4>
       </CustomTooltip>
-      <div className='album-informations__wrapper'>
+      <div className='album-information__wrapper'>
         <span
-          className='album-informations__release-date'
-          data-testid='album-informations-release-date'
+          className='album-information__release-date'
+          data-testid='album-information-release-date'
         >
           {releaseYear}
         </span>
-        <span className='album-informations__separator'>&#x2022;</span>
+        <span className='album-information__separator'>&#x2022;</span>
         <button
-          className='album-informations__text album-informations__artist'
-          data-testid='album-informations-artist-name'
+          className='album-information__text album-information__artist'
+          data-testid='album-information-artist-name'
           onClick={handleArtistClick}
         >
-          <CustomTooltip title={artistName} testId='album-informations-artist-name-tooltip'>
+          <CustomTooltip title={artistName} testId='album-information-artist-name-tooltip'>
             <span>{artistName}</span>
           </CustomTooltip>
         </button>

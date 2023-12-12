@@ -1,7 +1,7 @@
 import { RuleObject } from 'antd/es/form';
 import { NamePath } from 'antd/es/form/interface';
 
-import { PasswordResetCompleteFormKeys } from '@/password-reset/enums';
+import { EPasswordResetCompleteForm } from '@/password-reset/types';
 
 export const repeatNewPasswordValidator = ({
   getFieldValue,
@@ -13,7 +13,7 @@ export const repeatNewPasswordValidator = ({
       return Promise.reject(new Error(`Repeat new password`));
     }
 
-    if (getFieldValue(PasswordResetCompleteFormKeys.PASSWORD) !== value) {
+    if (getFieldValue(EPasswordResetCompleteForm.PASSWORD) !== value) {
       return Promise.reject(new Error('The new password that you entered do not match!'));
     }
 

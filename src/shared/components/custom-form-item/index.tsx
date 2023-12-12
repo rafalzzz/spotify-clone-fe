@@ -1,9 +1,9 @@
 import { Form, Input, Select, Radio, Checkbox, Switch } from 'antd';
 
-import { InputType } from '@/enums/input-type';
+import { EInputType } from '@/enums/input-type';
 
 import {
-  CustomFormItemProps,
+  TCustomFormItem,
   ExtendedCheckboxProps,
   ExtendedRadioProps,
   ExtendedSwitchProps,
@@ -22,26 +22,26 @@ export const CustomFormItem = ({
   checkboxProps,
   switchProps,
   setFieldValue,
-}: CustomFormItemProps) => {
-  const getFormItemInput = (inputType: InputType) => {
+}: TCustomFormItem) => {
+  const getFormItemInput = (inputType: EInputType) => {
     switch (inputType) {
-      case InputType.TEXT:
-        return <Input data-testid={`input-type-${InputType.TEXT}`} {...inputProps} />;
-      case InputType.PASSWORD:
+      case EInputType.TEXT:
+        return <Input data-testid={`input-type-${EInputType.TEXT}`} {...inputProps} />;
+      case EInputType.PASSWORD:
         return (
           <Input.Password
             autoComplete='on'
-            data-testid={`input-type-${InputType.PASSWORD}`}
+            data-testid={`input-type-${EInputType.PASSWORD}`}
             {...inputProps}
           />
         );
-      case InputType.SELECT:
-        return <Select data-testid={`input-type-${InputType.SELECT}`} {...selectProps} />;
-      case InputType.RADIO:
+      case EInputType.SELECT:
+        return <Select data-testid={`input-type-${EInputType.SELECT}`} {...selectProps} />;
+      case EInputType.RADIO:
         const { options } = radioProps as ExtendedRadioProps;
 
         return (
-          <Radio.Group data-testid={`input-type-${InputType.RADIO}`}>
+          <Radio.Group data-testid={`input-type-${EInputType.RADIO}`}>
             {options.map(({ label, value }) => (
               <Radio key={value} value={value}>
                 {label}
@@ -49,24 +49,24 @@ export const CustomFormItem = ({
             ))}
           </Radio.Group>
         );
-      case InputType.CHECKBOX:
+      case EInputType.CHECKBOX:
         const { label: checkboxLabel } = checkboxProps as ExtendedCheckboxProps;
 
         return (
-          <Checkbox data-testid={`input-type-${InputType.CHECKBOX}`}>{checkboxLabel}</Checkbox>
+          <Checkbox data-testid={`input-type-${EInputType.CHECKBOX}`}>{checkboxLabel}</Checkbox>
         );
-      case InputType.SWITCH:
+      case EInputType.SWITCH:
         const { label: switchLabel } = switchProps as ExtendedSwitchProps;
 
         return (
-          <div className={`input-type-${InputType.SWITCH}`}>
+          <div className={`input-type-${EInputType.SWITCH}`}>
             <Switch
-              className={`input-type-${InputType.SWITCH}__button`}
-              data-testid={`input-type-${InputType.SWITCH}`}
+              className={`input-type-${EInputType.SWITCH}__button`}
+              data-testid={`input-type-${EInputType.SWITCH}`}
               onChange={(value) => setFieldValue!(name, value)}
               title={switchLabel}
             />
-            <span className={`input-type-${InputType.SWITCH}__label`}>{switchLabel}</span>
+            <span className={`input-type-${EInputType.SWITCH}__label`}>{switchLabel}</span>
           </div>
         );
       default:
@@ -81,9 +81,9 @@ export const CustomFormItem = ({
       label={label ? <span className='form-item__label'>{label}</span> : null}
       rules={rules}
       validateFirst={true}
-      valuePropName={type === InputType.CHECKBOX ? 'checked' : 'value'}
+      valuePropName={type === EInputType.CHECKBOX ? 'checked' : 'value'}
     >
-      {getFormItemInput(type as InputType)}
+      {getFormItemInput(type as EInputType)}
     </Form.Item>
   );
 };

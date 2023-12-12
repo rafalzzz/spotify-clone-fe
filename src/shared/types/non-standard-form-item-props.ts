@@ -1,4 +1,4 @@
-import { CustomFormItemProps } from './custom-form-item-props';
+import { TCustomFormItem } from './custom-form-item-props';
 
-type CustomFormItemKeys = 'type' | 'key' | 'name' | 'label';
-export type NonStandardItemProps = Pick<CustomFormItemProps, CustomFormItemKeys>;
+type TCustomFormItemKeys = 'type' | 'key' | 'name' | 'label';
+export type TNonStandardItemProps = Pick<TCustomFormItem, TCustomFormItemKeys>;

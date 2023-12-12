@@ -3,9 +3,9 @@ import userEvent from '@testing-library/user-event';
 import { Form } from 'antd';
 import React from 'react';
 
-import { InputType, NonStandardInputType } from '@/enums/input-type';
+import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
-import { CustomFormItemProps } from '@/types/custom-form-item-props';
+import { TCustomFormItem } from '@/types/custom-form-item-props';
 
 import { CustomFormItem } from '..';
 
@@ -44,15 +44,15 @@ const MOCKED_OPTIONS = [
 
 const MOCKED_FORM_ITEMS = [
   {
-    type: InputType.TEXT,
+    type: EInputType.TEXT,
     props: textInputProps,
   },
   {
-    type: InputType.PASSWORD,
+    type: EInputType.PASSWORD,
     props: textInputProps,
   },
   {
-    type: InputType.SELECT,
+    type: EInputType.SELECT,
     props: {
       ...sharedFormItemProps,
       selectProps: {
@@ -61,7 +61,7 @@ const MOCKED_FORM_ITEMS = [
     },
   },
   {
-    type: InputType.RADIO,
+    type: EInputType.RADIO,
     props: {
       ...sharedFormItemProps,
       radioProps: {
@@ -73,7 +73,7 @@ const MOCKED_FORM_ITEMS = [
     },
   },
   {
-    type: InputType.CHECKBOX,
+    type: EInputType.CHECKBOX,
     props: {
       key: 'text',
       name: 'text',
@@ -84,7 +84,7 @@ const MOCKED_FORM_ITEMS = [
   },
   {
     label: 'test',
-    type: InputType.SWITCH,
+    type: EInputType.SWITCH,
     props: {
       key: 'text',
       name: 'text',
@@ -95,7 +95,7 @@ const MOCKED_FORM_ITEMS = [
   },
 ];
 
-const renderCustomFormItem = (type: InputType, formItemProps: CustomFormItemProps) => {
+const renderCustomFormItem = (type: EInputType, formItemProps: TCustomFormItem) => {
   const props = {
     ...formItemProps,
     setFieldValue: mockSetFieldValue,
@@ -113,14 +113,14 @@ const renderCustomFormItem = (type: InputType, formItemProps: CustomFormItemProp
 describe('CustomFormItem', () => {
   it('render component without error', () => {
     const { type, props } = MOCKED_FORM_ITEMS[0];
-    const screen = renderCustomFormItem(type, props as CustomFormItemProps);
+    const screen = renderCustomFormItem(type, props as TCustomFormItem);
     expect(screen).toMatchSnapshot();
   });
 
   describe('render correct input type', () => {
     MOCKED_FORM_ITEMS.forEach(({ type, props }) => {
       it(type, () => {
-        const { queryByTestId } = renderCustomFormItem(type, props as CustomFormItemProps);
+        const { queryByTestId } = renderCustomFormItem(type, props as TCustomFormItem);
         expect(queryByTestId(`input-type-${type}`)).toBeInTheDocument();
       });
     });
@@ -138,7 +138,7 @@ describe('CustomFormItem', () => {
       });
 
       const { type, props } = MOCKED_FORM_ITEMS[0];
-      const { queryByPlaceholderText } = renderCustomFormItem(type, props as CustomFormItemProps);
+      const { queryByPlaceholderText } = renderCustomFormItem(type, props as TCustomFormItem);
 
       const textInput = queryByPlaceholderText(textInputPlaceholder);
       expect(textInput).toBeInTheDocument();
@@ -161,8 +161,8 @@ describe('CustomFormItem', () => {
           <CustomFormItem
             {...({
               ...props,
-              type: invalidInputType as NonStandardInputType,
-            } as CustomFormItemProps)}
+              type: invalidInputType as ENonStandardInputType,
+            } as TCustomFormItem)}
           />,
         );
       }).toThrowError(`${invalidInputType} input type does not exist`);

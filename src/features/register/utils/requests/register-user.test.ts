@@ -1,6 +1,4 @@
-import fetch from 'node-fetch';
-
-import { RegisterFormKeys, RegisterFormAdditionalKeys } from '@/register/enums/register-form-keys';
+import { ERegisterFormAdditionalKeys, ERegisterFormKeys } from '@/register/types';
 
 import { customRequest } from '@/utils/custom-request';
 
@@ -11,14 +9,17 @@ import { registerUser } from './register-user';
 jest.mock('@/utils/custom-request');
 
 const REGISTER_FORM_MOCKED_VALUES = {
-  [RegisterFormKeys.EMAIL]: 'mockedEmail',
-  [RegisterFormKeys.PASSWORD]: 'mockedPassword',
-  [RegisterFormKeys.NICKNAME]: 'mockedNickname',
-  [RegisterFormAdditionalKeys.DATE_OF_BIRTH]: '01-01-2000',
-  [RegisterFormKeys.GENDER]: 1,
-  [RegisterFormKeys.OFFERS]: 0,
-  [RegisterFormKeys.SHARE_INFORMATION]: 0,
-  [RegisterFormKeys.TERMS]: 0,
+  [ERegisterFormKeys.EMAIL]: 'mockedEmail',
+  [ERegisterFormKeys.PASSWORD]: 'mockedPassword',
+  [ERegisterFormKeys.NICKNAME]: 'mockedNickname',
+  [ERegisterFormAdditionalKeys.DATE_OF_BIRTH]: '01-01-2000',
+  [ERegisterFormKeys.DAY]: '1',
+  [ERegisterFormKeys.MONTH]: '1',
+  [ERegisterFormKeys.YEAR]: '2000',
+  [ERegisterFormKeys.GENDER]: 1,
+  [ERegisterFormKeys.OFFERS]: 0,
+  [ERegisterFormKeys.SHARE_INFORMATION]: 0,
+  [ERegisterFormKeys.TERMS]: 0,
 };
 
 const MOCKED_REGISTER_USER_REQUEST_PROPS = {

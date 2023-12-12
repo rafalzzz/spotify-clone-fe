@@ -1,10 +1,10 @@
-import { PasswordResetFormValues } from '@/password-reset/types';
+import { TPasswordResetForm } from '@/password-reset/types';
 
 import { customRequest } from '@/utils/custom-request';
 
 import { ENDPOINTS } from '@/consts/endpoints';
 
-export async function passwordReset(requestBody: PasswordResetFormValues) {
+export async function passwordReset(requestBody: TPasswordResetForm) {
   const response = customRequest({
     endpoint: ENDPOINTS.PASSWORD_RESET,
     method: 'POST',

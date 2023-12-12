@@ -1,12 +1,12 @@
 'use client';
 
-import { parseRequestBody } from '@/register/helpers';
+import { TRegisterUserRequestBody } from '@/register/types';
 
 import { customRequest } from '@/utils/custom-request';
 
 import { ENDPOINTS } from '@/consts/endpoints';
 
-export async function registerUser(requestBody: ReturnType<typeof parseRequestBody>) {
+export async function registerUser(requestBody: TRegisterUserRequestBody) {
   const response = customRequest({
     endpoint: ENDPOINTS.REGISTER_USER,
     method: 'POST',

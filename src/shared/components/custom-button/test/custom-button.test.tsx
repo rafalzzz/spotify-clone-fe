@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import '@testing-library/jest-dom';
 
-import { CustomButtonProps } from '@/types/custom-button-props';
+import { TCustomButton } from '@/types/custom-button-props';
 
 import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
 
@@ -20,7 +20,7 @@ const renderCustomButton = (additionalProps = {}) => {
     ...additionalProps,
   };
 
-  return render(<CustomButton {...(props as CustomButtonProps)} />);
+  return render(<CustomButton {...(props as TCustomButton)} />);
 };
 
 describe('CustomButton', () => {

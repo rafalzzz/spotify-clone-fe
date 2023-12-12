@@ -3,7 +3,7 @@ import { Form } from 'antd';
 
 import { PASSWORD_RESET_FORM_FIELDS, PASSWORD_RESET_INITIAL_VALUES } from '@/password-reset/consts';
 import { usePasswordResetForm } from '@/password-reset/hooks/use-password-reset-form';
-import { PasswordResetFormValues } from '@/password-reset/types';
+import { TPasswordResetForm } from '@/password-reset/types';
 
 import { useDisplayError } from '@/hooks/use-display-error';
 
@@ -12,7 +12,7 @@ import { CustomFormItem, SubmitButton } from '@/shared/components';
 import './PasswordResetForm.scss';
 
 export const PasswordResetForm = () => {
-  const [form] = Form.useForm<PasswordResetFormValues>();
+  const [form] = Form.useForm<TPasswordResetForm>();
   const { displayError, contextHolder } = useDisplayError();
   const { submitButton, onFinish } = usePasswordResetForm({ displayError });
 

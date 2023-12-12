@@ -4,11 +4,11 @@ import './CustomSectionLoader.scss';
 
 const ITEMS_IDS = Array.from({ length: 15 }, (_, i) => i + 1);
 
-type CustomSectionLoaderProps = {
+type TCustomSectionLoader = {
   SectionItemLoader: () => JSX.Element;
 };
 
-export const CustomSectionLoader = ({ SectionItemLoader }: CustomSectionLoaderProps) => (
+export const CustomSectionLoader = ({ SectionItemLoader }: TCustomSectionLoader) => (
   <section className='custom-section-loader'>
     <div className='custom-section-loader__header'>
       <div className='custom-section-loader__header__title' />

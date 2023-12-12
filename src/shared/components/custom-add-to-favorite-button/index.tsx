@@ -7,7 +7,7 @@ import { CustomTooltip } from '../custom-tooltip';
 
 import './CustomAddToFavoriteButton.scss';
 
-export type CustomAddToFavoriteButtonProps = {
+type TCustomAddToFavoriteButton = {
   title: string;
   disabled?: boolean;
   isAddedToFav?: boolean;
@@ -19,7 +19,7 @@ export const CustomAddToFavoriteButton = ({
   disabled = false,
   isAddedToFav = true,
   onClick,
-}: CustomAddToFavoriteButtonProps) => (
+}: TCustomAddToFavoriteButton) => (
   <Button
     className={`custom-add-to-favorite-button custom-add-to-favorite-button--${
       isAddedToFav ? 'inactive' : 'active'

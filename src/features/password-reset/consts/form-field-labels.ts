@@ -1,7 +1,7 @@
-import { PasswordResetFormKeys, PasswordResetCompleteFormKeys } from '@/password-reset/enums';
+import { EPasswordResetCompleteForm, EPasswordResetFormKeys } from '../types';
 
 export const FORM_LABELS = {
-  [PasswordResetFormKeys.LOGIN]: 'Email address or username',
-  [PasswordResetCompleteFormKeys.PASSWORD]: 'New password',
-  [PasswordResetCompleteFormKeys.REPEAT_PASSWORD]: 'Repeat new password',
+  [EPasswordResetFormKeys.LOGIN]: 'Email address or username',
+  [EPasswordResetCompleteForm.PASSWORD]: 'New password',
+  [EPasswordResetCompleteForm.REPEAT_PASSWORD]: 'Repeat new password',
 };
