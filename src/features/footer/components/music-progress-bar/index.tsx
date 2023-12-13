@@ -9,7 +9,7 @@ import { ProgressBar } from '../progress-bar';
 
 import './MusicProgressBar.scss';
 
-export const MusicProgressBar = () => {
+export const MusicProgressBar = (): JSX.Element => {
   const { duration } = useMusicPlayerStore();
   const { ref, currentTime } = useMusicPlayerContext();
 

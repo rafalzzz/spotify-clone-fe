@@ -5,7 +5,7 @@ import React from 'react';
 
 import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
-import { TCustomFormItem } from '@/types/custom-form-item-props';
+import { TCustomFormItem } from '@/types/components';
 
 import { CustomFormItem } from '..';
 

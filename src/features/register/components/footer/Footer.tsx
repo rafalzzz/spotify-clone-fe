@@ -4,7 +4,7 @@ import { ROUTES } from '@/consts/routes';
 
 import './Footer.scss';
 
-export const Footer = () => (
+export const Footer = (): JSX.Element => (
   <footer>
     <CustomHyperlink
       href={ROUTES.LOGIN_USER}

@@ -9,7 +9,7 @@ export const enum EArtistKeys {
   WRAPPER_TYPE = 'wrapperType',
 }
 
-export type Artist = {
+export type TArtist = {
   [EArtistKeys.AMG_ARTIST_ID]: number;
   [EArtistKeys.ARTIST_ID]: number;
   [EArtistKeys.ARTIST_LINK_URL]: string;

@@ -31,7 +31,7 @@ export const enum EMusicTrackKeys {
   WRAPPER_TYPE = 'wrapperType',
 }
 
-export type MusicTrack = {
+export type TMusicTrack = {
   [EMusicTrackKeys.ARTIST_ID]: number;
   [EMusicTrackKeys.ARTIST_NAME]: string;
   [EMusicTrackKeys.ARTWORK_URL_30]: string;

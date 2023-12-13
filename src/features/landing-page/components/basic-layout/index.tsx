@@ -8,7 +8,7 @@ import Navbar from '@/navigation/components/navbar';
 
 import './BasicLayout.scss';
 
-export const BasicLayout: FC<PropsWithChildren> = ({ children }) => (
+export const BasicLayout: FC<PropsWithChildren> = ({ children }): JSX.Element => (
   <div className='basic-layout'>
     <Sidebar />
     <div className='basic-layout__content'>

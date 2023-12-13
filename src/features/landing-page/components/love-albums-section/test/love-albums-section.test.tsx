@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Album, EAlbumKeys } from '@/types/album';
+import { TAlbum, EAlbumKeys } from '@/types/album';
 
 import { LoveAlbumsSection } from '..';
 
@@ -49,7 +49,7 @@ const mockAlbums = [
   },
 ];
 
-const renderLoveAlbumsSection = () => render(<LoveAlbumsSection albums={mockAlbums as Album[]} />);
+const renderLoveAlbumsSection = () => render(<LoveAlbumsSection albums={mockAlbums as TAlbum[]} />);
 
 describe('LoveAlbumsSection', () => {
   it('render component without error', () => {

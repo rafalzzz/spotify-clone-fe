@@ -33,10 +33,10 @@ exports[`MusicTrackInformation renders component without error 1`] = `
             data-testid="music-track-informations-artist-name-tooltip"
           >
             <span>
-              Mocked First Artist Name
+              Mocked First TArtist Name
             </span>
             <span>
-              Mocked First Artist Name
+              Mocked First TArtist Name
             </span>
           </div>
         </button>
@@ -72,10 +72,10 @@ exports[`MusicTrackInformation renders component without error 1`] = `
           data-testid="music-track-informations-artist-name-tooltip"
         >
           <span>
-            Mocked First Artist Name
+            Mocked First TArtist Name
           </span>
           <span>
-            Mocked First Artist Name
+            Mocked First TArtist Name
           </span>
         </div>
       </button>

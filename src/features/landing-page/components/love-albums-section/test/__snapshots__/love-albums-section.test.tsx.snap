@@ -57,12 +57,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     width="100"
                   />
                   <button
-                    class="custom-section-item__play-button"
+                    class="custom-section-item__play-button "
                     data-testid="custom-section-item-play-button"
                   >
                     <span
                       aria-label="play-circle"
                       class="anticon anticon-play-circle antd-icon"
+                      data-testid="custom-section-item-play-icon"
                       role="img"
                     >
                       <svg
@@ -159,12 +160,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     width="100"
                   />
                   <button
-                    class="custom-section-item__play-button"
+                    class="custom-section-item__play-button "
                     data-testid="custom-section-item-play-button"
                   >
                     <span
                       aria-label="play-circle"
                       class="anticon anticon-play-circle antd-icon"
+                      data-testid="custom-section-item-play-icon"
                       role="img"
                     >
                       <svg
@@ -261,12 +263,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     width="100"
                   />
                   <button
-                    class="custom-section-item__play-button"
+                    class="custom-section-item__play-button "
                     data-testid="custom-section-item-play-button"
                   >
                     <span
                       aria-label="play-circle"
                       class="anticon anticon-play-circle antd-icon"
+                      data-testid="custom-section-item-play-icon"
                       role="img"
                     >
                       <svg
@@ -363,12 +366,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     width="100"
                   />
                   <button
-                    class="custom-section-item__play-button"
+                    class="custom-section-item__play-button "
                     data-testid="custom-section-item-play-button"
                   >
                     <span
                       aria-label="play-circle"
                       class="anticon anticon-play-circle antd-icon"
+                      data-testid="custom-section-item-play-icon"
                       role="img"
                     >
                       <svg
@@ -465,12 +469,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     width="100"
                   />
                   <button
-                    class="custom-section-item__play-button"
+                    class="custom-section-item__play-button "
                     data-testid="custom-section-item-play-button"
                   >
                     <span
                       aria-label="play-circle"
                       class="anticon anticon-play-circle antd-icon"
+                      data-testid="custom-section-item-play-icon"
                       role="img"
                     >
                       <svg
@@ -567,12 +572,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     width="100"
                   />
                   <button
-                    class="custom-section-item__play-button"
+                    class="custom-section-item__play-button "
                     data-testid="custom-section-item-play-button"
                   >
                     <span
                       aria-label="play-circle"
                       class="anticon anticon-play-circle antd-icon"
+                      data-testid="custom-section-item-play-icon"
                       role="img"
                     >
                       <svg
@@ -702,12 +708,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item__play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg
@@ -804,12 +811,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item__play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg
@@ -906,12 +914,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item__play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg
@@ -1008,12 +1017,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item__play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg
@@ -1110,12 +1120,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item__play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg
@@ -1212,12 +1223,13 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item__play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg

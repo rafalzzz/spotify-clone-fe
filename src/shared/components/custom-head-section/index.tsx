@@ -1,13 +1,13 @@
 import Head from 'next/head';
 
-type TCustomHeadSection = { title: string; icon?: string; description: string; keywords: string };
+import { TCustomHeadSection } from '@/types/components';
 
 export const CustomHeadSection = ({
   title,
   icon = '/spotify.png',
   description,
   keywords,
-}: TCustomHeadSection) => (
+}: TCustomHeadSection): JSX.Element => (
   <Head>
     <title>{title}</title>
     <link rel='icon' href={icon} type='image/svg+xml' />

@@ -9,7 +9,7 @@ import './DateOfBirthInput.scss';
 
 const { Option } = Select;
 
-export const DateOfBirthInput = ({ label = '', name }: TDateOfBirthInput) => {
+export const DateOfBirthInput = ({ label = '', name }: TDateOfBirthInput): JSX.Element => {
   const form = Form.useFormInstance();
 
   const validateInput = () => {

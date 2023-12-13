@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Artist, EArtistKeys } from '@/types/artist';
+import { TArtist, EArtistKeys } from '@/types/artist';
 
 import { ArtistsSection } from '..';
 
@@ -31,7 +31,7 @@ const mockArtists = [
   },
 ];
 
-const renderArtistsSection = () => render(<ArtistsSection artists={mockArtists as Artist[]} />);
+const renderArtistsSection = () => render(<ArtistsSection artists={mockArtists as TArtist[]} />);
 
 describe('ArtistsSection', () => {
   it('render component without error', () => {

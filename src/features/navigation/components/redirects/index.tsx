@@ -1,5 +1,4 @@
 'use client';
-
 import { useRouter } from 'next/navigation';
 import { useMemo } from 'react';
 
@@ -9,7 +8,7 @@ import { ROUTES } from '@/consts/routes';
 
 import './Redirects.scss';
 
-export const Redirects = () => {
+export const Redirects = (): JSX.Element => {
   const { push } = useRouter();
 
   const REDIRECT_BUTTONS = useMemo(

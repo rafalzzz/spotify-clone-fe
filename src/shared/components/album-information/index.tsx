@@ -2,21 +2,17 @@ import { useRouter } from 'next/navigation';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
+import { TAlbumInformation } from '@/types/components';
+
 import { CustomTooltip } from '../custom-tooltip';
 
 import './AlbumInformation.scss';
-
-type TAlbumInformation = {
-  collectionName: string;
-  releaseDate: string;
-  artistName: string;
-};
 
 export const AlbumInformation = ({
   collectionName,
   releaseDate,
   artistName,
-}: TAlbumInformation) => {
+}: TAlbumInformation): JSX.Element => {
   const router = useRouter();
   const releaseYear = releaseDate.split('-')[0];
 

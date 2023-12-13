@@ -1,11 +1,4 @@
-type TCustomRequest = {
-  basicUrl?: string;
-  endpoint?: string;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
-  headers?: Record<string, string>;
-  requestBody?: Record<string, unknown>;
-  allowCookies?: boolean;
-};
+import { TCustomRequest } from '@/types/utils';
 
 export const customRequest = ({
   basicUrl = process.env.NEXT_PUBLIC_API_URL,
@@ -17,7 +10,7 @@ export const customRequest = ({
   },
   requestBody,
   allowCookies = false,
-}: TCustomRequest) =>
+}: TCustomRequest): Promise<Response> =>
   fetch(basicUrl + endpoint, {
     method,
     headers,

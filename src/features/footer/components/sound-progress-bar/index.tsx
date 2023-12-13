@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useCallback, useRef, ChangeEvent } from 'react';
 
 import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
@@ -13,7 +12,7 @@ import { ProgressBar } from '../progress-bar';
 
 import './SoundProgressBar.scss';
 
-export const SoundProgressBar = () => {
+export const SoundProgressBar = (): JSX.Element => {
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
 

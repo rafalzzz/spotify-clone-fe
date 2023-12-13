@@ -1,7 +1,7 @@
-import { EMusicTrackKeys, MusicTrack } from './music-track';
+import { EMusicTrackKeys, TMusicTrack } from './music-track';
 
 export type TSongItem = Pick<
-  MusicTrack,
+  TMusicTrack,
   | EMusicTrackKeys.ARTIST_NAME
   | EMusicTrackKeys.TRACK_NAME
   | EMusicTrackKeys.PREVIEW_URL

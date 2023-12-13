@@ -19,7 +19,7 @@ export const enum EAlbumKeys {
   WRAPPER_TYPE = 'wrapperType',
 }
 
-export type Album = {
+export type TAlbum = {
   [EAlbumKeys.ARTIST_ID]: number;
   [EAlbumKeys.ARTIST_NAME]: string;
   [EAlbumKeys.ARTWORK_URL_60]: string;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const MutedSoundIcon = () => (
+const MutedSoundIcon = (): JSX.Element => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     role='img'

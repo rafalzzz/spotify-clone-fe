@@ -1,10 +1,6 @@
 import { ChangeEvent, Dispatch, RefObject, SyntheticEvent } from 'react';
 
-import { TSongItem } from '@/types/song-item';
-
-export type TUsePlayerButtonsProps = {
-  isPlaying: boolean;
-};
+import { TSongItem } from '@/types/store';
 
 export type TMusicPlayerContext = {
   ref: RefObject<HTMLAudioElement>;
@@ -41,4 +37,8 @@ export type TUseAudioProps = {
   onLoadedMetadata: ({ target }: SyntheticEvent<HTMLAudioElement>) => void;
   onTimeUpdate: ({ target }: SyntheticEvent<HTMLAudioElement>) => void;
   onEnded: () => void;
+};
+
+export type TUsePlayerButtonsProps = {
+  isPlaying: boolean;
 };

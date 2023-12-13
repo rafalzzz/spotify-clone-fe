@@ -1,15 +1,16 @@
 'use client';
-
 import { useCallback, useMemo } from 'react';
+
+import { TLoveSongsSection } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
-import { EMusicTrackKeys, MusicTrack } from '@/types/music-track';
-import { TSongItem } from '@/types/song-item';
+import { EMusicTrackKeys } from '@/types/music-track';
+import { TSongItem } from '@/types/store';
 
 import { CustomSection, CustomSectionItem, MusicTrackInformation } from '@/shared/components';
 
-export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => {
+export const LoveSongsSection = ({ songs }: TLoveSongsSection): JSX.Element => {
   const { isPlaying, activeIndex, songsList, changeSong, togglePlay } = useMusicPlayerStore();
 
   const currentPlayedSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);

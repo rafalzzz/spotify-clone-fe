@@ -14,7 +14,7 @@ import { CustomFormItem, SubmitButton } from '@/shared/components';
 
 import './RegisterForm.scss';
 
-export const RegisterForm = () => {
+export const RegisterForm = (): JSX.Element => {
   const [form] = Form.useForm<TRegisterForm>();
   const { displayError, contextHolder } = useDisplayError();
   const { submitButton, onFinish } = useRegisterForm({ displayError });

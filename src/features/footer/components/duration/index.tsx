@@ -5,7 +5,7 @@ import { formatDuration } from '@/footer/utils/format-duration';
 
 import './Duration.scss';
 
-export const Duration: FC<TDuration> = ({ seconds }) => {
+export const Duration: FC<TDuration> = ({ seconds }): JSX.Element => {
   const memoizedValue = useMemo(() => formatDuration(seconds), [seconds]);
 
   return <button className='duration'>{memoizedValue}</button>;

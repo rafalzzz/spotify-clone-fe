@@ -4,7 +4,9 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
-import { CustomSectionItem, TCustomSectionItem } from '../';
+import { TCustomSectionItem } from '@/types/components';
+
+import { CustomSectionItem } from '../';
 
 const mockOnClick = jest.fn();
 

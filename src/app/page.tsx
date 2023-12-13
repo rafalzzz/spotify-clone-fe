@@ -4,7 +4,7 @@ import { useLandingPage } from '@/landing-page/hooks/use-landing-page';
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 
-const LandingPage = async () => {
+const LandingPage = async (): Promise<JSX.Element> => {
   const { songs, albums, artists } = await useLandingPage();
 
   return <MainContent songs={songs} albums={albums} artists={artists} />;

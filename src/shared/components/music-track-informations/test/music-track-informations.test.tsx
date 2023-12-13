@@ -8,8 +8,8 @@ import { MusicTrackInformation } from '../';
 
 const MOCKED_TRACK_NAME = 'Mocked title';
 
-const FIRST_ARTIST_NAME = 'Mocked First Artist Name';
-const MOCKED_ARTIST_NAME = `${FIRST_ARTIST_NAME}, Second Artist Name`;
+const FIRST_ARTIST_NAME = 'Mocked First TArtist Name';
+const MOCKED_ARTIST_NAME = `${FIRST_ARTIST_NAME}, Second TArtist Name`;
 
 const TRACK_NAME_TEST_ID = 'music-track-informations-track-name';
 const ARTIST_NAME_TEST_ID = 'music-track-informations-artist-name';

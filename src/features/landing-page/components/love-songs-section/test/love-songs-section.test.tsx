@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { EMusicTrackKeys, MusicTrack } from '@/types/music-track';
+import { EMusicTrackKeys, TMusicTrack } from '@/types/music-track';
 
 import { LoveSongsSection } from '..';
 
@@ -49,7 +49,8 @@ const mockSongs = [
   },
 ];
 
-const renderLoveSongsSection = () => render(<LoveSongsSection songs={mockSongs as MusicTrack[]} />);
+const renderLoveSongsSection = () =>
+  render(<LoveSongsSection songs={mockSongs as TMusicTrack[]} />);
 
 describe('LoveSongsSection', () => {
   it('render component without error', () => {

@@ -1,21 +1,21 @@
-import { Dispatch, ReactNode, RefObject } from 'react';
-
-import { Album } from '@/types/album';
-import { Artist } from '@/types/artist';
-import { MusicTrack } from '@/types/music-track';
+import { TAlbum } from '@/types/album';
+import { TArtist } from '@/types/artist';
+import { TMusicTrack } from '@/types/music-track';
 
 export type TArtistSection = {
-  artists: Artist[];
+  artists: TArtist[];
 };
 
 export type TLoveAlbumsSection = {
-  albums: Album[];
+  albums: TAlbum[];
 };
 
+export type TLoveSongsSection = { songs: TMusicTrack[] };
+
 export type TMainContent = {
-  songs: MusicTrack[];
-  albums: Album[];
-  artists: Artist[];
+  songs: TMusicTrack[];
+  albums: TAlbum[];
+  artists: TArtist[];
 };
 
 export type TUseLandingPageProps = TMainContent;

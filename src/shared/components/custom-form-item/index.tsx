@@ -7,7 +7,7 @@ import {
   ExtendedCheckboxProps,
   ExtendedRadioProps,
   ExtendedSwitchProps,
-} from '@/types/custom-form-item-props';
+} from '@/types/components';
 
 import './CustomFormItem.scss';
 
@@ -22,7 +22,7 @@ export const CustomFormItem = ({
   checkboxProps,
   switchProps,
   setFieldValue,
-}: TCustomFormItem) => {
+}: TCustomFormItem): JSX.Element => {
   const getFormItemInput = (inputType: EInputType) => {
     switch (inputType) {
       case EInputType.TEXT:

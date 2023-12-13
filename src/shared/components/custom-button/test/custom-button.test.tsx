@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import '@testing-library/jest-dom';
 
-import { TCustomButton } from '@/types/custom-button-props';
+import { TCustomButton } from '@/types/components';
 
 import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
 

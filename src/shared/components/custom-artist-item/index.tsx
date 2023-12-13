@@ -2,13 +2,11 @@ import Link from 'next/link';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
-import { Artist } from '@/types/artist';
+import { TCustomArtistSection } from '@/types/components';
 
 import './CustomSectionItem.scss';
 
-type TCustomArtistSection = Pick<Artist, 'artistName'>;
-
-export const CustomArtistItem = ({ artistName }: TCustomArtistSection) => (
+export const CustomArtistItem = ({ artistName }: TCustomArtistSection): JSX.Element => (
   <Link
     href={generateArtistRedirectionPath(artistName)}
     className='custom-artist-item'

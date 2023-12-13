@@ -1,2 +1,2 @@
-export const generateArtistRedirectionPath = (artistName: string) =>
+export const generateArtistRedirectionPath = (artistName: string): string =>
   `/artist/${artistName.toLocaleLowerCase()}`;

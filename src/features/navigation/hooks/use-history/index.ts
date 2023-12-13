@@ -1,5 +1,4 @@
 'use client';
-
 import { usePathname, useRouter } from 'next/navigation';
 import { useReducer, useCallback, useEffect } from 'react';
 
@@ -9,6 +8,8 @@ import {
   TCountAction,
   TCountState,
   TUpdatePathIndex,
+  TUseHistory,
+  TUseHistoryProps,
 } from '@/navigation/types';
 
 const historyReducer = (state: TCountState, action: TCountAction) => {
@@ -51,14 +52,7 @@ const historyReducer = (state: TCountState, action: TCountAction) => {
 
 const DISABLED_UNDO_BUTTON_INDEX_VALUES = [-1, 0];
 
-type TUseHistory = {
-  initialState: {
-    allPaths: string[];
-    currentPathIndex: number;
-  };
-};
-
-export const useHistory = ({ initialState }: TUseHistory) => {
+export const useHistory = ({ initialState }: TUseHistory): TUseHistoryProps => {
   const [state, dispatch] = useReducer(historyReducer, initialState);
   const { push } = useRouter();
   const pathname = usePathname();

@@ -12,7 +12,7 @@ import {
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 
-const PasswordResetComplete = () => (
+const PasswordResetComplete = (): JSX.Element => (
   <>
     <CustomHeadSection
       title='Password change - Spotify'

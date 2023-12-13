@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 
 import { Audio } from '../audio';
@@ -8,7 +7,7 @@ import { PlayerButtons } from '../player-buttons';
 
 import './PlayerControls.scss';
 
-export const PlayerControls = () => (
+export const PlayerControls = (): JSX.Element => (
   <div className='player-controls'>
     <PlayerButtons />
     <MusicProgressBar />

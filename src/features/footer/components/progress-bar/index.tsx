@@ -3,7 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import './ProgressBar.scss';
 import { TProgressBar } from '@/footer/types';
 
-export const ProgressBar = ({ value, minValue, maxValue, handleChange }: TProgressBar) => {
+export const ProgressBar = ({
+  value,
+  minValue,
+  maxValue,
+  handleChange,
+}: TProgressBar): JSX.Element => {
   const [decimalValue, setDecimalValue] = useState(0);
 
   const inputRef = useRef<HTMLInputElement | null>(null);

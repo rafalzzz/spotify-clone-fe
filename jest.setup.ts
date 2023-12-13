@@ -1,5 +1,3 @@
-import { MockResizeObserver } from '@/types/mock-resize-observer';
-
 jest.mock('antd');
 
 beforeAll(() => {
@@ -12,12 +10,4 @@ beforeAll(() => {
         removeListener: function () {},
       };
     };
-});
-
-Object.defineProperty(window, 'ResizeObserver', {
-  writable: true,
-  value: jest.fn().mockImplementation(function (this: MockResizeObserver) {
-    this.observe = jest.fn();
-    this.unobserve = jest.fn();
-  }),
 });

@@ -1,18 +1,15 @@
 import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
 
-import './CustomSection.scss';
+import { TCustomSection } from '@/types/components';
 
-type TCustomSection = {
-  title: string;
-  redirectionUrl: string;
-};
+import './CustomSection.scss';
 
 export const CustomSection: FC<PropsWithChildren<TCustomSection>> = ({
   title,
   redirectionUrl,
   children,
-}) => (
+}): JSX.Element => (
   <section className='custom-section'>
     <div className='custom-section__header'>
       <header>

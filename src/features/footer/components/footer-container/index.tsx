@@ -8,7 +8,7 @@ import { SoundProgressBar } from '../sound-progress-bar';
 
 import './MusicPlayerContainer.scss';
 
-const FooterContainer = () => (
+const FooterContainer = (): JSX.Element => (
   <footer className='footer-container'>
     <NowPlayedTrack />
     <MusicPlayerContextProvider>

@@ -1,5 +1,4 @@
 'use client';
-
 import { TLoveAlbumsSection } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
@@ -8,7 +7,7 @@ import { EAlbumKeys } from '@/types/album';
 
 import { CustomSection, CustomSectionItem, AlbumInformation } from '@/shared/components';
 
-export const LoveAlbumsSection = ({ albums }: TLoveAlbumsSection) => {
+export const LoveAlbumsSection = ({ albums }: TLoveAlbumsSection): JSX.Element => {
   const { isPlaying } = useMusicPlayerStore();
 
   return (

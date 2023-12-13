@@ -1,6 +1,6 @@
 import './CustomSectionItemLoader.scss';
 
-export const CustomSectionItemLoader = () => (
+export const CustomSectionItemLoader = (): JSX.Element => (
   <div className='custom-section-item-loader'>
     <div className='custom-section-item-loader__image' />
     <div className='custom-section-item-loader__skeleton-text__container'>

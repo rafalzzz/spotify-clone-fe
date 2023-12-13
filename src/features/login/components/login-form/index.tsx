@@ -11,7 +11,7 @@ import { CustomFormItem, SubmitButton } from '@/shared/components';
 
 import './LoginForm.scss';
 
-export const LoginForm = () => {
+export const LoginForm = (): JSX.Element => {
   const [form] = Form.useForm<TLoginForm>();
   const { displayError, contextHolder } = useDisplayError();
   const { submitButton, onFinish } = useLoginForm({ displayError });

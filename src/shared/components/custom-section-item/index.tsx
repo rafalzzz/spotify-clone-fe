@@ -1,5 +1,4 @@
 'use client';
-
 import { PlayCircleFilled, PauseCircleFilled } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,15 +6,9 @@ import { FC, PropsWithChildren, useRef } from 'react';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
-import './CustomSectionItem.scss';
+import { TCustomSectionItem } from '@/types/components';
 
-export type TCustomSectionItem = {
-  collectionName: string;
-  imageUrl: string;
-  isActive: boolean;
-  isPlaying: boolean;
-  onClick: () => void;
-};
+import './CustomSectionItem.scss';
 
 export const CustomSectionItem: FC<PropsWithChildren<TCustomSectionItem>> = ({
   children,
@@ -24,7 +17,7 @@ export const CustomSectionItem: FC<PropsWithChildren<TCustomSectionItem>> = ({
   isActive,
   isPlaying,
   onClick,
-}) => {
+}): JSX.Element => {
   const ref = useRef(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

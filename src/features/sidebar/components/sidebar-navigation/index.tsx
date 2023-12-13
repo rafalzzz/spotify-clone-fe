@@ -1,12 +1,11 @@
 'use client';
-
 import Link from 'next/link';
 
 import { useSidebarNavigation } from '@/sidebar/hooks/use-sidebar-navigation';
 
 import './SidebarNavigation.scss';
 
-export const SidebarNavigation = () => {
+export const SidebarNavigation = (): JSX.Element => {
   const { sidebarNavigationItems } = useSidebarNavigation();
 
   return (

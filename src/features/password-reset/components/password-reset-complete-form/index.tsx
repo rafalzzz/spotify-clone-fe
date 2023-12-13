@@ -14,7 +14,7 @@ import { CustomFormItem, SubmitButton } from '@/shared/components';
 
 import './PasswordResetCompleteForm.scss';
 
-export const PasswordResetCompleteForm = () => {
+export const PasswordResetCompleteForm = (): JSX.Element => {
   const [form] = Form.useForm<TPasswordResetCompleteForm>();
   const { displayError, contextHolder } = useDisplayError();
   const { submitButton, onFinish } = usePasswordResetCompleteForm({ displayError });

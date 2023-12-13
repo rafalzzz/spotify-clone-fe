@@ -13,7 +13,7 @@ import {
   CustomSectionLoader,
 } from '@/shared/server-components';
 
-const MainContent = ({ songs, albums, artists }: TMainContent) => (
+const MainContent = ({ songs, albums, artists }: TMainContent): JSX.Element => (
   <CustomContentWrapper>
     <h1>Welcome</h1>
     <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>

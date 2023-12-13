@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useMemo } from 'react';
@@ -16,7 +15,7 @@ import { EMusicTrackKeys } from '@/types/music-track';
 
 import './NowPlayedTrack.scss';
 
-export const NowPlayedTrack = () => {
+export const NowPlayedTrack = (): JSX.Element => {
   const { activeIndex, songsList } = useMusicPlayerStore();
 
   const currentSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);

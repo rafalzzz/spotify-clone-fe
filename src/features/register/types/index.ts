@@ -1,4 +1,6 @@
-export enum ERegisterFormKeys {
+import { TCustomButton } from '@/types/components';
+
+export const enum ERegisterFormKeys {
   EMAIL = 'email',
   PASSWORD = 'password',
   NICKNAME = 'nickname',
@@ -11,7 +13,7 @@ export enum ERegisterFormKeys {
   TERMS = 'terms',
 }
 
-export enum ERegisterFormAdditionalKeys {
+export const enum ERegisterFormAdditionalKeys {
   DATE_OF_BIRTH = 'dateOfBirth',
 }
 
@@ -26,3 +28,8 @@ export type TRegisterUserRequestBody = Record<
   ERegisterFormKeys | ERegisterFormAdditionalKeys,
   string | number
 >;
+
+export type TUseRegisterFormProps = {
+  submitButton: TCustomButton;
+  onFinish: (values: TRegisterForm) => Promise<void>;
+};

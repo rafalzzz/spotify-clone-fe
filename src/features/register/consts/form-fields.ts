@@ -9,8 +9,8 @@ import { passwordValidator } from '@/validators/password-validator';
 
 import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
-import { TCustomFormItem } from '@/types/custom-form-item-props';
-import { TNonStandardItemProps } from '@/types/non-standard-form-item-props';
+import { TCustomFormItem } from '@/types/components';
+import { TNonStandardItemProps } from '@/types/components';
 
 import { ERegisterFormKeys } from '../types';
 

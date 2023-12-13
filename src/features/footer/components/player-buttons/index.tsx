@@ -13,7 +13,7 @@ import PrevIcon from '@/icons/prev';
 
 import './PlayerButtons.scss';
 
-export const PlayerButtons = () => {
+export const PlayerButtons = (): JSX.Element => {
   const { isPlaying, togglePlay } = useMusicPlayerStore();
   const { isShuffle, isLoop, setIsShuffle, setIsLoop } = useMusicPlayerContext();
 

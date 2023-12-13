@@ -2,7 +2,7 @@ import { repeatNewPasswordValidator } from '@/password-reset/utils/validators/re
 
 import { EInputType } from '@/enums/input-type';
 
-import { TCustomFormItem } from '@/types/custom-form-item-props';
+import { TCustomFormItem } from '@/types/components';
 
 import { passwordValidator, emailOrUsernameValidator } from '@/shared/validators';
 

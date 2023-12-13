@@ -1,13 +1,13 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { TPasswordResetForm } from '@/password-reset/types';
+import { TPasswordResetForm, TUsePasswordResetFormProps } from '@/password-reset/types';
 import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
-import { TCustomButton } from '@/types/custom-button-props';
-import { THookForm } from '@/types/hook-form-props';
+import { TCustomButton } from '@/types/components';
+import { THookForm } from '@/types/components';
 
-export const usePasswordResetForm = ({ displayError }: THookForm) => {
+export const usePasswordResetForm = ({ displayError }: THookForm): TUsePasswordResetFormProps => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { push } = useRouter();

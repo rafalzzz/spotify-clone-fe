@@ -12,7 +12,10 @@ type MusicTrackInformationProps = {
   artistName: string;
 };
 
-export const MusicTrackInformation = ({ trackName, artistName }: MusicTrackInformationProps) => {
+export const MusicTrackInformation = ({
+  trackName,
+  artistName,
+}: MusicTrackInformationProps): JSX.Element => {
   const router = useRouter();
   const mainArtist = getMainArtist(artistName);
 

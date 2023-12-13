@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { TSongItem } from '@/types/song-item';
+import { TSongItem } from '@/types/store';
 
 type TChangeSongAction = { activeIndex: number; songs: TSongItem[] };
 
