@@ -6,7 +6,7 @@ type TLinkMock = {
   replace?: boolean;
 };
 
-const LinkMock: FC<PropsWithChildren<TLinkMock>> = ({ children, href, ...props }) => (
+const LinkMock: FC<PropsWithChildren<TLinkMock>> = ({ children, href, ...props }): JSX.Element => (
   <a href={href} {...props}>
     {children}
   </a>

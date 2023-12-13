@@ -1,18 +1,6 @@
 import { create } from 'zustand';
 
-import { TSongItem } from '@/types/store';
-
-type TChangeSongAction = { activeIndex: number; songs: TSongItem[] };
-
-type TUseMusicPlayerStore = {
-  isPlaying: boolean;
-  duration: number;
-  activeIndex: number;
-  songsList: TSongItem[];
-  changeSong: ({ activeIndex, songs }: TChangeSongAction) => void;
-  togglePlay: () => void;
-  setDuration: (duration: number) => void;
-};
+import { TChangeSongAction, TUseMusicPlayerStore } from '@/types/store';
 
 export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
   isPlaying: false,
