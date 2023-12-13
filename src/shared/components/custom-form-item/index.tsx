@@ -1,4 +1,5 @@
 import { Form, Input, Select, Radio, Checkbox, Switch } from 'antd';
+import { useCallback } from 'react';
 
 import { EInputType } from '@/enums/input-type';
 
@@ -23,56 +24,59 @@ export const CustomFormItem = ({
   switchProps,
   setFieldValue,
 }: TCustomFormItem): JSX.Element => {
-  const getFormItemInput = (inputType: EInputType) => {
-    switch (inputType) {
-      case EInputType.TEXT:
-        return <Input data-testid={`input-type-${EInputType.TEXT}`} {...inputProps} />;
-      case EInputType.PASSWORD:
-        return (
-          <Input.Password
-            autoComplete='on'
-            data-testid={`input-type-${EInputType.PASSWORD}`}
-            {...inputProps}
-          />
-        );
-      case EInputType.SELECT:
-        return <Select data-testid={`input-type-${EInputType.SELECT}`} {...selectProps} />;
-      case EInputType.RADIO:
-        const { options } = radioProps as ExtendedRadioProps;
-
-        return (
-          <Radio.Group data-testid={`input-type-${EInputType.RADIO}`}>
-            {options.map(({ label, value }) => (
-              <Radio key={value} value={value}>
-                {label}
-              </Radio>
-            ))}
-          </Radio.Group>
-        );
-      case EInputType.CHECKBOX:
-        const { label: checkboxLabel } = checkboxProps as ExtendedCheckboxProps;
-
-        return (
-          <Checkbox data-testid={`input-type-${EInputType.CHECKBOX}`}>{checkboxLabel}</Checkbox>
-        );
-      case EInputType.SWITCH:
-        const { label: switchLabel } = switchProps as ExtendedSwitchProps;
-
-        return (
-          <div className={`input-type-${EInputType.SWITCH}`}>
-            <Switch
-              className={`input-type-${EInputType.SWITCH}__button`}
-              data-testid={`input-type-${EInputType.SWITCH}`}
-              onChange={(value) => setFieldValue!(name, value)}
-              title={switchLabel}
+  const getFormItemInput = useCallback(
+    (inputType: EInputType) => {
+      switch (inputType) {
+        case EInputType.TEXT:
+          return <Input data-testid={`input-type-${EInputType.TEXT}`} {...inputProps} />;
+        case EInputType.PASSWORD:
+          return (
+            <Input.Password
+              autoComplete='on'
+              data-testid={`input-type-${EInputType.PASSWORD}`}
+              {...inputProps}
             />
-            <span className={`input-type-${EInputType.SWITCH}__label`}>{switchLabel}</span>
-          </div>
-        );
-      default:
-        throw Error(`${inputType} input type does not exist`);
-    }
-  };
+          );
+        case EInputType.SELECT:
+          return <Select data-testid={`input-type-${EInputType.SELECT}`} {...selectProps} />;
+        case EInputType.RADIO:
+          const { options } = radioProps as ExtendedRadioProps;
+
+          return (
+            <Radio.Group data-testid={`input-type-${EInputType.RADIO}`}>
+              {options.map(({ label, value }) => (
+                <Radio key={value} value={value}>
+                  {label}
+                </Radio>
+              ))}
+            </Radio.Group>
+          );
+        case EInputType.CHECKBOX:
+          const { label: checkboxLabel } = checkboxProps as ExtendedCheckboxProps;
+
+          return (
+            <Checkbox data-testid={`input-type-${EInputType.CHECKBOX}`}>{checkboxLabel}</Checkbox>
+          );
+        case EInputType.SWITCH:
+          const { label: switchLabel } = switchProps as ExtendedSwitchProps;
+
+          return (
+            <div className={`input-type-${EInputType.SWITCH}`}>
+              <Switch
+                className={`input-type-${EInputType.SWITCH}__button`}
+                data-testid={`input-type-${EInputType.SWITCH}`}
+                onChange={(value) => setFieldValue!(name, value)}
+                title={switchLabel}
+              />
+              <span className={`input-type-${EInputType.SWITCH}__label`}>{switchLabel}</span>
+            </div>
+          );
+        default:
+          throw Error(`${inputType} input type does not exist`);
+      }
+    },
+    [checkboxProps, inputProps, name, radioProps, selectProps, switchProps, setFieldValue],
+  );
 
   return (
     <Form.Item

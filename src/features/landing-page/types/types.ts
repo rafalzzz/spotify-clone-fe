@@ -1,6 +1,7 @@
 import { TAlbum } from '@/types/album';
 import { TArtist } from '@/types/artist';
 import { TMusicTrack } from '@/types/music-track';
+import { TSongItem } from '@/types/store';
 
 export type TArtistSection = {
   artists: TArtist[];
@@ -19,3 +20,9 @@ export type TMainContent = {
 };
 
 export type TUseLandingPageProps = TMainContent;
+
+export type TUseLoveSongsSectionProps = {
+  isPlaying: boolean;
+  currentPlayedSong: TSongItem;
+  handleOnClick: (songItem: TSongItem) => void;
+};
