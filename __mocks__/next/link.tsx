@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
-type LinkProps = {
-  children: React.ReactElement;
+type TLinkMock = {
   href: string;
   passHref?: boolean;
   replace?: boolean;
 };
 
-const LinkMock = ({ children, href, ...props }: LinkProps) => (
+const LinkMock: FC<PropsWithChildren<TLinkMock>> = ({ children, href, ...props }) => (
   <a href={href} {...props}>
     {children}
   </a>

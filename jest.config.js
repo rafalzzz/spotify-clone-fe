@@ -31,6 +31,7 @@ module.exports = {
     '@/footer/(.*)$': '<rootDir>/src/features/footer/$1',
     '@/navigation/(.*)$': '<rootDir>/src/features/navigation/$1',
     '@/landing-page/(.*)$': '<rootDir>/src/features/landing-page/$1',
+    '@/store/(.*)$': '<rootDir>/src/store/$1',
     '@/components/(.*)$': '<rootDir>/src/shared/components/$1',
     '@/server-components/(.*)$': '<rootDir>/src/shared/server-components/$1',
     '@/configs/(.*)$': '<rootDir>/src/configs/$1',

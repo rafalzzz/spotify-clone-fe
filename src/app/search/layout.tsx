@@ -1,12 +1,8 @@
-import { ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 
-type SearchProps = {
-  children: ReactNode;
-};
-
-const Search = ({ children }: SearchProps) => <>{children}</>;
+const Search: FC<PropsWithChildren> = ({ children }) => <>{children}</>;
 
 export default Search;

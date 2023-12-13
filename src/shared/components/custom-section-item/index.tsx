@@ -1,9 +1,9 @@
 'use client';
 
-import { PlayCircleFilled } from '@ant-design/icons';
+import { PlayCircleFilled, PauseCircleFilled } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { FC, PropsWithChildren, useRef } from 'react';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
@@ -12,22 +12,22 @@ import './CustomSectionItem.scss';
 type TCustomSectionItem = {
   collectionName: string;
   imageUrl: string;
-  children: JSX.Element;
+  isActive: boolean;
   onClick: () => void;
 };
 
-export const CustomSectionItem = ({
+export const CustomSectionItem: FC<PropsWithChildren<TCustomSectionItem>> = ({
+  children,
   collectionName,
   imageUrl,
-  children,
+  isActive,
   onClick,
-}: TCustomSectionItem) => {
+}) => {
   const ref = useRef(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log('click');
     onClick();
   };
 
@@ -53,7 +53,11 @@ export const CustomSectionItem = ({
             onClick={handleClick}
             data-testid='custom-section-item-play-button'
           >
-            <PlayCircleFilled className='antd-icon' />
+            {isActive ? (
+              <PauseCircleFilled className='antd-icon' />
+            ) : (
+              <PlayCircleFilled className='antd-icon' />
+            )}
           </button>
         </div>
         {children}

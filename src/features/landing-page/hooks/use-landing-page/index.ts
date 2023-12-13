@@ -1,6 +1,6 @@
 import { fetchMusicData } from '@/server-actions/fetch-music-data';
 
-import { TUseLandingPageProps } from '../types/types';
+import { TUseLandingPageProps } from '../../types/types';
 
 export const useLandingPage = async (): Promise<TUseLandingPageProps> => {
   const loveSongsPromise = fetchMusicData({

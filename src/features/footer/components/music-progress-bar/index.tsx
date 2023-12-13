@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { ChangeEvent, useCallback } from 'react';
 
+import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
+
+import { useMusicPlayerStore } from '@/store/music-player';
+
+import { Duration } from '../duration';
 import { ProgressBar } from '../progress-bar';
 
 import './MusicProgressBar.scss';
 
-export const MusicProgressBar = () => (
-  <div className='music-progress-bar'>
-    <div className='music-progress-bar__timer'>0:00</div>
-    <ProgressBar />
-    <div className='music-progress-bar__timer'>1:00</div>
-  </div>
-);
+export const MusicProgressBar = () => {
+  const { duration } = useMusicPlayerStore();
+  const { ref, currentTime } = useMusicPlayerContext();
+
+  const handleChange = useCallback(
+    ({ target: { valueAsNumber } }: ChangeEvent<HTMLInputElement>) => {
+      if (ref.current) {
+        ref.current.currentTime = valueAsNumber;
+      }
+    },
+    [ref],
+  );
+
+  return (
+    <div className='music-progress-bar'>
+      <Duration seconds={0} />
+      <ProgressBar
+        value={currentTime}
+        minValue={0}
+        maxValue={duration}
+        handleChange={handleChange}
+      />
+      <Duration seconds={duration} />
+    </div>
+  );
+};

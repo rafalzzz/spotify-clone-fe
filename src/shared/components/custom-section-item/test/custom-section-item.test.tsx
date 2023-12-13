@@ -20,6 +20,7 @@ const renderCustomSectionItem = () =>
     <CustomSectionItem
       collectionName={MOCKED_COLLECTION_NAME}
       imageUrl={MOCKED_IMAGE_URL}
+      isActive={false}
       onClick={mockOnClick}
     >
       {MOCKED_CHILD}

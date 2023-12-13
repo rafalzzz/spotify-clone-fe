@@ -23,6 +23,7 @@
       "@/footer/*": ["features/footer/*"],
       "@/navigation/*": ["features/navigation/*"],
       "@/landing-page/*": ["features/landing-page/*"],
+      "@/store/*": ["store/*"],
       "@/components/*": ["shared/components/*"],
       "@/server-components/*": ["shared/server-components/*"],
       "@/server-actions/*": ["shared/server-actions/*"],

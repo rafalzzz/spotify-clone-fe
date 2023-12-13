@@ -1,4 +1,6 @@
-import { PlayCircleFilled } from '@ant-design/icons';
+import { PlayCircleFilled, PauseCircleFilled } from '@ant-design/icons';
+
+import { useMusicPlayerStore } from '@/store/music-player';
 
 import { CustomIconButton } from '@/components/custom-icon-button';
 
@@ -9,22 +11,26 @@ import PrevIcon from '@/icons/prev';
 
 import './PlayerButtons.scss';
 
-export const PlayerButtons = () => (
-  <div className='player-buttons'>
-    <CustomIconButton>
-      <MixIcon />
-    </CustomIconButton>
-    <CustomIconButton>
-      <PrevIcon />
-    </CustomIconButton>
-    <CustomIconButton>
-      <PlayCircleFilled />
-    </CustomIconButton>
-    <CustomIconButton>
-      <NextIcon />
-    </CustomIconButton>
-    <CustomIconButton>
-      <LoopIcon />
-    </CustomIconButton>
-  </div>
-);
+export const PlayerButtons = () => {
+  const { isPlaying, togglePlay } = useMusicPlayerStore();
+
+  return (
+    <div className='player-buttons'>
+      <CustomIconButton>
+        <MixIcon />
+      </CustomIconButton>
+      <CustomIconButton>
+        <PrevIcon />
+      </CustomIconButton>
+      <CustomIconButton onClick={togglePlay}>
+        {isPlaying ? <PauseCircleFilled /> : <PlayCircleFilled />}
+      </CustomIconButton>
+      <CustomIconButton>
+        <NextIcon />
+      </CustomIconButton>
+      <CustomIconButton>
+        <LoopIcon />
+      </CustomIconButton>
+    </div>
+  );
+};

@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
 import './CustomIconButton.scss';
 
 type TCustomIconButton = {
-  children: JSX.Element;
   onClick?: () => void;
   isActive?: boolean;
 };
 
-export const CustomIconButton = ({ children, onClick, isActive = true }: TCustomIconButton) => (
+export const CustomIconButton: FC<PropsWithChildren<TCustomIconButton>> = ({
+  children,
+  onClick,
+  isActive = true,
+}) => (
   <button
     className={`custom-icon-button${isActive ? ' custom-icon-button--active' : ''}`}
     role='button'

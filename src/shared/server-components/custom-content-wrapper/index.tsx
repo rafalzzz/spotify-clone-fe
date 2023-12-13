@@ -1,11 +1,7 @@
-import { ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import './CustomContentWrapper.scss';
 
-type TCustomContentWrapper = {
-  children: ReactNode;
-};
-
-export const CustomContentWrapper = ({ children }: TCustomContentWrapper) => (
+export const CustomContentWrapper: FC<PropsWithChildren> = ({ children }) => (
   <main className='custom-content-wrapper'>{children}</main>
 );
