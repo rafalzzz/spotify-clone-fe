@@ -9,10 +9,11 @@ import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection
 
 import './CustomSectionItem.scss';
 
-type TCustomSectionItem = {
+export type TCustomSectionItem = {
   collectionName: string;
   imageUrl: string;
   isActive: boolean;
+  isPlaying: boolean;
   onClick: () => void;
 };
 
@@ -21,6 +22,7 @@ export const CustomSectionItem: FC<PropsWithChildren<TCustomSectionItem>> = ({
   collectionName,
   imageUrl,
   isActive,
+  isPlaying,
   onClick,
 }) => {
   const ref = useRef(null);
@@ -49,14 +51,19 @@ export const CustomSectionItem: FC<PropsWithChildren<TCustomSectionItem>> = ({
             decoding='async'
           />
           <button
-            className='custom-section-item__play-button'
+            className={`custom-section-item__play-button ${
+              isActive ? `custom-section-item__play-button--visible` : ''
+            }`}
             onClick={handleClick}
             data-testid='custom-section-item-play-button'
           >
-            {isActive ? (
-              <PauseCircleFilled className='antd-icon' />
+            {isPlaying && isActive ? (
+              <PauseCircleFilled
+                className='antd-icon'
+                data-testid='custom-section-item-pause-icon'
+              />
             ) : (
-              <PlayCircleFilled className='antd-icon' />
+              <PlayCircleFilled className='antd-icon' data-testid='custom-section-item-play-icon' />
             )}
           </button>
         </div>

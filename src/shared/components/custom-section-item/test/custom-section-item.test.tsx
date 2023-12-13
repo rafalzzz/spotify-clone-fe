@@ -1,13 +1,16 @@
+import { PlayCircleFilled, PauseCircleFilled } from '@ant-design/icons';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
-import { CustomSectionItem } from '../';
+import { CustomSectionItem, TCustomSectionItem } from '../';
 
 const mockOnClick = jest.fn();
 
 const PLAY_BUTTON_TEST_ID = 'custom-section-item-play-button';
+const PLAY_ICON_TEST_ID = 'custom-section-item-play-icon';
+const PAUSE_ICON_TEST_ID = 'custom-section-item-pause-icon';
 const REDIRECTION_TEST_ID = 'custom-section-item-redirection';
 
 const MOCKED_CHILD_CONTENT = 'Mocked Child Content';
@@ -15,17 +18,22 @@ const MOCKED_COLLECTION_NAME = 'mocked collection name';
 const MOCKED_IMAGE_URL = '/some-image-url.jpg';
 const MOCKED_CHILD = <div>{MOCKED_CHILD_CONTENT}</div>;
 
-const renderCustomSectionItem = () =>
-  render(
+const renderCustomSectionItem = ({
+  isActive = false,
+  isPlaying = false,
+}: Partial<TCustomSectionItem> = {}) => {
+  return render(
     <CustomSectionItem
       collectionName={MOCKED_COLLECTION_NAME}
       imageUrl={MOCKED_IMAGE_URL}
-      isActive={false}
+      isActive={isActive}
+      isPlaying={isPlaying}
       onClick={mockOnClick}
     >
       {MOCKED_CHILD}
     </CustomSectionItem>,
   );
+};
 
 describe('CustomSectionItem', () => {
   beforeEach(() => {
@@ -67,5 +75,26 @@ describe('CustomSectionItem', () => {
       'src',
       `/_next/image?url=%2F${MOCKED_IMAGE_URL.replace('/', '')}&w=256&q=75`,
     );
+  });
+
+  it('displays the play button with correct class when isActive is true', () => {
+    const { queryByTestId } = renderCustomSectionItem({ isActive: true });
+
+    const button = queryByTestId(PLAY_BUTTON_TEST_ID);
+    expect(button).toHaveClass('custom-section-item__play-button--visible');
+  });
+
+  it('displays the PlayCircleFilled icon when isPlaying is equal false', () => {
+    const { queryByTestId } = renderCustomSectionItem();
+
+    const playIcon = queryByTestId(PLAY_ICON_TEST_ID);
+    expect(playIcon).toBeInTheDocument();
+  });
+
+  it('displays the PauseCircleFilled icon when isPlaying and isActive are equal true', () => {
+    const { queryByTestId } = renderCustomSectionItem({ isPlaying: true, isActive: true });
+
+    const pauseIcon = queryByTestId(PAUSE_ICON_TEST_ID);
+    expect(pauseIcon).toBeInTheDocument();
   });
 });

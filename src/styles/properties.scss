@@ -41,7 +41,8 @@ body {
   /*footer */
   --footer-background-color: #000;
   --footer-height: 100px;
-  --music-title-container-max-width: 150px;
+  --music-title-container-min-width: 100px;
+  --music-title-container-max-width: 200px;
 
   --player-button-color: #b3b3b3;
   --player-button-hover-color: #ffffff;

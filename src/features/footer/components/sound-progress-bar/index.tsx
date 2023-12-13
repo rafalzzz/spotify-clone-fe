@@ -56,7 +56,7 @@ export const SoundProgressBar = () => {
 
   return (
     <div className='sound-progress-bar'>
-      <CustomIconButton onClick={toggleMuted}>
+      <CustomIconButton onClick={toggleMuted} isActive>
         {isMuted ? <MutedSoundIcon /> : <SoundIcon />}
       </CustomIconButton>
       <ProgressBar value={volume} minValue={0} maxValue={1} handleChange={handleChange} />

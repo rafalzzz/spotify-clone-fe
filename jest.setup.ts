@@ -1,4 +1,4 @@
-import { MockResizeObserver } from '@/interfaces/mock-resize-observer';
+import { MockResizeObserver } from '@/types/mock-resize-observer';
 
 jest.mock('antd');
 

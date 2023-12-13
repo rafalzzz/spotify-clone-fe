@@ -1,10 +1,15 @@
 import { create } from 'zustand';
 
+import { TSongItem } from '@/types/song-item';
+
+type TChangeSongAction = { activeIndex: number; songs: TSongItem[] };
+
 type TUseMusicPlayerStore = {
   isPlaying: boolean;
   duration: number;
-  currentTrackUrl: string;
-  changeSong: (trackUrl: string) => void;
+  activeIndex: number;
+  songsList: TSongItem[];
+  changeSong: ({ activeIndex, songs }: TChangeSongAction) => void;
   togglePlay: () => void;
   setDuration: (duration: number) => void;
 };
@@ -12,9 +17,10 @@ type TUseMusicPlayerStore = {
 export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
   isPlaying: false,
   duration: 0,
-  currentTrackUrl: '',
-  changeSong: (trackUrl: string) =>
-    set(() => ({ isPlaying: true, currentTrackUrl: trackUrl, duration: 0 })),
+  activeIndex: 0,
+  songsList: [],
+  changeSong: ({ activeIndex, songs }: TChangeSongAction) =>
+    set(() => ({ isPlaying: true, duration: 0, activeIndex: activeIndex, songsList: songs })),
   togglePlay: () => set(({ isPlaying }) => ({ isPlaying: !isPlaying })),
   setDuration: (duration: number) => set(() => ({ duration: duration })),
 }));

@@ -10,7 +10,7 @@ type TCustomIconButton = {
 export const CustomIconButton: FC<PropsWithChildren<TCustomIconButton>> = ({
   children,
   onClick,
-  isActive = true,
+  isActive = false,
 }) => (
   <button
     className={`custom-icon-button${isActive ? ' custom-icon-button--active' : ''}`}

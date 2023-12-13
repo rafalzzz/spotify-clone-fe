@@ -1,48 +1,63 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
+import { EMusicTrackKeys, MusicTrack } from '@/types/music-track';
+import { TSongItem } from '@/types/song-item';
+
 import { CustomSection, CustomSectionItem, MusicTrackInformation } from '@/shared/components';
-import { MusicTrack } from '@/shared/interfaces/music-track';
 
 export const LoveSongsSection = ({ songs }: { songs: MusicTrack[] }) => {
-  const { isPlaying, currentTrackUrl, changeSong, togglePlay } = useMusicPlayerStore();
+  const { isPlaying, activeIndex, songsList, changeSong, togglePlay } = useMusicPlayerStore();
+
+  const currentPlayedSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);
 
   const handleOnClick = useCallback(
-    (previewUrl: string) => {
-      const trackIsAlreadyPlaying = previewUrl === currentTrackUrl;
-      console.log({ trackIsAlreadyPlaying });
-      if (trackIsAlreadyPlaying) {
+    (songItem: TSongItem) => {
+      const trackIsAlreadyPlayed =
+        songItem[EMusicTrackKeys.PREVIEW_URL] === currentPlayedSong?.[EMusicTrackKeys.PREVIEW_URL];
+
+      if (trackIsAlreadyPlayed) {
         return togglePlay();
       }
 
-      changeSong(previewUrl);
+      changeSong({ activeIndex: 0, songs: [songItem] });
     },
-    [currentTrackUrl, changeSong, togglePlay],
+    [currentPlayedSong, changeSong, togglePlay],
   );
 
   return (
     <CustomSection title='Love songs' redirectionUrl='/love-songs'>
       {
         <ul className='custom-section__items'>
-          {songs.map(
-            ({ trackId, artworkUrl60, trackName, artistName, collectionName, previewUrl }) => (
-              <li key={trackId}>
-                <CustomSectionItem
-                  collectionName={collectionName}
-                  imageUrl={artworkUrl60}
-                  isActive={isPlaying && previewUrl === currentTrackUrl}
-                  onClick={() => {
-                    handleOnClick(previewUrl);
-                  }}
-                >
-                  <MusicTrackInformation trackName={trackName} artistName={artistName} />
-                </CustomSectionItem>
-              </li>
-            ),
-          )}
+          {songs.map((song) => (
+            <li key={song[EMusicTrackKeys.TRACK_ID]}>
+              <CustomSectionItem
+                collectionName={song[EMusicTrackKeys.COLLECTION_NAME]}
+                imageUrl={song[EMusicTrackKeys.ARTWORK_URL_60]}
+                isActive={
+                  song[EMusicTrackKeys.PREVIEW_URL] ===
+                  currentPlayedSong?.[EMusicTrackKeys.PREVIEW_URL]
+                }
+                isPlaying={isPlaying}
+                onClick={() => {
+                  handleOnClick({
+                    artistName: song[EMusicTrackKeys.ARTIST_NAME],
+                    trackName: song[EMusicTrackKeys.TRACK_NAME],
+                    previewUrl: song[EMusicTrackKeys.PREVIEW_URL],
+                    artworkUrl60: song[EMusicTrackKeys.ARTWORK_URL_60],
+                  });
+                }}
+              >
+                <MusicTrackInformation
+                  trackName={song[EMusicTrackKeys.TRACK_NAME]}
+                  artistName={song[EMusicTrackKeys.ARTIST_NAME]}
+                />
+              </CustomSectionItem>
+            </li>
+          ))}
         </ul>
       }
     </CustomSection>

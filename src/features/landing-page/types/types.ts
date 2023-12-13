@@ -1,8 +1,8 @@
 import { Dispatch, ReactNode, RefObject } from 'react';
 
-import { Album } from '@/interfaces/album';
-import { Artist } from '@/interfaces/artist';
-import { MusicTrack } from '@/interfaces/music-track';
+import { Album } from '@/types/album';
+import { Artist } from '@/types/artist';
+import { MusicTrack } from '@/types/music-track';
 
 export type TArtistSection = {
   artists: Artist[];

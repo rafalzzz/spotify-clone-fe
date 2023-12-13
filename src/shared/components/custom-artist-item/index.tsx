@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
-import { Artist } from '@/shared/interfaces/artist';
+import { Artist } from '@/types/artist';
 
 import './CustomSectionItem.scss';
 

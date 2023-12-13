@@ -16,6 +16,8 @@ const MusicPlayerContext = createContext<TMusicPlayerContext | undefined>(undefi
 
 export const MusicPlayerContextProvider: FC<PropsWithChildren> = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(0);
+  const [isShuffle, setIsShuffle] = useState(false);
+  const [isLoop, setIsLoop] = useState(false);
 
   const ref = useRef<HTMLAudioElement>(null);
 
@@ -23,9 +25,13 @@ export const MusicPlayerContextProvider: FC<PropsWithChildren> = ({ children }) 
     () => ({
       ref,
       currentTime,
+      isShuffle,
+      isLoop,
+      setIsShuffle,
+      setIsLoop,
       setCurrentTime,
     }),
-    [currentTime],
+    [currentTime, isLoop, isShuffle],
   );
 
   return (

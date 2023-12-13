@@ -1,47 +1,18 @@
-import { SyntheticEvent, useCallback, useEffect } from 'react';
+import { useAudio } from '@/footer/hooks/use-audio';
 
-import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
-
-import { useMusicPlayerStore } from '@/store/music-player';
+import { EMusicTrackKeys } from '@/types/music-track';
 
 export const Audio = () => {
-  const { ref, setCurrentTime } = useMusicPlayerContext();
-
-  const { isPlaying, currentTrackUrl, setDuration } = useMusicPlayerStore();
-
-  const onLoadedMetadata = useCallback(
-    ({ target }: SyntheticEvent<HTMLAudioElement>) => {
-      const { duration } = target as HTMLAudioElement;
-      setDuration(duration);
-    },
-    [setDuration],
-  );
-
-  const onTimeUpdate = useCallback(
-    ({ target }: SyntheticEvent<HTMLAudioElement>) => {
-      const { currentTime } = target as HTMLAudioElement;
-      setCurrentTime(currentTime);
-    },
-    [setCurrentTime],
-  );
-
-  const handlePlaying = useCallback(() => {
-    if (isPlaying) {
-      ref.current?.play();
-    } else {
-      ref.current?.pause();
-    }
-  }, [isPlaying, ref]);
-
-  useEffect(handlePlaying, [handlePlaying]);
+  const { ref, currentSong, isPlaying, onLoadedMetadata, onTimeUpdate, onEnded } = useAudio();
 
   return (
     <audio
       ref={ref}
+      src={currentSong?.[EMusicTrackKeys.PREVIEW_URL]}
+      autoPlay={isPlaying}
       onLoadedMetadata={onLoadedMetadata}
       onTimeUpdate={onTimeUpdate}
-      src={currentTrackUrl}
-      autoPlay={isPlaying}
+      onEnded={onEnded}
     />
   );
 };

@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 
-import { Album } from '@/shared/interfaces/album';
-import { Artist } from '@/shared/interfaces/artist';
-import { MusicTrack } from '@/shared/interfaces/music-track';
+import { Album } from '@/types/album';
+import { Artist } from '@/types/artist';
+import { MusicTrack } from '@/types/music-track';
 
 import MainContent from '..';
 

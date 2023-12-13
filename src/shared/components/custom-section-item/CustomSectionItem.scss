@@ -53,6 +53,13 @@
       height: 44px;
       color: var(--section-item-play-button-color);
     }
+
+    &--visible {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      bottom: 15px;
+    }
   }
 
   &:hover {

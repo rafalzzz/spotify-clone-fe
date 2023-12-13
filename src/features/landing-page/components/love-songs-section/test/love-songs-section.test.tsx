@@ -1,51 +1,51 @@
 import { render } from '@testing-library/react';
 
-import { MusicTrack } from '@/shared/interfaces/music-track';
+import { EMusicTrackKeys, MusicTrack } from '@/types/music-track';
 
 import { LoveSongsSection } from '..';
 
 const mockSongs = [
   {
-    trackId: 1,
-    artworkUrl60: '/some-image-url1.jpg',
-    trackName: 'TestTrack',
-    artistName: 'Test_Artist',
-    collectionName: 'collectionName',
+    [EMusicTrackKeys.TRACK_ID]: 1,
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
   },
   {
-    trackId: 2,
-    artworkUrl60: '/some-image-url1.jpg',
-    trackName: 'TestTrack',
-    artistName: 'Test_Artist',
-    collectionName: 'collectionName',
+    [EMusicTrackKeys.TRACK_ID]: 2,
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
   },
   {
-    trackId: 3,
-    artworkUrl60: '/some-image-url1.jpg',
-    trackName: 'TestTrack',
-    artistName: 'Test_Artist',
-    collectionName: 'collectionName',
+    [EMusicTrackKeys.TRACK_ID]: 3,
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
   },
   {
-    trackId: 4,
-    artworkUrl60: '/some-image-url1.jpg',
-    trackName: 'TestTrack',
-    artistName: 'Test_Artist',
-    collectionName: 'collectionName',
+    [EMusicTrackKeys.TRACK_ID]: 4,
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
   },
   {
-    trackId: 5,
-    artworkUrl60: '/some-image-url1.jpg',
-    trackName: 'TestTrack',
-    artistName: 'Test_Artist',
-    collectionName: 'collectionName',
+    [EMusicTrackKeys.TRACK_ID]: 5,
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
   },
   {
-    trackId: 6,
-    artworkUrl60: '/some-image-url1.jpg',
-    trackName: 'TestTrack',
-    artistName: 'Test_Artist',
-    collectionName: 'collectionName',
+    [EMusicTrackKeys.TRACK_ID]: 6,
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
   },
 ];
 

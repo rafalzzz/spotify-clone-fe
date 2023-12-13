@@ -2,25 +2,39 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useMemo } from 'react';
+
+import { useIsTextOverflowing } from '@/footer/hooks/use-is-text-overflowing';
+
+import { useMusicPlayerStore } from '@/store/music-player';
 
 import { CustomAddToFavoriteButton } from '@/components/custom-add-to-favorite-button';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
+import { EMusicTrackKeys } from '@/types/music-track';
+
 import './NowPlayedTrack.scss';
 
 export const NowPlayedTrack = () => {
+  const { activeIndex, songsList } = useMusicPlayerStore();
+
+  const currentSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);
+
+  const { ref, isTextOverflowing } = useIsTextOverflowing({ currentSong });
+
   const onClick = () => {
     console.log('click');
   };
 
+  if (!currentSong) {
+    return <div className='now-played-track' />;
+  }
+
   return (
     <div className='now-played-track'>
       <Image
-        src={
-          'https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/b0/de/2cb0de7b-4559-d885-36f8-271c950cba34/886443562097.jpg/60x60bb.jpg'
-        }
+        src={currentSong?.[EMusicTrackKeys.ARTWORK_URL_60]}
         width={56}
         height={56}
         alt='image'
@@ -28,15 +42,21 @@ export const NowPlayedTrack = () => {
         decoding='async'
       />
       <div className='now-played-track__informations'>
-        <div className='now-played-track__title-container'>
-          <span className='now-played-track__title'>Just give me a reason and one one more...</span>
+        <div
+          className={`now-played-track__title-container ${
+            isTextOverflowing ? 'now-played-track__title-container--overflow' : ''
+          }`}
+        >
+          <span ref={ref} className='now-played-track__title'>
+            {currentSong?.[EMusicTrackKeys.TRACK_NAME]}
+          </span>
         </div>
         <Link
           href={generateArtistRedirectionPath('P!nk')}
           className='now-played-track__artist'
           data-testid='now-played-track-artist-redirection'
         >
-          P!nk
+          {currentSong?.[EMusicTrackKeys.ARTIST_NAME]}
         </Link>
       </div>
       <div className='now-played-track__button'>
