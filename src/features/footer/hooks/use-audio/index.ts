@@ -1,15 +1,33 @@
-import { SyntheticEvent, useCallback, useEffect, useMemo } from 'react';
+import { useRef, useCallback, useEffect, useMemo, SyntheticEvent } from 'react';
 
 import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
-import { TUseAudioProps } from '@/footer/types';
+import { TUseAudio, TUseAudioProps } from '@/footer/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
-export const useAudio = (): TUseAudioProps => {
-  const { ref, isLoop, setCurrentTime } = useMusicPlayerContext();
-  const { isPlaying, activeIndex, songsList, setDuration } = useMusicPlayerStore();
+export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
+  const { ref, isLoop } = useMusicPlayerContext();
+  const { isPlaying, activeIndex, songsList, setDuration, togglePlay } = useMusicPlayerStore();
+
+  const lastUpdatedTime = useRef(0);
 
   const currentSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);
+
+  const onTimeUpdate = useCallback(
+    ({ target }: SyntheticEvent<HTMLAudioElement>) => {
+      const { currentTime } = target as HTMLAudioElement;
+
+      // The purpose of the following procedure is to reduce the number
+      // of re-renders when updating the playback time of the song being played.
+      const roundedCurrentTime = Math.ceil(currentTime);
+
+      if (roundedCurrentTime !== lastUpdatedTime.current) {
+        setCurrentTime(roundedCurrentTime);
+        lastUpdatedTime.current = roundedCurrentTime;
+      }
+    },
+    [setCurrentTime],
+  );
 
   const onLoadedMetadata = useCallback(
     ({ target }: SyntheticEvent<HTMLAudioElement>) => {
@@ -19,13 +37,13 @@ export const useAudio = (): TUseAudioProps => {
     [setDuration],
   );
 
-  const onTimeUpdate = useCallback(
-    ({ target }: SyntheticEvent<HTMLAudioElement>) => {
-      const { currentTime } = target as HTMLAudioElement;
-      setCurrentTime(currentTime);
-    },
-    [setCurrentTime],
-  );
+  const onEnded = useCallback(() => {
+    const isLastSong = activeIndex === songsList.length - 1;
+
+    if (!isLoop && isLastSong) {
+      togglePlay();
+    }
+  }, [activeIndex, isLoop, songsList.length, togglePlay]);
 
   const handlePlaying = useCallback(() => {
     if (isPlaying) {
@@ -37,12 +55,5 @@ export const useAudio = (): TUseAudioProps => {
 
   useEffect(handlePlaying, [handlePlaying]);
 
-  const onEnded = useCallback(() => {
-    if (isLoop) {
-      setCurrentTime(0);
-      ref.current?.play();
-    }
-  }, [isLoop, ref, setCurrentTime]);
-
-  return { ref, currentSong, isPlaying, onLoadedMetadata, onTimeUpdate, onEnded };
+  return { ref, currentSong, isPlaying, isLoop, onLoadedMetadata, onTimeUpdate, onEnded };
 };

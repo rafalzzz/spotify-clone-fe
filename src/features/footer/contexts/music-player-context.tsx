@@ -14,7 +14,6 @@ import { TMusicPlayerContext } from '../types';
 const MusicPlayerContext = createContext<TMusicPlayerContext | undefined>(undefined);
 
 export const MusicPlayerContextProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [currentTime, setCurrentTime] = useState(0);
   const [isShuffle, setIsShuffle] = useState(false);
   const [isLoop, setIsLoop] = useState(false);
 
@@ -23,14 +22,12 @@ export const MusicPlayerContextProvider: FC<PropsWithChildren> = ({ children }) 
   const memoizedValue = useMemo(
     () => ({
       ref,
-      currentTime,
       isShuffle,
       isLoop,
       setIsShuffle,
       setIsLoop,
-      setCurrentTime,
     }),
-    [currentTime, isLoop, isShuffle],
+    [isLoop, isShuffle],
   );
 
   return (

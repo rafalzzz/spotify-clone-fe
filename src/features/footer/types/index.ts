@@ -4,10 +4,8 @@ import { TSongItem } from '@/types/store';
 
 export type TMusicPlayerContext = {
   ref: RefObject<HTMLAudioElement>;
-  currentTime: number;
   isShuffle: boolean;
   isLoop: boolean;
-  setCurrentTime: Dispatch<React.SetStateAction<number>>;
   setIsShuffle: Dispatch<React.SetStateAction<boolean>>;
   setIsLoop: Dispatch<React.SetStateAction<boolean>>;
 };
@@ -17,9 +15,22 @@ export type TProgressBar = {
   minValue: number;
   maxValue: number;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleStartChange?: () => void;
+  handleEndChange?: () => void;
 };
 
-export type TDuration = { seconds: number };
+export const enum ETextAlign {
+  START,
+  END,
+}
+
+export type TDuration = {
+  seconds: number;
+  textAlign?: ETextAlign;
+  disabled?: boolean;
+  isReversedTime?: boolean;
+  onClick?: () => void;
+};
 
 export type TUseIsTextOverflowing = {
   currentSong: TSongItem;
@@ -30,10 +41,17 @@ export type TUseIsTextOverflowingProps = {
   isTextOverflowing: boolean;
 };
 
+export type TAudio = {
+  setCurrentTime: Dispatch<React.SetStateAction<number>>;
+};
+
+export type TUseAudio = TAudio;
+
 export type TUseAudioProps = {
   ref: RefObject<HTMLAudioElement>;
   currentSong: TSongItem;
   isPlaying: boolean;
+  isLoop: boolean;
   onLoadedMetadata: ({ target }: SyntheticEvent<HTMLAudioElement>) => void;
   onTimeUpdate: ({ target }: SyntheticEvent<HTMLAudioElement>) => void;
   onEnded: () => void;

@@ -1,5 +1,5 @@
 'use client';
-import { useState, useCallback, useRef, ChangeEvent } from 'react';
+import { useState, useCallback, useRef, ChangeEvent, useEffect } from 'react';
 
 import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
 
@@ -12,8 +12,10 @@ import { ProgressBar } from '../progress-bar';
 
 import './SoundProgressBar.scss';
 
+const INITIAL_VOLUME_VALUE = 0.5;
+
 export const SoundProgressBar = (): JSX.Element => {
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(INITIAL_VOLUME_VALUE);
   const [isMuted, setIsMuted] = useState(false);
 
   const { ref } = useMusicPlayerContext();
@@ -52,6 +54,14 @@ export const SoundProgressBar = (): JSX.Element => {
     },
     [ref],
   );
+
+  const setVolumeToInitialValue = useCallback(() => {
+    if (ref.current) {
+      ref.current.volume = INITIAL_VOLUME_VALUE;
+    }
+  }, [ref]);
+
+  useEffect(setVolumeToInitialValue, [setVolumeToInitialValue]);
 
   return (
     <div className='sound-progress-bar'>

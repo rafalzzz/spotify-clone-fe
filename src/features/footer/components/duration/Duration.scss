@@ -1,8 +1,17 @@
 .duration {
+  width: 50px;
   font-size: 0.85rem;
   color: var(--timer-font-color);
   margin: 0px 10px;
   background-color: transparent;
   border: none;
   outline: none;
+
+  &--text-align-start {
+    text-align: start;
+  }
+
+  &--text-align-end {
+    text-align: end;
+  }
 }

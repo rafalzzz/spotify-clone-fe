@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import './ProgressBar.scss';
 import { TProgressBar } from '@/footer/types';
+
+import './ProgressBar.scss';
 
 export const ProgressBar = ({
   value,
   minValue,
   maxValue,
   handleChange,
+  handleStartChange,
+  handleEndChange,
 }: TProgressBar): JSX.Element => {
   const [decimalValue, setDecimalValue] = useState(0);
 
@@ -37,7 +40,11 @@ export const ProgressBar = ({
         value={value}
         type='range'
         className='progress-bar__input'
+        onMouseDown={handleStartChange}
+        onTouchStart={handleStartChange}
         onChange={handleChange}
+        onMouseUp={handleEndChange}
+        onTouchEnd={handleEndChange}
       />
       <span
         className='progress-bar__span-thumb'

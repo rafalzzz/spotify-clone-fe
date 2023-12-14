@@ -19,6 +19,8 @@ jest.mock('@/store/music-player', () => ({
   useMusicPlayerStore: jest.fn(),
 }));
 
+const mockSetCurrentTime = jest.fn();
+
 const mockAudioElement = {
   play: jest.fn(),
   pause: jest.fn(),
@@ -33,10 +35,9 @@ const mockRef = {
 const mockContext = {
   ref: mockRef,
   isLoop: false,
-  setCurrentTime: jest.fn(),
 };
 
-const renderUseAudio = () => renderHook(() => useAudio());
+const renderUseAudio = () => renderHook(() => useAudio({ setCurrentTime: mockSetCurrentTime }));
 
 describe('useAudio', () => {
   const mockStore = {
@@ -44,6 +45,7 @@ describe('useAudio', () => {
     activeIndex: 0,
     songsList: mockMusicStoreSongsList,
     setDuration: jest.fn(),
+    togglePlay: jest.fn(),
   };
 
   beforeEach(() => {
@@ -64,20 +66,25 @@ describe('useAudio', () => {
 
   it('calls setDuration with correct value on onLoadedMetadata', () => {
     const { result } = renderUseAudio();
+
     act(() => {
       const event = { target: mockAudioElement } as unknown as SyntheticEvent<HTMLAudioElement>;
       result.current.onLoadedMetadata(event);
     });
+
     expect(mockStore.setDuration).toHaveBeenCalledWith(mockAudioElement.duration);
   });
 
   it('calls setCurrentTime with correct value on onTimeUpdate', () => {
+    mockAudioElement.currentTime = 10;
     const { result } = renderUseAudio();
+
     act(() => {
       const event = { target: mockAudioElement } as unknown as SyntheticEvent<HTMLAudioElement>;
       result.current.onTimeUpdate(event);
     });
-    expect(mockContext.setCurrentTime).toHaveBeenCalledWith(mockAudioElement.currentTime);
+
+    expect(mockSetCurrentTime).toHaveBeenCalledWith(mockAudioElement.currentTime);
   });
 
   it('calls play or pause on the audio ref based on isPlaying', () => {
@@ -94,16 +101,13 @@ describe('useAudio', () => {
     expect(mockAudioElement.pause).toHaveBeenCalled();
   });
 
-  it('handles audio loop correctly on onEnded', () => {
-    mockContext.isLoop = true;
-
+  it('calls togglePlay correctly when is last song on onEnded', () => {
     const { result } = renderUseAudio();
 
     act(() => {
       result.current.onEnded();
     });
 
-    expect(mockContext.setCurrentTime).toHaveBeenCalledWith(0);
-    expect(mockAudioElement.play).toHaveBeenCalled();
+    expect(mockStore.togglePlay).toHaveBeenCalled();
   });
 });
