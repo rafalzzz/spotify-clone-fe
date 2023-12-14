@@ -5,6 +5,8 @@ import { useMusicPlayerStore } from '@/store/music-player';
 import { EMusicTrackKeys } from '@/types/music-track';
 import { TUseMusicPlayerStore } from '@/types/store';
 
+import { mockMusicStoreSongsList } from '@/consts/mocks';
+
 import { useLoveSongsSection } from '../';
 
 jest.mock('@/store/music-player', () => ({
@@ -16,20 +18,12 @@ const renderUseLoveSongsSection = () => renderHook(() => useLoveSongsSection());
 describe('useLoveSongsSection', () => {
   const mockTogglePlay = jest.fn();
   const mockChangeSong = jest.fn();
-  const mockSongsList = [
-    {
-      [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
-      [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
-      [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/1',
-      [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
-    },
-  ];
 
   beforeEach(() => {
     (useMusicPlayerStore as unknown as jest.Mock<Partial<TUseMusicPlayerStore>>).mockReturnValue({
       isPlaying: false,
       activeIndex: 0,
-      songsList: mockSongsList,
+      songsList: mockMusicStoreSongsList,
       changeSong: mockChangeSong,
       togglePlay: mockTogglePlay,
     });
@@ -39,7 +33,7 @@ describe('useLoveSongsSection', () => {
     const { result } = renderUseLoveSongsSection();
 
     act(() => {
-      result.current.handleOnClick(mockSongsList[0]);
+      result.current.handleOnClick(mockMusicStoreSongsList[0]);
     });
 
     expect(mockTogglePlay).toHaveBeenCalled();

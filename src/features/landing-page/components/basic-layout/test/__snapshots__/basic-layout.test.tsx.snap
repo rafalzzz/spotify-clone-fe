@@ -292,6 +292,7 @@ exports[`BasicLayout render component without error 1`] = `
         >
           <button
             class="duration"
+            data-testid="duration-button"
           >
             0:00
           </button>
@@ -313,6 +314,7 @@ exports[`BasicLayout render component without error 1`] = `
           </div>
           <button
             class="duration"
+            data-testid="duration-button"
           >
             0:00
           </button>

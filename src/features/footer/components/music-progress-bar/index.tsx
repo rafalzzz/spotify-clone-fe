@@ -24,7 +24,7 @@ export const MusicProgressBar = (): JSX.Element => {
 
   return (
     <div className='music-progress-bar'>
-      <Duration seconds={0} />
+      <Duration seconds={currentTime} />
       <ProgressBar
         value={currentTime}
         minValue={0}

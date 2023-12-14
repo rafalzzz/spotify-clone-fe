@@ -8,5 +8,9 @@ import './Duration.scss';
 export const Duration: FC<TDuration> = ({ seconds }): JSX.Element => {
   const memoizedValue = useMemo(() => formatDuration(seconds), [seconds]);
 
-  return <button className='duration'>{memoizedValue}</button>;
+  return (
+    <button className='duration' data-testid='duration-button'>
+      {memoizedValue}
+    </button>
+  );
 };
