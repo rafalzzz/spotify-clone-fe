@@ -335,33 +335,24 @@ exports[`BasicLayout render component without error 1`] = `
       >
         <button
           class="custom-icon-button custom-icon-button--active"
-          data-testid=""
+          data-testid="sound-progress-bar-button"
           role="button"
         >
-          <div
-            data-mouseenterdelay="0.5"
-            data-placement="top"
-            data-testid="sound-progress-bar-button"
+          <svg
+            aria-label="Ses seviyesi y\\xFCksek"
+            class="svg-icon"
+            data-testid="sound-icon"
+            height="16"
+            role="img"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-label="Ses seviyesi y\\xFCksek"
-              class="svg-icon"
-              data-testid="sound-icon"
-              height="16"
-              role="img"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="svg-icon-path"
-                d="M12.945 1.379l-.652.763c1.577 1.462 2.57 3.544 2.57 5.858s-.994 4.396-2.57 5.858l.651.763a8.966 8.966 0 00.001-13.242zm-2.272 2.66l-.651.763a4.484 4.484 0 01-.001 6.397l.651.763c1.04-1 1.691-2.404 1.691-3.961s-.65-2.962-1.69-3.962zM0 5v6h2.804L8 14V2L2.804 5H0zm7-1.268v8.536L3.072 10H1V6h2.072L7 3.732z"
-              />
-            </svg>
-            <span>
-              Mute
-            </span>
-          </div>
+            <path
+              class="svg-icon-path"
+              d="M12.945 1.379l-.652.763c1.577 1.462 2.57 3.544 2.57 5.858s-.994 4.396-2.57 5.858l.651.763a8.966 8.966 0 00.001-13.242zm-2.272 2.66l-.651.763a4.484 4.484 0 01-.001 6.397l.651.763c1.04-1 1.691-2.404 1.691-3.961s-.65-2.962-1.69-3.962zM0 5v6h2.804L8 14V2L2.804 5H0zm7-1.268v8.536L3.072 10H1V6h2.072L7 3.732z"
+            />
+          </svg>
         </button>
         <div
           class="progress-bar"
