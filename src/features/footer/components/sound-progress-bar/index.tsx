@@ -2,7 +2,6 @@
 import { useSoundProgressBar } from '@/footer/hooks/use-sound-progress-bar';
 
 import { CustomIconButton } from '@/components/custom-icon-button';
-import { CustomTooltip } from '@/components/custom-tooltip';
 
 import MutedSoundIcon from '@/icons/muted-sound';
 import SoundIcon from '@/icons/sound';
