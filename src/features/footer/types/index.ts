@@ -73,3 +73,10 @@ export type TUseMusicProgressBarProps = {
   handleEndChange: () => void;
   onClick: () => void;
 };
+
+export type TUseSoundProgressBar = {
+  isMuted: boolean;
+  volume: number;
+  toggleMuted: () => void;
+  handleChange: ({ target: { valueAsNumber } }: ChangeEvent<HTMLInputElement>) => void;
+};

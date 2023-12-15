@@ -1,6 +1,6 @@
 import { HeartFilled } from '@ant-design/icons';
 import { Button } from 'antd';
-import React from 'react';
+import React, { FC } from 'react';
 
 import { TCustomAddToFavoriteButton } from '@/types/components';
 
@@ -8,12 +8,12 @@ import { CustomTooltip } from '../custom-tooltip';
 
 import './CustomAddToFavoriteButton.scss';
 
-export const CustomAddToFavoriteButton = ({
+export const CustomAddToFavoriteButton: FC<TCustomAddToFavoriteButton> = ({
   title = '',
   disabled = false,
   isAddedToFav = true,
   onClick,
-}: TCustomAddToFavoriteButton): JSX.Element => (
+}): JSX.Element => (
   <Button
     className={`custom-add-to-favorite-button custom-add-to-favorite-button--${
       isAddedToFav ? 'inactive' : 'active'

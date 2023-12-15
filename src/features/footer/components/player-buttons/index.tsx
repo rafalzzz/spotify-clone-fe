@@ -24,20 +24,26 @@ export const PlayerButtons = (): JSX.Element => {
         onClick={() => {
           setIsShuffle((prevState) => !prevState);
         }}
+        testId='shuffle-button'
       >
         <MixIcon />
       </CustomIconButton>
-      <CustomIconButton>
+      <CustomIconButton testId='prev-song-button'>
         <PrevIcon />
       </CustomIconButton>
-      <CustomIconButton onClick={togglePlay} isActive={false}>
-        {isPlaying ? <PauseCircleFilled /> : <PlayCircleFilled />}
+      <CustomIconButton onClick={togglePlay} isActive={false} testId='play-button'>
+        {isPlaying ? (
+          <PauseCircleFilled data-testid='player-buttons-pause-icon' />
+        ) : (
+          <PlayCircleFilled data-testid='player-buttons-play-icon' />
+        )}
       </CustomIconButton>
-      <CustomIconButton>
+      <CustomIconButton testId='next-song-button'>
         <NextIcon />
       </CustomIconButton>
       <CustomIconButton
         isActive={isLoop}
+        testId='loop-button'
         onClick={() => {
           setIsLoop((prevState) => !prevState);
         }}

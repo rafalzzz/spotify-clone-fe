@@ -96,6 +96,7 @@ export type TCustomHyperlink = {
 export type TCustomIconButton = {
   onClick?: () => void;
   isActive?: boolean;
+  testId?: string;
 };
 
 export type TCustomMainContentWrapper = {

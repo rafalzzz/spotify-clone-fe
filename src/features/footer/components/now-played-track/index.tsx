@@ -27,11 +27,11 @@ export const NowPlayedTrack = (): JSX.Element => {
   };
 
   if (!currentSong) {
-    return <div className='now-played-track' />;
+    return <div className='now-played-track' data-testid='now-played-track' />;
   }
 
   return (
-    <div className='now-played-track'>
+    <div className='now-played-track' data-testid='now-played-track'>
       <Image
         src={currentSong?.[EMusicTrackKeys.ARTWORK_URL_60]}
         width={56}
@@ -45,13 +45,14 @@ export const NowPlayedTrack = (): JSX.Element => {
           className={`now-played-track__title-container ${
             isTextOverflowing ? 'now-played-track__title-container--overflow' : ''
           }`}
+          data-testid='now-played-track-title-container'
         >
-          <span ref={ref} className='now-played-track__title'>
+          <span ref={ref} className='now-played-track__title' data-testid='now-played-track-title'>
             {currentSong?.[EMusicTrackKeys.TRACK_NAME]}
           </span>
         </div>
         <Link
-          href={generateArtistRedirectionPath('P!nk')}
+          href={generateArtistRedirectionPath(currentSong?.[EMusicTrackKeys.ARTIST_NAME])}
           className='now-played-track__artist'
           data-testid='now-played-track-artist-redirection'
         >

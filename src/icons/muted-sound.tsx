@@ -9,6 +9,7 @@ const MutedSoundIcon = (): JSX.Element => (
     aria-label='Ses seviyesi y\xFCksek'
     viewBox='0 0 16 16'
     className='svg-icon'
+    data-testid='muted-sound-icon'
   >
     <path
       className='svg-icon-path'
