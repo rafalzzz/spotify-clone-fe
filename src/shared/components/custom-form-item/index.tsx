@@ -1,5 +1,5 @@
 import { Form, Input, Select, Radio, Checkbox, Switch } from 'antd';
-import { useCallback } from 'react';
+import { FC, useCallback } from 'react';
 
 import { EInputType } from '@/enums/input-type';
 
@@ -12,7 +12,7 @@ import {
 
 import './CustomFormItem.scss';
 
-export const CustomFormItem = ({
+export const CustomFormItem: FC<TCustomFormItem> = ({
   type,
   name,
   label = '',
@@ -23,7 +23,7 @@ export const CustomFormItem = ({
   checkboxProps,
   switchProps,
   setFieldValue,
-}: TCustomFormItem): JSX.Element => {
+}): JSX.Element => {
   const getFormItemInput = useCallback(
     (inputType: EInputType) => {
       switch (inputType) {

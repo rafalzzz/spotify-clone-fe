@@ -31,11 +31,9 @@ const mockArtists = [
   },
 ];
 
-const renderArtistsSection = () => render(<ArtistsSection artists={mockArtists as TArtist[]} />);
-
 describe('ArtistsSection', () => {
   it('render component without error', () => {
-    const screen = renderArtistsSection();
+    const screen = render(<ArtistsSection artists={mockArtists as TArtist[]} />);
     expect(screen).toMatchSnapshot();
   });
 });

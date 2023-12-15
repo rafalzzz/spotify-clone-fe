@@ -13,55 +13,12 @@ import './CustomSectionItem.scss';
 export const CustomSectionItem: FC<PropsWithChildren<TCustomSectionItem>> = ({
   children,
   collectionName,
-  imageUrl,
-  isActive,
-  isPlaying,
-  onClick,
-}): JSX.Element => {
-  const ref = useRef(null);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-    onClick();
-  };
-
-  return (
-    <Link
-      href={generateAlbumRedirectionPath(collectionName)}
-      className='custom-section-item__redirection'
-      data-testid='custom-section-item-redirection'
-    >
-      <div className='custom-section-item'>
-        <div className='custom-section-item__image' ref={ref}>
-          <Image
-            src={imageUrl}
-            width={100}
-            height={100}
-            style={{ height: '100%', width: '100%' }}
-            alt='image'
-            loading='lazy'
-            decoding='async'
-          />
-          <button
-            className={`custom-section-item__play-button ${
-              isActive ? `custom-section-item__play-button--visible` : ''
-            }`}
-            onClick={handleClick}
-            data-testid='custom-section-item-play-button'
-          >
-            {isPlaying && isActive ? (
-              <PauseCircleFilled
-                className='antd-icon'
-                data-testid='custom-section-item-pause-icon'
-              />
-            ) : (
-              <PlayCircleFilled className='antd-icon' data-testid='custom-section-item-play-icon' />
-            )}
-          </button>
-        </div>
-        {children}
-      </div>
-    </Link>
-  );
-};
+}): JSX.Element => (
+  <Link
+    href={generateAlbumRedirectionPath(collectionName)}
+    className='custom-section-item__redirection'
+    data-testid='custom-section-item-redirection'
+  >
+    <div className='custom-section-item'>{children}</div>
+  </Link>
+);

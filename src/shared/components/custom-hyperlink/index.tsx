@@ -1,16 +1,17 @@
 import Link from 'next/link';
+import { FC } from 'react';
 
 import { TCustomHyperlink } from '@/types/components';
 
 import './CustomHyperlink.scss';
 
-export const CustomHyperlink = ({
+export const CustomHyperlink: FC<TCustomHyperlink> = ({
   textBeforeHyperlink,
   href,
   hyperlinkText = '',
   textAfterHyperlink = '',
   className = '',
-}: TCustomHyperlink): JSX.Element => (
+}): JSX.Element => (
   <div className={`custom-hyperlink ${className}`} data-testid='custom-hyperlink'>
     <span className={`${className}__text-before`}>{textBeforeHyperlink}</span>
     <Link

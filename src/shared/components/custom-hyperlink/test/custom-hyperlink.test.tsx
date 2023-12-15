@@ -14,21 +14,17 @@ const hyperlinkText = 'Click me';
 const textAfterHyperlink = 'After';
 const className = 'test-class';
 
-const renderCustomHyperlink = () => {
-  const props = {
-    textBeforeHyperlink,
-    href,
-    hyperlinkText,
-    textAfterHyperlink,
-    className,
-  };
-
-  return render(<CustomHyperlink {...props} />);
-};
-
 describe('CustomHyperlink', () => {
   it('renders component without error', () => {
-    const screen = renderCustomHyperlink();
+    const props = {
+      textBeforeHyperlink,
+      href,
+      hyperlinkText,
+      textAfterHyperlink,
+      className,
+    };
+
+    const screen = render(<CustomHyperlink {...props} />);
     const { getByTestId, queryByText } = screen;
 
     expect(getByTestId(HYPERLINK_TEST_ID)).toHaveClass('custom-hyperlink test-class');

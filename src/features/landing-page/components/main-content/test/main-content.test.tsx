@@ -33,11 +33,9 @@ const props = {
   ] as TMusicTrack[],
 };
 
-const renderLoveAlbumsSection = () => render(<MainContent {...props} />);
-
 describe('MainContent', () => {
   it('render component without error', async () => {
-    const { container } = renderLoveAlbumsSection();
+    const { container } = render(<MainContent {...props} />);
 
     await waitFor(() => {
       expect(container).toBeDefined();

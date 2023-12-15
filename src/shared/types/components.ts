@@ -9,6 +9,7 @@ import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
 import { EAlbumKeys, TAlbum } from './album';
 import { EArtistKeys, TArtist } from './artist';
+import { TMusicTrack } from './music-track';
 
 export type TAlbumInformation = Pick<
   TAlbum,
@@ -108,10 +109,18 @@ export type TCustomSection = {
 
 export type TCustomSectionItem = {
   collectionName: string;
-  imageUrl: string;
+};
+
+export type TCustomSectionItemImage = { imageUrl: string };
+
+export type TCustomSectionItemPlayButton = {
   isActive: boolean;
   isPlaying: boolean;
   onClick: () => void;
+};
+
+export type TCustomSongPlayButton = {
+  song: TMusicTrack;
 };
 
 export type TCustomSubheader = {
@@ -131,4 +140,9 @@ export type THookForm = {
 
 export type TCustomSectionLoader = {
   SectionItemLoader: () => JSX.Element;
+};
+
+export type TMusicTrackInformationProps = {
+  trackName: string;
+  artistName: string;
 };

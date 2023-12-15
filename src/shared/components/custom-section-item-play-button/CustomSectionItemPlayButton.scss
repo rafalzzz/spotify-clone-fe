@@ -1,0 +1,39 @@
+.custom-section-item-play-button {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  bottom: 5px;
+  right: 10px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    bottom 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    transform-origin: center;
+    cursor: pointer;
+  }
+
+  .anticon > svg {
+    width: 44px;
+    height: 44px;
+    color: var(--section-item-play-button-color);
+  }
+
+  &--visible {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    bottom: 15px;
+  }
+}

@@ -1,14 +1,12 @@
 import { render, waitFor } from '@testing-library/react';
+import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
 
-import { BasicLayout } from '..';
+import Navbar from '../';
 
-describe('BasicLayout', () => {
+describe('Navbar', () => {
   it('render component without error', async () => {
-    const { container } = render(
-      <BasicLayout>
-        <div>Test</div>
-      </BasicLayout>,
-    );
+    const { container } = render(<Navbar />);
 
     await waitFor(() => {
       expect(container).toBeDefined();

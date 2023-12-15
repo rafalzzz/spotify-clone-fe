@@ -1,21 +1,19 @@
 import { useRouter } from 'next/navigation';
+import { FC } from 'react';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 import { getMainArtist } from '@/utils/get-main-artist';
+
+import { TMusicTrackInformationProps } from '@/types/components';
 
 import { CustomTooltip } from '../custom-tooltip';
 
 import './MusicTrackInformation.scss';
 
-type MusicTrackInformationProps = {
-  trackName: string;
-  artistName: string;
-};
-
-export const MusicTrackInformation = ({
+export const MusicTrackInformation: FC<TMusicTrackInformationProps> = ({
   trackName,
   artistName,
-}: MusicTrackInformationProps): JSX.Element => {
+}): JSX.Element => {
   const router = useRouter();
   const mainArtist = getMainArtist(artistName);
 

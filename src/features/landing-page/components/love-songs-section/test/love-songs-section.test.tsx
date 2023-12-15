@@ -49,12 +49,9 @@ const mockSongs = [
   },
 ];
 
-const renderLoveSongsSection = () =>
-  render(<LoveSongsSection songs={mockSongs as TMusicTrack[]} />);
-
 describe('LoveSongsSection', () => {
   it('render component without error', () => {
-    const screen = renderLoveSongsSection();
+    const screen = render(<LoveSongsSection songs={mockSongs as TMusicTrack[]} />);
     expect(screen).toMatchSnapshot();
   });
 });

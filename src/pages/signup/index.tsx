@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import { Footer } from '@/register/components/footer/Footer';
+import { Footer } from '@/register/components/footer';
 import { RegisterForm } from '@/register/components/register-form';
 
 import {

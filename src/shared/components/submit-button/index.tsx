@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import React from 'react';
+import React, { FC } from 'react';
 
 import { TCustomButton } from '@/types/components';
 
@@ -7,11 +7,9 @@ import { CustomButton } from '../custom-button';
 
 import './SubmitButton.scss';
 
-export const SubmitButton = ({
-  submitButtonProps,
-}: {
+export const SubmitButton: FC<{
   submitButtonProps: TCustomButton;
-}): JSX.Element => (
+}> = ({ submitButtonProps }): JSX.Element => (
   <Form.Item className='submit-button'>
     <CustomButton {...submitButtonProps} />
   </Form.Item>

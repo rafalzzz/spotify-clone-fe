@@ -49,11 +49,9 @@ const mockAlbums = [
   },
 ];
 
-const renderLoveAlbumsSection = () => render(<LoveAlbumsSection albums={mockAlbums as TAlbum[]} />);
-
 describe('LoveAlbumsSection', () => {
   it('render component without error', () => {
-    const screen = renderLoveAlbumsSection();
+    const screen = render(<LoveAlbumsSection albums={mockAlbums as TAlbum[]} />);
     expect(screen).toMatchSnapshot();
   });
 });

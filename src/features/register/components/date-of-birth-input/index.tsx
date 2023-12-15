@@ -1,4 +1,5 @@
 import { Form, Input, Select, Row, Col } from 'antd';
+import { FC } from 'react';
 
 import { MONTH_OPTIONS } from '@/register/consts';
 import { FORM_LABELS, FORM_FIELD_PLACEHOLDERS } from '@/register/consts';
@@ -9,7 +10,7 @@ import './DateOfBirthInput.scss';
 
 const { Option } = Select;
 
-export const DateOfBirthInput = ({ label = '', name }: TDateOfBirthInput): JSX.Element => {
+export const DateOfBirthInput: FC<TDateOfBirthInput> = ({ label = '', name }): JSX.Element => {
   const form = Form.useFormInstance();
 
   const validateInput = () => {
