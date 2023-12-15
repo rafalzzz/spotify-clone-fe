@@ -1,26 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Duration renders component without error 1`] = `
+exports[`renders component without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <button
-        class="duration duration--text-align-start"
-        data-testid="duration-button"
-      >
-        0:00
-      </button>
-    </div>
+    <div />
   </body>,
-  "container": <div>
-    <button
-      class="duration duration--text-align-start"
-      data-testid="duration-button"
-    >
-      0:00
-    </button>
-  </div>,
+  "container": <div />,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

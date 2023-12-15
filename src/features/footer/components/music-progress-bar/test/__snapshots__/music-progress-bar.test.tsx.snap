@@ -1,10 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Duration renders component without error 1`] = `
+exports[`MusicProgressBar renders without errors 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="music-progress-bar"
+      >
+        <audio />
+        <button
+          class="duration duration--text-align-end"
+          data-testid="duration-button"
+          disabled=""
+        >
+          0:00
+        </button>
+        <div
+          class="progress-bar"
+        >
+          <input
+            class="progress-bar__input"
+            max="0"
+            min="0"
+            step="0.01"
+            type="range"
+            value="0"
+          />
+          <span
+            class="progress-bar__span-thumb"
+            style="left: -3px;"
+          />
+        </div>
+        <button
+          class="duration duration--text-align-start"
+          data-testid="duration-button"
+        >
+          0:00
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="music-progress-bar"
+    >
+      <audio />
+      <button
+        class="duration duration--text-align-end"
+        data-testid="duration-button"
+        disabled=""
+      >
+        0:00
+      </button>
+      <div
+        class="progress-bar"
+      >
+        <input
+          class="progress-bar__input"
+          max="0"
+          min="0"
+          step="0.01"
+          type="range"
+          value="0"
+        />
+        <span
+          class="progress-bar__span-thumb"
+          style="left: -3px;"
+        />
+      </div>
       <button
         class="duration duration--text-align-start"
         data-testid="duration-button"
@@ -12,14 +76,6 @@ exports[`Duration renders component without error 1`] = `
         0:00
       </button>
     </div>
-  </body>,
-  "container": <div>
-    <button
-      class="duration duration--text-align-start"
-      data-testid="duration-button"
-    >
-      0:00
-    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

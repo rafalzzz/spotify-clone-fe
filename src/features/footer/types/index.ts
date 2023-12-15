@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, RefObject, SyntheticEvent } from 'react';
+import { ChangeEvent, Dispatch, RefObject, SetStateAction, SyntheticEvent } from 'react';
 
 import { TSongItem } from '@/types/store';
 
@@ -59,4 +59,17 @@ export type TUseAudioProps = {
 
 export type TUsePlayerButtonsProps = {
   isPlaying: boolean;
+};
+
+export type TUseMusicProgressBarProps = {
+  duration: number;
+  currentTime: number;
+  temporaryTime: number | null;
+  durationValue: number;
+  isReversedTime: boolean;
+  setCurrentTime: Dispatch<SetStateAction<number>>;
+  handleStartChange: () => void;
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleEndChange: () => void;
+  onClick: () => void;
 };

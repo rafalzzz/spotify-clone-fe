@@ -290,9 +290,11 @@ exports[`BasicLayout render component without error 1`] = `
         <div
           class="music-progress-bar"
         >
+          <audio />
           <button
-            class="duration"
+            class="duration duration--text-align-end"
             data-testid="duration-button"
+            disabled=""
           >
             0:00
           </button>
@@ -313,13 +315,12 @@ exports[`BasicLayout render component without error 1`] = `
             />
           </div>
           <button
-            class="duration"
+            class="duration duration--text-align-start"
             data-testid="duration-button"
           >
             0:00
           </button>
         </div>
-        <audio />
       </div>
       <div
         class="sound-progress-bar"
