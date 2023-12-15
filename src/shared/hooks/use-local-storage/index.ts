@@ -1,11 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 
-type TUseLocalStorage = {
-  key: string;
-  defaultValue: string;
-};
+import { TUseLocalStorage, TUseLocalStorageProps } from '@/types/hooks';
 
-export const useLocalStorage = ({ key, defaultValue }: TUseLocalStorage) => {
+export const useLocalStorage = ({ key, defaultValue }: TUseLocalStorage): TUseLocalStorageProps => {
   const [currentValue, setCurrentValue] = useState(defaultValue);
 
   const isLocalStorageAvailable = typeof window !== 'undefined';

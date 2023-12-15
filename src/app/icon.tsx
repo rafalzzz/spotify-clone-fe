@@ -7,7 +7,7 @@ export const size = {
   height: 32,
 };
 
-export default function Icon() {
+export default function Icon(): ImageResponse {
   return new ImageResponse(
     (
       <div

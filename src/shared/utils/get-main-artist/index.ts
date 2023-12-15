@@ -1,1 +1,1 @@
-export const getMainArtist = (artistName: string) => artistName.split(',')[0];
+export const getMainArtist = (artistName: string): string => artistName.split(',')[0];

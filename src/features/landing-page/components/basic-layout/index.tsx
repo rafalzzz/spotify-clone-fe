@@ -1,14 +1,14 @@
+import { FC, PropsWithChildren } from 'react';
+
 import Sidebar from '@/sidebar/components/sidebar';
 
 import FooterContainer from '@/footer/components/footer-container';
 
 import Navbar from '@/navigation/components/navbar';
 
-import { TBasicLayout } from '@/landing-page/types/types';
-
 import './BasicLayout.scss';
 
-export const BasicLayout = ({ children }: TBasicLayout) => (
+export const BasicLayout: FC<PropsWithChildren> = ({ children }): JSX.Element => (
   <div className='basic-layout'>
     <Sidebar />
     <div className='basic-layout__content'>

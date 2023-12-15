@@ -1,25 +1,28 @@
-import { ReactNode } from 'react';
-
-import { Album } from '@/interfaces/album';
-import { Artist } from '@/interfaces/artist';
-import { MusicTrack } from '@/interfaces/music-track';
+import { TAlbum } from '@/types/album';
+import { TArtist } from '@/types/artist';
+import { TMusicTrack } from '@/types/music-track';
+import { TSongItem } from '@/types/store';
 
 export type TArtistSection = {
-  artists: Artist[];
-};
-
-export type TBasicLayout = {
-  children: ReactNode;
+  artists: TArtist[];
 };
 
 export type TLoveAlbumsSection = {
-  albums: Album[];
+  albums: TAlbum[];
 };
 
+export type TLoveSongsSection = { songs: TMusicTrack[] };
+
 export type TMainContent = {
-  songs: MusicTrack[];
-  albums: Album[];
-  artists: Artist[];
+  songs: TMusicTrack[];
+  albums: TAlbum[];
+  artists: TArtist[];
 };
 
 export type TUseLandingPageProps = TMainContent;
+
+export type TUseLoveSongsSectionProps = {
+  isPlaying: boolean;
+  currentPlayedSong: TSongItem;
+  handleOnClick: (songItem: TSongItem) => void;
+};

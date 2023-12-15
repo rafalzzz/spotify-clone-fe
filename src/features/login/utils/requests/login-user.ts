@@ -2,9 +2,11 @@ import { TLoginForm } from '@/login/types';
 
 import { customRequest } from '@/utils/custom-request';
 
+import { TServerResponse } from '@/types/response';
+
 import { ENDPOINTS } from '@/consts/endpoints';
 
-export async function loginUser(requestBody: TLoginForm) {
+export async function loginUser(requestBody: TLoginForm): Promise<TServerResponse> {
   const response = customRequest({
     endpoint: ENDPOINTS.LOGIN_USER,
     method: 'POST',

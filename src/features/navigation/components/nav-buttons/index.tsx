@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   currentPathIndex: -1,
 };
 
-export const NavButtons = () => {
+export const NavButtons = (): JSX.Element => {
   const { isUndoButtonDisabled, isRedoButtonDisabled, undoHistory, redoHistory } = useHistory({
     initialState: INITIAL_STATE,
   });

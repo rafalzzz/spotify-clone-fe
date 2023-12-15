@@ -1,25 +1,19 @@
 import { HeartFilled } from '@ant-design/icons';
 import { Button } from 'antd';
-import React from 'react';
-import { MouseEventHandler } from 'react';
+import React, { FC } from 'react';
+
+import { TCustomAddToFavoriteButton } from '@/types/components';
 
 import { CustomTooltip } from '../custom-tooltip';
 
 import './CustomAddToFavoriteButton.scss';
 
-type TCustomAddToFavoriteButton = {
-  title: string;
-  disabled?: boolean;
-  isAddedToFav?: boolean;
-  onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
-};
-
-export const CustomAddToFavoriteButton = ({
+export const CustomAddToFavoriteButton: FC<TCustomAddToFavoriteButton> = ({
   title = '',
   disabled = false,
   isAddedToFav = true,
   onClick,
-}: TCustomAddToFavoriteButton) => (
+}): JSX.Element => (
   <Button
     className={`custom-add-to-favorite-button custom-add-to-favorite-button--${
       isAddedToFav ? 'inactive' : 'active'

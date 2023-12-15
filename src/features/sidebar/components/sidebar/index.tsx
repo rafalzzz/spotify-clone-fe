@@ -8,7 +8,7 @@ import { useResizeSidebar } from '@/sidebar/hooks/use-resize-sidebar';
 
 import { SidebarNavigation } from '../sidebar-navigation';
 
-const Sidebar = () => {
+const Sidebar = (): JSX.Element => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const { sidebarWidth, startResizing } = useResizeSidebar({ sidebarRef });
 

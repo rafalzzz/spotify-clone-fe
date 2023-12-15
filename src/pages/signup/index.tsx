@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import { Footer } from '@/register/components/footer/Footer';
+import { Footer } from '@/register/components/footer';
 import { RegisterForm } from '@/register/components/register-form';
 
 import {
@@ -13,7 +13,7 @@ import {
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 
-const Register = () => (
+const Register = (): JSX.Element => (
   <>
     <CustomHeadSection
       title='Sign up - Spotify'

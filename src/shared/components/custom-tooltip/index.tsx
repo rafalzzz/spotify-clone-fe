@@ -1,20 +1,15 @@
-import Tooltip, { TooltipPlacement } from 'antd/lib/tooltip';
+import Tooltip from 'antd/lib/tooltip';
+import { FC, PropsWithChildren } from 'react';
 
-type TCustomTooltip = {
-  title: string;
-  children: JSX.Element;
-  mouseEnterDelay?: number;
-  placement?: TooltipPlacement;
-  testId?: string;
-};
+import { TCustomTooltip } from '@/types/components';
 
-export const CustomTooltip = ({
+export const CustomTooltip: FC<PropsWithChildren<TCustomTooltip>> = ({
+  children,
   title,
   mouseEnterDelay = 0.5,
   placement = 'right',
   testId = '',
-  children,
-}: TCustomTooltip) => (
+}): JSX.Element => (
   <Tooltip
     mouseEnterDelay={mouseEnterDelay}
     placement={placement}

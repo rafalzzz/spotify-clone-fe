@@ -1,4 +1,4 @@
-import { TOptionType } from '@/types/custom-form-item-props';
+import { TOptionType } from '@/types/components';
 
 export const MONTH_OPTIONS: TOptionType[] = [
   { label: 'January', value: 1 },

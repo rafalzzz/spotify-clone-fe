@@ -183,78 +183,8 @@ exports[`BasicLayout render component without error 1`] = `
     >
       <div
         class="now-played-track"
-      >
-        <img
-          alt="image"
-          data-nimg="1"
-          decoding="async"
-          height="56"
-          loading="lazy"
-          src="/_next/image?url=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic115%2Fv4%2F2c%2Fb0%2Fde%2F2cb0de7b-4559-d885-36f8-271c950cba34%2F886443562097.jpg%2F60x60bb.jpg&w=128&q=75"
-          srcset="/_next/image?url=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic115%2Fv4%2F2c%2Fb0%2Fde%2F2cb0de7b-4559-d885-36f8-271c950cba34%2F886443562097.jpg%2F60x60bb.jpg&w=64&q=75 1x, /_next/image?url=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic115%2Fv4%2F2c%2Fb0%2Fde%2F2cb0de7b-4559-d885-36f8-271c950cba34%2F886443562097.jpg%2F60x60bb.jpg&w=128&q=75 2x"
-          style="color: transparent;"
-          width="56"
-        />
-        <div
-          class="now-played-track__informations"
-        >
-          <div
-            class="now-played-track__title-container"
-          >
-            <span
-              class="now-played-track__title"
-            >
-              Just give me a reason and one one more...
-            </span>
-          </div>
-          <a
-            class="now-played-track__artist"
-            data-testid="now-played-track-artist-redirection"
-            href="/artist/p!nk"
-          >
-            P!nk
-          </a>
-        </div>
-        <div
-          class="now-played-track__button"
-        >
-          <button
-            class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-default ant-btn-sm ant-btn-background-ghost custom-add-to-favorite-button custom-add-to-favorite-button--active"
-            data-testid="custom-add-to-favorite-button"
-            role="button"
-            type="button"
-          >
-            <div
-              data-mouseenterdelay="0.5"
-              data-placement="top"
-              data-testid="custom-add-to-favorite-button-tooltip"
-            >
-              <span
-                aria-label="heart"
-                class="anticon anticon-heart"
-                role="img"
-              >
-                <svg
-                  aria-hidden="true"
-                  data-icon="heart"
-                  fill="currentColor"
-                  focusable="false"
-                  height="1em"
-                  viewBox="64 64 896 896"
-                  width="1em"
-                >
-                  <path
-                    d="M923 283.6a260.04 260.04 0 00-56.9-82.8 264.4 264.4 0 00-84-55.5A265.34 265.34 0 00679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 00-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z"
-                  />
-                </svg>
-              </span>
-              <span>
-                Add to favorites
-              </span>
-            </div>
-          </button>
-        </div>
-      </div>
+        data-testid="now-played-track"
+      />
       <div
         class="player-controls"
       >
@@ -262,7 +192,8 @@ exports[`BasicLayout render component without error 1`] = `
           class="player-buttons"
         >
           <button
-            class="custom-icon-button custom-icon-button--active"
+            class="custom-icon-button"
+            data-testid="shuffle-button"
             role="button"
           >
             <svg
@@ -280,7 +211,8 @@ exports[`BasicLayout render component without error 1`] = `
             </svg>
           </button>
           <button
-            class="custom-icon-button custom-icon-button--active"
+            class="custom-icon-button"
+            data-testid="prev-song-button"
             role="button"
           >
             <svg
@@ -298,12 +230,14 @@ exports[`BasicLayout render component without error 1`] = `
             </svg>
           </button>
           <button
-            class="custom-icon-button custom-icon-button--active"
+            class="custom-icon-button"
+            data-testid="play-button"
             role="button"
           >
             <span
               aria-label="play-circle"
               class="anticon anticon-play-circle"
+              data-testid="player-buttons-play-icon"
               role="img"
             >
               <svg
@@ -322,7 +256,8 @@ exports[`BasicLayout render component without error 1`] = `
             </span>
           </button>
           <button
-            class="custom-icon-button custom-icon-button--active"
+            class="custom-icon-button"
+            data-testid="next-song-button"
             role="button"
           >
             <svg
@@ -340,7 +275,8 @@ exports[`BasicLayout render component without error 1`] = `
             </svg>
           </button>
           <button
-            class="custom-icon-button custom-icon-button--active"
+            class="custom-icon-button"
+            data-testid="loop-button"
             role="button"
           >
             <svg
@@ -361,29 +297,37 @@ exports[`BasicLayout render component without error 1`] = `
         <div
           class="music-progress-bar"
         >
-          <div
-            class="music-progress-bar__timer"
+          <audio />
+          <button
+            class="duration duration--text-align-end"
+            data-testid="duration-button"
+            disabled=""
           >
             0:00
-          </div>
+          </button>
           <div
             class="progress-bar"
           >
             <input
               class="progress-bar__input"
+              data-testid="progress-bar"
+              max="0"
+              min="0"
               step="0.01"
               type="range"
+              value="0"
             />
             <span
               class="progress-bar__span-thumb"
-              style="left: 297px;"
+              style="left: -3px;"
             />
           </div>
-          <div
-            class="music-progress-bar__timer"
+          <button
+            class="duration duration--text-align-start"
+            data-testid="duration-button"
           >
-            1:00
-          </div>
+            0:00
+          </button>
         </div>
       </div>
       <div
@@ -391,11 +335,13 @@ exports[`BasicLayout render component without error 1`] = `
       >
         <button
           class="custom-icon-button custom-icon-button--active"
+          data-testid="sound-progress-bar-button"
           role="button"
         >
           <svg
             aria-label="Ses seviyesi y\\xFCksek"
             class="svg-icon"
+            data-testid="sound-icon"
             height="16"
             role="img"
             viewBox="0 0 16 16"
@@ -413,12 +359,16 @@ exports[`BasicLayout render component without error 1`] = `
         >
           <input
             class="progress-bar__input"
+            data-testid="progress-bar"
+            max="1"
+            min="0"
             step="0.01"
             type="range"
+            value="0.5"
           />
           <span
             class="progress-bar__span-thumb"
-            style="left: 297px;"
+            style="left: -3px;"
           />
         </div>
       </div>

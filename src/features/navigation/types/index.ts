@@ -1,4 +1,4 @@
-export enum EHistoryActionKind {
+export const enum EHistoryActionKind {
   UNDO_BUTTON = 'UNDO_BUTTON',
   REDO_BUTTON = 'REDO_BUTTON',
   ADD_PATH = 'ADD_PATH',
@@ -17,4 +17,18 @@ export type TCountAction = {
 export type TCountState = {
   allPaths: string[];
   currentPathIndex: number;
+};
+
+export type TUseHistory = {
+  initialState: {
+    allPaths: string[];
+    currentPathIndex: number;
+  };
+};
+
+export type TUseHistoryProps = {
+  isUndoButtonDisabled: boolean;
+  isRedoButtonDisabled: boolean;
+  undoHistory: () => void;
+  redoHistory: () => void;
 };

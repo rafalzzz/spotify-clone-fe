@@ -1,4 +1,4 @@
-import { TOptionType } from '@/types/custom-form-item-props';
+import { TOptionType } from '@/types/components';
 
 export const GENDER_OPTIONS: TOptionType[] = [
   { label: 'Man', value: 1 },

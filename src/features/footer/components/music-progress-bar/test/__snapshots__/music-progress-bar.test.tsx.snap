@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MusicProgressBar renders without errors 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="music-progress-bar"
+      >
+        <audio />
+        <button
+          class="duration duration--text-align-end"
+          data-testid="duration-button"
+          disabled=""
+        >
+          0:00
+        </button>
+        <div
+          class="progress-bar"
+        >
+          <input
+            class="progress-bar__input"
+            data-testid="progress-bar"
+            max="0"
+            min="0"
+            step="0.01"
+            type="range"
+            value="0"
+          />
+          <span
+            class="progress-bar__span-thumb"
+            style="left: -3px;"
+          />
+        </div>
+        <button
+          class="duration duration--text-align-start"
+          data-testid="duration-button"
+        >
+          0:00
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="music-progress-bar"
+    >
+      <audio />
+      <button
+        class="duration duration--text-align-end"
+        data-testid="duration-button"
+        disabled=""
+      >
+        0:00
+      </button>
+      <div
+        class="progress-bar"
+      >
+        <input
+          class="progress-bar__input"
+          data-testid="progress-bar"
+          max="0"
+          min="0"
+          step="0.01"
+          type="range"
+          value="0"
+        />
+        <span
+          class="progress-bar__span-thumb"
+          style="left: -3px;"
+        />
+      </div>
+      <button
+        class="duration duration--text-align-start"
+        data-testid="duration-button"
+      >
+        0:00
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

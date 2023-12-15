@@ -1,11 +1,6 @@
-type TIsCreatedDateCorrect = {
-  year: number;
-  month: number;
-  day: number;
-  createdDate: Date;
-};
+import { TIsCreatedDateCorrect } from '@/types/helpers';
 
-const isCreatedDateCorrect = ({ year, month, day, createdDate }: TIsCreatedDateCorrect) =>
+const isCreatedDateCorrect = ({ year, month, day, createdDate }: TIsCreatedDateCorrect): boolean =>
   createdDate.getFullYear() === year &&
   createdDate.getMonth() === month - 1 &&
   createdDate.getDate() === day;

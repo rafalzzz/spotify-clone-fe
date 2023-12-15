@@ -1,59 +1,57 @@
 import { render } from '@testing-library/react';
 
-import { Album } from '@/interfaces/album';
+import { TAlbum, EAlbumKeys } from '@/types/album';
 
 import { LoveAlbumsSection } from '..';
 
 const mockAlbums = [
   {
-    collectionId: 1,
-    artworkUrl60: '/some-image-url1.jpg',
-    collectionName: 'CollectionName',
-    releaseDate: '2020-01-01',
-    artistName: 'Test_Artist',
+    [EAlbumKeys.COLLECTION_ID]: 1,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
   },
   {
-    collectionId: 2,
-    artworkUrl60: '/some-image-url1.jpg',
-    collectionName: 'CollectionName',
-    releaseDate: '2020-01-01',
-    artistName: 'Test_Artist',
+    [EAlbumKeys.COLLECTION_ID]: 2,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
   },
   {
-    collectionId: 3,
-    artworkUrl60: '/some-image-url1.jpg',
-    collectionName: 'CollectionName',
-    releaseDate: '2020-01-01',
-    artistName: 'Test_Artist',
+    [EAlbumKeys.COLLECTION_ID]: 3,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
   },
   {
-    collectionId: 4,
-    artworkUrl60: '/some-image-url1.jpg',
-    collectionName: 'CollectionName',
-    releaseDate: '2020-01-01',
-    artistName: 'Test_Artist',
+    [EAlbumKeys.COLLECTION_ID]: 4,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
   },
   {
-    collectionId: 5,
-    artworkUrl60: '/some-image-url1.jpg',
-    collectionName: 'CollectionName',
-    releaseDate: '2020-01-01',
-    artistName: 'Test_Artist',
+    [EAlbumKeys.COLLECTION_ID]: 5,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
   },
   {
-    collectionId: 6,
-    artworkUrl60: '/some-image-url1.jpg',
-    collectionName: 'CollectionName',
-    releaseDate: '2020-01-01',
-    artistName: 'Test_Artist',
+    [EAlbumKeys.COLLECTION_ID]: 6,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
   },
 ];
 
-const renderLoveAlbumsSection = () => render(<LoveAlbumsSection albums={mockAlbums as Album[]} />);
-
 describe('LoveAlbumsSection', () => {
   it('render component without error', () => {
-    const screen = renderLoveAlbumsSection();
+    const screen = render(<LoveAlbumsSection albums={mockAlbums as TAlbum[]} />);
     expect(screen).toMatchSnapshot();
   });
 });

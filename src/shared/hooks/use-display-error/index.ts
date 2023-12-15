@@ -1,6 +1,8 @@
 import { notification } from 'antd';
 
-export const useDisplayError = () => {
+import { TUseDisplayErrorProps } from '@/types/hooks';
+
+export const useDisplayError = (): TUseDisplayErrorProps => {
   const [api, contextHolder] = notification.useNotification();
 
   const displayError = (description: string) => {

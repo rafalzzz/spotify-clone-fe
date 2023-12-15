@@ -1,18 +1,12 @@
-type TFetchMusicData = {
-  term: string;
-  entity: string;
-  errorMessage?: string;
-  limit?: number;
-  revalidate?: number;
-};
+import { TFetchMusicData } from '@/types/server-actions';
 
-export const fetchMusicData = async ({
+export const fetchMusicData = async <T>({
   term,
   entity,
   errorMessage,
   limit = 10,
   revalidate = 600,
-}: TFetchMusicData) => {
+}: TFetchMusicData): Promise<T> => {
   const response = await fetch(
     `${process.env.API_ITUNES}/search?term=${term}&entity=${entity}&limit=${limit}`,
     {

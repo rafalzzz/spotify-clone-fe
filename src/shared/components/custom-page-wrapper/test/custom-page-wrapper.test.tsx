@@ -5,16 +5,14 @@ import { CustomPageWrapper } from '..';
 
 import '@testing-library/jest-dom';
 
-const renderCustomPageWrapper = () =>
-  render(
-    <CustomPageWrapper>
-      <div>Test</div>
-    </CustomPageWrapper>,
-  );
-
 describe('CustomPageWrapper', () => {
   it('render component without error', () => {
-    const screen = renderCustomPageWrapper();
+    const screen = render(
+      <CustomPageWrapper>
+        <div>Test</div>
+      </CustomPageWrapper>,
+    );
+
     expect(screen).toMatchSnapshot();
   });
 });

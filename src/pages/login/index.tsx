@@ -17,7 +17,7 @@ import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 import './LoginPage.scss';
 
-const Login = () => (
+const Login = (): JSX.Element => (
   <>
     <CustomHeadSection
       title='Sign in - Spotify'

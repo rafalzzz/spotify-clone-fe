@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const SoundIcon = () => (
+const SoundIcon = (): JSX.Element => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     role='img'
@@ -9,6 +9,7 @@ const SoundIcon = () => (
     aria-label='Ses seviyesi y\xFCksek'
     viewBox='0 0 16 16'
     className='svg-icon'
+    data-testid='sound-icon'
   >
     <path
       className='svg-icon-path'

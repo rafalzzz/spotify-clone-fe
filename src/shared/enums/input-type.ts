@@ -7,6 +7,6 @@ export enum EInputType {
   SWITCH = 'switch',
 }
 
-export enum ENonStandardInputType {
+export const enum ENonStandardInputType {
   DATE_OF_BIRTH = 'dateOfBirth',
 }

@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
+import { FC, Suspense } from 'react';
 
 import { ArtistsSection } from '@/landing-page/components/artists-section';
 import { LoveAlbumsSection } from '@/landing-page/components/love-albums-section';
@@ -13,7 +13,7 @@ import {
   CustomSectionLoader,
 } from '@/shared/server-components';
 
-const MainContent = ({ songs, albums, artists }: TMainContent) => (
+const MainContent: FC<TMainContent> = ({ songs, albums, artists }): JSX.Element => (
   <CustomContentWrapper>
     <h1>Welcome</h1>
     <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>

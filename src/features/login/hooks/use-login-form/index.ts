@@ -1,13 +1,13 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
-import { TLoginForm } from '@/login/types';
+import { TLoginForm, TUseLoginFormProps } from '@/login/types';
 import { loginUser } from '@/login/utils/requests/login-user';
 
-import { TCustomButton } from '@/types/custom-button-props';
-import { THookForm } from '@/types/hook-form-props';
+import { TCustomButton } from '@/types/components';
+import { THookForm } from '@/types/components';
 
-export const useLoginForm = ({ displayError }: THookForm) => {
+export const useLoginForm = ({ displayError }: THookForm): TUseLoginFormProps => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { push } = useRouter();

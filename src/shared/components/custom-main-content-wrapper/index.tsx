@@ -1,14 +1,15 @@
-import { ReactNode } from 'react';
-import './CustomMainContentWrapper.scss';
+import { FC, PropsWithChildren } from 'react';
 
-type TCustomMainContentWrapper = {
-  children: ReactNode;
-  className?: string;
-};
+import { TCustomMainContentWrapper } from '@/types/components';
+
+import './CustomMainContentWrapper.scss';
 
 const BASIC_CLASS_NAME = 'custom-main-content-wrapper';
 
-export const CustomMainContentWrapper = ({ className, children }: TCustomMainContentWrapper) => (
+export const CustomMainContentWrapper: FC<PropsWithChildren<TCustomMainContentWrapper>> = ({
+  className,
+  children,
+}): JSX.Element => (
   <main
     className={className ? `${BASIC_CLASS_NAME} ${className}` : BASIC_CLASS_NAME}
     data-testid='custom-main-content-wrapper'

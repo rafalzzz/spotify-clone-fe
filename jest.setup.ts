@@ -1,8 +1,9 @@
-import { MockResizeObserver } from '@/interfaces/mock-resize-observer';
-
 jest.mock('antd');
 
 beforeAll(() => {
+  window.HTMLMediaElement.prototype.play = jest.fn();
+  window.HTMLMediaElement.prototype.pause = jest.fn();
+
   window.matchMedia =
     window.matchMedia ||
     function () {
@@ -12,12 +13,4 @@ beforeAll(() => {
         removeListener: function () {},
       };
     };
-});
-
-Object.defineProperty(window, 'ResizeObserver', {
-  writable: true,
-  value: jest.fn().mockImplementation(function (this: MockResizeObserver) {
-    this.observe = jest.fn();
-    this.unobserve = jest.fn();
-  }),
 });

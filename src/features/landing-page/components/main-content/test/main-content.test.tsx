@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 
-import { Album } from '@/shared/interfaces/album';
-import { Artist } from '@/shared/interfaces/artist';
-import { MusicTrack } from '@/shared/interfaces/music-track';
+import { TAlbum } from '@/types/album';
+import { TArtist } from '@/types/artist';
+import { TMusicTrack } from '@/types/music-track';
 
 import MainContent from '..';
 
@@ -12,7 +12,7 @@ const props = {
       artistId: 1,
       artistName: 'Test_Artist1',
     },
-  ] as Artist[],
+  ] as TArtist[],
   albums: [
     {
       collectionId: 1,
@@ -21,7 +21,7 @@ const props = {
       releaseDate: '2020-01-01',
       artistName: 'Test_Artist',
     },
-  ] as Album[],
+  ] as TAlbum[],
   songs: [
     {
       trackId: 1,
@@ -30,14 +30,12 @@ const props = {
       artistName: 'Test_Artist',
       collectionName: 'collectionName',
     },
-  ] as MusicTrack[],
+  ] as TMusicTrack[],
 };
-
-const renderLoveAlbumsSection = () => render(<MainContent {...props} />);
 
 describe('MainContent', () => {
   it('render component without error', async () => {
-    const { container } = renderLoveAlbumsSection();
+    const { container } = render(<MainContent {...props} />);
 
     await waitFor(() => {
       expect(container).toBeDefined();

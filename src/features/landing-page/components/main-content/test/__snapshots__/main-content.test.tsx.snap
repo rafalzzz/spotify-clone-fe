@@ -46,7 +46,7 @@ exports[`MainContent render component without error 1`] = `
               class="custom-section-item"
             >
               <div
-                class="custom-section-item__image"
+                class="custom-section-item-image"
               >
                 <img
                   alt="image"
@@ -60,12 +60,13 @@ exports[`MainContent render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item-play-button custom-section-item-play-button--visible"
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg
@@ -163,7 +164,7 @@ exports[`MainContent render component without error 1`] = `
               class="custom-section-item"
             >
               <div
-                class="custom-section-item__image"
+                class="custom-section-item-image"
               >
                 <img
                   alt="image"
@@ -177,12 +178,13 @@ exports[`MainContent render component without error 1`] = `
                   width="100"
                 />
                 <button
-                  class="custom-section-item__play-button"
+                  class="custom-section-item-play-button "
                   data-testid="custom-section-item-play-button"
                 >
                   <span
                     aria-label="play-circle"
                     class="anticon anticon-play-circle antd-icon"
+                    data-testid="custom-section-item-play-icon"
                     role="img"
                   >
                     <svg

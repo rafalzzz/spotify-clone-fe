@@ -1,41 +1,39 @@
 import { render } from '@testing-library/react';
 
-import { Artist } from '@/interfaces/artist';
+import { TArtist, EArtistKeys } from '@/types/artist';
 
 import { ArtistsSection } from '..';
 
 const mockArtists = [
   {
-    artistId: 1,
-    artistName: 'Test_Artist1',
+    [EArtistKeys.ARTIST_ID]: 1,
+    [EArtistKeys.ARTIST_NAME]: 'Test_Artist1',
   },
   {
-    artistId: 2,
-    artistName: 'Test_Artist2',
+    [EArtistKeys.ARTIST_ID]: 2,
+    [EArtistKeys.ARTIST_NAME]: 'Test_Artist2',
   },
   {
-    artistId: 3,
-    artistName: 'Test_Artist3',
+    [EArtistKeys.ARTIST_ID]: 3,
+    [EArtistKeys.ARTIST_NAME]: 'Test_Artist3',
   },
   {
-    artistId: 4,
-    artistName: 'Test_Artist4',
+    [EArtistKeys.ARTIST_ID]: 4,
+    [EArtistKeys.ARTIST_NAME]: 'Test_Artist4',
   },
   {
-    artistId: 5,
-    artistName: 'Test_Artist5',
+    [EArtistKeys.ARTIST_ID]: 5,
+    [EArtistKeys.ARTIST_NAME]: 'Test_Artist5',
   },
   {
-    artistId: 6,
-    artistName: 'Test_Artist6',
+    [EArtistKeys.ARTIST_ID]: 6,
+    [EArtistKeys.ARTIST_NAME]: 'Test_Artist6',
   },
 ];
 
-const renderArtistsSection = () => render(<ArtistsSection artists={mockArtists as Artist[]} />);
-
 describe('ArtistsSection', () => {
   it('render component without error', () => {
-    const screen = renderArtistsSection();
+    const screen = render(<ArtistsSection artists={mockArtists as TArtist[]} />);
     expect(screen).toMatchSnapshot();
   });
 });

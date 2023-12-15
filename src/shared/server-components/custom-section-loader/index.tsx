@@ -1,14 +1,12 @@
 'use server';
 
+import { TCustomSectionLoader } from '@/types/components';
+
 import './CustomSectionLoader.scss';
 
 const ITEMS_IDS = Array.from({ length: 15 }, (_, i) => i + 1);
 
-type TCustomSectionLoader = {
-  SectionItemLoader: () => JSX.Element;
-};
-
-export const CustomSectionLoader = ({ SectionItemLoader }: TCustomSectionLoader) => (
+export const CustomSectionLoader = ({ SectionItemLoader }: TCustomSectionLoader): JSX.Element => (
   <section className='custom-section-loader'>
     <div className='custom-section-loader__header'>
       <div className='custom-section-loader__header__title' />

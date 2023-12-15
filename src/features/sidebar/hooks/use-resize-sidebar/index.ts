@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 
-import { TUseResizeSidebarProps } from '@/sidebar/types';
+import { TUseResizeSidebar, TUseResizeSidebarProps } from '@/sidebar/types';
 
 import { useLocalStorage } from '@/hooks/use-local-storage';
 
@@ -8,7 +8,7 @@ import SIDEBAR_SETTINGS from '@/configs/sidebar-settings';
 
 const { DEFAULT_WIDTH, SIDEBAR_MIN_WIDTH, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH_KEY } = SIDEBAR_SETTINGS;
 
-export const useResizeSidebar = ({ sidebarRef }: TUseResizeSidebarProps) => {
+export const useResizeSidebar = ({ sidebarRef }: TUseResizeSidebar): TUseResizeSidebarProps => {
   const [isResizing, setIsResizing] = useState(false);
 
   const defaultValue = localStorage.getItem(SIDEBAR_WIDTH_KEY) ?? DEFAULT_WIDTH;

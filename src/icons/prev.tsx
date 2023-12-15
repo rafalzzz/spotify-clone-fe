@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const PrevIcon = () => (
+const PrevIcon = (): JSX.Element => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     role='img'
