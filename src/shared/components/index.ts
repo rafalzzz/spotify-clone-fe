@@ -11,7 +11,6 @@ export { CustomPageWrapper } from './custom-page-wrapper';
 export { CustomSection } from './custom-section';
 export { CustomSectionItem } from './custom-section-item';
 export { CustomSectionItemImage } from './custom-section-item-image';
-export { CustomSongPlayButton } from './custom-song-play-button';
 export { CustomSubheader } from './custom-subheader';
 export { CustomTooltip } from './custom-tooltip';
 export { MusicTrackInformation } from './music-track-informations';
