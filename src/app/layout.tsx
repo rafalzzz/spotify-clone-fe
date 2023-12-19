@@ -1,10 +1,9 @@
-import { FC, PropsWithChildren, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { BasicLayout } from '@/landing-page/components/basic-layout';
 
-import Favicon from '/public/favicon.ico';
 
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';

@@ -1,8 +1,6 @@
 'use client';
-import { PlayCircleFilled, PauseCircleFilled } from '@ant-design/icons';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FC, PropsWithChildren, useRef } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
