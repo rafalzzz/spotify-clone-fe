@@ -131,6 +131,7 @@
         "pathGroupsExcludedImportTypes": []
       }
     ],
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    "no-unused-vars": "warn"
   }
 }
