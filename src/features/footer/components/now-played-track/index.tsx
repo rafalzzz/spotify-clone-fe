@@ -16,7 +16,8 @@ import { EMusicTrackKeys } from '@/types/music-track';
 import './NowPlayedTrack.scss';
 
 export const NowPlayedTrack = (): JSX.Element => {
-  const { activeIndex, songsList } = useMusicPlayerStore();
+  const activeIndex = useMusicPlayerStore(({ activeIndex }) => activeIndex);
+  const songsList = useMusicPlayerStore(({ songsList }) => songsList);
 
   const currentSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);
 
