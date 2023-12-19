@@ -2,6 +2,7 @@ export { AlbumInformation } from './album-information';
 export { CustomAddToFavoriteButton } from './custom-add-to-favorite-button';
 export { CustomArtistItem } from './custom-artist-item';
 export { CustomButton } from './custom-button';
+export { CustomContentWrapper } from './custom-content-wrapper';
 export { CustomFormItem } from './custom-form-item';
 export { CustomHeader } from './custom-header';
 export { CustomHeadSection } from './custom-head-section';

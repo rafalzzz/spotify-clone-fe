@@ -6,9 +6,10 @@ import { LoveAlbumsSection } from '@/landing-page/components/love-albums-section
 import { LoveSongsSection } from '@/landing-page/components/love-songs-section';
 import { TMainContent } from '@/landing-page/types/types';
 
+import { CustomContentWrapper } from '@/components/custom-content-wrapper';
+
 import {
   CustomArtistItemLoader,
-  CustomContentWrapper,
   CustomSectionItemLoader,
   CustomSectionLoader,
 } from '@/shared/server-components';

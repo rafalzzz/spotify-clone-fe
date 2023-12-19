@@ -36,7 +36,9 @@ exports[`MainContent render component without error 1`] = `
       <ul
         class="custom-section__items"
       >
-        <li>
+        <li
+          data-testid="section-item"
+        >
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"

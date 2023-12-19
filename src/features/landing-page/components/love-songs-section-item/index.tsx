@@ -36,7 +36,7 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
     }, [isActive, song, changeSong, togglePlay]);
 
     return (
-      <li key={song[EMusicTrackKeys.TRACK_ID]}>
+      <li key={song[EMusicTrackKeys.TRACK_ID]} data-testid='section-item'>
         <CustomSectionItem collectionName={song[EMusicTrackKeys.COLLECTION_NAME]}>
           <>
             <CustomSectionItemImage imageUrl={song[EMusicTrackKeys.ARTWORK_URL_60]}>
