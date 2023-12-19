@@ -131,8 +131,9 @@
         "pathGroupsExcludedImportTypes": []
       }
     ],
+    "react/display-name": "off",
+    "unused-imports/no-unused-imports-ts": "warn",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "Type$" }],
-    "react/display-name": "off"
+    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "Type$" }]
   }
 }
