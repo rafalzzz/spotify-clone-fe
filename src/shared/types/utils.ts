@@ -6,3 +6,9 @@ export type TCustomRequest = {
   requestBody?: Record<string, unknown>;
   allowCookies?: boolean;
 };
+
+export type MockResizeObserver = {
+  observe: jest.Mock;
+  unobserve: jest.Mock;
+  disconnect: jest.Mock;
+};

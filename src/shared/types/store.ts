@@ -19,3 +19,11 @@ export type TUseMusicPlayerStore = {
   togglePlay: () => void;
   setDuration: (duration: number) => void;
 };
+
+export type TUseSectionStore = {
+  isResizing: boolean;
+  itemsAmount: number | null;
+  enableResizing: () => void;
+  disableResizing: () => void;
+  setItemsAmount: (itemsAmount: number) => void;
+};

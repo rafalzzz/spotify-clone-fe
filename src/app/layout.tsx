@@ -4,7 +4,6 @@ import { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { BasicLayout } from '@/landing-page/components/basic-layout';
 
-
 import '@/styles/globals.scss';
 import '@/styles/properties.scss';
 

@@ -8,14 +8,21 @@ import { useMusicPlayerStore } from '@/store/music-player';
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
 import { EMusicTrackKeys } from '@/types/music-track';
+import { TUseMusicPlayerStore } from '@/types/store';
 
 import { mockMusicStoreSongsList } from '@/consts/mocks';
 
 import { NowPlayedTrack } from '../';
 
-jest.mock('@/store/music-player', () => ({
-  useMusicPlayerStore: jest.fn() as unknown as typeof useMusicPlayerStore,
-}));
+jest.mock('@/store/music-player', () => {
+  const originalModule = jest.requireActual('@/store/music-player');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    useMusicPlayerStore: jest.fn(),
+  };
+});
 
 jest.mock('@/footer/hooks/use-is-text-overflowing', () => ({
   useIsTextOverflowing: jest.fn(),
@@ -30,11 +37,12 @@ const renderNowPlayerTrack = () => render(<NowPlayedTrack />);
 
 describe('NowPlayedTrack', () => {
   beforeEach(() => {
-    (useMusicPlayerStore as jest.MockedFunction<typeof useMusicPlayerStore>).mockImplementation(
-      () => ({
-        activeIndex: 0,
-        songsList: mockMusicStoreSongsList,
-      }),
+    (useMusicPlayerStore as unknown as jest.Mock<Partial<TUseMusicPlayerStore>>).mockImplementation(
+      (selector) =>
+        selector({
+          activeIndex: 0,
+          songsList: mockMusicStoreSongsList,
+        }),
     );
 
     (useIsTextOverflowing as jest.Mock).mockImplementation(() => ({
@@ -44,7 +52,7 @@ describe('NowPlayedTrack', () => {
   });
 
   it('renders empty div when there is no current song', () => {
-    (useMusicPlayerStore as jest.MockedFunction<typeof useMusicPlayerStore>).mockImplementation(
+    (useMusicPlayerStore as unknown as jest.Mock<Partial<TUseMusicPlayerStore>>).mockImplementation(
       () => ({
         activeIndex: -1,
         songsList: [],

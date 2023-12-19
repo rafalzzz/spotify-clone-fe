@@ -3,7 +3,6 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
 
-
 import { CustomSectionItem } from '../';
 
 const REDIRECTION_TEST_ID = 'custom-section-item-redirection';

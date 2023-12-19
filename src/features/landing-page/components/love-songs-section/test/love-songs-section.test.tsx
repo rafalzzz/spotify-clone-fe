@@ -4,6 +4,10 @@ import { EMusicTrackKeys, TMusicTrack } from '@/types/music-track';
 
 import { LoveSongsSection } from '..';
 
+jest.mock('@/store/section', () => ({
+  useSectionStore: jest.fn(),
+}));
+
 const mockSongs = [
   {
     [EMusicTrackKeys.TRACK_ID]: 1,
@@ -49,9 +53,12 @@ const mockSongs = [
   },
 ];
 
+const renderLoveSongsSection = () =>
+  render(<LoveSongsSection songs={mockSongs as TMusicTrack[]} />);
+
 describe('LoveSongsSection', () => {
   it('render component without error', () => {
-    const screen = render(<LoveSongsSection songs={mockSongs as TMusicTrack[]} />);
+    const screen = renderLoveSongsSection();
     expect(screen).toMatchSnapshot();
   });
 });
