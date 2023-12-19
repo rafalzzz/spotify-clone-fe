@@ -75,7 +75,7 @@ describe('PasswordResetForm', () => {
       },
     ];
 
-    formFieldsWithValidators.forEach(({ type, key, validator, ...restProps }) => {
+    formFieldsWithValidators.forEach(({ key, validator, ...restProps }) => {
       it(key, async () => {
         const { queryByPlaceholderText } = renderPasswordResetForm();
 

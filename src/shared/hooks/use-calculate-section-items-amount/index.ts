@@ -56,7 +56,7 @@ export const useCalculateSectionItemsAmount = (): MutableRefObject<HTMLUListElem
     return () => {
       resizeObserver.disconnect();
     };
-  }, [getItemsAmount, onResize, onResizeEnd]);
+  }, [onResize, onResizeEnd]);
 
   useEffect(handleObserver, [handleObserver]);
 

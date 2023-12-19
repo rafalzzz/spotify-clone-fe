@@ -1,10 +1,7 @@
-import { PlayCircleFilled, PauseCircleFilled } from '@ant-design/icons';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
-
-import { TCustomSectionItem } from '@/types/components';
 
 import { CustomSectionItem } from '../';
 

@@ -1,4 +1,3 @@
-import { HomeFilled, SearchOutlined } from '@ant-design/icons';
 import { RefObject } from 'react';
 
 export type TUseResizeSidebar = {
