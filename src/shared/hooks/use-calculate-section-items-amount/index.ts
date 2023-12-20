@@ -28,26 +28,32 @@ export const useCalculateSectionItemsAmount = (): MutableRefObject<HTMLUListElem
     [setItemsAmount, disableResizing],
   );
 
+  const getResizeObserver = useCallback(
+    () =>
+      new ResizeObserver((entries) => {
+        const itemsAmount = getItemsAmount(entries);
+
+        if (prevItemsAmount.current === itemsAmount) {
+          return;
+        }
+
+        prevItemsAmount.current = itemsAmount;
+
+        if (resizeTimeout.current) {
+          clearTimeout(resizeTimeout.current);
+        }
+
+        onResize();
+
+        resizeTimeout.current = setTimeout(() => {
+          onResizeEnd(itemsAmount);
+        }, RESIZE_TIMEOUT);
+      }),
+    [onResize, onResizeEnd],
+  );
+
   const handleObserver = useCallback(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      const itemsAmount = getItemsAmount(entries);
-
-      if (prevItemsAmount.current === itemsAmount) {
-        return;
-      }
-
-      prevItemsAmount.current = itemsAmount;
-
-      if (resizeTimeout.current) {
-        clearTimeout(resizeTimeout.current);
-      }
-
-      onResize();
-
-      resizeTimeout.current = setTimeout(() => {
-        onResizeEnd(itemsAmount);
-      }, RESIZE_TIMEOUT);
-    });
+    const resizeObserver = getResizeObserver();
 
     if (elementRef.current) {
       resizeObserver.observe(elementRef.current);
@@ -56,7 +62,7 @@ export const useCalculateSectionItemsAmount = (): MutableRefObject<HTMLUListElem
     return () => {
       resizeObserver.disconnect();
     };
-  }, [onResize, onResizeEnd]);
+  }, [getResizeObserver]);
 
   useEffect(handleObserver, [handleObserver]);
 

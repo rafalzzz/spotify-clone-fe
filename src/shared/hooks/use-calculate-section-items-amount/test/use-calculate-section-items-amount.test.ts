@@ -1,25 +1,27 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { act } from 'react-dom/test-utils';
+import { create } from 'zustand';
 
 import { useSectionStore } from '@/store/section';
 
 import { getItemsAmount } from '@/utils/get-items-amount';
 
-import {
-  MockResizeObserver,
-  resetMock,
-  lastInstance,
-} from '@/test-utils/common-mocks/mock-resize-observer';
+import { MockResizeObserver, lastInstance } from '@/test-utils/common-mocks/mock-resize-observer';
 
 import { useCalculateSectionItemsAmount } from '..';
 
-jest.mock('@/store/section', () => ({
-  useSectionStore: jest.fn().mockImplementation(() => ({
+const createTestSectionStore = () =>
+  create(() => ({
     enableResizing: jest.fn(),
     disableResizing: jest.fn(),
     setItemsAmount: jest.fn(),
-  })),
-}));
+  }));
+
+jest.mock('@/store/section', () => {
+  return {
+    useSectionStore: createTestSectionStore(),
+  };
+});
 
 const MOCKED_INLINE_SIZE = { inlineSize: 500, blockSize: 0 };
 
@@ -27,31 +29,21 @@ const renderUseCalculateSectionItemsAmount = () =>
   renderHook(() => useCalculateSectionItemsAmount());
 
 describe('useCalculateSectionItemsAmount', () => {
-  beforeEach(() => {
-    jest.useFakeTimers();
-    jest.clearAllMocks();
-    resetMock();
-  });
-
-  afterEach(() => {
-    jest.useRealTimers();
-  });
-
   it('should update enableResizing, disableResizing and setItemsAmount on resize', async () => {
     const { result } = renderUseCalculateSectionItemsAmount();
-    const mockStore = useSectionStore();
+    const { enableResizing, setItemsAmount, disableResizing } = useSectionStore.getState();
 
     act(() => {
       const ulElement = document.createElement('ul');
       result.current.current = ulElement;
     });
 
-    await act(async () => {
+    act(() => {
       const mockResizeObserver = new MockResizeObserver((entries) => {
         const itemsAmount = getItemsAmount(entries);
-        mockStore.enableResizing();
-        mockStore.setItemsAmount(itemsAmount);
-        mockStore.disableResizing();
+        enableResizing();
+        setItemsAmount(itemsAmount);
+        disableResizing();
       });
 
       const contentRect = {
@@ -66,7 +58,7 @@ describe('useCalculateSectionItemsAmount', () => {
       };
 
       const mockEntry: ResizeObserverEntry = {
-        target: document.createElement('ul'),
+        target: document.createElement('div'),
         contentRect: contentRect as DOMRectReadOnly,
         borderBoxSize: [MOCKED_INLINE_SIZE],
         contentBoxSize: [MOCKED_INLINE_SIZE],
@@ -74,13 +66,11 @@ describe('useCalculateSectionItemsAmount', () => {
       };
 
       mockResizeObserver.mockTrigger([mockEntry]);
-      jest.runAllTimers();
-      await Promise.resolve();
     });
 
-    expect(mockStore.enableResizing).toHaveBeenCalled();
-    expect(mockStore.disableResizing).toHaveBeenCalled();
-    expect(mockStore.setItemsAmount).toHaveBeenCalledWith(3);
+    expect(enableResizing).toHaveBeenCalled();
+    expect(disableResizing).toHaveBeenCalled();
+    expect(setItemsAmount).toHaveBeenCalledWith(3);
   });
 
   it('should clean up MockResizeObser on unmount', () => {
