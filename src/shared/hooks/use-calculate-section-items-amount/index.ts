@@ -5,7 +5,7 @@ import { useSectionStore } from '@/store/section';
 
 import { getItemsAmount } from '@/utils/get-items-amount';
 
-const RESIZE_TIMEOUT = 1000;
+export const RESIZE_TIMEOUT = 1000;
 
 export const useCalculateSectionItemsAmount = (): MutableRefObject<HTMLUListElement | null> => {
   const enableResizing = useSectionStore(({ enableResizing }) => enableResizing);

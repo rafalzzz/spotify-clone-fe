@@ -4,11 +4,9 @@ import { create } from 'zustand';
 
 import { useSectionStore } from '@/store/section';
 
-import { getItemsAmount } from '@/utils/get-items-amount';
+import { lastInstance } from '@/test-utils/common-mocks/mock-resize-observer';
 
-import { MockResizeObserver, lastInstance } from '@/test-utils/common-mocks/mock-resize-observer';
-
-import { useCalculateSectionItemsAmount } from '..';
+import { useCalculateSectionItemsAmount, RESIZE_TIMEOUT } from '..';
 
 const createTestSectionStore = () =>
   create(() => ({
@@ -23,57 +21,104 @@ jest.mock('@/store/section', () => {
   };
 });
 
-const MOCKED_INLINE_SIZE = { inlineSize: 500, blockSize: 0 };
+jest.mock('@/utils/get-items-amount', () => ({
+  getItemsAmount: jest.fn(() => 3),
+}));
+
+const createUlElement = () => document.createElement('ul');
+
+const createMockEntry = (width: number) => ({
+  target: document.createElement('div'),
+  contentRect: { width } as DOMRectReadOnly,
+  borderBoxSize: [{ inlineSize: width, blockSize: 0 }],
+  contentBoxSize: [{ inlineSize: width, blockSize: 0 }],
+  devicePixelContentBoxSize: [{ inlineSize: width, blockSize: 0 }],
+});
 
 const renderUseCalculateSectionItemsAmount = () =>
   renderHook(() => useCalculateSectionItemsAmount());
 
 describe('useCalculateSectionItemsAmount', () => {
-  it('should update enableResizing, disableResizing and setItemsAmount on resize', async () => {
+  let enableResizing: () => void,
+    disableResizing: () => void,
+    setItemsAmount: (itemsAmount: number) => void;
+
+  beforeEach(() => {
+    ({ enableResizing, setItemsAmount, disableResizing } = useSectionStore.getState());
+    jest.clearAllMocks();
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('should call enableResizing and setItemsAmount on resize', () => {
     const { result } = renderUseCalculateSectionItemsAmount();
-    const { enableResizing, setItemsAmount, disableResizing } = useSectionStore.getState();
 
     act(() => {
-      const ulElement = document.createElement('ul');
-      result.current.current = ulElement;
-    });
-
-    act(() => {
-      const mockResizeObserver = new MockResizeObserver((entries) => {
-        const itemsAmount = getItemsAmount(entries);
-        enableResizing();
-        setItemsAmount(itemsAmount);
-        disableResizing();
-      });
-
-      const contentRect = {
-        bottom: 0,
-        height: 0,
-        left: 0,
-        right: 500,
-        top: 0,
-        width: 500,
-        x: 0,
-        y: 0,
-      };
-
-      const mockEntry: ResizeObserverEntry = {
-        target: document.createElement('div'),
-        contentRect: contentRect as DOMRectReadOnly,
-        borderBoxSize: [MOCKED_INLINE_SIZE],
-        contentBoxSize: [MOCKED_INLINE_SIZE],
-        devicePixelContentBoxSize: [MOCKED_INLINE_SIZE],
-      };
-
-      mockResizeObserver.mockTrigger([mockEntry]);
+      result.current.current = createUlElement();
+      const mockEntry = createMockEntry(500);
+      lastInstance?.mockTrigger([mockEntry]);
+      jest.advanceTimersByTime(RESIZE_TIMEOUT);
     });
 
     expect(enableResizing).toHaveBeenCalled();
-    expect(disableResizing).toHaveBeenCalled();
     expect(setItemsAmount).toHaveBeenCalledWith(3);
   });
 
-  it('should clean up MockResizeObser on unmount', () => {
+  it('should call disableResizing after the delay', () => {
+    renderUseCalculateSectionItemsAmount();
+
+    act(() => {
+      const mockEntry = createMockEntry(600);
+      lastInstance?.mockTrigger([mockEntry]);
+      jest.advanceTimersByTime(RESIZE_TIMEOUT);
+    });
+
+    expect(disableResizing).toHaveBeenCalled();
+  });
+
+  it('should not update if itemsAmount does not change', () => {
+    const { result } = renderUseCalculateSectionItemsAmount();
+
+    act(() => {
+      result.current.current = createUlElement();
+
+      const mockEntry1 = createMockEntry(500);
+      lastInstance?.mockTrigger([mockEntry1]);
+      // The end of first resize event
+      jest.advanceTimersByTime(RESIZE_TIMEOUT);
+
+      // The same value
+      const mockEntry2 = createMockEntry(500);
+      lastInstance?.mockTrigger([mockEntry2]);
+      // The end of second resize event
+      jest.advanceTimersByTime(RESIZE_TIMEOUT);
+    });
+
+    // Method called only one time
+    expect(setItemsAmount).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle the case when elementRef.current is null', () => {
+    const { result } = renderUseCalculateSectionItemsAmount();
+
+    act(() => {
+      result.current.current = null;
+    });
+
+    act(() => {
+      // Waiting for potential operations to complete
+      jest.advanceTimersByTime(RESIZE_TIMEOUT);
+    });
+
+    expect(enableResizing).not.toHaveBeenCalled();
+    expect(setItemsAmount).not.toHaveBeenCalled();
+    expect(disableResizing).not.toHaveBeenCalled();
+  });
+
+  it('should clean up MockResizeObserver on unmount', () => {
     const { unmount } = renderUseCalculateSectionItemsAmount();
 
     unmount();
