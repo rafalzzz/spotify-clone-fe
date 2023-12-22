@@ -111,11 +111,9 @@ describe('useMusicPlayerStore', () => {
   it('should play prev song and update state', () => {
     const { result } = renderUseMusicPlayerStore();
 
-    const mockAlbumId = 1;
-
     // Action to initialize state
     act(() => {
-      result.current.playAlbum({ albumId: mockAlbumId, songs: mockSongs });
+      result.current.playAlbum({ albumId: 0, songs: mockSongs });
     });
 
     act(() => {
@@ -129,11 +127,9 @@ describe('useMusicPlayerStore', () => {
   it('should play next song and update state', () => {
     const { result } = renderUseMusicPlayerStore();
 
-    const mockAlbumId = 1;
-
     // Action to initialize state
     act(() => {
-      result.current.playAlbum({ albumId: mockAlbumId, songs: mockSongs });
+      result.current.playAlbum({ albumId: 0, songs: mockSongs });
     });
 
     act(() => {
