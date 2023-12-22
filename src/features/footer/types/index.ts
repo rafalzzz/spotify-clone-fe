@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, RefObject, SetStateAction, SyntheticEvent } from 'react';
+import { ChangeEvent, Dispatch, RefObject, SyntheticEvent } from 'react';
 
 import { TSongItem } from '@/types/components';
 

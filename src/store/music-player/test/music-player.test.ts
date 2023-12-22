@@ -107,4 +107,40 @@ describe('useMusicPlayerStore', () => {
     expect(result.current.duration).toBe(0);
     expect(result.current.trackId).toBe(null);
   });
+
+  it('should play prev song and update state', () => {
+    const { result } = renderUseMusicPlayerStore();
+
+    const mockAlbumId = 1;
+
+    // Action to initialize state
+    act(() => {
+      result.current.playAlbum({ albumId: mockAlbumId, songs: mockSongs });
+    });
+
+    act(() => {
+      result.current.playPrevSong();
+    });
+
+    expect(result.current.activeIndex).toBe(mockSongs.length - 1);
+    expect(result.current.currentTime).toBe(0);
+  });
+
+  it('should play next song and update state', () => {
+    const { result } = renderUseMusicPlayerStore();
+
+    const mockAlbumId = 1;
+
+    // Action to initialize state
+    act(() => {
+      result.current.playAlbum({ albumId: mockAlbumId, songs: mockSongs });
+    });
+
+    act(() => {
+      result.current.playNextSong();
+    });
+
+    expect(result.current.activeIndex).toBe(1);
+    expect(result.current.currentTime).toBe(0);
+  });
 });

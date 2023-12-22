@@ -17,6 +17,8 @@ export type TUseMusicPlayerStore = {
   setActiveIndex: (time: number) => void;
   playSong: ({ trackId, songs }: TPlaySongAction) => void;
   playAlbum: ({ albumId, songs }: TPlayAlbumAction) => void;
+  playPrevSong: () => void;
+  playNextSong: () => void;
 };
 
 export type TUseSectionStore = {

@@ -32,4 +32,23 @@ export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
       songsList: songs,
       trackId: null,
     })),
+  playPrevSong: () =>
+    set(({ activeIndex, songsList }) => {
+      const isFirstSong = activeIndex === 0;
+      const lastIndex = songsList.length - 1;
+
+      return {
+        currentTime: 0,
+        activeIndex: isFirstSong ? lastIndex : activeIndex - 1,
+      };
+    }),
+  playNextSong: () =>
+    set(({ activeIndex, songsList }) => {
+      const isLastSong = activeIndex === songsList.length - 1;
+
+      return {
+        currentTime: 0,
+        activeIndex: isLastSong ? 0 : activeIndex + 1,
+      };
+    }),
 }));
