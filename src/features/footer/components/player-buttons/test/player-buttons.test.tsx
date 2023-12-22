@@ -8,13 +8,16 @@ import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
-import { PlayerButtons } from '../';
+import { mockSongItem } from '@/consts/mocks';
+
+import { PlayerButtons, MIN_TIME_TO_RESET_CURRENT_TIME } from '../';
 
 const createTestMusicPlayerStore = () =>
   create(() => ({
     currentTime: 0,
     isShuffle: false,
     isLoop: false,
+    songsList: [],
     toggleShuffle: jest.fn(),
     playPrevSong: jest.fn(),
     playNextSong: jest.fn(),
@@ -59,6 +62,9 @@ describe('PlayerButtons', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (useMusicPlayerContext as jest.Mock).mockImplementation(() => mockContext);
+
+    const store = useMusicPlayerStore.getState();
+    store.songsList = [mockSongItem, mockSongItem];
   });
 
   it('should render correctly', () => {
@@ -78,22 +84,22 @@ describe('PlayerButtons', () => {
     expect(toggleShuffle).toHaveBeenCalledTimes(1);
   });
 
-  it('not calls playPrevSong when playPrevSong button is clicked and currentTime is lower than 5', () => {
+  it('calls playPrevSong when playPrevSong button is clicked and currentTime is lower than MIN_TIME_TO_RESET_CURRENT_TIME', () => {
     const { getByTestId } = renderPlayerButtons();
     const { playPrevSong } = useMusicPlayerStore.getState();
 
     fireEvent.click(getByTestId(PREV_SONG_BUTTON_TEST_ID));
-    expect(playPrevSong).not.toHaveBeenCalled();
+    expect(playPrevSong).toHaveBeenCalledTimes(1);
   });
 
-  it('calls playPrevSong when playPrevSong button is clicked and currentTime is higher than 5', () => {
+  it('not calls playPrevSong when playPrevSong button is clicked and currentTime is higher than MIN_TIME_TO_RESET_CURRENT_TIME', () => {
     const store = useMusicPlayerStore.getState();
-    store.currentTime = 10;
+    store.currentTime = MIN_TIME_TO_RESET_CURRENT_TIME + 5;
 
     const { getByTestId } = renderPlayerButtons();
 
     fireEvent.click(getByTestId(PREV_SONG_BUTTON_TEST_ID));
-    expect(store.playPrevSong).toHaveBeenCalledTimes(1);
+    expect(store.playPrevSong).not.toHaveBeenCalled();
   });
 
   it('should show active class for shuffle button when isShuffle is true', () => {
@@ -126,5 +132,18 @@ describe('PlayerButtons', () => {
 
     const { queryByTestId } = renderPlayerButtons();
     expect(queryByTestId(LOOP_BUTTON_TEST_ID)).toHaveClass(CUSTOM_ICON_BUTTON_ACTIVE_CLASS_NAME);
+  });
+
+  it('not calls playPrevSong or playNextSong when songList.length is equal 1', () => {
+    const store = useMusicPlayerStore.getState();
+    store.songsList = [mockSongItem];
+
+    const { getByTestId } = renderPlayerButtons();
+
+    fireEvent.click(getByTestId(PREV_SONG_BUTTON_TEST_ID));
+    expect(store.playPrevSong).not.toHaveBeenCalled();
+
+    fireEvent.click(getByTestId(NEXT_SONG_BUTTON_TEST_ID));
+    expect(store.playNextSong).not.toHaveBeenCalled();
   });
 });
