@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
+import { loginUser } from '@/login/requests/login-user';
 import { ELoginFormKeys } from '@/login/types';
-import { loginUser } from '@/login/utils/requests/login-user';
 
 import { useLoginForm } from '..';
 
@@ -18,7 +18,7 @@ jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
-jest.mock('@/login/utils/requests/login-user', () => ({
+jest.mock('@/login/requests/login-user', () => ({
   loginUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
 }));
 

@@ -22,7 +22,7 @@ import { RegisterForm } from '..';
 
 jest.mock('@/register/hooks/use-register-form');
 
-jest.mock('@/register/utils/requests/register-user', () => ({
+jest.mock('@/register/requests/register-user', () => ({
   registerUser: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 

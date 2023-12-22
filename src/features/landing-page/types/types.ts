@@ -1,7 +1,7 @@
-import { TAlbum } from '@/types/album';
+import { EAlbumKeys, TAlbum } from '@/types/album';
 import { TArtist } from '@/types/artist';
-import { EMusicTrackKeys, TMusicTrack } from '@/types/music-track';
-import { TSongItem } from '@/types/store';
+import { TSongItem } from '@/types/components';
+import { TMusicTrack } from '@/types/music-track';
 
 export type TArtistSection = {
   artists: TArtist[];
@@ -14,15 +14,7 @@ export type TLoveAlbumsSection = {
 export type TLoveSongsSection = { songs: TMusicTrack[] };
 
 export type TLoveSongsSectionItem = {
-  song: Pick<
-    TMusicTrack,
-    | EMusicTrackKeys.TRACK_ID
-    | EMusicTrackKeys.COLLECTION_NAME
-    | EMusicTrackKeys.ARTWORK_URL_60
-    | EMusicTrackKeys.ARTIST_NAME
-    | EMusicTrackKeys.TRACK_NAME
-    | EMusicTrackKeys.PREVIEW_URL
-  >;
+  song: TMusicTrack;
   isPlaying: boolean;
   isActive: boolean;
 };
@@ -39,4 +31,17 @@ export type TUseLoveSongsSectionProps = {
   isPlaying: boolean;
   currentPlayedSong: TSongItem;
   handleOnClick: (songItem: TSongItem) => void;
+};
+
+export type TLoveAlbumsSectionItem = {
+  album: Pick<
+    TAlbum,
+    | EAlbumKeys.COLLECTION_ID
+    | EAlbumKeys.COLLECTION_NAME
+    | EAlbumKeys.ARTWORK_URL_60
+    | EAlbumKeys.ARTIST_NAME
+    | EAlbumKeys.RELEASE_DATE
+  >;
+  isPlaying: boolean;
+  isActive: boolean;
 };

@@ -14,13 +14,10 @@ import { LoveSongsSectionItem } from '../love-songs-section-item';
 
 export const LoveSongsSection: FC<TLoveSongsSection> = ({ songs }): JSX.Element => {
   const isPlaying = useMusicPlayerStore(({ isPlaying }) => isPlaying);
-  const activeIndex = useMusicPlayerStore(({ activeIndex }) => activeIndex);
-  const songsList = useMusicPlayerStore(({ songsList }) => songsList);
+  const trackId = useMusicPlayerStore(({ trackId }) => trackId);
 
   const isResizing = useSectionStore(({ isResizing }) => isResizing);
   const itemsAmount = useSectionStore(({ itemsAmount }) => itemsAmount);
-
-  const currentPlayedSong = songsList[activeIndex];
 
   return (
     <CustomSection title='Love songs' redirectionUrl='/love-songs'>
@@ -31,14 +28,8 @@ export const LoveSongsSection: FC<TLoveSongsSection> = ({ songs }): JSX.Element 
               <LoveSongsSectionItem
                 key={song[EMusicTrackKeys.TRACK_ID]}
                 song={song}
-                isActive={
-                  song[EMusicTrackKeys.PREVIEW_URL] ===
-                  currentPlayedSong?.[EMusicTrackKeys.PREVIEW_URL]
-                }
-                isPlaying={
-                  song[EMusicTrackKeys.PREVIEW_URL] ===
-                    currentPlayedSong?.[EMusicTrackKeys.PREVIEW_URL] && isPlaying
-                }
+                isActive={song[EMusicTrackKeys.TRACK_ID] === trackId}
+                isPlaying={song[EMusicTrackKeys.TRACK_ID] === trackId && isPlaying}
               />
             );
 

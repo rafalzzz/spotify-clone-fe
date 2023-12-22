@@ -55,7 +55,7 @@
     "src/shared/components/custom-button/test/custom-button.test.ts",
     "src/shared/helpers/get-date.test.ts",
     "src/shared/utils/get-past-date.test.ts",
-    "src/features/register/utils/requests/register-user.test.ts",
+    "src/features/register/requests/register-user.test.ts",
     "src/shared/components/custom-hyperlink/test/custom-hyperlink.test.tsx",
     "src/features/password-reset/utils/validators/repeat-new-password-validator.test.ts",
     "__mocks__/antd/lib/tooltip/index.jsx"

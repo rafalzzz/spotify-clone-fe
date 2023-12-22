@@ -5,7 +5,9 @@ import '@testing-library/jest-dom';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
-import { EMusicTrackKeys } from '@/types/music-track';
+import { EMusicTrackKeys, TMusicTrack } from '@/types/music-track';
+
+import { mockSongItem } from '@/consts/mocks';
 
 import { LoveSongsSectionItem } from '..';
 
@@ -13,7 +15,7 @@ const createTestMusicPlayerStore = () =>
   create(() => ({
     isPlaying: false,
     togglePlay: jest.fn(),
-    changeSong: jest.fn(),
+    playSong: jest.fn(),
   }));
 
 jest.mock('@/store/music-player', () => {
@@ -22,19 +24,15 @@ jest.mock('@/store/music-player', () => {
   };
 });
 
-const song = {
-  [EMusicTrackKeys.TRACK_ID]: 1,
-  [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
-  [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
-  [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
-  [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
-  [EMusicTrackKeys.PREVIEW_URL]: 'http://example.com/preview.mp3',
-};
-
 const PLAY_BUTTON_TEST_ID = 'custom-section-item-play-button';
 
 const renderLoveSongsSectionItem = (additionalProps = {}) => {
-  const props = { song, isPlaying: false, isActive: false, ...additionalProps };
+  const props = {
+    song: mockSongItem as TMusicTrack,
+    isPlaying: false,
+    isActive: false,
+    ...additionalProps,
+  };
   return render(<LoveSongsSectionItem {...props} />);
 };
 
@@ -53,20 +51,24 @@ describe('LoveSongsSectionItem', () => {
     expect(togglePlay).toHaveBeenCalled();
   });
 
-  it('calls changeSong when not isActive and the button is clicked', () => {
+  it('calls playSong when not isActive and the button is clicked', () => {
     const { getByTestId } = renderLoveSongsSectionItem({ isActive: false });
     const playButton = getByTestId(PLAY_BUTTON_TEST_ID);
     fireEvent.click(playButton);
 
-    const { changeSong } = useMusicPlayerStore.getState();
-    expect(changeSong).toHaveBeenCalledWith({
-      activeIndex: 0,
+    const { playSong } = useMusicPlayerStore.getState();
+    expect(playSong).toHaveBeenCalledWith({
+      trackId: mockSongItem[EMusicTrackKeys.TRACK_ID],
       songs: [
         {
-          artistName: song[EMusicTrackKeys.ARTIST_NAME],
-          trackName: song[EMusicTrackKeys.TRACK_NAME],
-          previewUrl: song[EMusicTrackKeys.PREVIEW_URL],
-          artworkUrl60: song[EMusicTrackKeys.ARTWORK_URL_60],
+          [EMusicTrackKeys.ARTIST_NAME]: mockSongItem[EMusicTrackKeys.ARTIST_NAME],
+          [EMusicTrackKeys.COLLECTION_NAME]: mockSongItem[EMusicTrackKeys.COLLECTION_NAME],
+          [EMusicTrackKeys.TRACK_NAME]: mockSongItem[EMusicTrackKeys.TRACK_NAME],
+          [EMusicTrackKeys.PREVIEW_URL]: mockSongItem[EMusicTrackKeys.PREVIEW_URL],
+          [EMusicTrackKeys.ARTWORK_URL_60]: mockSongItem[EMusicTrackKeys.ARTWORK_URL_60],
+          [EMusicTrackKeys.ARTIST_ID]: mockSongItem[EMusicTrackKeys.ARTIST_ID],
+          [EMusicTrackKeys.COLLECTION_ID]: mockSongItem[EMusicTrackKeys.COLLECTION_ID],
+          [EMusicTrackKeys.TRACK_ID]: mockSongItem[EMusicTrackKeys.TRACK_ID],
         },
       ],
     });

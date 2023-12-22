@@ -2,8 +2,8 @@ import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
 import { parseRequestBody } from '@/register/helpers';
+import { registerUser } from '@/register/requests/register-user';
 import { TRegisterForm, TUseRegisterFormProps } from '@/register/types';
-import { registerUser } from '@/register/utils/requests/register-user';
 
 import { TCustomButton } from '@/types/components';
 import { THookForm } from '@/types/components';

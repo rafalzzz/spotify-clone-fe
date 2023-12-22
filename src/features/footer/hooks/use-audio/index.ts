@@ -7,7 +7,8 @@ import { useMusicPlayerStore } from '@/store/music-player';
 
 export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
   const { ref, isLoop } = useMusicPlayerContext();
-  const { isPlaying, activeIndex, songsList, setDuration, togglePlay } = useMusicPlayerStore();
+  const { isPlaying, albumId, activeIndex, songsList, togglePlay, setDuration, setActiveIndex } =
+    useMusicPlayerStore();
 
   const lastUpdatedTime = useRef(0);
 
@@ -19,7 +20,7 @@ export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
 
       // The purpose of the following procedure is to reduce the number
       // of re-renders when updating the playback time of the song being played.
-      const roundedCurrentTime = Math.ceil(currentTime);
+      const roundedCurrentTime = Math.floor(currentTime);
 
       if (roundedCurrentTime !== lastUpdatedTime.current) {
         setCurrentTime(roundedCurrentTime);
@@ -37,13 +38,26 @@ export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
     [setDuration],
   );
 
+  const handlePlayingAlbum = useCallback(
+    (activeIndex: number, isLastSong: boolean) => {
+      setCurrentTime(0);
+      setActiveIndex(isLastSong ? 0 : activeIndex + 1);
+    },
+    [setCurrentTime, setActiveIndex],
+  );
+
   const onEnded = useCallback(() => {
     const isLastSong = activeIndex === songsList.length - 1;
+    const isPlayingAlbum = !!albumId;
+
+    if (isPlayingAlbum) {
+      return handlePlayingAlbum(activeIndex, isLastSong);
+    }
 
     if (!isLoop && isLastSong) {
       togglePlay();
     }
-  }, [activeIndex, isLoop, songsList.length, togglePlay]);
+  }, [activeIndex, albumId, isLoop, songsList.length, handlePlayingAlbum, togglePlay]);
 
   const handlePlaying = useCallback(() => {
     if (isPlaying) {

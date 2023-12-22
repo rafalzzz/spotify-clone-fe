@@ -1,23 +1,20 @@
-import { EMusicTrackKeys, TMusicTrack } from './music-track';
+import { TSongItem } from './components';
 
-export type TSongItem = Pick<
-  TMusicTrack,
-  | EMusicTrackKeys.ARTIST_NAME
-  | EMusicTrackKeys.TRACK_NAME
-  | EMusicTrackKeys.PREVIEW_URL
-  | EMusicTrackKeys.ARTWORK_URL_60
->;
-
-export type TChangeSongAction = { activeIndex: number; songs: TSongItem[] };
+export type TPlaySongAction = { trackId: number; songs: TSongItem[] };
+export type TPlayAlbumAction = { albumId: number; songs: TSongItem[] };
 
 export type TUseMusicPlayerStore = {
   isPlaying: boolean;
   duration: number;
   activeIndex: number;
   songsList: TSongItem[];
-  changeSong: ({ activeIndex, songs }: TChangeSongAction) => void;
+  trackId: null | number;
+  albumId: null | number;
   togglePlay: () => void;
   setDuration: (duration: number) => void;
+  setActiveIndex: (activeIndex: number) => void;
+  playSong: ({ trackId, songs }: TPlaySongAction) => void;
+  playAlbum: ({ albumId, songs }: TPlayAlbumAction) => void;
 };
 
 export type TUseSectionStore = {

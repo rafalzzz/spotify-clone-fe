@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
+import { passwordReset } from '@/password-reset/requests/password-reset';
 import { EPasswordResetFormKeys } from '@/password-reset/types';
-import { passwordReset } from '@/password-reset/utils/requests/password-reset';
 
 import { usePasswordResetForm } from '..';
 
@@ -12,7 +12,7 @@ jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
-jest.mock('@/password-reset/utils/requests/password-reset', () => ({
+jest.mock('@/password-reset/requests/password-reset', () => ({
   passwordReset: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
 }));
 

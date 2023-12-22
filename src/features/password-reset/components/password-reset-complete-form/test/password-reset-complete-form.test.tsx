@@ -16,7 +16,7 @@ import { PasswordResetCompleteForm } from '..';
 
 jest.mock('@/password-reset/hooks/use-password-reset-complete-form');
 
-jest.mock('@/password-reset/utils/requests/password-reset-complete', () => ({
+jest.mock('@/password-reset/requests/password-reset-complete', () => ({
   passwordResetComplete: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 

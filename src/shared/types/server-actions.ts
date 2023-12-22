@@ -5,3 +5,8 @@ export type TFetchMusicData = {
   limit?: number;
   revalidate?: number;
 };
+
+export type TFetchAlbumData = {
+  collectionId: number;
+  errorMessage?: string;
+};

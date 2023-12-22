@@ -9,7 +9,7 @@ import { EInputType, ENonStandardInputType } from '@/enums/input-type';
 
 import { EAlbumKeys, TAlbum } from './album';
 import { EArtistKeys, TArtist } from './artist';
-import { TMusicTrack } from './music-track';
+import { EMusicTrackKeys, TMusicTrack } from './music-track';
 
 export type TAlbumInformation = Pick<
   TAlbum,
@@ -147,3 +147,15 @@ export type TMusicTrackInformationProps = {
   trackName: string;
   artistName: string;
 };
+
+export type TSongItem = Pick<
+  TMusicTrack,
+  | EMusicTrackKeys.ARTIST_NAME
+  | EMusicTrackKeys.COLLECTION_NAME
+  | EMusicTrackKeys.TRACK_NAME
+  | EMusicTrackKeys.PREVIEW_URL
+  | EMusicTrackKeys.ARTWORK_URL_60
+  | EMusicTrackKeys.ARTIST_ID
+  | EMusicTrackKeys.COLLECTION_ID
+  | EMusicTrackKeys.TRACK_ID
+>;

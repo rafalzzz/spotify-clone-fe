@@ -8,7 +8,7 @@ export const fetchMusicData = async <T>({
   revalidate = 600,
 }: TFetchMusicData): Promise<T> => {
   const response = await fetch(
-    `${process.env.API_ITUNES}/search?term=${term}&entity=${entity}&limit=${limit}`,
+    `${process.env.NEXT_PUBLIC_API_ITUNES}/search?term=${term}&entity=${entity}&limit=${limit}`,
     {
       next: { revalidate },
     },
