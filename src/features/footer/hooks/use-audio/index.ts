@@ -17,7 +17,7 @@ export const useAudio = (): TUseAudioProps => {
     togglePlay,
     setDuration,
     setCurrentTime,
-    setActiveIndex,
+    playNextSong,
   } = useMusicPlayerStore();
 
   const lastUpdatedTime = useRef(0);
@@ -48,26 +48,18 @@ export const useAudio = (): TUseAudioProps => {
     [setDuration],
   );
 
-  const handlePlayingAlbum = useCallback(
-    (activeIndex: number, isLastSong: boolean) => {
-      setCurrentTime(0);
-      setActiveIndex(isLastSong ? 0 : activeIndex + 1);
-    },
-    [setCurrentTime, setActiveIndex],
-  );
-
   const onEnded = useCallback(() => {
     const isLastSong = activeIndex === songsList.length - 1;
     const isPlayingAlbum = !!albumId;
 
     if (isPlayingAlbum) {
-      return handlePlayingAlbum(activeIndex, isLastSong);
+      return playNextSong();
     }
 
     if (!isLoop && isLastSong) {
       togglePlay();
     }
-  }, [activeIndex, albumId, isLoop, songsList.length, handlePlayingAlbum, togglePlay]);
+  }, [activeIndex, albumId, isLoop, songsList.length, playNextSong, togglePlay]);
 
   const handlePlaying = useCallback(() => {
     if (isPlaying) {

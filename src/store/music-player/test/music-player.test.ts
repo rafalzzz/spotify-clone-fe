@@ -152,12 +152,20 @@ describe('useMusicPlayerStore', () => {
       result.current.playAlbum({ albumId: 0, songs: mockSongs });
     });
 
-    act(() => {
-      result.current.playPrevSong();
-    });
+    const actionsAndExpectations = [
+      { expectedActiveIndex: mockSongs.length - 1, expectedCurrentTime: 0 },
+      { expectedActiveIndex: mockSongs.length - 2, expectedCurrentTime: 0 },
+      { expectedActiveIndex: mockSongs.length - 3, expectedCurrentTime: 0 },
+    ];
 
-    expect(result.current.activeIndex).toBe(mockSongs.length - 1);
-    expect(result.current.currentTime).toBe(0);
+    actionsAndExpectations.forEach(({ expectedActiveIndex, expectedCurrentTime }) => {
+      act(() => {
+        result.current.playPrevSong();
+      });
+
+      expect(result.current.activeIndex).toBe(expectedActiveIndex);
+      expect(result.current.currentTime).toBe(expectedCurrentTime);
+    });
   });
 
   it('should play next song and update state', () => {
@@ -168,11 +176,19 @@ describe('useMusicPlayerStore', () => {
       result.current.playAlbum({ albumId: 0, songs: mockSongs });
     });
 
-    act(() => {
-      result.current.playNextSong();
-    });
+    const actionsAndExpectations = [
+      { expectedActiveIndex: 1, expectedCurrentTime: 0 },
+      { expectedActiveIndex: 2, expectedCurrentTime: 0 },
+      { expectedActiveIndex: 0, expectedCurrentTime: 0 },
+    ];
 
-    expect(result.current.activeIndex).toBe(1);
-    expect(result.current.currentTime).toBe(0);
+    actionsAndExpectations.forEach(({ expectedActiveIndex, expectedCurrentTime }) => {
+      act(() => {
+        result.current.playNextSong();
+      });
+
+      expect(result.current.activeIndex).toBe(expectedActiveIndex);
+      expect(result.current.currentTime).toBe(expectedCurrentTime);
+    });
   });
 });

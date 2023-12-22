@@ -46,7 +46,7 @@ describe('useAudio', () => {
     setDuration: jest.fn(),
     setCurrentTime: jest.fn(),
     togglePlay: jest.fn(),
-    setActiveIndex: jest.fn(),
+    playNextSong: jest.fn(),
   };
 
   beforeEach(() => {
@@ -112,31 +112,16 @@ describe('useAudio', () => {
     expect(mockStore.togglePlay).toHaveBeenCalled();
   });
 
-  it('calls setCurrentTime and setActiveIndex correctly when the album is being played', () => {
+  it('calls playNextSong when the album is being played', () => {
     mockStore.albumId = 1;
     mockStore.activeIndex = 0;
 
-    const { result, rerender } = renderUseAudio();
+    const { result } = renderUseAudio();
 
     act(() => {
       result.current.onEnded();
     });
 
-    expect(mockStore.setCurrentTime).toHaveBeenCalled();
-    expect(mockStore.setActiveIndex).toHaveBeenCalled();
-    expect(mockStore.setActiveIndex).toHaveBeenCalledWith(1);
-
-    // Check the correctness of the argument setActiveIndex
-    // when activeIndex is equal to the last index
-    mockStore.activeIndex = 1;
-    rerender();
-
-    act(() => {
-      result.current.onEnded();
-    });
-
-    expect(mockStore.setCurrentTime).toHaveBeenCalled();
-    expect(mockStore.setActiveIndex).toHaveBeenCalled();
-    expect(mockStore.setActiveIndex).toHaveBeenCalledWith(0);
+    expect(mockStore.playNextSong).toHaveBeenCalled();
   });
 });
