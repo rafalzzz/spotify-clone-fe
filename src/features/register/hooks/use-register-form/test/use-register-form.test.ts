@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
+import { registerUser } from '@/register/requests/register-user';
 import { ERegisterFormKeys } from '@/register/types';
-import { registerUser } from '@/register/utils/requests/register-user';
 
 import { useRegisterForm } from '..';
 
@@ -12,7 +12,7 @@ jest.mock('antd', () => ({
   Form: { useForm: jest.fn() },
 }));
 
-jest.mock('@/register/utils/requests/register-user', () => ({
+jest.mock('@/register/requests/register-user', () => ({
   registerUser: jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(''), 500))),
 }));
 

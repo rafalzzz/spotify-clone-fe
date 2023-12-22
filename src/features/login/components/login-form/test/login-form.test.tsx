@@ -16,7 +16,7 @@ import { LoginForm } from '..';
 
 jest.mock('@/login/hooks/use-login-form');
 
-jest.mock('@/login/utils/requests/login-user', () => ({
+jest.mock('@/login/requests/login-user', () => ({
   loginUser: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 

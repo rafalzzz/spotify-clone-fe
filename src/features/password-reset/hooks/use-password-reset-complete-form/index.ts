@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 
+import { passwordResetComplete } from '@/password-reset/requests/password-reset-complete';
 import {
   TPasswordResetCompleteForm,
   TUsePasswordResetCompleteFormProps,
 } from '@/password-reset/types';
-import { passwordResetComplete } from '@/password-reset/utils/requests/password-reset-complete';
 
 import { TCustomButton } from '@/types/components';
 import { THookForm } from '@/types/components';

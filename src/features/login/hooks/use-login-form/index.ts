@@ -1,8 +1,8 @@
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
+import { loginUser } from '@/login/requests/login-user';
 import { TLoginForm, TUseLoginFormProps } from '@/login/types';
-import { loginUser } from '@/login/utils/requests/login-user';
 
 import { TCustomButton } from '@/types/components';
 import { THookForm } from '@/types/components';

@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, RefObject, SetStateAction, SyntheticEvent } from 'react';
 
-import { TSongItem } from '@/types/store';
+import { TSongItem } from '@/types/components';
 
 export type TMusicPlayerContext = {
   ref: RefObject<HTMLAudioElement>;

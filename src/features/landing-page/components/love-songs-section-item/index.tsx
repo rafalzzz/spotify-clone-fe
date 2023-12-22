@@ -7,6 +7,8 @@ import { useMusicPlayerStore } from '@/store/music-player';
 
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
 
+import { convertMusicTrackToSongItem } from '@/utils/convert-music-track-to-song-item';
+
 import { EMusicTrackKeys } from '@/types/music-track';
 
 import {
@@ -17,7 +19,7 @@ import {
 
 export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
   ({ song, isPlaying, isActive }) => {
-    const changeSong = useMusicPlayerStore(({ changeSong }) => changeSong);
+    const playSong = useMusicPlayerStore(({ playSong }) => playSong);
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
     const handleOnClick = useCallback(() => {
@@ -25,15 +27,10 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
         return togglePlay();
       }
 
-      const songItem = {
-        artistName: song[EMusicTrackKeys.ARTIST_NAME],
-        trackName: song[EMusicTrackKeys.TRACK_NAME],
-        previewUrl: song[EMusicTrackKeys.PREVIEW_URL],
-        artworkUrl60: song[EMusicTrackKeys.ARTWORK_URL_60],
-      };
+      const songItem = convertMusicTrackToSongItem(song);
 
-      changeSong({ activeIndex: 0, songs: [songItem] });
-    }, [isActive, song, changeSong, togglePlay]);
+      playSong({ trackId: song[EMusicTrackKeys.TRACK_ID], songs: [songItem] });
+    }, [isActive, song, playSong, togglePlay]);
 
     return (
       <li key={song[EMusicTrackKeys.TRACK_ID]} data-testid='section-item'>

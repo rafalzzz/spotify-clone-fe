@@ -1,11 +1,11 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { mockMusicStoreSongsListItem } from '@/consts/mocks';
+import { mockSongItem } from '@/consts/mocks';
 
 import { useIsTextOverflowing } from '..';
 
 const renderUseIsTextOverflowing = () =>
-  renderHook(() => useIsTextOverflowing({ currentSong: mockMusicStoreSongsListItem }));
+  renderHook(() => useIsTextOverflowing({ currentSong: mockSongItem }));
 
 describe('useIsTextOverflowing', () => {
   const mockRefElement = document.createElement('div');
