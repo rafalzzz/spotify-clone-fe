@@ -33,15 +33,17 @@ export type TUseLoveSongsSectionProps = {
   handleOnClick: (songItem: TSongItem) => void;
 };
 
+export type TAlbumItem = Pick<
+  TAlbum,
+  | EAlbumKeys.COLLECTION_ID
+  | EAlbumKeys.COLLECTION_NAME
+  | EAlbumKeys.ARTWORK_URL_60
+  | EAlbumKeys.ARTIST_NAME
+  | EAlbumKeys.RELEASE_DATE
+>;
+
 export type TLoveAlbumsSectionItem = {
-  album: Pick<
-    TAlbum,
-    | EAlbumKeys.COLLECTION_ID
-    | EAlbumKeys.COLLECTION_NAME
-    | EAlbumKeys.ARTWORK_URL_60
-    | EAlbumKeys.ARTIST_NAME
-    | EAlbumKeys.RELEASE_DATE
-  >;
+  album: TAlbumItem;
   isPlaying: boolean;
   isActive: boolean;
 };

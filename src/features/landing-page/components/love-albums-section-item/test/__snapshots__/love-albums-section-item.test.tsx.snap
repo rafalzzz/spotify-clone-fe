@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoveAlbumsSectionItem renders without error 1`] = `
+<div>
+  <li
+    data-testid="section-item"
+  >
+    <a
+      class="custom-section-item__redirection"
+      data-testid="custom-section-item-redirection"
+      href="/album/albumtest"
+    >
+      <div
+        class="custom-section-item"
+      >
+        <div
+          class="custom-section-item-image"
+        >
+          <img
+            alt="image"
+            data-nimg="1"
+            decoding="async"
+            height="100"
+            loading="lazy"
+            src="/_next/image?url=https%3A%2F%2Fwww.test-url.com&w=256&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fwww.test-url.com&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Fwww.test-url.com&w=256&q=75 2x"
+            style="color: transparent; height: 100%; width: 100%;"
+            width="100"
+          />
+          <button
+            class="custom-section-item-play-button "
+            data-testid="custom-section-item-play-button"
+          >
+            <span
+              aria-label="play-circle"
+              class="anticon anticon-play-circle antd-icon"
+              data-testid="custom-section-item-play-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="play-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm144.1 454.9L437.7 677.8a8.02 8.02 0 01-12.7-6.5V353.7a8 8 0 0112.7-6.5L656.1 506a7.9 7.9 0 010 12.9z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="album-information"
+        >
+          <div
+            data-mouseenterdelay="0.5"
+            data-placement="right"
+            data-testid="album-information-collection-name-tooltip"
+          >
+            <h4
+              class="album-information__text"
+              data-testid="album-information-collection-name"
+            >
+              AlbumTest
+            </h4>
+            <span>
+              AlbumTest
+            </span>
+          </div>
+          <div
+            class="album-information__wrapper"
+          >
+            <span
+              class="album-information__release-date"
+              data-testid="album-information-release-date"
+            >
+              2020
+            </span>
+            <span
+              class="album-information__separator"
+            >
+              •
+            </span>
+            <button
+              class="album-information__text album-information__artist"
+              data-testid="album-information-artist-name"
+            >
+              <div
+                data-mouseenterdelay="0.5"
+                data-placement="right"
+                data-testid="album-information-artist-name-tooltip"
+              >
+                <span>
+                  ArtistTest
+                </span>
+                <span>
+                  ArtistTest
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</div>
+`;

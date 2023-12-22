@@ -69,6 +69,17 @@ describe('useMusicPlayerStore', () => {
     expect(result.current.duration).toBe(mockDuration);
   });
 
+  it('should set duration', () => {
+    const { result } = renderHook(() => useMusicPlayerStore());
+    const mockCurrentTime = 15;
+
+    act(() => {
+      result.current.setCurrentTime(mockCurrentTime);
+    });
+
+    expect(result.current.currentTime).toBe(mockCurrentTime);
+  });
+
   it('should set activeIndex', () => {
     const { result } = renderHook(() => useMusicPlayerStore());
     const mockActiveIndex = 1;

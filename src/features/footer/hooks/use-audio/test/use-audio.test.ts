@@ -19,8 +19,6 @@ jest.mock('@/store/music-player', () => ({
   useMusicPlayerStore: jest.fn(),
 }));
 
-const mockSetCurrentTime = jest.fn();
-
 const mockAudioElement = {
   play: jest.fn(),
   pause: jest.fn(),
@@ -37,7 +35,7 @@ const mockContext = {
   isLoop: false,
 };
 
-const renderUseAudio = () => renderHook(() => useAudio({ setCurrentTime: mockSetCurrentTime }));
+const renderUseAudio = () => renderHook(() => useAudio());
 
 describe('useAudio', () => {
   const mockStore = {
@@ -46,6 +44,7 @@ describe('useAudio', () => {
     activeIndex: 1,
     songsList: [mockSongItem, mockSongItem],
     setDuration: jest.fn(),
+    setCurrentTime: jest.fn(),
     togglePlay: jest.fn(),
     setActiveIndex: jest.fn(),
   };
@@ -86,7 +85,7 @@ describe('useAudio', () => {
       result.current.onTimeUpdate(event);
     });
 
-    expect(mockSetCurrentTime).toHaveBeenCalledWith(mockAudioElement.currentTime);
+    expect(mockStore.setCurrentTime).toHaveBeenCalledWith(mockAudioElement.currentTime);
   });
 
   it('calls play or pause on the audio ref based on isPlaying', () => {
@@ -123,7 +122,7 @@ describe('useAudio', () => {
       result.current.onEnded();
     });
 
-    expect(mockSetCurrentTime).toHaveBeenCalled();
+    expect(mockStore.setCurrentTime).toHaveBeenCalled();
     expect(mockStore.setActiveIndex).toHaveBeenCalled();
     expect(mockStore.setActiveIndex).toHaveBeenCalledWith(1);
 
@@ -136,7 +135,7 @@ describe('useAudio', () => {
       result.current.onEnded();
     });
 
-    expect(mockSetCurrentTime).toHaveBeenCalled();
+    expect(mockStore.setCurrentTime).toHaveBeenCalled();
     expect(mockStore.setActiveIndex).toHaveBeenCalled();
     expect(mockStore.setActiveIndex).toHaveBeenCalledWith(0);
   });

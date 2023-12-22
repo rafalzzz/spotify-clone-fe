@@ -9,8 +9,7 @@ import { Audio } from '../';
 
 jest.mock('@/footer/hooks/use-audio');
 
-const mockSetCurrentTime = () => {};
-const renderAudio = () => render(<Audio setCurrentTime={mockSetCurrentTime} />);
+const renderAudio = () => render(<Audio />);
 
 describe('Audio', () => {
   const mockUseAudio = {

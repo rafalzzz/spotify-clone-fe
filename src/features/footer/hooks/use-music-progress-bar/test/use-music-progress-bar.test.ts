@@ -1,22 +1,28 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { ChangeEvent } from 'react';
+import { create } from 'zustand';
 
 import * as musicPlayerContext from '@/footer/contexts/music-player-context';
 
-import * as musicPlayerStore from '@/store/music-player';
-
 import { useMusicProgressBar } from '../';
+
+const createTestMusicPlayerStore = () =>
+  create(() => ({
+    duration: 30,
+    currentTime: 0,
+  }));
+
+jest.mock('@/store/music-player', () => {
+  return {
+    useMusicPlayerStore: createTestMusicPlayerStore(),
+  };
+});
 
 jest.mock('@/footer/contexts/music-player-context', () => ({
   useMusicPlayerContext: jest.fn(),
 }));
 
-jest.mock('@/store/music-player', () => ({
-  useMusicPlayerStore: jest.fn(),
-}));
-
 const mockRef = { current: { currentTime: 0 } };
-const duration = 30;
 
 const renderUseMusicProgressBar = () => renderHook(() => useMusicProgressBar());
 
@@ -24,16 +30,15 @@ describe('useMusicProgressBar', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (musicPlayerContext.useMusicPlayerContext as jest.Mock).mockReturnValue({ ref: mockRef });
-    (musicPlayerStore.useMusicPlayerStore as unknown as jest.Mock).mockReturnValue({ duration });
   });
 
   it('initializes state correctly', () => {
     const { result } = renderUseMusicProgressBar();
 
+    expect(result.current.duration).toBe(30);
     expect(result.current.currentTime).toBe(0);
     expect(result.current.temporaryTime).toBeNull();
     expect(result.current.isReversedTime).toBe(false);
-    expect(result.current.duration).toBe(duration);
   });
 
   it('handles start, change, and end of slider correctly', () => {

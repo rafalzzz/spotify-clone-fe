@@ -1,14 +1,22 @@
 import { useRef, useCallback, useEffect, useMemo, SyntheticEvent } from 'react';
 
 import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
-import { TUseAudio, TUseAudioProps } from '@/footer/types';
+import { TUseAudioProps } from '@/footer/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
-export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
+export const useAudio = (): TUseAudioProps => {
   const { ref, isLoop } = useMusicPlayerContext();
-  const { isPlaying, albumId, activeIndex, songsList, togglePlay, setDuration, setActiveIndex } =
-    useMusicPlayerStore();
+  const {
+    isPlaying,
+    albumId,
+    activeIndex,
+    songsList,
+    togglePlay,
+    setDuration,
+    setCurrentTime,
+    setActiveIndex,
+  } = useMusicPlayerStore();
 
   const lastUpdatedTime = useRef(0);
 
