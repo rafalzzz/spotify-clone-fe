@@ -4,6 +4,8 @@ import { TPlayAlbumAction, TPlaySongAction, TUseMusicPlayerStore } from '@/types
 
 export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
   isPlaying: false,
+  isShuffle: false,
+  isLoop: false,
   duration: 0,
   currentTime: 0,
   activeIndex: 0,
@@ -11,6 +13,8 @@ export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
   trackId: null,
   albumId: null,
   togglePlay: () => set(({ isPlaying }) => ({ isPlaying: !isPlaying })),
+  toggleShuffle: () => set(({ isShuffle }) => ({ isShuffle: !isShuffle })),
+  toggleLoop: () => set(({ isLoop }) => ({ isLoop: !isLoop })),
   setDuration: (duration: number) => set(() => ({ duration: duration })),
   setCurrentTime: (time: number) => set(() => ({ currentTime: time })),
   setActiveIndex: (activeIndex: number) => set(() => ({ activeIndex })),

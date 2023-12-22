@@ -6,9 +6,11 @@ import { TUseAudioProps } from '@/footer/types';
 import { useMusicPlayerStore } from '@/store/music-player';
 
 export const useAudio = (): TUseAudioProps => {
-  const { ref, isLoop } = useMusicPlayerContext();
+  const { ref } = useMusicPlayerContext();
+
   const {
     isPlaying,
+    isLoop,
     albumId,
     activeIndex,
     songsList,

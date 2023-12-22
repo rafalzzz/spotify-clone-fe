@@ -16,10 +16,14 @@ import { PlayerPlayButton } from '../player-play-button';
 import './PlayerButtons.scss';
 
 export const PlayerButtons = (): JSX.Element => {
-  const { isShuffle, isLoop, ref, setIsShuffle, setIsLoop } = useMusicPlayerContext();
+  const { ref } = useMusicPlayerContext();
 
+  const isShuffle = useMusicPlayerStore(({ isShuffle }) => isShuffle);
+  const isLoop = useMusicPlayerStore(({ isLoop }) => isLoop);
+  const toggleShuffle = useMusicPlayerStore(({ toggleShuffle }) => toggleShuffle);
   const playPrevSong = useMusicPlayerStore(({ playPrevSong }) => playPrevSong);
   const playNextSong = useMusicPlayerStore(({ playNextSong }) => playNextSong);
+  const toggleLoop = useMusicPlayerStore(({ toggleLoop }) => toggleLoop);
 
   const handlePlayPrevSong = useCallback(() => {
     const { currentTime } = useMusicPlayerStore.getState();
@@ -34,13 +38,7 @@ export const PlayerButtons = (): JSX.Element => {
 
   return (
     <div className='player-buttons'>
-      <CustomIconButton
-        isActive={isShuffle}
-        onClick={() => {
-          setIsShuffle((prevState) => !prevState);
-        }}
-        testId='shuffle-button'
-      >
+      <CustomIconButton isActive={isShuffle} onClick={toggleShuffle} testId='shuffle-button'>
         <MixIcon />
       </CustomIconButton>
       <CustomIconButton testId='prev-song-button' onClick={handlePlayPrevSong}>
@@ -50,13 +48,7 @@ export const PlayerButtons = (): JSX.Element => {
       <CustomIconButton testId='next-song-button' onClick={playNextSong}>
         <NextIcon />
       </CustomIconButton>
-      <CustomIconButton
-        isActive={isLoop}
-        testId='loop-button'
-        onClick={() => {
-          setIsLoop((prevState) => !prevState);
-        }}
-      >
+      <CustomIconButton isActive={isLoop} testId='loop-button' onClick={toggleLoop}>
         <LoopIcon />
       </CustomIconButton>
     </div>

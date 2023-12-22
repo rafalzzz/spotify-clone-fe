@@ -58,6 +58,42 @@ describe('useMusicPlayerStore', () => {
     expect(result.current.isPlaying).toBe(false);
   });
 
+  it('should toggle shuffle state', () => {
+    const { result } = renderUseMusicPlayerStore();
+
+    expect(result.current.isShuffle).toBe(false);
+
+    act(() => {
+      result.current.toggleShuffle();
+    });
+
+    expect(result.current.isShuffle).toBe(true);
+
+    act(() => {
+      result.current.toggleShuffle();
+    });
+
+    expect(result.current.isShuffle).toBe(false);
+  });
+
+  it('should toggle loop state', () => {
+    const { result } = renderUseMusicPlayerStore();
+
+    expect(result.current.isLoop).toBe(false);
+
+    act(() => {
+      result.current.toggleLoop();
+    });
+
+    expect(result.current.isLoop).toBe(true);
+
+    act(() => {
+      result.current.toggleLoop();
+    });
+
+    expect(result.current.isLoop).toBe(false);
+  });
+
   it('should set duration', () => {
     const { result } = renderHook(() => useMusicPlayerStore());
     const mockDuration = 30;

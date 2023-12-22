@@ -32,7 +32,6 @@ const mockRef = {
 
 const mockContext = {
   ref: mockRef,
-  isLoop: false,
 };
 
 const renderUseAudio = () => renderHook(() => useAudio());
@@ -40,6 +39,7 @@ const renderUseAudio = () => renderHook(() => useAudio());
 describe('useAudio', () => {
   const mockStore = {
     isPlaying: false,
+    isLoop: false,
     albumId: 0,
     activeIndex: 1,
     songsList: [mockSongItem, mockSongItem],

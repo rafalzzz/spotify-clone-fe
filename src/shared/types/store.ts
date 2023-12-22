@@ -5,6 +5,8 @@ export type TPlayAlbumAction = { albumId: number; songs: TSongItem[] };
 
 export type TUseMusicPlayerStore = {
   isPlaying: boolean;
+  isShuffle: boolean;
+  isLoop: boolean;
   duration: number;
   currentTime: number;
   activeIndex: number;
@@ -12,6 +14,8 @@ export type TUseMusicPlayerStore = {
   trackId: null | number;
   albumId: null | number;
   togglePlay: () => void;
+  toggleShuffle: () => void;
+  toggleLoop: () => void;
   setDuration: (duration: number) => void;
   setCurrentTime: (duration: number) => void;
   setActiveIndex: (time: number) => void;

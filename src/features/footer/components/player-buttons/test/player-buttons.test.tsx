@@ -13,8 +13,12 @@ import { PlayerButtons } from '../';
 const createTestMusicPlayerStore = () =>
   create(() => ({
     currentTime: 0,
+    isShuffle: false,
+    isLoop: false,
+    toggleShuffle: jest.fn(),
     playPrevSong: jest.fn(),
     playNextSong: jest.fn(),
+    toggleLoop: jest.fn(),
   }));
 
 jest.mock('@/store/music-player', () => {
@@ -37,9 +41,6 @@ const LOOP_BUTTON_TEST_ID = 'loop-button';
 const CUSTOM_ICON_BUTTON_ACTIVE_CLASS_NAME = 'custom-icon-button--active';
 
 describe('PlayerButtons', () => {
-  const mockSetIsShuffle = jest.fn();
-  const mockSetIsLoop = jest.fn();
-
   const mockAudioElement = {
     play: jest.fn(),
     pause: jest.fn(),
@@ -51,17 +52,13 @@ describe('PlayerButtons', () => {
     current: mockAudioElement,
   };
 
-  const mockedUseMusicPlayerContext = {
-    isShuffle: false,
-    isLoop: false,
+  const mockContext = {
     ref: mockRef,
-    setIsShuffle: mockSetIsShuffle,
-    setIsLoop: mockSetIsLoop,
   };
 
   beforeEach(() => {
     jest.clearAllMocks();
-    (useMusicPlayerContext as jest.Mock).mockImplementation(() => mockedUseMusicPlayerContext);
+    (useMusicPlayerContext as jest.Mock).mockImplementation(() => mockContext);
   });
 
   it('should render correctly', () => {
@@ -73,10 +70,12 @@ describe('PlayerButtons', () => {
     expect(queryByTestId(LOOP_BUTTON_TEST_ID)).toBeInTheDocument();
   });
 
-  it('calls setIsShuffle when shuffle button is clicked', () => {
+  it('calls toggleShuffle when shuffle button is clicked', () => {
     const { getByTestId } = renderPlayerButtons();
+    const { toggleShuffle } = useMusicPlayerStore.getState();
+
     fireEvent.click(getByTestId(SHUFFLE_BUTTON_TEST_ID));
-    expect(mockSetIsShuffle).toHaveBeenCalledTimes(1);
+    expect(toggleShuffle).toHaveBeenCalledTimes(1);
   });
 
   it('not calls playPrevSong when playPrevSong button is clicked and currentTime is lower than 5', () => {
@@ -98,10 +97,8 @@ describe('PlayerButtons', () => {
   });
 
   it('should show active class for shuffle button when isShuffle is true', () => {
-    (useMusicPlayerContext as jest.Mock).mockImplementation(() => ({
-      ...mockedUseMusicPlayerContext,
-      isShuffle: true,
-    }));
+    const store = useMusicPlayerStore.getState();
+    store.isShuffle = true;
 
     const { queryByTestId } = renderPlayerButtons();
     expect(queryByTestId(SHUFFLE_BUTTON_TEST_ID)).toHaveClass(CUSTOM_ICON_BUTTON_ACTIVE_CLASS_NAME);
@@ -115,17 +112,17 @@ describe('PlayerButtons', () => {
     expect(playNextSong).toHaveBeenCalledTimes(1);
   });
 
-  it('calls setIsLoop when loop button is clicked', () => {
+  it('calls toggleLoop when loop button is clicked', () => {
     const { getByTestId } = renderPlayerButtons();
+    const { toggleLoop } = useMusicPlayerStore.getState();
+
     fireEvent.click(getByTestId(LOOP_BUTTON_TEST_ID));
-    expect(mockSetIsLoop).toHaveBeenCalledTimes(1);
+    expect(toggleLoop).toHaveBeenCalledTimes(1);
   });
 
   it('has active class when loop button is active', () => {
-    (useMusicPlayerContext as jest.Mock).mockImplementation(() => ({
-      ...mockedUseMusicPlayerContext,
-      isLoop: true,
-    }));
+    const store = useMusicPlayerStore.getState();
+    store.isLoop = true;
 
     const { queryByTestId } = renderPlayerButtons();
     expect(queryByTestId(LOOP_BUTTON_TEST_ID)).toHaveClass(CUSTOM_ICON_BUTTON_ACTIVE_CLASS_NAME);
