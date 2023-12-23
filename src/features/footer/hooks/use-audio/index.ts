@@ -1,18 +1,26 @@
-import { useRef, useCallback, useEffect, useMemo, SyntheticEvent } from 'react';
+import { useRef, useCallback, useEffect, SyntheticEvent } from 'react';
 
 import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
-import { TUseAudio, TUseAudioProps } from '@/footer/types';
+import { TUseAudioProps } from '@/footer/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
-export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
-  const { ref, isLoop } = useMusicPlayerContext();
-  const { isPlaying, albumId, activeIndex, songsList, togglePlay, setDuration, setActiveIndex } =
-    useMusicPlayerStore();
+import { useCurrentSong } from '@/hooks/use-current-song';
 
+export const useAudio = (): TUseAudioProps => {
+  const { ref } = useMusicPlayerContext();
+  const currentSong = useCurrentSong();
   const lastUpdatedTime = useRef(0);
 
-  const currentSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);
+  const isPlaying = useMusicPlayerStore(({ isPlaying }) => isPlaying);
+  const isLoop = useMusicPlayerStore(({ isLoop }) => isLoop);
+  const albumId = useMusicPlayerStore(({ albumId }) => albumId);
+  const activeIndex = useMusicPlayerStore(({ activeIndex }) => activeIndex);
+  const songsList = useMusicPlayerStore(({ songsList }) => songsList);
+  const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
+  const setDuration = useMusicPlayerStore(({ setDuration }) => setDuration);
+  const setCurrentTime = useMusicPlayerStore(({ setCurrentTime }) => setCurrentTime);
+  const playNextSong = useMusicPlayerStore(({ playNextSong }) => playNextSong);
 
   const onTimeUpdate = useCallback(
     ({ target }: SyntheticEvent<HTMLAudioElement>) => {
@@ -38,26 +46,18 @@ export const useAudio = ({ setCurrentTime }: TUseAudio): TUseAudioProps => {
     [setDuration],
   );
 
-  const handlePlayingAlbum = useCallback(
-    (activeIndex: number, isLastSong: boolean) => {
-      setCurrentTime(0);
-      setActiveIndex(isLastSong ? 0 : activeIndex + 1);
-    },
-    [setCurrentTime, setActiveIndex],
-  );
-
   const onEnded = useCallback(() => {
     const isLastSong = activeIndex === songsList.length - 1;
     const isPlayingAlbum = !!albumId;
 
     if (isPlayingAlbum) {
-      return handlePlayingAlbum(activeIndex, isLastSong);
+      return playNextSong();
     }
 
     if (!isLoop && isLastSong) {
       togglePlay();
     }
-  }, [activeIndex, albumId, isLoop, songsList.length, handlePlayingAlbum, togglePlay]);
+  }, [activeIndex, albumId, isLoop, songsList.length, playNextSong, togglePlay]);
 
   const handlePlaying = useCallback(() => {
     if (isPlaying) {

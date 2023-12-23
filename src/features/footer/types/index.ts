@@ -1,13 +1,9 @@
-import { ChangeEvent, Dispatch, RefObject, SetStateAction, SyntheticEvent } from 'react';
+import { ChangeEvent, RefObject, SyntheticEvent } from 'react';
 
 import { TSongItem } from '@/types/components';
 
 export type TMusicPlayerContext = {
   ref: RefObject<HTMLAudioElement>;
-  isShuffle: boolean;
-  isLoop: boolean;
-  setIsShuffle: Dispatch<React.SetStateAction<boolean>>;
-  setIsLoop: Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type TProgressBar = {
@@ -41,12 +37,6 @@ export type TUseIsTextOverflowingProps = {
   isTextOverflowing: boolean;
 };
 
-export type TAudio = {
-  setCurrentTime: Dispatch<React.SetStateAction<number>>;
-};
-
-export type TUseAudio = TAudio;
-
 export type TUseAudioProps = {
   ref: RefObject<HTMLAudioElement>;
   currentSong: TSongItem;
@@ -67,7 +57,6 @@ export type TUseMusicProgressBarProps = {
   temporaryTime: number | null;
   durationValue: number;
   isReversedTime: boolean;
-  setCurrentTime: Dispatch<SetStateAction<number>>;
   handleStartChange: () => void;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleEndChange: () => void;

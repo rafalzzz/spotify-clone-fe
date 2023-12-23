@@ -4,7 +4,7 @@ import { create } from 'zustand';
 
 import { useSectionStore } from '@/store/section';
 
-import { lastInstance } from '@/test-utils/common-mocks/mock-resize-observer';
+import { lastInstance } from '@/test-utils/mock-resize-observer';
 
 import { useCalculateSectionItemsAmount, RESIZE_TIMEOUT } from '..';
 

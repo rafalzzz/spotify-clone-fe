@@ -1,14 +1,66 @@
 import { EMusicTrackKeys } from '@/types/music-track';
 
-export const mockSongItem = {
-  [EMusicTrackKeys.TRACK_ID]: 1,
-  [EMusicTrackKeys.ARTIST_ID]: 1,
-  [EMusicTrackKeys.COLLECTION_ID]: 1,
-  [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/1',
-  [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
-  [EMusicTrackKeys.TRACK_NAME]: 'TestTrack',
-  [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist',
-  [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName',
-};
+export const mockSongs = [
+  {
+    [EMusicTrackKeys.TRACK_ID]: 2,
+    [EMusicTrackKeys.ARTIST_ID]: 2,
+    [EMusicTrackKeys.COLLECTION_ID]: 2,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/2',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url2.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack2',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist2',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName2',
+  },
+  {
+    [EMusicTrackKeys.TRACK_ID]: 3,
+    [EMusicTrackKeys.ARTIST_ID]: 3,
+    [EMusicTrackKeys.COLLECTION_ID]: 3,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/3',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url3.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack3',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist3',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName3',
+  },
+  {
+    [EMusicTrackKeys.TRACK_ID]: 4,
+    [EMusicTrackKeys.ARTIST_ID]: 4,
+    [EMusicTrackKeys.COLLECTION_ID]: 4,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/4',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url4.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack4',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist4',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName4',
+  },
+  {
+    [EMusicTrackKeys.TRACK_ID]: 5,
+    [EMusicTrackKeys.ARTIST_ID]: 5,
+    [EMusicTrackKeys.COLLECTION_ID]: 5,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/5',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url5.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack5',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist5',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName5',
+  },
+  {
+    [EMusicTrackKeys.TRACK_ID]: 6,
+    [EMusicTrackKeys.ARTIST_ID]: 6,
+    [EMusicTrackKeys.COLLECTION_ID]: 6,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/6',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url6.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack6',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist6',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName6',
+  },
+  {
+    [EMusicTrackKeys.TRACK_ID]: 7,
+    [EMusicTrackKeys.ARTIST_ID]: 7,
+    [EMusicTrackKeys.COLLECTION_ID]: 7,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/7',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url7.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack7',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist7',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName7',
+  },
+];
 
-export const mockMusicStoreSongsList = [mockSongItem];
+export const mockSongItem = mockSongs[0];

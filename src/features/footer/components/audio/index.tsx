@@ -1,12 +1,10 @@
 import { useAudio } from '@/footer/hooks/use-audio';
-import { TAudio } from '@/footer/types';
 
 import { EMusicTrackKeys } from '@/types/music-track';
 
-export const Audio = ({ setCurrentTime }: TAudio): JSX.Element => {
-  const { ref, currentSong, isPlaying, isLoop, onLoadedMetadata, onTimeUpdate, onEnded } = useAudio(
-    { setCurrentTime },
-  );
+export const Audio = (): JSX.Element => {
+  const { ref, currentSong, isPlaying, isLoop, onLoadedMetadata, onTimeUpdate, onEnded } =
+    useAudio();
 
   return (
     <audio

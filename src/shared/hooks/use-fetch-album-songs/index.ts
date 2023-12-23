@@ -1,5 +1,4 @@
 'use client';
-
 import { useQueryClient, useQuery } from 'react-query';
 
 import { TUseGetAlbumSongs, TUseGetAlbumSongsProps } from '@/types/hooks';

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoveSongsSectionItem renders without error 1`] = `
+exports[`LoveAlbumsSectionItem renders without error 1`] = `
 <div>
   <li
     data-testid="section-item"
@@ -8,7 +8,7 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
     <a
       class="custom-section-item__redirection"
       data-testid="custom-section-item-redirection"
-      href="/album/collectionname1"
+      href="/album/albumtest"
     >
       <div
         class="custom-section-item"
@@ -22,8 +22,8 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
             decoding="async"
             height="100"
             loading="lazy"
-            src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-            srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+            src="/_next/image?url=https%3A%2F%2Fwww.test-url.com&w=256&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fwww.test-url.com&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Fwww.test-url.com&w=256&q=75 2x"
             style="color: transparent; height: 100%; width: 100%;"
             width="100"
           />
@@ -54,40 +54,55 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
           </button>
         </div>
         <div
-          class="music-track-informations"
+          class="album-information"
         >
           <div
             data-mouseenterdelay="0.5"
             data-placement="right"
-            data-testid="music-track-informations-track-name-tooltip"
+            data-testid="album-information-collection-name-tooltip"
           >
             <h4
-              class="music-track-informations__text"
-              data-testid="music-track-informations-track-name"
+              class="album-information__text"
+              data-testid="album-information-collection-name"
             >
-              TestTrack1
+              AlbumTest
             </h4>
             <span>
-              TestTrack1
+              AlbumTest
             </span>
           </div>
-          <button
-            class="music-track-informations__text music-track-informations__artist"
-            data-testid="music-track-informations-artist-name"
+          <div
+            class="album-information__wrapper"
           >
-            <div
-              data-mouseenterdelay="0.5"
-              data-placement="right"
-              data-testid="music-track-informations-artist-name-tooltip"
+            <span
+              class="album-information__release-date"
+              data-testid="album-information-release-date"
             >
-              <span>
-                Test_Artist1
-              </span>
-              <span>
-                Test_Artist1
-              </span>
-            </div>
-          </button>
+              2020
+            </span>
+            <span
+              class="album-information__separator"
+            >
+              •
+            </span>
+            <button
+              class="album-information__text album-information__artist"
+              data-testid="album-information-artist-name"
+            >
+              <div
+                data-mouseenterdelay="0.5"
+                data-placement="right"
+                data-testid="album-information-artist-name-tooltip"
+              >
+                <span>
+                  ArtistTest
+                </span>
+                <span>
+                  ArtistTest
+                </span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </a>

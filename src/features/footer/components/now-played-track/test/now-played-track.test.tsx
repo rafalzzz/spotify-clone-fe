@@ -3,26 +3,19 @@ import '@testing-library/jest-dom';
 
 import { useIsTextOverflowing } from '@/footer/hooks/use-is-text-overflowing';
 
-import { useMusicPlayerStore } from '@/store/music-player';
+import { useCurrentSong } from '@/hooks/use-current-song';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
 import { EMusicTrackKeys } from '@/types/music-track';
-import { TUseMusicPlayerStore } from '@/types/store';
 
-import { mockMusicStoreSongsList } from '@/consts/mocks';
+import { mockSongItem } from '@/consts/mocks';
 
 import { NowPlayedTrack } from '../';
 
-jest.mock('@/store/music-player', () => {
-  const originalModule = jest.requireActual('@/store/music-player');
-
-  return {
-    __esModule: true,
-    ...originalModule,
-    useMusicPlayerStore: jest.fn(),
-  };
-});
+jest.mock('@/hooks/use-current-song', () => ({
+  useCurrentSong: jest.fn(),
+}));
 
 jest.mock('@/footer/hooks/use-is-text-overflowing', () => ({
   useIsTextOverflowing: jest.fn(),
@@ -37,14 +30,7 @@ const renderNowPlayerTrack = () => render(<NowPlayedTrack />);
 
 describe('NowPlayedTrack', () => {
   beforeEach(() => {
-    (useMusicPlayerStore as unknown as jest.Mock<Partial<TUseMusicPlayerStore>>).mockImplementation(
-      (selector) =>
-        selector({
-          activeIndex: 0,
-          songsList: mockMusicStoreSongsList,
-        }),
-    );
-
+    (useCurrentSong as jest.Mock).mockReturnValue(mockSongItem);
     (useIsTextOverflowing as jest.Mock).mockImplementation(() => ({
       ref: jest.fn(),
       isTextOverflowing: false,
@@ -52,12 +38,7 @@ describe('NowPlayedTrack', () => {
   });
 
   it('renders empty div when there is no current song', () => {
-    (useMusicPlayerStore as unknown as jest.Mock<Partial<TUseMusicPlayerStore>>).mockImplementation(
-      () => ({
-        activeIndex: -1,
-        songsList: [],
-      }),
-    );
+    (useCurrentSong as jest.Mock).mockImplementation(() => null);
 
     const { queryByTestId } = renderNowPlayerTrack();
     const element = queryByTestId(NOW_PLAYED_TRACK_TEST_ID);
@@ -96,15 +77,15 @@ describe('NowPlayedTrack', () => {
 
     expect(link).toHaveAttribute(
       'href',
-      generateArtistRedirectionPath(mockMusicStoreSongsList[0][EMusicTrackKeys.ARTIST_NAME]),
+      generateArtistRedirectionPath(mockSongItem[EMusicTrackKeys.ARTIST_NAME]),
     );
 
-    expect(link).toHaveTextContent(mockMusicStoreSongsList[0][EMusicTrackKeys.ARTIST_NAME]);
+    expect(link).toHaveTextContent(mockSongItem[EMusicTrackKeys.ARTIST_NAME]);
   });
 
-  it('displays correct song information based on activeIndex from useMusicPlayerStore', () => {
+  it('displays correct song information', () => {
     const { queryByTestId } = renderNowPlayerTrack();
     const title = queryByTestId(NOW_PLAYED_TRACK_TITLE_TEST_ID);
-    expect(title).toHaveTextContent(mockMusicStoreSongsList[0][EMusicTrackKeys.TRACK_NAME]);
+    expect(title).toHaveTextContent(mockSongItem[EMusicTrackKeys.TRACK_NAME]);
   });
 });

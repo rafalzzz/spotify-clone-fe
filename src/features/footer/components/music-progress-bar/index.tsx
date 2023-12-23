@@ -16,7 +16,6 @@ export const MusicProgressBar = (): JSX.Element => {
     temporaryTime,
     durationValue,
     isReversedTime,
-    setCurrentTime,
     handleStartChange,
     handleChange,
     handleEndChange,
@@ -25,7 +24,7 @@ export const MusicProgressBar = (): JSX.Element => {
 
   return (
     <div className='music-progress-bar'>
-      <Audio setCurrentTime={setCurrentTime} />
+      <Audio />
       <Duration seconds={currentTime} textAlign={ETextAlign.END} disabled />
       <ProgressBar
         value={temporaryTime ?? currentTime}

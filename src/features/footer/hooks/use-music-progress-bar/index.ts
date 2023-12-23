@@ -6,12 +6,12 @@ import { TUseMusicProgressBarProps } from '@/footer/types';
 import { useMusicPlayerStore } from '@/store/music-player';
 
 export const useMusicProgressBar = (): TUseMusicProgressBarProps => {
-  const [currentTime, setCurrentTime] = useState(0);
   const [temporaryTime, setTemporaryTime] = useState<number | null>(null);
   const [isReversedTime, setIsReversedTime] = useState(false);
 
   const { ref } = useMusicPlayerContext();
-  const { duration } = useMusicPlayerStore();
+  const duration = useMusicPlayerStore(({ duration }) => duration);
+  const currentTime = useMusicPlayerStore(({ currentTime }) => currentTime);
 
   const isChangingRef = useRef(false);
 
@@ -51,7 +51,6 @@ export const useMusicProgressBar = (): TUseMusicProgressBarProps => {
     temporaryTime,
     durationValue,
     isReversedTime,
-    setCurrentTime,
     handleStartChange,
     handleChange,
     handleEndChange,

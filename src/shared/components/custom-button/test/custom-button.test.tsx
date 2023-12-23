@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 
 import { TCustomButton } from '@/types/components';
 
-import { commonButtonProps } from '@/test-utils/common-mocks/common-button-props';
+import { commonButtonProps } from '@/test-utils/mock-common-button-props';
 
 import { CustomButton } from '..';
 
