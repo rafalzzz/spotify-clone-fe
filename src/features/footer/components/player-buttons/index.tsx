@@ -28,8 +28,8 @@ export const PlayerButtons = (): JSX.Element => {
   const toggleLoop = useMusicPlayerStore(({ toggleLoop }) => toggleLoop);
 
   const isOneSong = useCallback(() => {
-    const { songsList } = useMusicPlayerStore.getState();
-    return songsList.length === 1;
+    const { isLoop, songsList } = useMusicPlayerStore.getState();
+    return isLoop || songsList.length === 1;
   }, []);
 
   const handlePlayPrevSong = useCallback(() => {

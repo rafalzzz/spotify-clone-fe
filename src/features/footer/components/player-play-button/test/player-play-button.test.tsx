@@ -1,24 +1,11 @@
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { create } from 'zustand';
 
 import '@testing-library/jest-dom/extend-expect';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
 import { PlayerPlayButton } from '..';
-
-const createTestMusicPlayerStore = () =>
-  create(() => ({
-    isPlaying: false,
-    togglePlay: jest.fn(),
-  }));
-
-jest.mock('@/store/music-player', () => {
-  return {
-    useMusicPlayerStore: createTestMusicPlayerStore(),
-  };
-});
 
 jest.mock('@/footer/contexts/music-player-context', () => ({
   useMusicPlayerContext: jest.fn(),

@@ -1,6 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { create } from 'zustand';
 import '@testing-library/jest-dom';
 
 import { useMusicPlayerStore } from '@/store/music-player';
@@ -11,19 +10,6 @@ import { TSongItem } from '@/types/components';
 import { mockSongItem } from '@/consts/mocks';
 
 import { LoveAlbumsSectionItem } from '..';
-
-const createTestMusicPlayerStore = () =>
-  create(() => ({
-    isPlaying: false,
-    togglePlay: jest.fn(),
-    playAlbum: jest.fn(),
-  }));
-
-jest.mock('@/store/music-player', () => {
-  return {
-    useMusicPlayerStore: createTestMusicPlayerStore(),
-  };
-});
 
 let mockCachedData: TSongItem[] | null = null;
 let mockRefetch = jest.fn();

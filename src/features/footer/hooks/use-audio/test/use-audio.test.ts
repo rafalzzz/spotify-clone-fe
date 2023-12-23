@@ -1,6 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { SyntheticEvent } from 'react';
-import { create } from 'zustand';
 
 import { useMusicPlayerContext } from '@/footer/contexts/music-player-context';
 
@@ -9,29 +8,6 @@ import { useMusicPlayerStore } from '@/store/music-player';
 import { mockSongs } from '@/consts/mocks';
 
 import { useAudio } from '../';
-
-const mockedSongsList = mockSongs.slice(0, 2);
-
-const createTestMusicPlayerStore = () =>
-  create(() => ({
-    isPlaying: false,
-    isShuffle: false,
-    isLoop: false,
-    albumId: 0,
-    activeIndex: 1,
-    songsList: [],
-    shuffledIndexes: [],
-    setDuration: jest.fn(),
-    setCurrentTime: jest.fn(),
-    togglePlay: jest.fn(),
-    playNextSong: jest.fn(),
-  }));
-
-jest.mock('@/store/music-player', () => {
-  return {
-    useMusicPlayerStore: createTestMusicPlayerStore(),
-  };
-});
 
 jest.mock('@/footer/contexts/music-player-context', () => ({
   useMusicPlayerContext: jest.fn(),
@@ -52,6 +28,8 @@ const mockContext = {
   ref: mockRef,
 };
 
+const mockedSongsList = mockSongs.slice(0, 2);
+
 const renderUseAudio = () => renderHook(() => useAudio());
 
 describe('useAudio', () => {
@@ -59,6 +37,7 @@ describe('useAudio', () => {
     (useMusicPlayerContext as jest.Mock).mockReturnValue(mockContext);
 
     useMusicPlayerStore.setState({
+      activeIndex: 1,
       songsList: mockedSongsList,
     });
   });

@@ -1,5 +1,4 @@
 import { act, renderHook } from '@testing-library/react-hooks';
-import { create } from 'zustand';
 import '@testing-library/jest-dom';
 
 import { useMusicPlayerStore } from '@/store/music-player';
@@ -8,19 +7,7 @@ import { mockSongs } from '@/consts/mocks';
 
 import { useCurrentSong } from '..';
 
-const createTestMusicPlayerStore = () =>
-  create(() => ({
-    activeIndex: 0,
-    isShuffle: false,
-    songsList: [],
-    shuffledIndexes: [],
-  }));
-
-jest.mock('@/store/music-player', () => {
-  return {
-    useMusicPlayerStore: createTestMusicPlayerStore(),
-  };
-});
+const renderUseCurrentSong = () => renderHook(() => useCurrentSong());
 
 describe('useCurrentSong', () => {
   beforeEach(() => {
@@ -30,7 +17,7 @@ describe('useCurrentSong', () => {
   });
 
   it('returns the correct song at default state', () => {
-    const { result } = renderHook(() => useCurrentSong());
+    const { result } = renderUseCurrentSong();
     expect(result.current).toEqual(mockSongs[0]);
   });
 
@@ -42,7 +29,7 @@ describe('useCurrentSong', () => {
       });
     });
 
-    const { result } = renderHook(() => useCurrentSong());
+    const { result } = renderUseCurrentSong();
     expect(result.current).toEqual(mockSongs[2]);
   });
 
@@ -54,7 +41,7 @@ describe('useCurrentSong', () => {
       });
     });
 
-    const { result } = renderHook(() => useCurrentSong());
+    const { result } = renderUseCurrentSong();
     expect(result.current).toEqual(mockSongs[1]);
   });
 
@@ -65,7 +52,7 @@ describe('useCurrentSong', () => {
       });
     });
 
-    const { result } = renderHook(() => useCurrentSong());
+    const { result } = renderUseCurrentSong();
     expect(result.current).toBeUndefined();
   });
 
@@ -76,7 +63,7 @@ describe('useCurrentSong', () => {
       });
     });
 
-    const { result } = renderHook(() => useCurrentSong());
+    const { result } = renderUseCurrentSong();
     expect(result.current).toBeUndefined();
   });
 
@@ -89,7 +76,7 @@ describe('useCurrentSong', () => {
       });
     });
 
-    const { result: shuffleResult } = renderHook(() => useCurrentSong());
+    const { result: shuffleResult } = renderUseCurrentSong();
     expect(shuffleResult.current).toEqual(mockSongs[2]);
 
     act(() => {
@@ -98,7 +85,7 @@ describe('useCurrentSong', () => {
       });
     });
 
-    const { result: regularResult } = renderHook(() => useCurrentSong());
+    const { result: regularResult } = renderUseCurrentSong();
     expect(regularResult.current).toEqual(mockSongs[0]);
   });
 });

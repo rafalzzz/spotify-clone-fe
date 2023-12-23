@@ -1,6 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { create } from 'zustand';
 import '@testing-library/jest-dom';
 
 import { useMusicPlayerStore } from '@/store/music-player';
@@ -11,19 +10,6 @@ import { mockSongItem } from '@/consts/mocks';
 
 import { LoveSongsSectionItem } from '..';
 
-const createTestMusicPlayerStore = () =>
-  create(() => ({
-    isPlaying: false,
-    togglePlay: jest.fn(),
-    playSong: jest.fn(),
-  }));
-
-jest.mock('@/store/music-player', () => {
-  return {
-    useMusicPlayerStore: createTestMusicPlayerStore(),
-  };
-});
-
 const PLAY_BUTTON_TEST_ID = 'custom-section-item-play-button';
 
 const renderLoveSongsSectionItem = (additionalProps = {}) => {
@@ -33,6 +19,7 @@ const renderLoveSongsSectionItem = (additionalProps = {}) => {
     isActive: false,
     ...additionalProps,
   };
+
   return render(<LoveSongsSectionItem {...props} />);
 };
 

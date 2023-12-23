@@ -2,6 +2,16 @@ import { EMusicTrackKeys } from '@/types/music-track';
 
 export const mockSongs = [
   {
+    [EMusicTrackKeys.TRACK_ID]: 1,
+    [EMusicTrackKeys.ARTIST_ID]: 1,
+    [EMusicTrackKeys.COLLECTION_ID]: 1,
+    [EMusicTrackKeys.PREVIEW_URL]: 'www.test-url.com/1',
+    [EMusicTrackKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EMusicTrackKeys.TRACK_NAME]: 'TestTrack1',
+    [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist1',
+    [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName1',
+  },
+  {
     [EMusicTrackKeys.TRACK_ID]: 2,
     [EMusicTrackKeys.ARTIST_ID]: 2,
     [EMusicTrackKeys.COLLECTION_ID]: 2,
