@@ -1,22 +1,11 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { ChangeEvent } from 'react';
-import { create } from 'zustand';
 
 import * as musicPlayerContext from '@/footer/contexts/music-player-context';
 
+import { useMusicPlayerStore } from '@/store/music-player';
+
 import { useMusicProgressBar } from '../';
-
-const createTestMusicPlayerStore = () =>
-  create(() => ({
-    duration: 30,
-    currentTime: 0,
-  }));
-
-jest.mock('@/store/music-player', () => {
-  return {
-    useMusicPlayerStore: createTestMusicPlayerStore(),
-  };
-});
 
 jest.mock('@/footer/contexts/music-player-context', () => ({
   useMusicPlayerContext: jest.fn(),
@@ -30,6 +19,10 @@ describe('useMusicProgressBar', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (musicPlayerContext.useMusicPlayerContext as jest.Mock).mockReturnValue({ ref: mockRef });
+
+    useMusicPlayerStore.setState({
+      duration: 30,
+    });
   });
 
   it('initializes state correctly', () => {

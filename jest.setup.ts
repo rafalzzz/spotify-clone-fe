@@ -1,3 +1,5 @@
+import { create } from 'zustand';
+
 import { MockResizeObserver } from '@/types/utils';
 
 jest.mock('antd');
@@ -24,4 +26,34 @@ Object.defineProperty(window, 'ResizeObserver', {
     this.unobserve = jest.fn();
     this.disconnect = jest.fn();
   }),
+});
+
+const createMusicPlayerStore = () =>
+  create(() => ({
+    isPlaying: false,
+    isShuffle: false,
+    isLoop: false,
+    duration: 0,
+    currentTime: 0,
+    activeIndex: 0,
+    songsList: [],
+    shuffledIndexes: [],
+    trackId: null,
+    albumId: null,
+    togglePlay: jest.fn(),
+    toggleShuffle: jest.fn(),
+    toggleLoop: jest.fn(),
+    setDuration: jest.fn(),
+    setCurrentTime: jest.fn(),
+    setActiveIndex: jest.fn(),
+    playSong: jest.fn(),
+    playAlbum: jest.fn(),
+    playPrevSong: jest.fn(),
+    playNextSong: jest.fn(),
+  }));
+
+jest.mock('@/store/music-player', () => {
+  return {
+    useMusicPlayerStore: createMusicPlayerStore(),
+  };
 });

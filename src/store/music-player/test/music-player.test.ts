@@ -4,6 +4,8 @@ import { mockSongs } from '@/consts/mocks';
 
 import { useMusicPlayerStore } from '../';
 
+jest.unmock('@/store/music-player');
+
 const renderUseMusicPlayerStore = () => renderHook(() => useMusicPlayerStore());
 
 const mockedSongsArr = mockSongs.slice(0, 3);
