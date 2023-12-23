@@ -45,7 +45,6 @@ const createMusicPlayerStore = () =>
     toggleLoop: jest.fn(),
     setDuration: jest.fn(),
     setCurrentTime: jest.fn(),
-    setActiveIndex: jest.fn(),
     playSong: jest.fn(),
     playAlbum: jest.fn(),
     playPrevSong: jest.fn(),

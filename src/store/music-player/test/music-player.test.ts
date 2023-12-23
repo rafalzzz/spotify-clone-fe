@@ -87,17 +87,6 @@ describe('useMusicPlayerStore', () => {
     expect(result.current.currentTime).toBe(mockCurrentTime);
   });
 
-  it('should set activeIndex', () => {
-    const { result } = renderHook(() => useMusicPlayerStore());
-    const mockActiveIndex = 1;
-
-    act(() => {
-      result.current.setActiveIndex(mockActiveIndex);
-    });
-
-    expect(result.current.activeIndex).toBe(mockActiveIndex);
-  });
-
   it('should play album and update state', () => {
     const { result } = renderUseMusicPlayerStore();
 

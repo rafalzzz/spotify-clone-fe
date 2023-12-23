@@ -19,7 +19,6 @@ export type TUseMusicPlayerStore = {
   toggleLoop: () => void;
   setDuration: (duration: number) => void;
   setCurrentTime: (duration: number) => void;
-  setActiveIndex: (time: number) => void;
   playSong: ({ trackId, songs }: TPlaySongAction) => void;
   playAlbum: ({ albumId, songs }: TPlayAlbumAction) => void;
   playPrevSong: () => void;

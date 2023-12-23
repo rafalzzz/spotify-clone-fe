@@ -25,7 +25,6 @@ export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
   toggleLoop: () => set(({ isLoop }) => ({ isLoop: !isLoop })),
   setDuration: (duration: number) => set(() => ({ duration: duration })),
   setCurrentTime: (time: number) => set(() => ({ currentTime: time })),
-  setActiveIndex: (activeIndex: number) => set(() => ({ activeIndex })),
   playSong: ({ trackId, songs }: TPlaySongAction) =>
     set(() => ({
       trackId,
