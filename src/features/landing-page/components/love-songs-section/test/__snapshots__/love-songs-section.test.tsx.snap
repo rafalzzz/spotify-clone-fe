@@ -39,7 +39,7 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/collectionname2"
             >
               <div
                 class="custom-section-item"
@@ -53,8 +53,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                     decoding="async"
                     height="100"
                     loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    src="/_next/image?url=%2Fsome-image-url2.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url2.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url2.jpg&w=256&q=75 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -96,10 +96,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
-                      TestTrack
+                      TestTrack2
                     </h4>
                     <span>
-                      TestTrack
+                      TestTrack2
                     </span>
                   </div>
                   <button
@@ -112,10 +112,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
-                        Test_Artist
+                        Test_Artist2
                       </span>
                       <span>
-                        Test_Artist
+                        Test_Artist2
                       </span>
                     </div>
                   </button>
@@ -129,7 +129,7 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/collectionname3"
             >
               <div
                 class="custom-section-item"
@@ -143,8 +143,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                     decoding="async"
                     height="100"
                     loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    src="/_next/image?url=%2Fsome-image-url3.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url3.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url3.jpg&w=256&q=75 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -186,10 +186,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
-                      TestTrack
+                      TestTrack3
                     </h4>
                     <span>
-                      TestTrack
+                      TestTrack3
                     </span>
                   </div>
                   <button
@@ -202,10 +202,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
-                        Test_Artist
+                        Test_Artist3
                       </span>
                       <span>
-                        Test_Artist
+                        Test_Artist3
                       </span>
                     </div>
                   </button>
@@ -219,7 +219,7 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/collectionname4"
             >
               <div
                 class="custom-section-item"
@@ -233,8 +233,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                     decoding="async"
                     height="100"
                     loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    src="/_next/image?url=%2Fsome-image-url4.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url4.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url4.jpg&w=256&q=75 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -276,10 +276,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
-                      TestTrack
+                      TestTrack4
                     </h4>
                     <span>
-                      TestTrack
+                      TestTrack4
                     </span>
                   </div>
                   <button
@@ -292,10 +292,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
-                        Test_Artist
+                        Test_Artist4
                       </span>
                       <span>
-                        Test_Artist
+                        Test_Artist4
                       </span>
                     </div>
                   </button>
@@ -309,7 +309,7 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/collectionname5"
             >
               <div
                 class="custom-section-item"
@@ -323,8 +323,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                     decoding="async"
                     height="100"
                     loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    src="/_next/image?url=%2Fsome-image-url5.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url5.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url5.jpg&w=256&q=75 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -366,10 +366,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
-                      TestTrack
+                      TestTrack5
                     </h4>
                     <span>
-                      TestTrack
+                      TestTrack5
                     </span>
                   </div>
                   <button
@@ -382,10 +382,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
-                        Test_Artist
+                        Test_Artist5
                       </span>
                       <span>
-                        Test_Artist
+                        Test_Artist5
                       </span>
                     </div>
                   </button>
@@ -399,7 +399,7 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/collectionname6"
             >
               <div
                 class="custom-section-item"
@@ -413,8 +413,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                     decoding="async"
                     height="100"
                     loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    src="/_next/image?url=%2Fsome-image-url6.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url6.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url6.jpg&w=256&q=75 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -456,10 +456,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
-                      TestTrack
+                      TestTrack6
                     </h4>
                     <span>
-                      TestTrack
+                      TestTrack6
                     </span>
                   </div>
                   <button
@@ -472,10 +472,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
-                        Test_Artist
+                        Test_Artist6
                       </span>
                       <span>
-                        Test_Artist
+                        Test_Artist6
                       </span>
                     </div>
                   </button>
@@ -489,7 +489,7 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/collectionname7"
             >
               <div
                 class="custom-section-item"
@@ -503,8 +503,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                     decoding="async"
                     height="100"
                     loading="lazy"
-                    src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                    srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                    src="/_next/image?url=%2Fsome-image-url7.jpg&w=256&q=75"
+                    srcset="/_next/image?url=%2Fsome-image-url7.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url7.jpg&w=256&q=75 2x"
                     style="color: transparent; height: 100%; width: 100%;"
                     width="100"
                   />
@@ -546,10 +546,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
-                      TestTrack
+                      TestTrack7
                     </h4>
                     <span>
-                      TestTrack
+                      TestTrack7
                     </span>
                   </div>
                   <button
@@ -562,10 +562,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                       data-testid="music-track-informations-artist-name-tooltip"
                     >
                       <span>
-                        Test_Artist
+                        Test_Artist7
                       </span>
                       <span>
-                        Test_Artist
+                        Test_Artist7
                       </span>
                     </div>
                   </button>
@@ -612,7 +612,7 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/collectionname2"
           >
             <div
               class="custom-section-item"
@@ -626,8 +626,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                   decoding="async"
                   height="100"
                   loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  src="/_next/image?url=%2Fsome-image-url2.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url2.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url2.jpg&w=256&q=75 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -669,10 +669,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
-                    TestTrack
+                    TestTrack2
                   </h4>
                   <span>
-                    TestTrack
+                    TestTrack2
                   </span>
                 </div>
                 <button
@@ -685,10 +685,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
-                      Test_Artist
+                      Test_Artist2
                     </span>
                     <span>
-                      Test_Artist
+                      Test_Artist2
                     </span>
                   </div>
                 </button>
@@ -702,7 +702,7 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/collectionname3"
           >
             <div
               class="custom-section-item"
@@ -716,8 +716,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                   decoding="async"
                   height="100"
                   loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  src="/_next/image?url=%2Fsome-image-url3.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url3.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url3.jpg&w=256&q=75 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -759,10 +759,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
-                    TestTrack
+                    TestTrack3
                   </h4>
                   <span>
-                    TestTrack
+                    TestTrack3
                   </span>
                 </div>
                 <button
@@ -775,10 +775,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
-                      Test_Artist
+                      Test_Artist3
                     </span>
                     <span>
-                      Test_Artist
+                      Test_Artist3
                     </span>
                   </div>
                 </button>
@@ -792,7 +792,7 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/collectionname4"
           >
             <div
               class="custom-section-item"
@@ -806,8 +806,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                   decoding="async"
                   height="100"
                   loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  src="/_next/image?url=%2Fsome-image-url4.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url4.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url4.jpg&w=256&q=75 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -849,10 +849,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
-                    TestTrack
+                    TestTrack4
                   </h4>
                   <span>
-                    TestTrack
+                    TestTrack4
                   </span>
                 </div>
                 <button
@@ -865,10 +865,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
-                      Test_Artist
+                      Test_Artist4
                     </span>
                     <span>
-                      Test_Artist
+                      Test_Artist4
                     </span>
                   </div>
                 </button>
@@ -882,7 +882,7 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/collectionname5"
           >
             <div
               class="custom-section-item"
@@ -896,8 +896,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                   decoding="async"
                   height="100"
                   loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  src="/_next/image?url=%2Fsome-image-url5.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url5.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url5.jpg&w=256&q=75 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -939,10 +939,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
-                    TestTrack
+                    TestTrack5
                   </h4>
                   <span>
-                    TestTrack
+                    TestTrack5
                   </span>
                 </div>
                 <button
@@ -955,10 +955,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
-                      Test_Artist
+                      Test_Artist5
                     </span>
                     <span>
-                      Test_Artist
+                      Test_Artist5
                     </span>
                   </div>
                 </button>
@@ -972,7 +972,7 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/collectionname6"
           >
             <div
               class="custom-section-item"
@@ -986,8 +986,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                   decoding="async"
                   height="100"
                   loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  src="/_next/image?url=%2Fsome-image-url6.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url6.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url6.jpg&w=256&q=75 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -1029,10 +1029,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
-                    TestTrack
+                    TestTrack6
                   </h4>
                   <span>
-                    TestTrack
+                    TestTrack6
                   </span>
                 </div>
                 <button
@@ -1045,10 +1045,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
-                      Test_Artist
+                      Test_Artist6
                     </span>
                     <span>
-                      Test_Artist
+                      Test_Artist6
                     </span>
                   </div>
                 </button>
@@ -1062,7 +1062,7 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/collectionname7"
           >
             <div
               class="custom-section-item"
@@ -1076,8 +1076,8 @@ exports[`LoveSongsSection render component without error 1`] = `
                   decoding="async"
                   height="100"
                   loading="lazy"
-                  src="/_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75"
-                  srcset="/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url1.jpg&w=256&q=75 2x"
+                  src="/_next/image?url=%2Fsome-image-url7.jpg&w=256&q=75"
+                  srcset="/_next/image?url=%2Fsome-image-url7.jpg&w=128&q=75 1x, /_next/image?url=%2Fsome-image-url7.jpg&w=256&q=75 2x"
                   style="color: transparent; height: 100%; width: 100%;"
                   width="100"
                 />
@@ -1119,10 +1119,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
-                    TestTrack
+                    TestTrack7
                   </h4>
                   <span>
-                    TestTrack
+                    TestTrack7
                   </span>
                 </div>
                 <button
@@ -1135,10 +1135,10 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-testid="music-track-informations-artist-name-tooltip"
                   >
                     <span>
-                      Test_Artist
+                      Test_Artist7
                     </span>
                     <span>
-                      Test_Artist
+                      Test_Artist7
                     </span>
                   </div>
                 </button>

@@ -1,13 +1,9 @@
-import { ChangeEvent, Dispatch, RefObject, SyntheticEvent } from 'react';
+import { ChangeEvent, RefObject, SyntheticEvent } from 'react';
 
 import { TSongItem } from '@/types/components';
 
 export type TMusicPlayerContext = {
   ref: RefObject<HTMLAudioElement>;
-  isShuffle: boolean;
-  isLoop: boolean;
-  setIsShuffle: Dispatch<React.SetStateAction<boolean>>;
-  setIsLoop: Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type TProgressBar = {

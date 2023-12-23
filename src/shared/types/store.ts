@@ -11,6 +11,7 @@ export type TUseMusicPlayerStore = {
   currentTime: number;
   activeIndex: number;
   songsList: TSongItem[];
+  shuffledIndexes: number[];
   trackId: null | number;
   albumId: null | number;
   togglePlay: () => void;

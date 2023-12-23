@@ -1,13 +1,12 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useMemo } from 'react';
 
 import { useIsTextOverflowing } from '@/footer/hooks/use-is-text-overflowing';
 
-import { useMusicPlayerStore } from '@/store/music-player';
-
 import { CustomAddToFavoriteButton } from '@/components/custom-add-to-favorite-button';
+
+import { useCurrentSong } from '@/hooks/use-current-song';
 
 import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
@@ -16,11 +15,7 @@ import { EMusicTrackKeys } from '@/types/music-track';
 import './NowPlayedTrack.scss';
 
 export const NowPlayedTrack = (): JSX.Element => {
-  const activeIndex = useMusicPlayerStore(({ activeIndex }) => activeIndex);
-  const songsList = useMusicPlayerStore(({ songsList }) => songsList);
-
-  const currentSong = useMemo(() => songsList[activeIndex], [activeIndex, songsList]);
-
+  const currentSong = useCurrentSong();
   const { ref, isTextOverflowing } = useIsTextOverflowing({ currentSong });
 
   const onClick = () => {

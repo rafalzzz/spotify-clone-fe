@@ -8,7 +8,7 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
     <a
       class="custom-section-item__redirection"
       data-testid="custom-section-item-redirection"
-      href="/album/collectionname"
+      href="/album/collectionname1"
     >
       <div
         class="custom-section-item"
@@ -65,10 +65,10 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
               class="music-track-informations__text"
               data-testid="music-track-informations-track-name"
             >
-              TestTrack
+              TestTrack1
             </h4>
             <span>
-              TestTrack
+              TestTrack1
             </span>
           </div>
           <button
@@ -81,10 +81,10 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
               data-testid="music-track-informations-artist-name-tooltip"
             >
               <span>
-                Test_Artist
+                Test_Artist1
               </span>
               <span>
-                Test_Artist
+                Test_Artist1
               </span>
             </div>
           </button>

@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 
+import { getShuffledIndexes } from '@/utils/get-shuffled-indexes';
+
 import { TPlayAlbumAction, TPlaySongAction, TUseMusicPlayerStore } from '@/types/store';
 
 export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
@@ -10,10 +12,16 @@ export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
   currentTime: 0,
   activeIndex: 0,
   songsList: [],
+  shuffledIndexes: [],
   trackId: null,
   albumId: null,
   togglePlay: () => set(({ isPlaying }) => ({ isPlaying: !isPlaying })),
-  toggleShuffle: () => set(({ isShuffle }) => ({ isShuffle: !isShuffle })),
+  toggleShuffle: () =>
+    set(({ isShuffle, songsList }) => ({
+      isShuffle: !isShuffle,
+      shuffledIndexes:
+        !isShuffle && songsList.length > 1 ? getShuffledIndexes(songsList.length) : [],
+    })),
   toggleLoop: () => set(({ isLoop }) => ({ isLoop: !isLoop })),
   setDuration: (duration: number) => set(() => ({ duration: duration })),
   setCurrentTime: (time: number) => set(() => ({ currentTime: time })),
@@ -28,12 +36,13 @@ export const useMusicPlayerStore = create<TUseMusicPlayerStore>((set) => ({
       albumId: null,
     })),
   playAlbum: ({ albumId, songs }: TPlayAlbumAction) =>
-    set(() => ({
+    set((isShuffle) => ({
       albumId,
       isPlaying: true,
       duration: 0,
       activeIndex: 0,
       songsList: songs,
+      shuffledIndexes: isShuffle && songs.length > 1 ? getShuffledIndexes(songs.length) : [],
       trackId: null,
     })),
   playPrevSong: () =>
