@@ -5,10 +5,13 @@ import { TUseCopyToClipboard } from '@/types/hooks';
 
 import './CopyToClipboard.scss';
 
+const defaultHeight = '100px';
+const footerHeight = getComputedStyle(document.body).getPropertyValue('--footer-height');
+
 const CONTEXT_MENU_STYPES = {
   width: 'auto',
   padding: '10px 10px 20px 10px',
-  marginBottom: '100px',
+  marginBottom: footerHeight || defaultHeight,
 };
 
 export const useCopyToClipboard = (): TUseCopyToClipboard => {
