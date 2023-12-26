@@ -1,13 +1,12 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
+import { useLoveSongsItemContextMenu } from '@/landing-page/hooks/use-landing-page/use-love-songs-item-context-menu';
 import { TLoveSongsSectionItem } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
-
-import { convertMusicTrackToSongItem } from '@/utils/convert-music-track-to-song-item';
 
 import { EMusicTrackKeys } from '@/types/music-track';
 
@@ -16,11 +15,14 @@ import {
   CustomSectionItemImage,
   MusicTrackInformation,
 } from '@/shared/components';
+import { convertMusicTrackToSongItem, generateTrackRedirectionPath } from '@/shared/utils';
 
 export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
   ({ song, isPlaying, isActive }) => {
     const playSong = useMusicPlayerStore(({ playSong }) => playSong);
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
+
+    const items = useLoveSongsItemContextMenu({ song });
 
     const handleOnClick = useCallback(() => {
       if (isActive) {
@@ -34,7 +36,10 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
 
     return (
       <li key={song[EMusicTrackKeys.TRACK_ID]} data-testid='section-item'>
-        <CustomSectionItem collectionName={song[EMusicTrackKeys.COLLECTION_NAME]}>
+        <CustomSectionItem
+          href={generateTrackRedirectionPath(song[EMusicTrackKeys.TRACK_ID])}
+          items={items}
+        >
           <>
             <CustomSectionItemImage imageUrl={song[EMusicTrackKeys.ARTWORK_URL_60]}>
               <CustomSectionItemPlayButton

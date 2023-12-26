@@ -6,7 +6,6 @@ const SoundIcon = (): JSX.Element => (
     role='img'
     height='16'
     width='16'
-    aria-label='Ses seviyesi y\xFCksek'
     viewBox='0 0 16 16'
     className='svg-icon'
     data-testid='sound-icon'

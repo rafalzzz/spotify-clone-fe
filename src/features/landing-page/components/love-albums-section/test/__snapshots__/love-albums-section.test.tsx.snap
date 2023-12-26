@@ -39,10 +39,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/1"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -144,10 +144,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/2"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -249,10 +249,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/3"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -354,10 +354,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/4"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -459,10 +459,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/5"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -564,10 +564,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname"
+              href="/album/6"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -702,10 +702,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/1"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -807,10 +807,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/2"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -912,10 +912,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/3"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -1017,10 +1017,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/4"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -1122,10 +1122,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/5"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -1227,10 +1227,10 @@ exports[`LoveAlbumsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/6"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"

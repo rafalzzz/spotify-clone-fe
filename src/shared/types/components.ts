@@ -2,6 +2,7 @@ import { CheckboxProps, InputProps, RadioProps, SelectProps, SwitchProps } from 
 import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { Rule } from 'antd/es/form';
 import { NamePath } from 'antd/es/form/interface';
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { TooltipPlacement } from 'antd/es/tooltip';
 import { AriaRole, ReactNode, MouseEventHandler } from 'react';
 
@@ -109,7 +110,12 @@ export type TCustomSection = {
 };
 
 export type TCustomSectionItem = {
-  collectionName: string;
+  href: string;
+  items?: ItemType[];
+};
+
+export type TCustomContextMenu = {
+  items: ItemType[];
 };
 
 export type TCustomSectionItemImage = { imageUrl: string };

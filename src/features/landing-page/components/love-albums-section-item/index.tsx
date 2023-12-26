@@ -9,6 +9,8 @@ import { CustomSectionItemPlayButton } from '@/components/custom-section-item-pl
 
 import { useGetAlbumSongs } from '@/hooks/use-fetch-album-songs';
 
+import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
+
 import { EAlbumKeys } from '@/types/album';
 
 import { AlbumInformation, CustomSectionItem, CustomSectionItemImage } from '@/shared/components';
@@ -41,7 +43,7 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
 
     return (
       <li key={album[EAlbumKeys.COLLECTION_ID]} data-testid='section-item'>
-        <CustomSectionItem collectionName={album[EAlbumKeys.COLLECTION_NAME]}>
+        <CustomSectionItem href={generateAlbumRedirectionPath(album[EAlbumKeys.COLLECTION_ID])}>
           <>
             <CustomSectionItemImage imageUrl={album[EAlbumKeys.ARTWORK_URL_60]}>
               <CustomSectionItemPlayButton

@@ -42,10 +42,10 @@ exports[`MainContent render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/track/1"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -162,10 +162,10 @@ exports[`MainContent render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname"
+            href="/album/1"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -295,7 +295,7 @@ exports[`MainContent render component without error 1`] = `
           <a
             class="custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist1"
+            href="/artist/Test_Artist1"
           >
             <div
               class="custom-artist-item__wrapper"
