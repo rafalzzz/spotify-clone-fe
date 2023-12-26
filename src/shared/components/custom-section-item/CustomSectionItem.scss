@@ -27,17 +27,3 @@
     }
   }
 }
-
-.test {
-  background-color: green !important;
-}
-
-.custom-dropdown-item {
-  border-radius: 0;
-  color: initial;
-
-  &:hover {
-    background-color: red !important;
-    color: white !important;
-  }
-}

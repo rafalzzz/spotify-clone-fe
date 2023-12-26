@@ -1,5 +1,6 @@
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { MenuProps } from 'antd';
+import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
 import { TUseLoveSongsItemContextMenu } from '@/landing-page/types/types';
@@ -19,7 +20,12 @@ import ShareIcon from '@/icons/share';
 
 const MOCKED_IS_IN_FAVOTIRES = false;
 
-export const useLoveSongsItemContextMenu = ({ song }: TUseLoveSongsItemContextMenu) => {
+export const useLoveSongsItemContextMenu = ({
+  song,
+  copytoClipboard,
+}: TUseLoveSongsItemContextMenu) => {
+  const { push } = useRouter();
+
   const addToFavorites = useCallback(() => {
     const songItem = convertMusicTrackToSongItem(song);
     console.log({ songItem });
@@ -27,18 +33,18 @@ export const useLoveSongsItemContextMenu = ({ song }: TUseLoveSongsItemContextMe
 
   const shareTrack = useCallback(() => {
     const url = generateShareTrackUrl(song[EMusicTrackKeys.TRACK_ID]);
-    console.log({ url });
-  }, [song]);
+    copytoClipboard(url);
+  }, [song, copytoClipboard]);
 
   const redirectToAlbum = useCallback(() => {
     const url = generateAlbumRedirectionPath(song[EMusicTrackKeys.COLLECTION_ID]);
-    console.log({ url });
-  }, [song]);
+    push(url);
+  }, [song, push]);
 
   const redirectToArtist = useCallback(() => {
     const url = generateArtistRedirectionPath(song[EMusicTrackKeys.ARTIST_ID]);
-    console.log({ url });
-  }, [song]);
+    push(url);
+  }, [song, push]);
 
   const items: MenuProps['items'] = useMemo(
     () => [

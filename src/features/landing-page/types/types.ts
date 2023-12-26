@@ -50,4 +50,5 @@ export type TLoveAlbumsSectionItem = {
 
 export type TUseLoveSongsItemContextMenu = {
   song: TMusicTrack;
+  copytoClipboard: (text: string) => void;
 };

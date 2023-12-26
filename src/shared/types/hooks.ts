@@ -33,3 +33,8 @@ export type TUseGetAlbumSongsProps = {
   cachedData?: TSongItem[];
   fetchAlbumSongsAction: UseQueryResult<TSongItem[], unknown>;
 };
+
+export type TUseCopyToClipboard = {
+  copytoClipboard: (text: string) => void;
+  contextHolder: ReactElement<string, string | JSXElementConstructor<string>>;
+};

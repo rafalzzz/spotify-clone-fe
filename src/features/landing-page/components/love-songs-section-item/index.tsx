@@ -8,6 +8,8 @@ import { useMusicPlayerStore } from '@/store/music-player';
 
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
 
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
+
 import { EMusicTrackKeys } from '@/types/music-track';
 
 import {
@@ -22,7 +24,8 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
     const playSong = useMusicPlayerStore(({ playSong }) => playSong);
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
-    const items = useLoveSongsItemContextMenu({ song });
+    const { contextHolder, copytoClipboard } = useCopyToClipboard();
+    const items = useLoveSongsItemContextMenu({ song, copytoClipboard });
 
     const handleOnClick = useCallback(() => {
       if (isActive) {
@@ -40,6 +43,7 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
           href={generateTrackRedirectionPath(song[EMusicTrackKeys.TRACK_ID])}
           items={items}
         >
+          {contextHolder}
           <>
             <CustomSectionItemImage imageUrl={song[EMusicTrackKeys.ARTWORK_URL_60]}>
               <CustomSectionItemPlayButton

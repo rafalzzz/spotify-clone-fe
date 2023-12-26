@@ -6,7 +6,7 @@
     border-radius: 4px !important;
     padding: 10px !important;
     font-weight: 400 !important;
-    color: initial;
+    color: var(--context-menu-item-icon-color) !important;
 
     .anticon {
       font-size: 1rem;
@@ -24,7 +24,6 @@
 
     &:hover {
       background-color: var(--context-menu-item-hover-background-color) !important;
-      color: white !important;
       cursor: default;
     }
   }
