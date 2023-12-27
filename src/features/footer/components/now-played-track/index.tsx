@@ -26,6 +26,8 @@ export const NowPlayedTrack = (): JSX.Element => {
     return <div className='now-played-track' data-testid='now-played-track' />;
   }
 
+  console.log({ isTextOverflowing });
+
   return (
     <div className='now-played-track' data-testid='now-played-track'>
       <Image
@@ -48,7 +50,7 @@ export const NowPlayedTrack = (): JSX.Element => {
           </span>
         </div>
         <Link
-          href={generateArtistRedirectionPath(currentSong?.[EMusicTrackKeys.ARTIST_NAME])}
+          href={generateArtistRedirectionPath(currentSong?.[EMusicTrackKeys.ARTIST_ID])}
           className='now-played-track__artist'
           data-testid='now-played-track-artist-redirection'
         >
