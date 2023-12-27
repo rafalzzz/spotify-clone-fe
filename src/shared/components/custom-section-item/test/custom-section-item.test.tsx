@@ -8,12 +8,14 @@ import { CustomSectionItem } from '../';
 const REDIRECTION_TEST_ID = 'custom-section-item-redirection';
 
 const MOCKED_CHILD_CONTENT = 'Mocked Child Content';
-const MOCKED_COLLECTION_NAME = 'mocked collection name';
+const MOCKED_COLLECTION_ID = 123456;
 const MOCKED_CHILD = <div>{MOCKED_CHILD_CONTENT}</div>;
 
 const renderCustomSectionItem = () =>
   render(
-    <CustomSectionItem collectionName={MOCKED_COLLECTION_NAME}>{MOCKED_CHILD}</CustomSectionItem>,
+    <CustomSectionItem href={generateAlbumRedirectionPath(MOCKED_COLLECTION_ID)}>
+      {MOCKED_CHILD}
+    </CustomSectionItem>,
   );
 
 describe('CustomSectionItem', () => {
@@ -33,7 +35,7 @@ describe('CustomSectionItem', () => {
     const artistNameElement = queryByTestId(REDIRECTION_TEST_ID);
     expect(artistNameElement).toHaveAttribute(
       'href',
-      generateAlbumRedirectionPath(MOCKED_COLLECTION_NAME),
+      generateAlbumRedirectionPath(MOCKED_COLLECTION_ID),
     );
   });
 });

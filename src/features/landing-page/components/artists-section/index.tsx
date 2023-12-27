@@ -13,7 +13,10 @@ export const ArtistsSection: FC<TArtistSection> = ({ artists }): JSX.Element => 
       <ul className='custom-section__items'>
         {artists.map((artist) => (
           <li key={artist[EArtistKeys.ARTIST_ID]}>
-            <CustomArtistItem artistName={artist[EArtistKeys.ARTIST_NAME]} />
+            <CustomArtistItem
+              artistName={artist[EArtistKeys.ARTIST_NAME]}
+              artistId={artist[EArtistKeys.ARTIST_ID]}
+            />
           </li>
         ))}
       </ul>

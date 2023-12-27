@@ -8,10 +8,10 @@ exports[`LoveAlbumsSectionItem renders without error 1`] = `
     <a
       class="custom-section-item__redirection"
       data-testid="custom-section-item-redirection"
-      href="/album/albumtest"
+      href="/album/1"
     >
       <div
-        class="custom-section-item"
+        class="ant-dropdown-trigger custom-section-item"
       >
         <div
           class="custom-section-item-image"

@@ -32,10 +32,11 @@ export type TUseIsTextOverflowing = {
   currentSong: TSongItem;
 };
 
-export type TUseIsTextOverflowingProps = {
-  ref: RefObject<HTMLDivElement>;
-  isTextOverflowing: boolean;
+export type TUseIsTextTruncated = {
+  ref: RefObject<HTMLElement>;
 };
+
+export type TUseIsTextTruncatedProps = boolean;
 
 export type TUseAudioProps = {
   ref: RefObject<HTMLAudioElement>;
@@ -68,4 +69,12 @@ export type TUseSoundProgressBar = {
   volume: number;
   toggleMuted: () => void;
   handleChange: ({ target: { valueAsNumber } }: ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type TUseMusicTrackTitleTooltipProps = {
+  isMenuOpen: boolean;
+  isMouseOver: boolean;
+  onOpenChange: (open: boolean) => void;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 };

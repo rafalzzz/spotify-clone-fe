@@ -8,10 +8,10 @@ exports[`CustomSectionItem renders component without error 1`] = `
       <a
         class="custom-section-item__redirection"
         data-testid="custom-section-item-redirection"
-        href="/album/mocked collection name"
+        href="/album/123456"
       >
         <div
-          class="custom-section-item"
+          class="ant-dropdown-trigger custom-section-item"
         >
           <div>
             Mocked Child Content
@@ -24,10 +24,10 @@ exports[`CustomSectionItem renders component without error 1`] = `
     <a
       class="custom-section-item__redirection"
       data-testid="custom-section-item-redirection"
-      href="/album/mocked collection name"
+      href="/album/123456"
     >
       <div
-        class="custom-section-item"
+        class="ant-dropdown-trigger custom-section-item"
       >
         <div>
           Mocked Child Content

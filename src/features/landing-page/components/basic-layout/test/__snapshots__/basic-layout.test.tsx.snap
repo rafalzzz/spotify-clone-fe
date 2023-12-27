@@ -339,7 +339,6 @@ exports[`BasicLayout render component without error 1`] = `
           role="button"
         >
           <svg
-            aria-label="Ses seviyesi y\\xFCksek"
             class="svg-icon"
             data-testid="sound-icon"
             height="16"

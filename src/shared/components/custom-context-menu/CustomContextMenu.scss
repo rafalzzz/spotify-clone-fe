@@ -1,0 +1,34 @@
+.custom-context-menu {
+  background-color: var(--context-menu-background-color) !important;
+  border-radius: 0 !important;
+
+  .menu-item {
+    border-radius: 4px !important;
+    padding: 10px !important;
+    font-weight: 400 !important;
+    color: var(--context-menu-item-icon-color) !important;
+
+    .anticon {
+      font-size: 1rem;
+      color: var(--context-menu-item-icon-color);
+    }
+
+    .svg-icon {
+      margin-right: 8px;
+
+      &-path {
+        fill: var(--context-menu-item-icon-color);
+        color: var(--context-menu-item-icon-color);
+      }
+    }
+
+    &:hover {
+      background-color: var(--context-menu-item-hover-background-color) !important;
+      cursor: default;
+    }
+  }
+
+  &:hover {
+    cursor: default;
+  }
+}

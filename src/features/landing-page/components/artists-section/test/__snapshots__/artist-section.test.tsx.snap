@@ -35,9 +35,9 @@ exports[`ArtistsSection render component without error 1`] = `
         >
           <li>
             <a
-              class="custom-artist-item"
+              class="ant-dropdown-trigger custom-artist-item"
               data-testid="custom-artist-item-redirection"
-              href="/artist/test_artist1"
+              href="/artist/1"
             >
               <div
                 class="custom-artist-item__wrapper"
@@ -50,9 +50,9 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item"
+              class="ant-dropdown-trigger custom-artist-item"
               data-testid="custom-artist-item-redirection"
-              href="/artist/test_artist2"
+              href="/artist/2"
             >
               <div
                 class="custom-artist-item__wrapper"
@@ -65,9 +65,9 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item"
+              class="ant-dropdown-trigger custom-artist-item"
               data-testid="custom-artist-item-redirection"
-              href="/artist/test_artist3"
+              href="/artist/3"
             >
               <div
                 class="custom-artist-item__wrapper"
@@ -80,9 +80,9 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item"
+              class="ant-dropdown-trigger custom-artist-item"
               data-testid="custom-artist-item-redirection"
-              href="/artist/test_artist4"
+              href="/artist/4"
             >
               <div
                 class="custom-artist-item__wrapper"
@@ -95,9 +95,9 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item"
+              class="ant-dropdown-trigger custom-artist-item"
               data-testid="custom-artist-item-redirection"
-              href="/artist/test_artist5"
+              href="/artist/5"
             >
               <div
                 class="custom-artist-item__wrapper"
@@ -110,9 +110,9 @@ exports[`ArtistsSection render component without error 1`] = `
           </li>
           <li>
             <a
-              class="custom-artist-item"
+              class="ant-dropdown-trigger custom-artist-item"
               data-testid="custom-artist-item-redirection"
-              href="/artist/test_artist6"
+              href="/artist/6"
             >
               <div
                 class="custom-artist-item__wrapper"
@@ -158,9 +158,9 @@ exports[`ArtistsSection render component without error 1`] = `
       >
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist1"
+            href="/artist/1"
           >
             <div
               class="custom-artist-item__wrapper"
@@ -173,9 +173,9 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist2"
+            href="/artist/2"
           >
             <div
               class="custom-artist-item__wrapper"
@@ -188,9 +188,9 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist3"
+            href="/artist/3"
           >
             <div
               class="custom-artist-item__wrapper"
@@ -203,9 +203,9 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist4"
+            href="/artist/4"
           >
             <div
               class="custom-artist-item__wrapper"
@@ -218,9 +218,9 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist5"
+            href="/artist/5"
           >
             <div
               class="custom-artist-item__wrapper"
@@ -233,9 +233,9 @@ exports[`ArtistsSection render component without error 1`] = `
         </li>
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/test_artist6"
+            href="/artist/6"
           >
             <div
               class="custom-artist-item__wrapper"

@@ -1,18 +1,10 @@
 .sound-progress-bar {
   display: flex;
-  width: 150px;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: flex-end;
+  width: 100%;
 
-@media screen and (max-width: 1000px) {
-  .sound-progress-bar {
-    width: 100px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .sound-progress-bar {
-    display: none;
+  .progress-bar {
+    max-width: 100px;
   }
 }

@@ -39,10 +39,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname1"
+              href="/track/1"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -129,10 +129,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname2"
+              href="/track/2"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -219,10 +219,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname3"
+              href="/track/3"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -309,10 +309,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname4"
+              href="/track/4"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -399,10 +399,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname5"
+              href="/track/5"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -489,10 +489,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname6"
+              href="/track/6"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -579,10 +579,10 @@ exports[`LoveSongsSection render component without error 1`] = `
             <a
               class="custom-section-item__redirection"
               data-testid="custom-section-item-redirection"
-              href="/album/collectionname7"
+              href="/track/7"
             >
               <div
-                class="custom-section-item"
+                class="ant-dropdown-trigger custom-section-item"
               >
                 <div
                   class="custom-section-item-image"
@@ -702,10 +702,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname1"
+            href="/track/1"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -792,10 +792,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname2"
+            href="/track/2"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -882,10 +882,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname3"
+            href="/track/3"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -972,10 +972,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname4"
+            href="/track/4"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -1062,10 +1062,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname5"
+            href="/track/5"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -1152,10 +1152,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname6"
+            href="/track/6"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"
@@ -1242,10 +1242,10 @@ exports[`LoveSongsSection render component without error 1`] = `
           <a
             class="custom-section-item__redirection"
             data-testid="custom-section-item-redirection"
-            href="/album/collectionname7"
+            href="/track/7"
           >
             <div
-              class="custom-section-item"
+              class="ant-dropdown-trigger custom-section-item"
             >
               <div
                 class="custom-section-item-image"

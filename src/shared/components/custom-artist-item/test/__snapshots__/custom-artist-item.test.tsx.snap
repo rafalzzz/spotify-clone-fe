@@ -6,9 +6,9 @@ exports[`CustomArtistItem renders component without error 1`] = `
   "baseElement": <body>
     <div>
       <a
-        class="custom-artist-item"
+        class="ant-dropdown-trigger custom-artist-item"
         data-testid="custom-artist-item-redirection"
-        href="/artist/mocked artist name"
+        href="/artist/1"
       >
         <div
           class="custom-artist-item__wrapper"
@@ -22,9 +22,9 @@ exports[`CustomArtistItem renders component without error 1`] = `
   </body>,
   "container": <div>
     <a
-      class="custom-artist-item"
+      class="ant-dropdown-trigger custom-artist-item"
       data-testid="custom-artist-item-redirection"
-      href="/artist/mocked artist name"
+      href="/artist/1"
     >
       <div
         class="custom-artist-item__wrapper"

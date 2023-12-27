@@ -2,6 +2,7 @@ import { CheckboxProps, InputProps, RadioProps, SelectProps, SwitchProps } from 
 import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { Rule } from 'antd/es/form';
 import { NamePath } from 'antd/es/form/interface';
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { TooltipPlacement } from 'antd/es/tooltip';
 import { AriaRole, ReactNode, MouseEventHandler } from 'react';
 
@@ -23,7 +24,7 @@ export type TCustomAddToFavoriteButton = {
   onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
 };
 
-export type TCustomArtistSection = Pick<TArtist, EArtistKeys.ARTIST_NAME>;
+export type TCustomArtistSection = Pick<TArtist, EArtistKeys.ARTIST_NAME | EArtistKeys.ARTIST_ID>;
 
 export type TCustomButton = {
   htmlType: 'reset' | 'submit' | 'button' | undefined;
@@ -109,7 +110,13 @@ export type TCustomSection = {
 };
 
 export type TCustomSectionItem = {
-  collectionName: string;
+  href: string;
+  items?: ItemType[];
+};
+
+export type TCustomContextMenu = {
+  items: ItemType[];
+  onOpenChange?: (open: boolean) => void;
 };
 
 export type TCustomSectionItemImage = { imageUrl: string };
@@ -130,6 +137,7 @@ export type TCustomSubheader = {
 
 export type TCustomTooltip = {
   title: string;
+  open?: boolean;
   mouseEnterDelay?: number;
   placement?: TooltipPlacement;
   testId?: string;
@@ -146,6 +154,7 @@ export type TCustomSectionLoader = {
 export type TMusicTrackInformationProps = {
   trackName: string;
   artistName: string;
+  artistId: number;
 };
 
 export type TSongItem = Pick<

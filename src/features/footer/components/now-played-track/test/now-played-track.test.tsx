@@ -1,11 +1,7 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { useIsTextOverflowing } from '@/footer/hooks/use-is-text-overflowing';
-
 import { useCurrentSong } from '@/hooks/use-current-song';
-
-import { generateArtistRedirectionPath } from '@/utils/generate-artist-redirection-path';
 
 import { EMusicTrackKeys } from '@/types/music-track';
 
@@ -17,75 +13,77 @@ jest.mock('@/hooks/use-current-song', () => ({
   useCurrentSong: jest.fn(),
 }));
 
-jest.mock('@/footer/hooks/use-is-text-overflowing', () => ({
-  useIsTextOverflowing: jest.fn(),
-}));
-
-const NOW_PLAYED_TRACK_TEST_ID = 'now-played-track';
-const NOW_PLAYED_TRACK_TITLE_CONTAINER_TEST_ID = 'now-played-track-title-container';
-const NOW_PLAYED_TRACK_TITLE_TEST_ID = 'now-played-track-title';
+const NOW_PLAYED_TRACK_CONTAINER_TEST_ID = 'now-played-track';
+const NOW_PLAYED_TRACK_TRACK_TITLE_TOOLTIP_TEST_ID = 'now-played-track-track-name-tooltip';
+const NOW_PLAYED_TRACK_SONG_REDIRECTION_TEST_ID = 'now-played-track-title-redirection';
+const NOW_PLAYED_TRACK_TRACK_TITLE_TEST_ID = 'now-played-track-title-text';
 const NOW_PLAYED_TRACK_ARTIST_REDIRECTION_TEST_ID = 'now-played-track-artist-redirection';
 
-const renderNowPlayerTrack = () => render(<NowPlayedTrack />);
+const renderNowPlayedTrack = () => render(<NowPlayedTrack />);
 
 describe('NowPlayedTrack', () => {
   beforeEach(() => {
+    jest.clearAllMocks();
     (useCurrentSong as jest.Mock).mockReturnValue(mockSongItem);
-    (useIsTextOverflowing as jest.Mock).mockImplementation(() => ({
-      ref: jest.fn(),
-      isTextOverflowing: false,
-    }));
   });
 
   it('renders empty div when there is no current song', () => {
-    (useCurrentSong as jest.Mock).mockImplementation(() => null);
+    (useCurrentSong as jest.Mock).mockReturnValueOnce(null);
 
-    const { queryByTestId } = renderNowPlayerTrack();
-    const element = queryByTestId(NOW_PLAYED_TRACK_TEST_ID);
+    const { queryByTestId } = renderNowPlayedTrack();
+    const element = queryByTestId(NOW_PLAYED_TRACK_CONTAINER_TEST_ID);
     expect(element).toBeEmptyDOMElement();
   });
 
   it('renders correctly when there is a current song', () => {
-    const { queryByTestId } = renderNowPlayerTrack();
-    expect(queryByTestId(NOW_PLAYED_TRACK_TEST_ID)).toBeInTheDocument();
+    const { queryByTestId } = renderNowPlayedTrack();
+    expect(queryByTestId(NOW_PLAYED_TRACK_CONTAINER_TEST_ID)).toBeInTheDocument();
   });
 
   it('renders Image component with correct props', () => {
-    const { queryByAltText } = renderNowPlayerTrack();
-    const image = queryByAltText('image');
+    const { getByAltText } = renderNowPlayedTrack();
+    const image = getByAltText('image');
 
     expect(image).toHaveAttribute('src', '/_next/image?url=%2Fsome-image-url1.jpg&w=128&q=75');
     expect(image).toHaveAttribute('width', '56');
     expect(image).toHaveAttribute('height', '56');
   });
 
-  it('applies overflow class when text is overflowing', () => {
-    (useIsTextOverflowing as jest.Mock).mockImplementation(() => ({
-      ref: jest.fn(),
-      isTextOverflowing: true,
-    }));
+  it('displays correct song information', () => {
+    const { getByTestId } = renderNowPlayedTrack();
+    const title = getByTestId(NOW_PLAYED_TRACK_TRACK_TITLE_TEST_ID);
+    expect(title).toBeInTheDocument();
+  });
 
-    const { queryByTestId } = renderNowPlayerTrack();
-    const titleContainer = queryByTestId(NOW_PLAYED_TRACK_TITLE_CONTAINER_TEST_ID);
+  it('passes track name to the track tooltip', () => {
+    const { queryByTestId, queryByText, getByTestId } = renderNowPlayedTrack();
+    const title = getByTestId(NOW_PLAYED_TRACK_TRACK_TITLE_TEST_ID);
 
-    expect(titleContainer).toHaveClass('now-played-track__title-container--overflow');
+    fireEvent.mouseEnter(title);
+
+    const trackNameTooltip = queryByTestId(NOW_PLAYED_TRACK_TRACK_TITLE_TOOLTIP_TEST_ID);
+    expect(trackNameTooltip).toBeInTheDocument();
+
+    const tooltipTitle = queryByText(mockSongItem[EMusicTrackKeys.TRACK_NAME], {
+      selector: 'span',
+    });
+
+    expect(tooltipTitle).toBeInTheDocument();
+  });
+
+  it('renders Link component with correct href and displays track name', () => {
+    const { queryByTestId } = renderNowPlayedTrack();
+    const link = queryByTestId(NOW_PLAYED_TRACK_SONG_REDIRECTION_TEST_ID);
+
+    expect(link).toHaveAttribute('href', `/track/${mockSongItem[EMusicTrackKeys.TRACK_ID]}`);
+    expect(link).toHaveTextContent(mockSongItem[EMusicTrackKeys.TRACK_NAME]);
   });
 
   it('renders Link component with correct href and displays artist name', () => {
-    const { queryByTestId } = renderNowPlayerTrack();
+    const { queryByTestId } = renderNowPlayedTrack();
     const link = queryByTestId(NOW_PLAYED_TRACK_ARTIST_REDIRECTION_TEST_ID);
 
-    expect(link).toHaveAttribute(
-      'href',
-      generateArtistRedirectionPath(mockSongItem[EMusicTrackKeys.ARTIST_NAME]),
-    );
-
+    expect(link).toHaveAttribute('href', `/artist/${mockSongItem[EMusicTrackKeys.ARTIST_ID]}`);
     expect(link).toHaveTextContent(mockSongItem[EMusicTrackKeys.ARTIST_NAME]);
-  });
-
-  it('displays correct song information', () => {
-    const { queryByTestId } = renderNowPlayerTrack();
-    const title = queryByTestId(NOW_PLAYED_TRACK_TITLE_TEST_ID);
-    expect(title).toHaveTextContent(mockSongItem[EMusicTrackKeys.TRACK_NAME]);
   });
 });

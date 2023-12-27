@@ -43,7 +43,7 @@ export type TAlbumItem = Pick<
 >;
 
 export type TLoveAlbumsSectionItem = {
-  album: TAlbumItem;
+  album: TAlbum;
   isPlaying: boolean;
   isActive: boolean;
 };

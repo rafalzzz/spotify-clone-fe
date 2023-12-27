@@ -1,2 +1,1 @@
-export const generateAlbumRedirectionPath = (artistName: string): string =>
-  `/album/${artistName.toLocaleLowerCase()}`;
+export const generateAlbumRedirectionPath = (albumId: number): string => `/album/${albumId}`;
