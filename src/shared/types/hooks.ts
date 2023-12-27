@@ -2,7 +2,6 @@ import { JSXElementConstructor, ReactElement, RefObject } from 'react';
 import { UseQueryResult } from 'react-query';
 
 import { TAlbum } from './album';
-import { TArtist } from './artist';
 import { TSongItem } from './components';
 import { TMusicTrack } from './music-track';
 

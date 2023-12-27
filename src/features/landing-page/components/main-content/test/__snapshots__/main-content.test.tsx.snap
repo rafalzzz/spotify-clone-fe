@@ -293,9 +293,9 @@ exports[`MainContent render component without error 1`] = `
       >
         <li>
           <a
-            class="custom-artist-item"
+            class="ant-dropdown-trigger custom-artist-item"
             data-testid="custom-artist-item-redirection"
-            href="/artist/Test_Artist1"
+            href="/artist/1"
           >
             <div
               class="custom-artist-item__wrapper"
