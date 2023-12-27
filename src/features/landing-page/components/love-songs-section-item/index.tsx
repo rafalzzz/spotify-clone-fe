@@ -1,7 +1,7 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
-import { useLoveSongsItemContextMenu } from '@/landing-page/hooks/use-landing-page/use-love-songs-item-context-menu';
+import { useSongContextMenu } from '@/landing-page/hooks/use-song-context-menu';
 import { TLoveSongsSectionItem } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
@@ -25,7 +25,7 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
     const { contextHolder, copytoClipboard } = useCopyToClipboard();
-    const items = useLoveSongsItemContextMenu({ song, copytoClipboard });
+    const items = useSongContextMenu({ song, copytoClipboard });
 
     const handleOnClick = useCallback(() => {
       if (isActive) {

@@ -1,12 +1,14 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
+import { useAlbumContextMenu } from '@/landing-page/hooks/use-album-context-menu';
 import { TLoveAlbumsSectionItem } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
 
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
 import { useGetAlbumSongs } from '@/hooks/use-fetch-album-songs';
 
 import { generateAlbumRedirectionPath } from '@/utils/generate-album-redirection-path';
@@ -21,6 +23,9 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
     const albumId = album[EAlbumKeys.COLLECTION_ID];
+
+    const { contextHolder, copytoClipboard } = useCopyToClipboard();
+    const items = useAlbumContextMenu({ album, copytoClipboard });
 
     const { cachedData, fetchAlbumSongsAction } = useGetAlbumSongs({
       albumId,
@@ -43,7 +48,11 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
 
     return (
       <li key={album[EAlbumKeys.COLLECTION_ID]} data-testid='section-item'>
-        <CustomSectionItem href={generateAlbumRedirectionPath(album[EAlbumKeys.COLLECTION_ID])}>
+        <CustomSectionItem
+          href={generateAlbumRedirectionPath(album[EAlbumKeys.COLLECTION_ID])}
+          items={items}
+        >
+          {contextHolder}
           <>
             <CustomSectionItemImage imageUrl={album[EAlbumKeys.ARTWORK_URL_60]}>
               <CustomSectionItemPlayButton

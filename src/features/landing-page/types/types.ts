@@ -43,12 +43,17 @@ export type TAlbumItem = Pick<
 >;
 
 export type TLoveAlbumsSectionItem = {
-  album: TAlbumItem;
+  album: TAlbum;
   isPlaying: boolean;
   isActive: boolean;
 };
 
-export type TUseLoveSongsItemContextMenu = {
+export type TUseSongContextMenu = {
   song: TMusicTrack;
+  copytoClipboard: (text: string) => void;
+};
+
+export type TUseAlbumContextMenu = {
+  album: TAlbum;
   copytoClipboard: (text: string) => void;
 };

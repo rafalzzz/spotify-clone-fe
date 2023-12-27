@@ -3,7 +3,7 @@ import { MenuProps } from 'antd';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
-import { TUseLoveSongsItemContextMenu } from '@/landing-page/types/types';
+import { TUseSongContextMenu } from '@/landing-page/types/types';
 
 import { EMusicTrackKeys } from '@/types/music-track';
 
@@ -20,10 +20,7 @@ import ShareIcon from '@/icons/share';
 
 const MOCKED_IS_IN_FAVOTIRES = false;
 
-export const useLoveSongsItemContextMenu = ({
-  song,
-  copytoClipboard,
-}: TUseLoveSongsItemContextMenu) => {
+export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMenu) => {
   const { push } = useRouter();
 
   const addToFavorites = useCallback(() => {
