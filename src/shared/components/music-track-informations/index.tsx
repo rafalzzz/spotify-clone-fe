@@ -13,6 +13,7 @@ import './MusicTrackInformation.scss';
 export const MusicTrackInformation: FC<TMusicTrackInformationProps> = ({
   trackName,
   artistName,
+  artistId,
 }): JSX.Element => {
   const router = useRouter();
   const mainArtist = getMainArtist(artistName);
@@ -20,7 +21,7 @@ export const MusicTrackInformation: FC<TMusicTrackInformationProps> = ({
   const handleArtistClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    const path = generateArtistRedirectionPath(mainArtist);
+    const path = generateArtistRedirectionPath(artistId);
     router.push(path);
   };
 

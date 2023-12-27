@@ -2,9 +2,8 @@ import { MenuProps } from 'antd';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
-import { TUseAlbumContextMenu } from '@/landing-page/types/types';
-
 import { EAlbumKeys } from '@/types/album';
+import { TUseAlbumContextMenu } from '@/types/hooks';
 import { EMusicTrackKeys } from '@/types/music-track';
 
 import { generateAlbumRedirectionPath, generateShareAlbumUrl } from '@/shared/utils';

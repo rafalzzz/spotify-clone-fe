@@ -47,13 +47,3 @@ export type TLoveAlbumsSectionItem = {
   isPlaying: boolean;
   isActive: boolean;
 };
-
-export type TUseSongContextMenu = {
-  song: TMusicTrack;
-  copytoClipboard: (text: string) => void;
-};
-
-export type TUseAlbumContextMenu = {
-  album: TAlbum;
-  copytoClipboard: (text: string) => void;
-};

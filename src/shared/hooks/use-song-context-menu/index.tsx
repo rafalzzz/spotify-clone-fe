@@ -3,9 +3,9 @@ import { MenuProps } from 'antd';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
-import { TUseSongContextMenu } from '@/landing-page/types/types';
-
-import { EMusicTrackKeys } from '@/types/music-track';
+import { TSongItem } from '@/types/components';
+import { TUseSongContextMenu } from '@/types/hooks';
+import { EMusicTrackKeys, TMusicTrack } from '@/types/music-track';
 
 import {
   convertMusicTrackToSongItem,
@@ -23,9 +23,16 @@ const MOCKED_IS_IN_FAVOTIRES = false;
 export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMenu) => {
   const { push } = useRouter();
 
+  const isMusicTrack = (item: TSongItem | TMusicTrack): item is TMusicTrack =>
+    EMusicTrackKeys.TRACK_PRICE in item;
+
   const addToFavorites = useCallback(() => {
-    const songItem = convertMusicTrackToSongItem(song);
-    console.log({ songItem });
+    if (isMusicTrack(song)) {
+      const songItem = convertMusicTrackToSongItem(song);
+      console.log({ songItem });
+    }
+
+    console.log({ song });
   }, [song]);
 
   const shareTrack = useCallback(() => {

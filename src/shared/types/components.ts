@@ -116,6 +116,7 @@ export type TCustomSectionItem = {
 
 export type TCustomContextMenu = {
   items: ItemType[];
+  onOpenChange?: (open: boolean) => void;
 };
 
 export type TCustomSectionItemImage = { imageUrl: string };
@@ -136,6 +137,7 @@ export type TCustomSubheader = {
 
 export type TCustomTooltip = {
   title: string;
+  open?: boolean;
   mouseEnterDelay?: number;
   placement?: TooltipPlacement;
   testId?: string;
@@ -152,6 +154,7 @@ export type TCustomSectionLoader = {
 export type TMusicTrackInformationProps = {
   trackName: string;
   artistName: string;
+  artistId: number;
 };
 
 export type TSongItem = Pick<

@@ -32,10 +32,11 @@ export type TUseIsTextOverflowing = {
   currentSong: TSongItem;
 };
 
-export type TUseIsTextOverflowingProps = {
-  ref: RefObject<HTMLDivElement>;
-  isTextOverflowing: boolean;
+export type TUseIsTextTruncated = {
+  ref: RefObject<HTMLElement>;
 };
+
+export type TUseIsTextTruncatedProps = boolean;
 
 export type TUseAudioProps = {
   ref: RefObject<HTMLAudioElement>;

@@ -1,7 +1,7 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
-import { useAlbumContextMenu } from '@/landing-page/hooks/use-album-context-menu';
+import { useAlbumContextMenu } from '@/hooks/use-album-context-menu';
 import { TLoveAlbumsSectionItem } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';

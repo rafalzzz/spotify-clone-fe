@@ -12,13 +12,6 @@
     padding: 0 10px;
   }
 
-  &__title-container {
-    width: fit-content;
-    max-width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
   &__title {
     display: inline-block;
     width: fit-content;
@@ -29,6 +22,12 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 
   &__artist {
@@ -54,11 +53,5 @@
   .now-played-track {
     display: flex;
     width: calc(50vw - 200px);
-
-    &__title-container {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-    }
   }
 }

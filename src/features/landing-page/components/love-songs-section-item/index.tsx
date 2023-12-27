@@ -1,7 +1,6 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
-import { useSongContextMenu } from '@/landing-page/hooks/use-song-context-menu';
 import { TLoveSongsSectionItem } from '@/landing-page/types/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
@@ -9,6 +8,7 @@ import { useMusicPlayerStore } from '@/store/music-player';
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
 
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
+import { useSongContextMenu } from '@/hooks/use-song-context-menu';
 
 import { EMusicTrackKeys } from '@/types/music-track';
 
@@ -55,6 +55,7 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
             <MusicTrackInformation
               trackName={song[EMusicTrackKeys.TRACK_NAME]}
               artistName={song[EMusicTrackKeys.ARTIST_NAME]}
+              artistId={song[EMusicTrackKeys.ARTIST_ID]}
             />
           </>
         </CustomSectionItem>

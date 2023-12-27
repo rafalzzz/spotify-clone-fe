@@ -10,6 +10,7 @@ const MOCKED_TRACK_NAME = 'Mocked title';
 
 const FIRST_ARTIST_NAME = 'Mocked First TArtist Name';
 const MOCKED_ARTIST_NAME = `${FIRST_ARTIST_NAME}, Second TArtist Name`;
+const MOCKED_ARTIST_ID = 1;
 
 const TRACK_NAME_TEST_ID = 'music-track-informations-track-name';
 const ARTIST_NAME_TEST_ID = 'music-track-informations-artist-name';
@@ -25,7 +26,13 @@ beforeEach(() => {
 });
 
 const renderMusicTrackInformation = () =>
-  render(<MusicTrackInformation trackName={MOCKED_TRACK_NAME} artistName={MOCKED_ARTIST_NAME} />);
+  render(
+    <MusicTrackInformation
+      trackName={MOCKED_TRACK_NAME}
+      artistName={MOCKED_ARTIST_NAME}
+      artistId={MOCKED_ARTIST_ID}
+    />,
+  );
 
 describe('MusicTrackInformation', () => {
   beforeEach(() => {
@@ -80,7 +87,7 @@ describe('MusicTrackInformation', () => {
 
     fireEvent.click(artistNameElement as Element);
 
-    const expectedPath = generateArtistRedirectionPath(FIRST_ARTIST_NAME);
+    const expectedPath = generateArtistRedirectionPath(MOCKED_ARTIST_ID);
     expect(mockPush).toHaveBeenCalledWith(expectedPath);
   });
 });
