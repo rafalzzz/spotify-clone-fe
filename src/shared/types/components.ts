@@ -24,7 +24,7 @@ export type TCustomAddToFavoriteButton = {
   onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
 };
 
-export type TCustomArtistSection = Pick<TArtist, EArtistKeys.ARTIST_NAME>;
+export type TCustomArtistSection = Pick<TArtist, EArtistKeys.ARTIST_NAME | EArtistKeys.ARTIST_ID>;
 
 export type TCustomButton = {
   htmlType: 'reset' | 'submit' | 'button' | undefined;

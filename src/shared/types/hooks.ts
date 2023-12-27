@@ -2,6 +2,7 @@ import { JSXElementConstructor, ReactElement, RefObject } from 'react';
 import { UseQueryResult } from 'react-query';
 
 import { TAlbum } from './album';
+import { TArtist } from './artist';
 import { TSongItem } from './components';
 import { TMusicTrack } from './music-track';
 
@@ -48,6 +49,11 @@ export type TUseSongContextMenu = {
 
 export type TUseAlbumContextMenu = {
   album: TAlbum;
+  copytoClipboard: (text: string) => void;
+};
+
+export type TUseArtistContextMenu = {
+  artistId?: number;
   copytoClipboard: (text: string) => void;
 };
 

@@ -4,6 +4,7 @@ export { getMainArtist } from './get-main-artist';
 export { generateAlbumRedirectionPath } from './generate-album-redirection-path';
 export { generateArtistRedirectionPath } from './generate-artist-redirection-path';
 export { generateShareAlbumUrl } from './generate-share-album-url';
+export { generateShareArtistUrl } from './generate-share-artist-url';
 export { generateShareTrackUrl } from './generate-share-track-url';
 export { generateTrackRedirectionPath } from './generate-track-redirection-path';
 export { getShuffledIndexes } from './get-shuffled-indexes';

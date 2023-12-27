@@ -70,3 +70,11 @@ export type TUseSoundProgressBar = {
   toggleMuted: () => void;
   handleChange: ({ target: { valueAsNumber } }: ChangeEvent<HTMLInputElement>) => void;
 };
+
+export type TUseMusicTrackTitleTooltipProps = {
+  isMenuOpen: boolean;
+  isMouseOver: boolean;
+  onOpenChange: (open: boolean) => void;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+};

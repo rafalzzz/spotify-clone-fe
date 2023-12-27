@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { useCurrentSong } from '@/hooks/use-current-song';
@@ -43,18 +43,26 @@ describe('NowPlayedTrack', () => {
     expect(image).toHaveAttribute('height', '56');
   });
 
-  it('renders Link component with correct href and displays artist name', () => {
-    const { queryByTestId } = renderNowPlayedTrack();
-    const link = queryByTestId('now-played-track-artist-redirection');
-
-    expect(link).toHaveAttribute('href', `/artist/${mockSongItem[EMusicTrackKeys.ARTIST_ID]}`);
-    expect(link).toHaveTextContent(mockSongItem[EMusicTrackKeys.ARTIST_NAME]);
-  });
-
   it('displays correct song information', () => {
     const { getByTestId } = renderNowPlayedTrack();
     const title = getByTestId('now-played-track-title-text');
     expect(title).toBeInTheDocument();
+  });
+
+  it('passes track name to the track tooltip', () => {
+    const { queryByTestId, queryByText, getByTestId } = renderNowPlayedTrack();
+    const title = getByTestId('now-played-track-title-text');
+
+    fireEvent.mouseEnter(title);
+
+    const trackNameTooltip = queryByTestId('now-played-track-track-name-tooltip');
+    expect(trackNameTooltip).toBeInTheDocument();
+
+    const tooltipTitle = queryByText(mockSongItem[EMusicTrackKeys.TRACK_NAME], {
+      selector: 'span',
+    });
+
+    expect(tooltipTitle).toBeInTheDocument();
   });
 
   it('renders Link component with correct href and displays track name', () => {
@@ -63,5 +71,13 @@ describe('NowPlayedTrack', () => {
 
     expect(link).toHaveAttribute('href', `/track/${mockSongItem[EMusicTrackKeys.TRACK_ID]}`);
     expect(link).toHaveTextContent(mockSongItem[EMusicTrackKeys.TRACK_NAME]);
+  });
+
+  it('renders Link component with correct href and displays artist name', () => {
+    const { queryByTestId } = renderNowPlayedTrack();
+    const link = queryByTestId('now-played-track-artist-redirection');
+
+    expect(link).toHaveAttribute('href', `/artist/${mockSongItem[EMusicTrackKeys.ARTIST_ID]}`);
+    expect(link).toHaveTextContent(mockSongItem[EMusicTrackKeys.ARTIST_NAME]);
   });
 });

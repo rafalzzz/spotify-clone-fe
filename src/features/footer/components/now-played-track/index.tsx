@@ -3,10 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
+import { useMusicTrackTitleTooltips } from '@/footer/hooks/use-now-played-track-events';
+
 import { CustomAddToFavoriteButton } from '@/components/custom-add-to-favorite-button';
 import { CustomContextMenu } from '@/components/custom-context-menu';
 import { CustomTooltip } from '@/components/custom-tooltip';
 
+import { useArtistContextMenu } from '@/hooks/use-artist-context-menu';
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
 import { useCurrentSong } from '@/hooks/use-current-song';
 import { useSongContextMenu } from '@/hooks/use-song-context-menu';
@@ -19,29 +22,22 @@ import { EMusicTrackKeys } from '@/types/music-track';
 import './NowPlayedTrack.scss';
 
 export const NowPlayedTrack = (): JSX.Element => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMouseOver, setIsMouseOver] = useState(false);
-
   const currentSong = useCurrentSong();
   const ref = useRef<HTMLAnchorElement>(null);
 
   const { contextHolder, copytoClipboard } = useCopyToClipboard();
-  const items = useSongContextMenu({ song: currentSong, copytoClipboard });
+  const songMenuItems = useSongContextMenu({ song: currentSong, copytoClipboard });
+
+  const artistMenuItems = useArtistContextMenu({
+    artistId: currentSong?.[EMusicTrackKeys.ARTIST_ID],
+    copytoClipboard,
+  });
+
+  const { isMenuOpen, isMouseOver, onOpenChange, onMouseEnter, onMouseLeave } =
+    useMusicTrackTitleTooltips();
 
   const onClick = () => {
     console.log('click');
-  };
-
-  const onOpenChange = (open: boolean) => {
-    setIsMenuOpen(open);
-  };
-
-  const onMouseEnter = () => {
-    setIsMouseOver(true);
-  };
-
-  const onMouseLeave = () => {
-    setIsMouseOver(false);
   };
 
   if (!currentSong) {
@@ -64,7 +60,7 @@ export const NowPlayedTrack = (): JSX.Element => {
           title={currentSong?.[EMusicTrackKeys.TRACK_NAME]}
           open={isMouseOver && !isMenuOpen}
           placement='top'
-          testId='music-track-informations-track-name-tooltip'
+          testId='now-played-track-track-name-tooltip'
         >
           <Link
             ref={ref}
@@ -74,20 +70,22 @@ export const NowPlayedTrack = (): JSX.Element => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <CustomContextMenu items={items} onOpenChange={onOpenChange}>
-              <span data-testid='now-played-track-title-text'>
+            <CustomContextMenu items={songMenuItems} onOpenChange={onOpenChange}>
+              <div data-testid='now-played-track-title-text'>
                 {currentSong?.[EMusicTrackKeys.TRACK_NAME]}
-              </span>
+              </div>
             </CustomContextMenu>
           </Link>
         </CustomTooltip>
-        <Link
-          href={generateArtistRedirectionPath(currentSong?.[EMusicTrackKeys.ARTIST_ID])}
-          className='now-played-track__artist'
-          data-testid='now-played-track-artist-redirection'
-        >
-          {currentSong?.[EMusicTrackKeys.ARTIST_NAME]}
-        </Link>
+        <CustomContextMenu items={artistMenuItems} onOpenChange={onOpenChange}>
+          <Link
+            href={generateArtistRedirectionPath(currentSong?.[EMusicTrackKeys.ARTIST_ID])}
+            className='now-played-track__artist'
+            data-testid='now-played-track-artist-redirection'
+          >
+            {currentSong?.[EMusicTrackKeys.ARTIST_NAME]}
+          </Link>
+        </CustomContextMenu>
       </div>
       <div className='now-played-track__button'>
         <CustomAddToFavoriteButton
