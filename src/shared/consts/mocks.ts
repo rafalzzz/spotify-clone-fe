@@ -1,3 +1,4 @@
+import { EAlbumKeys } from '@/types/album';
 import { EMusicTrackKeys } from '@/types/music-track';
 
 export const mockSongs = [
@@ -74,3 +75,59 @@ export const mockSongs = [
 ];
 
 export const mockSongItem = mockSongs[0];
+
+export const mockAlbums = [
+  {
+    [EAlbumKeys.COLLECTION_ID]: 1,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
+  },
+  {
+    [EAlbumKeys.COLLECTION_ID]: 2,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
+  },
+  {
+    [EAlbumKeys.COLLECTION_ID]: 3,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
+  },
+  {
+    [EAlbumKeys.COLLECTION_ID]: 4,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
+  },
+  {
+    [EAlbumKeys.COLLECTION_ID]: 5,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
+  },
+  {
+    [EAlbumKeys.COLLECTION_ID]: 6,
+    [EAlbumKeys.ARTWORK_URL_60]: '/some-image-url1.jpg',
+    [EAlbumKeys.COLLECTION_NAME]: 'CollectionName',
+    [EAlbumKeys.RELEASE_DATE]: '2020-01-01',
+    [EAlbumKeys.ARTIST_NAME]: 'Test_Artist',
+  },
+];
+
+export const mockAlbum = mockAlbums[0];
+
+export const mockMenuInfo = {
+  key: '1',
+  keyPath: ['1'],
+  item: { props: {} } as React.ReactInstance,
+  domEvent: {
+    stopPropagation: jest.fn(),
+  } as unknown as React.MouseEvent<HTMLElement>,
+};

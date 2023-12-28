@@ -1,17 +1,20 @@
 import { MenuProps } from 'antd';
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
 import { EAlbumKeys } from '@/types/album';
 import { TUseAlbumContextMenu } from '@/types/hooks';
-import { EMusicTrackKeys } from '@/types/music-track';
 
 import { generateAlbumRedirectionPath, generateShareAlbumUrl } from '@/shared/utils';
 
 import AlbumIcon from '@/icons/album';
 import ShareIcon from '@/icons/share';
 
-export const useAlbumContextMenu = ({ album, copytoClipboard }: TUseAlbumContextMenu) => {
+export const useAlbumContextMenu = ({
+  album,
+  copytoClipboard,
+}: TUseAlbumContextMenu): ItemType[] => {
   const { push } = useRouter();
 
   const shareTrack = useCallback(() => {
@@ -20,7 +23,7 @@ export const useAlbumContextMenu = ({ album, copytoClipboard }: TUseAlbumContext
   }, [album, copytoClipboard]);
 
   const redirectToAlbum = useCallback(() => {
-    const url = generateAlbumRedirectionPath(album[EMusicTrackKeys.COLLECTION_ID]);
+    const url = generateAlbumRedirectionPath(album[EAlbumKeys.COLLECTION_ID]);
     push(url);
   }, [album, push]);
 
