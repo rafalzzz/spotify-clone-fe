@@ -17,30 +17,27 @@ export const ProgressBar = ({
   const inputRef = useRef<HTMLInputElement | null>(null);
   const inputRefWidth = useRef<number>(0);
 
-  const inputValue = Math.floor(value);
-  const inputMaxValue = Math.floor(maxValue);
-
   useEffect(() => {
     const inputWidth = window.getComputedStyle(inputRef.current as HTMLInputElement).width;
     inputRefWidth.current = parseInt(inputWidth.replace('px', ''));
   });
 
   useEffect(() => {
-    if (inputMaxValue > 1) {
-      setDecimalValue((inputValue * 1) / inputMaxValue);
+    if (maxValue > 1) {
+      setDecimalValue((value * 1) / maxValue);
     } else {
-      setDecimalValue(inputValue);
+      setDecimalValue(value);
     }
-  }, [inputMaxValue, inputValue]);
+  }, [maxValue, value]);
 
   return (
     <div className='progress-bar'>
       <input
         ref={inputRef}
         min={minValue}
-        max={inputMaxValue}
+        max={maxValue}
         step='0.01'
-        value={inputValue}
+        value={value}
         type='range'
         className='progress-bar__input'
         onMouseDown={handleStartChange}
