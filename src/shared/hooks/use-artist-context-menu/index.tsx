@@ -1,4 +1,5 @@
 import { MenuProps } from 'antd';
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { useCallback, useMemo } from 'react';
 
 import { TUseArtistContextMenu } from '@/types/hooks';
@@ -7,7 +8,10 @@ import { generateShareArtistUrl } from '@/shared/utils';
 
 import ShareIcon from '@/icons/share';
 
-export const useArtistContextMenu = ({ artistId, copytoClipboard }: TUseArtistContextMenu) => {
+export const useArtistContextMenu = ({
+  artistId,
+  copytoClipboard,
+}: TUseArtistContextMenu): ItemType[] => {
   const shareArtist = useCallback(() => {
     if (!artistId) {
       return;

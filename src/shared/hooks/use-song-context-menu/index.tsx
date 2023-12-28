@@ -1,5 +1,6 @@
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { MenuProps } from 'antd';
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
@@ -20,7 +21,7 @@ import ShareIcon from '@/icons/share';
 
 const MOCKED_IS_IN_FAVOTIRES = false;
 
-export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMenu) => {
+export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMenu): ItemType[] => {
   const { push } = useRouter();
 
   const isMusicTrack = (item: TSongItem | TMusicTrack): item is TMusicTrack =>
