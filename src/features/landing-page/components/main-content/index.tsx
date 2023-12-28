@@ -15,18 +15,20 @@ import {
 } from '@/shared/server-components';
 
 const MainContent: FC<TMainContent> = ({ songs, albums, artists }): JSX.Element => (
-  <CustomContentWrapper>
-    <h1>Welcome</h1>
-    <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>
-      <LoveSongsSection songs={songs} />
-    </Suspense>
-    <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>
-      <LoveAlbumsSection albums={albums} />
-    </Suspense>
-    <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomArtistItemLoader} />}>
-      <ArtistsSection artists={artists} />
-    </Suspense>
-  </CustomContentWrapper>
+  <>
+    <CustomContentWrapper>
+      <h1>Welcome</h1>
+      <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>
+        <LoveSongsSection songs={songs} />
+      </Suspense>
+      <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomSectionItemLoader} />}>
+        <LoveAlbumsSection albums={albums} />
+      </Suspense>
+      <Suspense fallback={<CustomSectionLoader SectionItemLoader={CustomArtistItemLoader} />}>
+        <ArtistsSection artists={artists} />
+      </Suspense>
+    </CustomContentWrapper>
+  </>
 );
 
 export default dynamic(() => Promise.resolve(MainContent), { ssr: false });

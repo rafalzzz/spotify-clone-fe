@@ -27,9 +27,9 @@ export const MusicProgressBar = (): JSX.Element => {
       <Audio />
       <Duration seconds={currentTime} textAlign={ETextAlign.END} disabled />
       <ProgressBar
-        value={temporaryTime ?? currentTime}
+        value={Math.floor(temporaryTime ?? currentTime)}
         minValue={0}
-        maxValue={duration}
+        maxValue={Math.floor(duration)}
         handleStartChange={handleStartChange}
         handleChange={handleChange}
         handleEndChange={handleEndChange}
