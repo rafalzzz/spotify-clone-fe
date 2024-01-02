@@ -39,8 +39,12 @@ export const LoveSongsSection: FC<TLoveSongsSection> = ({ songs }): JSX.Element 
               />
             );
 
-            if (!isResizing && itemsAmount && index < itemsAmount) {
+            if (isResizing) {
               return sectionItem;
+            }
+
+            if (!isResizing && itemsAmount && itemsAmount <= index) {
+              return null;
             }
 
             return sectionItem;
