@@ -4,6 +4,8 @@ import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
+import { useFavoritesStore } from '@/store/favorites';
+
 import { TSongItem } from '@/types/components';
 import { TUseSongContextMenu } from '@/types/hooks';
 import { EMusicTrackKeys, TMusicTrack } from '@/types/music-track';
@@ -19,22 +21,32 @@ import AlbumIcon from '@/icons/album';
 import ArtistIcon from '@/icons/artist';
 import ShareIcon from '@/icons/share';
 
-const MOCKED_IS_IN_FAVOTIRES = false;
-
-export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMenu): ItemType[] => {
+export const useSongContextMenu = ({
+  song,
+  isFavorite,
+  copytoClipboard,
+}: TUseSongContextMenu): ItemType[] => {
   const { push } = useRouter();
+
+  const addSongToFavorites = useFavoritesStore(({ addToFavorites }) => addToFavorites);
+  const removeSongFromFavorites = useFavoritesStore(
+    ({ removeFromFavorites }) => removeFromFavorites,
+  );
 
   const isMusicTrack = (item: TSongItem | TMusicTrack): item is TMusicTrack =>
     EMusicTrackKeys.TRACK_PRICE in item;
 
-  const addToFavorites = useCallback(() => {
-    if (isMusicTrack(song)) {
-      const songItem = convertMusicTrackToSongItem(song);
-      console.log({ songItem });
-    }
+  const addToFavorites = useCallback(
+    (song: TMusicTrack | TSongItem) => {
+      if (isMusicTrack(song)) {
+        const songItem = convertMusicTrackToSongItem(song);
+        return addSongToFavorites(songItem);
+      }
 
-    console.log({ song });
-  }, [song]);
+      addSongToFavorites(song);
+    },
+    [addSongToFavorites],
+  );
 
   const shareTrack = useCallback(() => {
     const url = generateShareTrackUrl(song[EMusicTrackKeys.TRACK_ID]);
@@ -55,15 +67,17 @@ export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMen
     () => [
       {
         key: 1,
-        label: 'Add to favorites',
+        label: isFavorite ? 'Remove from favorites' : 'Add to favorites',
         icon: <PlusCircleOutlined />,
         className: 'menu-item',
         onClick: ({ domEvent }) => {
           domEvent.stopPropagation();
 
-          if (MOCKED_IS_IN_FAVOTIRES) {
-            addToFavorites();
+          if (isFavorite) {
+            return removeSongFromFavorites(song[EMusicTrackKeys.TRACK_ID]);
           }
+
+          addToFavorites(song);
         },
       },
       {
@@ -97,7 +111,15 @@ export const useSongContextMenu = ({ song, copytoClipboard }: TUseSongContextMen
         },
       },
     ],
-    [addToFavorites, redirectToAlbum, redirectToArtist, shareTrack],
+    [
+      song,
+      isFavorite,
+      addToFavorites,
+      removeSongFromFavorites,
+      shareTrack,
+      redirectToAlbum,
+      redirectToArtist,
+    ],
   );
 
   return items;

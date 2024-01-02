@@ -56,3 +56,16 @@ jest.mock('@/store/music-player', () => {
     useMusicPlayerStore: createMusicPlayerStore(),
   };
 });
+
+const createFavoritesStore = () =>
+  create(() => ({
+    favorites: [],
+    addToFavorites: jest.fn(),
+    removeFromFavorites: jest.fn(),
+  }));
+
+jest.mock('@/store/favorites', () => {
+  return {
+    useFavoritesStore: createFavoritesStore(),
+  };
+});

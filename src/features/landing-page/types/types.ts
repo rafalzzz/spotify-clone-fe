@@ -17,6 +17,7 @@ export type TLoveSongsSectionItem = {
   song: TMusicTrack;
   isPlaying: boolean;
   isActive: boolean;
+  isFavorite: boolean;
 };
 
 export type TMainContent = {

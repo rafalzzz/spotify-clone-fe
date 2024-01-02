@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import { TLoveSongsSection } from '@/landing-page/types/types';
 
+import { useFavoritesStore } from '@/store/favorites';
 import { useMusicPlayerStore } from '@/store/music-player';
 import { useSectionStore } from '@/store/section';
 
@@ -19,6 +20,10 @@ export const LoveSongsSection: FC<TLoveSongsSection> = ({ songs }): JSX.Element 
   const isResizing = useSectionStore(({ isResizing }) => isResizing);
   const itemsAmount = useSectionStore(({ itemsAmount }) => itemsAmount);
 
+  const favoritesIds = useFavoritesStore(({ favorites }) =>
+    favorites.map((songItem) => songItem[EMusicTrackKeys.TRACK_ID]),
+  );
+
   return (
     <CustomSection title='Love songs' redirectionUrl='/love-songs'>
       {
@@ -30,6 +35,7 @@ export const LoveSongsSection: FC<TLoveSongsSection> = ({ songs }): JSX.Element 
                 song={song}
                 isActive={song[EMusicTrackKeys.TRACK_ID] === trackId}
                 isPlaying={song[EMusicTrackKeys.TRACK_ID] === trackId && isPlaying}
+                isFavorite={favoritesIds.includes(song[EMusicTrackKeys.TRACK_ID])}
               />
             );
 
