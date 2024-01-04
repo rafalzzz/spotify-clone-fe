@@ -19,8 +19,7 @@ export type TAlbumInformation = Pick<
 
 export type TCustomAddToFavoriteButton = {
   title: string;
-  disabled?: boolean;
-  isAddedToFav?: boolean;
+  isAddedToFav: boolean;
   onClick?: MouseEventHandler<HTMLAnchorElement> & MouseEventHandler<HTMLButtonElement>;
 };
 

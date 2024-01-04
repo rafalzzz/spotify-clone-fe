@@ -1,9 +1,11 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import { useMusicTrackTitleTooltips } from '@/footer/hooks/use-now-played-track-events';
+
+import { useFavoritesStore } from '@/store/favorites';
 
 import { CustomAddToFavoriteButton } from '@/components/custom-add-to-favorite-button';
 import { CustomContextMenu } from '@/components/custom-context-menu';
@@ -25,8 +27,19 @@ export const NowPlayedTrack = (): JSX.Element => {
   const currentSong = useCurrentSong();
   const ref = useRef<HTMLAnchorElement>(null);
 
+  const favoritesIds = useFavoritesStore(({ favorites }) =>
+    favorites.map((songItem) => songItem[EMusicTrackKeys.TRACK_ID]),
+  );
+
+  const addSongToFavorites = useFavoritesStore(({ addToFavorites }) => addToFavorites);
+  const removeSongFromFavorites = useFavoritesStore(
+    ({ removeFromFavorites }) => removeFromFavorites,
+  );
+
+  const isFavorite = favoritesIds.includes(currentSong?.[EMusicTrackKeys.TRACK_ID]) ?? false;
+
   const { contextHolder, copytoClipboard } = useCopyToClipboard();
-  const songMenuItems = useSongContextMenu({ song: currentSong, copytoClipboard });
+  const songMenuItems = useSongContextMenu({ song: currentSong, isFavorite, copytoClipboard });
 
   const artistMenuItems = useArtistContextMenu({
     artistId: currentSong?.[EMusicTrackKeys.ARTIST_ID],
@@ -36,9 +49,13 @@ export const NowPlayedTrack = (): JSX.Element => {
   const { isMenuOpen, isMouseOver, onOpenChange, onMouseEnter, onMouseLeave } =
     useMusicTrackTitleTooltips();
 
-  const onClick = () => {
-    console.log('click');
-  };
+  const onClick = useCallback(() => {
+    if (isFavorite) {
+      return removeSongFromFavorites(currentSong[EMusicTrackKeys.TRACK_ID]);
+    }
+
+    addSongToFavorites(currentSong);
+  }, [currentSong, isFavorite, addSongToFavorites, removeSongFromFavorites]);
 
   if (!currentSong) {
     return <div className='now-played-track' data-testid='now-played-track' />;
@@ -89,8 +106,8 @@ export const NowPlayedTrack = (): JSX.Element => {
       </div>
       <div className='now-played-track__button'>
         <CustomAddToFavoriteButton
-          title='Add to favorites'
-          isAddedToFav={false}
+          title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          isAddedToFav={isFavorite}
           onClick={onClick}
         />
       </div>

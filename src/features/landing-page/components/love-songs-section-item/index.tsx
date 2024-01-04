@@ -20,12 +20,12 @@ import {
 import { convertMusicTrackToSongItem, generateTrackRedirectionPath } from '@/shared/utils';
 
 export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
-  ({ song, isPlaying, isActive }) => {
+  ({ song, isPlaying, isActive, isFavorite }) => {
     const playSong = useMusicPlayerStore(({ playSong }) => playSong);
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
     const { contextHolder, copytoClipboard } = useCopyToClipboard();
-    const items = useSongContextMenu({ song, copytoClipboard });
+    const items = useSongContextMenu({ song, isFavorite, copytoClipboard });
 
     const handleOnClick = useCallback(() => {
       if (isActive) {

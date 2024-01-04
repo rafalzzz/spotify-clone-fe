@@ -6,10 +6,19 @@ import { TCustomAddToFavoriteButton } from '@/types/components';
 import { CustomAddToFavoriteButton } from '../';
 
 const BUTTON_TEST_ID = 'custom-add-to-favorite-button';
+const IS_IN_FAVORITES_ICON_TEST_ID = 'is-favorite-icon';
+const IS_NOT_IN_FAVORITES_ICON_TEST_ID = 'is-not-favorite-icon';
 const TOOLTIP_TITLE = 'Test Tooltip';
 
 const renderCustomAddToFavoriteButton = (props: Partial<TCustomAddToFavoriteButton> = {}) =>
-  render(<CustomAddToFavoriteButton title={TOOLTIP_TITLE} onClick={() => {}} {...props} />);
+  render(
+    <CustomAddToFavoriteButton
+      title={TOOLTIP_TITLE}
+      isAddedToFav={false}
+      onClick={() => {}}
+      {...props}
+    />,
+  );
 
 describe('CustomAddToFavoriteButton', () => {
   it('renders component without error', () => {
@@ -21,21 +30,22 @@ describe('CustomAddToFavoriteButton', () => {
     const { queryByTestId } = renderCustomAddToFavoriteButton();
     const button = queryByTestId(BUTTON_TEST_ID);
 
-    expect(button).toHaveClass('custom-add-to-favorite-button--inactive');
+    expect(button).toHaveClass('custom-add-to-favorite-button');
     expect(button).toBeEnabled();
   });
 
-  it('renders as active when isAddedToFav is false', () => {
-    const { queryByTestId } = renderCustomAddToFavoriteButton({ isAddedToFav: false });
-    const button = queryByTestId(BUTTON_TEST_ID);
+  it('renders not-in-favorites icon when isAddedToFav is false', () => {
+    const { queryByTestId } = renderCustomAddToFavoriteButton();
+    const isInFavoritesIcon = queryByTestId(IS_NOT_IN_FAVORITES_ICON_TEST_ID);
 
-    expect(button).toHaveClass('custom-add-to-favorite-button--active');
+    expect(isInFavoritesIcon).toBeInTheDocument();
   });
 
-  it('renders as disabled when disabled prop is true', () => {
-    const { queryByTestId } = renderCustomAddToFavoriteButton({ disabled: true });
-    const button = queryByTestId(BUTTON_TEST_ID);
-    expect(button).toBeDisabled();
+  it('renders in-favorites icon when isAddedToFav is true', () => {
+    const { queryByTestId } = renderCustomAddToFavoriteButton({ isAddedToFav: true });
+    const isInFavoritesIcon = queryByTestId(IS_IN_FAVORITES_ICON_TEST_ID);
+
+    expect(isInFavoritesIcon).toBeInTheDocument();
   });
 
   it('calls onClick when clicked', () => {

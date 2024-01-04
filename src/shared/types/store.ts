@@ -32,3 +32,9 @@ export type TUseSectionStore = {
   disableResizing: () => void;
   setItemsAmount: (itemsAmount: number) => void;
 };
+
+export type TUseFavoritesStore = {
+  favorites: TSongItem[];
+  addToFavorites: (songItem: TSongItem) => void;
+  removeFromFavorites: (songId: number) => void;
+};

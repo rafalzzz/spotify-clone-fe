@@ -4,6 +4,7 @@
 
   .anticon-heart {
     font-size: 1.2rem;
+    color: var(--section-item-play-button-color);
   }
 
   /* disabling antd onClick effect */
@@ -16,17 +17,5 @@
     border: none;
     outline: none;
     transition: none;
-  }
-
-  &--active {
-    .anticon-heart {
-      color: var(--section-item-play-button-color);
-    }
-  }
-
-  &--inactive {
-    .anticon-heart {
-      color: var(--section-secondary-text-color);
-    }
   }
 }

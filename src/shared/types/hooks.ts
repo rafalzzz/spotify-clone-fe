@@ -43,6 +43,7 @@ export type TUseCopyToClipboard = {
 
 export type TUseSongContextMenu = {
   song: TMusicTrack | TSongItem;
+  isFavorite: boolean;
   copytoClipboard: (text: string) => void;
 };
 
