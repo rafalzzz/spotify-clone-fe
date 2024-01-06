@@ -9,13 +9,27 @@ import './CustomContextMenu.scss';
 export const CustomContextMenu: FC<PropsWithChildren<TCustomContextMenu>> = ({
   children,
   items = [],
+  position = 'top',
+  wrapperClassName = '',
   onOpenChange,
 }): JSX.Element => (
   <Dropdown
-    menu={{ className: 'custom-context-menu', items }}
+    className={wrapperClassName}
+    menu={{
+      className: 'custom-context-menu',
+      items,
+      motion: {
+        motionName: 'none',
+        motionAppear: false,
+        motionEnter: false,
+        motionLeave: false,
+        motionDeadline: 0,
+      },
+    }}
     trigger={['contextMenu']}
-    placement='top'
+    placement={position}
     onOpenChange={onOpenChange}
+    destroyPopupOnHide
   >
     {children}
   </Dropdown>

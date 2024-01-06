@@ -1,0 +1,23 @@
+.ant-table {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.ant-table-container,
+.ant-table-content {
+  background-color: transparent !important;
+}
+
+.ant-table-thead > tr > th {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.ant-table-tbody > tr > td {
+  padding: 0 !important;
+  background-color: transparent !important;
+
+  .context-menu-cell {
+    padding: 16px 16px !important;
+  }
+}

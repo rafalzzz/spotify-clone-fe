@@ -14,5 +14,9 @@ export const ContextMenuCell: FC<PropsWithChildren<TContextMenuCell>> = ({ child
   const copytoClipboard = useCopyToClipboard(api);
   const items = useSongContextMenu({ song: record, isFavorite: true, copytoClipboard });
 
-  return <CustomContextMenu items={items}>{children}</CustomContextMenu>;
+  return (
+    <CustomContextMenu wrapperClassName='context-menu-cell' position='bottom' items={items}>
+      {children}
+    </CustomContextMenu>
+  );
 };

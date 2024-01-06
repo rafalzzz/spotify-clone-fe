@@ -1,6 +1,5 @@
 'use client';
 import { notification, Table } from 'antd';
-import {} from 'antd';
 import dynamic from 'next/dynamic';
 
 import { useFavoritesTableColumns } from '@/favorites/hooks/use-favorites-table-columns';
@@ -10,6 +9,8 @@ import { NotificationContextProvider } from '@/contexts/notification-context';
 import { CustomContentWrapper } from '@/components/custom-content-wrapper';
 
 import { mockSongs } from '@/consts/mocks';
+
+import './FavoritesTable.scss';
 
 const FavoritesTableWrapper = (): JSX.Element => {
   const columns = useFavoritesTableColumns();

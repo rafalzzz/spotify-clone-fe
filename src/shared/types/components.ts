@@ -1,4 +1,11 @@
-import { CheckboxProps, InputProps, RadioProps, SelectProps, SwitchProps } from 'antd';
+import {
+  CheckboxProps,
+  DropdownProps,
+  InputProps,
+  RadioProps,
+  SelectProps,
+  SwitchProps,
+} from 'antd';
 import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { Rule } from 'antd/es/form';
 import { NamePath } from 'antd/es/form/interface';
@@ -115,6 +122,8 @@ export type TCustomSectionItem = {
 
 export type TCustomContextMenu = {
   items: ItemType[];
+  position?: DropdownProps['placement'];
+  wrapperClassName?: string;
   onOpenChange?: (open: boolean) => void;
 };
 
