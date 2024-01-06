@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
 
-import { TArtistSection } from '@/landing-page/types/types';
+import { TArtistSection } from '@/landing-page/types';
 
 import { EArtistKeys } from '@/types/artist';
 

@@ -1,3 +1,4 @@
+import { NotificationInstance } from 'antd/es/notification/interface';
 import { JSXElementConstructor, ReactElement, RefObject } from 'react';
 import { UseQueryResult } from 'react-query';
 
@@ -37,8 +38,7 @@ export type TUseGetAlbumSongsProps = {
 };
 
 export type TUseCopyToClipboard = {
-  copytoClipboard: (text: string) => void;
-  contextHolder: ReactElement<string, string | JSXElementConstructor<string>>;
+  api: NotificationInstance;
 };
 
 export type TUseSongContextMenu = {

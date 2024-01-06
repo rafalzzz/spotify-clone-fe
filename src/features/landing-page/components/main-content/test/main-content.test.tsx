@@ -6,6 +6,8 @@ import { TMusicTrack } from '@/types/music-track';
 
 import MainContent from '..';
 
+jest.unmock('@/contexts/notification-context');
+
 const props = {
   artists: [
     {

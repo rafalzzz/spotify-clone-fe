@@ -1,8 +1,18 @@
 import { create } from 'zustand';
 
+import { useNotificationContext } from '@/contexts/notification-context';
+
 import { MockResizeObserver } from '@/types/utils';
 
+const mockApi = {
+  notify: jest.fn(),
+};
+
 jest.mock('antd');
+
+jest.mock('@/contexts/notification-context', () => ({
+  useNotificationContext: jest.fn(),
+}));
 
 beforeAll(() => {
   window.HTMLMediaElement.prototype.play = jest.fn();
@@ -17,6 +27,8 @@ beforeAll(() => {
         removeListener: function () {},
       };
     };
+
+  (useNotificationContext as jest.Mock).mockImplementation(() => ({ api: mockApi }));
 });
 
 Object.defineProperty(window, 'ResizeObserver', {

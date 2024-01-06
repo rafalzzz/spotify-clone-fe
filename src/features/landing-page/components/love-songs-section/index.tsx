@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
 
-import { TLoveSongsSection } from '@/landing-page/types/types';
+import { TLoveSongsSection } from '@/landing-page/types';
 
 import { useFavoritesStore } from '@/store/favorites';
 import { useMusicPlayerStore } from '@/store/music-player';

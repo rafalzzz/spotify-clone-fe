@@ -15,7 +15,8 @@ jest.mock('antd', () => {
   };
 });
 
-const renderUseCopyToClipboard = () => renderHook(() => useCopyToClipboard());
+const renderUseCopyToClipboard = (api: NotificationInstance) =>
+  renderHook(() => useCopyToClipboard(api));
 
 describe('useCopyToClipboard', () => {
   let mockWriteText: jest.Mock;
@@ -35,13 +36,13 @@ describe('useCopyToClipboard', () => {
   });
 
   it('should copy text to clipboard and show success notification', async () => {
-    const { result } = renderUseCopyToClipboard();
+    const { result } = renderUseCopyToClipboard(mockApi as NotificationInstance);
     const textToCopy = 'Test text';
 
     mockWriteText.mockResolvedValue(undefined);
 
     await act(async () => {
-      result.current.copytoClipboard(textToCopy);
+      result.current(textToCopy);
     });
 
     expect(mockWriteText).toHaveBeenCalledWith(textToCopy);
@@ -53,12 +54,12 @@ describe('useCopyToClipboard', () => {
   });
 
   it('should show error notification on clipboard copy failure', async () => {
-    const { result } = renderUseCopyToClipboard();
+    const { result } = renderUseCopyToClipboard(mockApi as NotificationInstance);
     const error = new Error('copy failed');
     mockWriteText.mockRejectedValue(error);
 
     await act(async () => {
-      result.current.copytoClipboard('Test text');
+      result.current('Test text');
     });
 
     expect(mockApi.error).toHaveBeenCalledWith(

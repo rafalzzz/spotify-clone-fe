@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import { QueryClientProvider } from 'react-query';
 
-import { TLoveAlbumsSection } from '@/landing-page/types/types';
+import { TLoveAlbumsSection } from '@/landing-page/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
 import { useSectionStore } from '@/store/section';

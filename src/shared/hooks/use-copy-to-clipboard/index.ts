@@ -1,22 +1,23 @@
-import { notification } from 'antd';
+'use client';
+import { NotificationInstance } from 'antd/es/notification/interface';
 import { useCallback } from 'react';
 
-import { TUseCopyToClipboard } from '@/types/hooks';
-
 import './CopyToClipboard.scss';
+// eslint-disable-next-line import/order
 
 const defaultHeight = '100px';
-const footerHeight = getComputedStyle(document.body).getPropertyValue('--footer-height');
+const footerHeight =
+  typeof window !== 'undefined'
+    ? getComputedStyle(document.body)?.getPropertyValue('--footer-height')
+    : defaultHeight;
 
 const CONTEXT_MENU_STYPES = {
   width: 'auto',
   padding: '10px 10px 20px 10px',
-  marginBottom: footerHeight || defaultHeight,
+  marginBottom: footerHeight,
 };
 
-export const useCopyToClipboard = (): TUseCopyToClipboard => {
-  const [api, contextHolder] = notification.useNotification();
-
+export const useCopyToClipboard = (api: NotificationInstance): ((text: string) => void) => {
   const copytoClipboard = useCallback(
     (text: string): void => {
       navigator.clipboard
@@ -43,5 +44,5 @@ export const useCopyToClipboard = (): TUseCopyToClipboard => {
     [api],
   );
 
-  return { contextHolder, copytoClipboard };
+  return copytoClipboard;
 };

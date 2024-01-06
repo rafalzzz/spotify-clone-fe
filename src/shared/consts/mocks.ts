@@ -128,6 +128,6 @@ export const mockMenuInfo = {
   keyPath: ['1'],
   item: { props: {} } as React.ReactInstance,
   domEvent: {
-    stopPropagation: jest.fn(),
+    stopPropagation: () => {},
   } as unknown as React.MouseEvent<HTMLElement>,
 };
