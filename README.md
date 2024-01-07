@@ -35,6 +35,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Env file
 
+.env.local
 ```bash
 NEXT_PUBLIC_API_URL=https://localhost:7173/api
 NEXT_PUBLIC_API_ITUNES=https://itunes.apple.com
