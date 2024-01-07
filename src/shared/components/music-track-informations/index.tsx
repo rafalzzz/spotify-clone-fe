@@ -28,12 +28,12 @@ export const MusicTrackInformation: FC<TMusicTrackInformationProps> = ({
   return (
     <div className='music-track-informations'>
       <CustomTooltip title={trackName} testId='music-track-informations-track-name-tooltip'>
-        <h4
+        <h3
           className='music-track-informations__text'
           data-testid='music-track-informations-track-name'
         >
           {trackName}
-        </h4>
+        </h3>
       </CustomTooltip>
       <button
         className='music-track-informations__text music-track-informations__artist'

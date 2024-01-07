@@ -14,8 +14,6 @@ const UNDO_HISTORY_TEST_ID = 'undo-history';
 const REDO_HISTORY_TEST_ID = 'redo-history';
 
 const BASIC_HOOK_VALUES = {
-  isUndoButtonDisabled: false,
-  isRedoButtonDisabled: false,
   undoHistory: mockUndoHistory,
   redoHistory: mockRedoHistory,
 };
@@ -59,27 +57,6 @@ describe('NavButtons', () => {
     await userEvent.click(redoHistoryButton as Element);
 
     expect(mockRedoHistory).toHaveBeenCalledTimes(1);
-    expect(mockUndoHistory).not.toHaveBeenCalled();
-  });
-
-  it('should not call functions when buttons are disabled', async () => {
-    (useHistory as jest.Mock).mockReturnValue({
-      ...BASIC_HOOK_VALUES,
-      isUndoButtonDisabled: true,
-      isRedoButtonDisabled: true,
-    });
-
-    const { queryByTestId } = renderNavButtons();
-    const undoHistoryButton = queryByTestId(UNDO_HISTORY_TEST_ID);
-    const redoHistoryButton = queryByTestId(REDO_HISTORY_TEST_ID);
-
-    expect(undoHistoryButton).toBeInTheDocument();
-    expect(redoHistoryButton).toBeInTheDocument();
-
-    await userEvent.click(undoHistoryButton as Element);
-    await userEvent.click(redoHistoryButton as Element);
-
-    expect(mockRedoHistory).not.toHaveBeenCalled();
     expect(mockUndoHistory).not.toHaveBeenCalled();
   });
 });

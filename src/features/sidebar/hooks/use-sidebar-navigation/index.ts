@@ -1,10 +1,11 @@
-import { HomeFilled, SearchOutlined } from '@ant-design/icons';
+import { HomeFilled, SearchOutlined, HeartFilled } from '@ant-design/icons';
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 
 const SIDEBAR_NAVIGATION_PATHS = {
   HOME: '/',
   SEARCH: '/search',
+  FAVORITES: '/favorites',
 };
 
 export const useSidebarNavigation = () => {
@@ -23,6 +24,12 @@ export const useSidebarNavigation = () => {
         path: SIDEBAR_NAVIGATION_PATHS.SEARCH,
         isActive: pathname?.startsWith(SIDEBAR_NAVIGATION_PATHS.SEARCH),
         label: 'Search',
+      },
+      {
+        icon: HeartFilled,
+        path: SIDEBAR_NAVIGATION_PATHS.FAVORITES,
+        isActive: pathname?.startsWith(SIDEBAR_NAVIGATION_PATHS.FAVORITES),
+        label: 'Favorites',
       },
     ],
     [pathname],

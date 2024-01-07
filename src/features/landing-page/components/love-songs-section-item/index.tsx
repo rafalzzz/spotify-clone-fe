@@ -1,9 +1,11 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
-import { TLoveSongsSectionItem } from '@/landing-page/types/types';
+import { TLoveSongsSectionItem } from '@/landing-page/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
+
+import { useNotificationContext } from '@/contexts/notification-context';
 
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
 
@@ -24,7 +26,8 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
     const playSong = useMusicPlayerStore(({ playSong }) => playSong);
     const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
-    const { contextHolder, copytoClipboard } = useCopyToClipboard();
+    const { api } = useNotificationContext();
+    const copytoClipboard = useCopyToClipboard(api);
     const items = useSongContextMenu({ song, isFavorite, copytoClipboard });
 
     const handleOnClick = useCallback(() => {
@@ -43,7 +46,6 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
           href={generateTrackRedirectionPath(song[EMusicTrackKeys.TRACK_ID])}
           items={items}
         >
-          {contextHolder}
           <>
             <CustomSectionItemImage imageUrl={song[EMusicTrackKeys.ARTWORK_URL_60]}>
               <CustomSectionItemPlayButton

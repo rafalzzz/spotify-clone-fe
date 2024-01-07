@@ -12,7 +12,6 @@ export const CustomSectionItemPlayButton: FC<TCustomSectionItemPlayButton> = ({
 }): JSX.Element => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    event.stopPropagation();
     onClick();
   };
 

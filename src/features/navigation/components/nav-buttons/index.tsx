@@ -8,22 +8,15 @@ import { CustomButton } from '@/components/custom-button';
 
 import './NavButtons.scss';
 
-const INITIAL_STATE = {
-  allPaths: [],
-  currentPathIndex: -1,
-};
-
 export const NavButtons = (): JSX.Element => {
-  const { isUndoButtonDisabled, isRedoButtonDisabled, undoHistory, redoHistory } = useHistory({
-    initialState: INITIAL_STATE,
-  });
+  const { undoHistory, redoHistory } = useHistory();
 
   const NAV_BUTTONS = useMemo(
     () => [
       {
         key: 1,
         text: <LeftOutlined />,
-        disabled: isUndoButtonDisabled,
+        disabled: false,
         testId: 'undo-history',
         onClick: undoHistory,
       },
@@ -31,11 +24,11 @@ export const NavButtons = (): JSX.Element => {
         key: 2,
         text: <RightOutlined />,
         testId: 'redo-history',
-        disabled: isRedoButtonDisabled,
+        disabled: false,
         onClick: redoHistory,
       },
     ],
-    [isUndoButtonDisabled, isRedoButtonDisabled, undoHistory, redoHistory],
+    [undoHistory, redoHistory],
   );
 
   return (

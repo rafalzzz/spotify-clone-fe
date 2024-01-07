@@ -48,7 +48,17 @@
             "position": "before"
           },
           {
+            "pattern": "@/favorites/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
             "pattern": "@/store/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/contexts/**",
             "group": "internal",
             "position": "before"
           },

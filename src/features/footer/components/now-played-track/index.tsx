@@ -1,4 +1,5 @@
 'use client';
+import { notification } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useRef } from 'react';
@@ -24,6 +25,7 @@ import { EMusicTrackKeys } from '@/types/music-track';
 import './NowPlayedTrack.scss';
 
 export const NowPlayedTrack = (): JSX.Element => {
+  const [api, contextHolder] = notification.useNotification();
   const currentSong = useCurrentSong();
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -38,7 +40,7 @@ export const NowPlayedTrack = (): JSX.Element => {
 
   const isFavorite = favoritesIds.includes(currentSong?.[EMusicTrackKeys.TRACK_ID]) ?? false;
 
-  const { contextHolder, copytoClipboard } = useCopyToClipboard();
+  const copytoClipboard = useCopyToClipboard(api);
   const songMenuItems = useSongContextMenu({ song: currentSong, isFavorite, copytoClipboard });
 
   const artistMenuItems = useArtistContextMenu({

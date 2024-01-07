@@ -11,6 +11,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack1',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist1',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName1',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
   {
     [EMusicTrackKeys.TRACK_ID]: 2,
@@ -21,6 +22,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack2',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist2',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName2',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
   {
     [EMusicTrackKeys.TRACK_ID]: 3,
@@ -31,6 +33,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack3',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist3',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName3',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
   {
     [EMusicTrackKeys.TRACK_ID]: 4,
@@ -41,6 +44,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack4',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist4',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName4',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
   {
     [EMusicTrackKeys.TRACK_ID]: 5,
@@ -51,6 +55,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack5',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist5',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName5',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
   {
     [EMusicTrackKeys.TRACK_ID]: 6,
@@ -61,6 +66,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack6',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist6',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName6',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
   {
     [EMusicTrackKeys.TRACK_ID]: 7,
@@ -71,6 +77,7 @@ export const mockSongs = [
     [EMusicTrackKeys.TRACK_NAME]: 'TestTrack7',
     [EMusicTrackKeys.ARTIST_NAME]: 'Test_Artist7',
     [EMusicTrackKeys.COLLECTION_NAME]: 'collectionName7',
+    [EMusicTrackKeys.TRACK_TIME_MILLIS]: 30000,
   },
 ];
 
@@ -128,6 +135,6 @@ export const mockMenuInfo = {
   keyPath: ['1'],
   item: { props: {} } as React.ReactInstance,
   domEvent: {
-    stopPropagation: jest.fn(),
+    stopPropagation: () => {},
   } as unknown as React.MouseEvent<HTMLElement>,
 };

@@ -20,9 +20,11 @@ describe('useSidebarNavigation', () => {
 
     const homeItem = getNavigationItemByLabel('Home', result as unknown as ResultType);
     const searchItem = getNavigationItemByLabel('Search', result as unknown as ResultType);
+    const FavoritesItem = getNavigationItemByLabel('Favorites', result as unknown as ResultType);
 
     expect(homeItem!.isActive).toBe(true);
     expect(searchItem!.isActive).toBe(false);
+    expect(FavoritesItem!.isActive).toBe(false);
   });
 
   it('marks the Search item as active when pathname starts with "/search"', () => {
@@ -32,8 +34,24 @@ describe('useSidebarNavigation', () => {
 
     const homeItem = getNavigationItemByLabel('Home', result as unknown as ResultType);
     const searchItem = getNavigationItemByLabel('Search', result as unknown as ResultType);
+    const FavoritesItem = getNavigationItemByLabel('Favorites', result as unknown as ResultType);
 
     expect(homeItem!.isActive).toBe(false);
     expect(searchItem!.isActive).toBe(true);
+    expect(FavoritesItem!.isActive).toBe(false);
+  });
+
+  it('marks the Favorites item as active when pathname starts with "/favorites"', () => {
+    (usePathname as jest.Mock).mockReturnValue('/favorites');
+
+    const { result } = renderHook(() => useSidebarNavigation());
+
+    const homeItem = getNavigationItemByLabel('Home', result as unknown as ResultType);
+    const searchItem = getNavigationItemByLabel('Search', result as unknown as ResultType);
+    const FavoritesItem = getNavigationItemByLabel('Favorites', result as unknown as ResultType);
+
+    expect(homeItem!.isActive).toBe(false);
+    expect(searchItem!.isActive).toBe(false);
+    expect(FavoritesItem!.isActive).toBe(true);
   });
 });

@@ -1,4 +1,11 @@
-import { CheckboxProps, InputProps, RadioProps, SelectProps, SwitchProps } from 'antd';
+import {
+  CheckboxProps,
+  DropdownProps,
+  InputProps,
+  RadioProps,
+  SelectProps,
+  SwitchProps,
+} from 'antd';
 import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { Rule } from 'antd/es/form';
 import { NamePath } from 'antd/es/form/interface';
@@ -14,7 +21,10 @@ import { EMusicTrackKeys, TMusicTrack } from './music-track';
 
 export type TAlbumInformation = Pick<
   TAlbum,
-  EAlbumKeys.COLLECTION_NAME | EAlbumKeys.RELEASE_DATE | EAlbumKeys.ARTIST_NAME
+  | EAlbumKeys.COLLECTION_NAME
+  | EAlbumKeys.RELEASE_DATE
+  | EAlbumKeys.ARTIST_ID
+  | EAlbumKeys.ARTIST_NAME
 >;
 
 export type TCustomAddToFavoriteButton = {
@@ -94,9 +104,10 @@ export type TCustomHyperlink = {
 };
 
 export type TCustomIconButton = {
-  onClick?: () => void;
   isActive?: boolean;
   testId?: string;
+  ariaLabel?: string;
+  onClick?: () => void;
 };
 
 export type TCustomMainContentWrapper = {
@@ -115,6 +126,8 @@ export type TCustomSectionItem = {
 
 export type TCustomContextMenu = {
   items: ItemType[];
+  position?: DropdownProps['placement'];
+  wrapperClassName?: string;
   onOpenChange?: (open: boolean) => void;
 };
 
@@ -166,4 +179,9 @@ export type TSongItem = Pick<
   | EMusicTrackKeys.ARTIST_ID
   | EMusicTrackKeys.COLLECTION_ID
   | EMusicTrackKeys.TRACK_ID
+  | EMusicTrackKeys.TRACK_TIME_MILLIS
 >;
+
+export type ResultPage = {
+  params: { id: string };
+};

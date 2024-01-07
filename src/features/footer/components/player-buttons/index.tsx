@@ -60,17 +60,35 @@ export const PlayerButtons = (): JSX.Element => {
 
   return (
     <div className='player-buttons'>
-      <CustomIconButton isActive={isShuffle} onClick={toggleShuffle} testId='shuffle-button'>
+      <CustomIconButton
+        isActive={isShuffle}
+        onClick={toggleShuffle}
+        testId='shuffle-button'
+        ariaLabel='shuffle'
+      >
         <MixIcon />
       </CustomIconButton>
-      <CustomIconButton testId='prev-song-button' onClick={handlePlayPrevSong}>
+      <CustomIconButton
+        testId='prev-song-button'
+        onClick={handlePlayPrevSong}
+        ariaLabel='prev-song'
+      >
         <PrevIcon />
       </CustomIconButton>
       <PlayerPlayButton />
-      <CustomIconButton testId='next-song-button' onClick={handlePlayNextSong}>
+      <CustomIconButton
+        testId='next-song-button'
+        onClick={handlePlayNextSong}
+        ariaLabel='next-song'
+      >
         <NextIcon />
       </CustomIconButton>
-      <CustomIconButton isActive={isLoop} testId='loop-button' onClick={toggleLoop}>
+      <CustomIconButton
+        isActive={isLoop}
+        testId='loop-button'
+        onClick={toggleLoop}
+        ariaLabel='loop'
+      >
         <LoopIcon />
       </CustomIconButton>
     </div>

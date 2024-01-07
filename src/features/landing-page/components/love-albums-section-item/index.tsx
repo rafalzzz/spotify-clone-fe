@@ -1,9 +1,11 @@
 'use client';
 import { FC, memo, useCallback } from 'react';
 
-import { TLoveAlbumsSectionItem } from '@/landing-page/types/types';
+import { TLoveAlbumsSectionItem } from '@/landing-page/types';
 
 import { useMusicPlayerStore } from '@/store/music-player';
+
+import { useNotificationContext } from '@/contexts/notification-context';
 
 import { CustomSectionItemPlayButton } from '@/components/custom-section-item-play-button';
 
@@ -24,7 +26,8 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
 
     const albumId = album[EAlbumKeys.COLLECTION_ID];
 
-    const { contextHolder, copytoClipboard } = useCopyToClipboard();
+    const { api } = useNotificationContext();
+    const copytoClipboard = useCopyToClipboard(api);
     const items = useAlbumContextMenu({ album, copytoClipboard });
 
     const { cachedData, fetchAlbumSongsAction } = useGetAlbumSongs({
@@ -52,7 +55,6 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
           href={generateAlbumRedirectionPath(album[EAlbumKeys.COLLECTION_ID])}
           items={items}
         >
-          {contextHolder}
           <>
             <CustomSectionItemImage imageUrl={album[EAlbumKeys.ARTWORK_URL_60]}>
               <CustomSectionItemPlayButton
@@ -64,6 +66,7 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
             <AlbumInformation
               collectionName={album[EAlbumKeys.COLLECTION_NAME]}
               releaseDate={album[EAlbumKeys.RELEASE_DATE]}
+              artistId={album[EAlbumKeys.ARTIST_ID]}
               artistName={album[EAlbumKeys.ARTIST_NAME]}
             />
           </>

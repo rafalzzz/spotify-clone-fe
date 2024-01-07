@@ -8,6 +8,7 @@ import { AlbumInformation } from '..';
 
 const MOCKED_COLLECTION_NAME = 'Mocked album name';
 const MOCKED_RELEASE_DATE = '2020-01-01';
+const MOCKED_ARTIST_ID = 1;
 const MOCKED_ARTIST_NAME = `Mocked artist name`;
 
 const COLLECTION_NAME_TEST_ID = 'album-information-collection-name';
@@ -30,6 +31,7 @@ const renderAlbumInformation = () =>
     <AlbumInformation
       collectionName={MOCKED_COLLECTION_NAME}
       releaseDate={MOCKED_RELEASE_DATE}
+      artistId={MOCKED_ARTIST_ID}
       artistName={MOCKED_ARTIST_NAME}
     />,
   );
@@ -85,7 +87,7 @@ describe('AlbumInformation', () => {
 
     fireEvent.click(artistNameElement as Element);
 
-    const expectedPath = generateArtistRedirectionPath(MOCKED_ARTIST_NAME);
+    const expectedPath = generateArtistRedirectionPath(MOCKED_ARTIST_ID);
     expect(mockPush).toHaveBeenCalledWith(expectedPath);
   });
 });

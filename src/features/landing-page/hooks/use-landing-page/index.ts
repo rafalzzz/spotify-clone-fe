@@ -4,7 +4,7 @@ import { TAlbum } from '@/types/album';
 import { TArtist } from '@/types/artist';
 import { TMusicTrack } from '@/types/music-track';
 
-import { TUseLandingPageProps } from '../../types/types';
+import { TUseLandingPageProps } from '../../types';
 
 export const useLandingPage = async (): Promise<TUseLandingPageProps> => {
   const loveSongsPromise = fetchMusicData<TMusicTrack[]>({
