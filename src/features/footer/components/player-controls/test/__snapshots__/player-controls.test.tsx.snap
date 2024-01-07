@@ -12,6 +12,7 @@ exports[`PlayerControls render component without error 1`] = `
           class="player-buttons"
         >
           <button
+            aria-label="shuffle"
             class="custom-icon-button"
             data-testid="shuffle-button"
             role="button"
@@ -31,6 +32,7 @@ exports[`PlayerControls render component without error 1`] = `
             </svg>
           </button>
           <button
+            aria-label="prev-song"
             class="custom-icon-button"
             data-testid="prev-song-button"
             role="button"
@@ -50,6 +52,7 @@ exports[`PlayerControls render component without error 1`] = `
             </svg>
           </button>
           <button
+            aria-label="play"
             class="custom-icon-button"
             data-testid="play-button"
             role="button"
@@ -76,6 +79,7 @@ exports[`PlayerControls render component without error 1`] = `
             </span>
           </button>
           <button
+            aria-label="next-song"
             class="custom-icon-button"
             data-testid="next-song-button"
             role="button"
@@ -95,6 +99,7 @@ exports[`PlayerControls render component without error 1`] = `
             </svg>
           </button>
           <button
+            aria-label="loop"
             class="custom-icon-button"
             data-testid="loop-button"
             role="button"
@@ -129,6 +134,7 @@ exports[`PlayerControls render component without error 1`] = `
             class="progress-bar"
           >
             <input
+              aria-label="progress-bar"
               class="progress-bar__input"
               data-testid="progress-bar"
               max="0"
@@ -160,6 +166,7 @@ exports[`PlayerControls render component without error 1`] = `
         class="player-buttons"
       >
         <button
+          aria-label="shuffle"
           class="custom-icon-button"
           data-testid="shuffle-button"
           role="button"
@@ -179,6 +186,7 @@ exports[`PlayerControls render component without error 1`] = `
           </svg>
         </button>
         <button
+          aria-label="prev-song"
           class="custom-icon-button"
           data-testid="prev-song-button"
           role="button"
@@ -198,6 +206,7 @@ exports[`PlayerControls render component without error 1`] = `
           </svg>
         </button>
         <button
+          aria-label="play"
           class="custom-icon-button"
           data-testid="play-button"
           role="button"
@@ -224,6 +233,7 @@ exports[`PlayerControls render component without error 1`] = `
           </span>
         </button>
         <button
+          aria-label="next-song"
           class="custom-icon-button"
           data-testid="next-song-button"
           role="button"
@@ -243,6 +253,7 @@ exports[`PlayerControls render component without error 1`] = `
           </svg>
         </button>
         <button
+          aria-label="loop"
           class="custom-icon-button"
           data-testid="loop-button"
           role="button"
@@ -277,6 +288,7 @@ exports[`PlayerControls render component without error 1`] = `
           class="progress-bar"
         >
           <input
+            aria-label="progress-bar"
             class="progress-bar__input"
             data-testid="progress-bar"
             max="0"

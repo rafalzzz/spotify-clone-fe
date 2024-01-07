@@ -95,12 +95,12 @@ exports[`MainContent render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack
                   </span>
@@ -215,12 +215,12 @@ exports[`MainContent render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>

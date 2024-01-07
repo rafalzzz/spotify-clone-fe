@@ -61,12 +61,12 @@ exports[`LoveSongsSectionItem renders without error 1`] = `
             data-placement="right"
             data-testid="music-track-informations-track-name-tooltip"
           >
-            <h4
+            <h3
               class="music-track-informations__text"
               data-testid="music-track-informations-track-name"
             >
               TestTrack1
-            </h4>
+            </h3>
             <span>
               TestTrack1
             </span>

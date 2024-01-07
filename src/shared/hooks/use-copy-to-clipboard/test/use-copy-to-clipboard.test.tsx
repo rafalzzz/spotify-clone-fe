@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { notification } from 'antd';
 import { NotificationInstance } from 'antd/es/notification/interface';
 
-import { useCopyToClipboard } from '../';
+import { useCopyToClipboard, NOTIFICATION_KEY } from '../';
 
 jest.mock('antd', () => {
   const actualAntd = jest.requireActual('antd');
@@ -31,7 +31,7 @@ describe('useCopyToClipboard', () => {
       },
     });
 
-    mockApi = { info: jest.fn(), error: jest.fn() };
+    mockApi = { destroy: jest.fn(), info: jest.fn(), error: jest.fn() };
     (notification.useNotification as jest.Mock).mockReturnValue([mockApi, <div key='1' />]);
   });
 
@@ -45,6 +45,7 @@ describe('useCopyToClipboard', () => {
       result.current(textToCopy);
     });
 
+    expect(mockApi.destroy).toHaveBeenCalledWith(NOTIFICATION_KEY);
     expect(mockWriteText).toHaveBeenCalledWith(textToCopy);
     expect(mockApi.info).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -62,6 +63,7 @@ describe('useCopyToClipboard', () => {
       result.current('Test text');
     });
 
+    expect(mockApi.destroy).toHaveBeenCalledWith(NOTIFICATION_KEY);
     expect(mockApi.error).toHaveBeenCalledWith(
       expect.objectContaining({
         description: error,

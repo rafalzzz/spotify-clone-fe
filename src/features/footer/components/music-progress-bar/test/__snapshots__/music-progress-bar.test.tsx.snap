@@ -20,6 +20,7 @@ exports[`MusicProgressBar renders without errors 1`] = `
           class="progress-bar"
         >
           <input
+            aria-label="progress-bar"
             class="progress-bar__input"
             data-testid="progress-bar"
             max="0"
@@ -58,6 +59,7 @@ exports[`MusicProgressBar renders without errors 1`] = `
         class="progress-bar"
       >
         <input
+          aria-label="progress-bar"
           class="progress-bar__input"
           data-testid="progress-bar"
           max="0"

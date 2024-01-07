@@ -13,12 +13,12 @@ exports[`MusicTrackInformation renders component without error 1`] = `
           data-placement="right"
           data-testid="music-track-informations-track-name-tooltip"
         >
-          <h4
+          <h3
             class="music-track-informations__text"
             data-testid="music-track-informations-track-name"
           >
             Mocked title
-          </h4>
+          </h3>
           <span>
             Mocked title
           </span>
@@ -52,12 +52,12 @@ exports[`MusicTrackInformation renders component without error 1`] = `
         data-placement="right"
         data-testid="music-track-informations-track-name-tooltip"
       >
-        <h4
+        <h3
           class="music-track-informations__text"
           data-testid="music-track-informations-track-name"
         >
           Mocked title
-        </h4>
+        </h3>
         <span>
           Mocked title
         </span>

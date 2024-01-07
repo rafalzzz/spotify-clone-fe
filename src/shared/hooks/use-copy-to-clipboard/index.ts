@@ -17,7 +17,7 @@ const CONTEXT_MENU_STYPES = {
   marginBottom: footerHeight,
 };
 
-const NOTIFICATION_KEY = 'copyToClipboard';
+export const NOTIFICATION_KEY = 'copyToClipboard';
 
 export const useCopyToClipboard = (api: NotificationInstance): ((text: string) => void) => {
   const copytoClipboard = useCallback(

@@ -92,12 +92,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="album-information-collection-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="album-information__text"
                       data-testid="album-information-collection-name"
                     >
                       CollectionName
-                    </h4>
+                    </h3>
                     <span>
                       CollectionName
                     </span>
@@ -197,12 +197,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="album-information-collection-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="album-information__text"
                       data-testid="album-information-collection-name"
                     >
                       CollectionName
-                    </h4>
+                    </h3>
                     <span>
                       CollectionName
                     </span>
@@ -302,12 +302,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="album-information-collection-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="album-information__text"
                       data-testid="album-information-collection-name"
                     >
                       CollectionName
-                    </h4>
+                    </h3>
                     <span>
                       CollectionName
                     </span>
@@ -407,12 +407,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="album-information-collection-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="album-information__text"
                       data-testid="album-information-collection-name"
                     >
                       CollectionName
-                    </h4>
+                    </h3>
                     <span>
                       CollectionName
                     </span>
@@ -512,12 +512,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="album-information-collection-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="album-information__text"
                       data-testid="album-information-collection-name"
                     >
                       CollectionName
-                    </h4>
+                    </h3>
                     <span>
                       CollectionName
                     </span>
@@ -617,12 +617,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="album-information-collection-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="album-information__text"
                       data-testid="album-information-collection-name"
                     >
                       CollectionName
-                    </h4>
+                    </h3>
                     <span>
                       CollectionName
                     </span>
@@ -755,12 +755,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>
@@ -860,12 +860,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>
@@ -965,12 +965,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>
@@ -1070,12 +1070,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>
@@ -1175,12 +1175,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>
@@ -1280,12 +1280,12 @@ exports[`LoveAlbumsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="album-information-collection-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="album-information__text"
                     data-testid="album-information-collection-name"
                   >
                     CollectionName
-                  </h4>
+                  </h3>
                   <span>
                     CollectionName
                   </span>

@@ -38,7 +38,6 @@ export const useSongContextMenu = ({
 
   const addToFavorites = useCallback(
     (song: TMusicTrack | TSongItem) => {
-      console.log({ song });
       if (isMusicTrack(song)) {
         const songItem = convertMusicTrackToSongItem(song);
         return addSongToFavorites(songItem);

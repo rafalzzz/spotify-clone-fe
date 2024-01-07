@@ -13,12 +13,12 @@ exports[`AlbumInformation renders component without error 1`] = `
           data-placement="right"
           data-testid="album-information-collection-name-tooltip"
         >
-          <h4
+          <h3
             class="album-information__text"
             data-testid="album-information-collection-name"
           >
             Mocked album name
-          </h4>
+          </h3>
           <span>
             Mocked album name
           </span>
@@ -67,12 +67,12 @@ exports[`AlbumInformation renders component without error 1`] = `
         data-placement="right"
         data-testid="album-information-collection-name-tooltip"
       >
-        <h4
+        <h3
           class="album-information__text"
           data-testid="album-information-collection-name"
         >
           Mocked album name
-        </h4>
+        </h3>
         <span>
           Mocked album name
         </span>

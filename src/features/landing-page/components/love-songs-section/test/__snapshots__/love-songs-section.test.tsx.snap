@@ -92,12 +92,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack1
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack1
                     </span>
@@ -182,12 +182,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack2
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack2
                     </span>
@@ -272,12 +272,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack3
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack3
                     </span>
@@ -362,12 +362,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack4
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack4
                     </span>
@@ -452,12 +452,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack5
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack5
                     </span>
@@ -542,12 +542,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack6
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack6
                     </span>
@@ -632,12 +632,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                     data-placement="right"
                     data-testid="music-track-informations-track-name-tooltip"
                   >
-                    <h4
+                    <h3
                       class="music-track-informations__text"
                       data-testid="music-track-informations-track-name"
                     >
                       TestTrack7
-                    </h4>
+                    </h3>
                     <span>
                       TestTrack7
                     </span>
@@ -755,12 +755,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack1
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack1
                   </span>
@@ -845,12 +845,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack2
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack2
                   </span>
@@ -935,12 +935,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack3
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack3
                   </span>
@@ -1025,12 +1025,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack4
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack4
                   </span>
@@ -1115,12 +1115,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack5
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack5
                   </span>
@@ -1205,12 +1205,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack6
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack6
                   </span>
@@ -1295,12 +1295,12 @@ exports[`LoveSongsSection render component without error 1`] = `
                   data-placement="right"
                   data-testid="music-track-informations-track-name-tooltip"
                 >
-                  <h4
+                  <h3
                     class="music-track-informations__text"
                     data-testid="music-track-informations-track-name"
                   >
                     TestTrack7
-                  </h4>
+                  </h3>
                   <span>
                     TestTrack7
                   </span>
