@@ -2,36 +2,58 @@
 import type { ColumnsType } from 'antd/es/table';
 import { useMemo } from 'react';
 
-import { ContextMenuCell } from '@/favorites/components/context-menu-cell';
+import { useFavoritesStore } from '@/store/favorites';
+
+import { formatDuration } from '@/utils/format-duration';
 
 import { TSongItem } from '@/types/components';
 import { EMusicTrackKeys } from '@/types/music-track';
 
 export const useFavoritesTableColumns = (): ColumnsType<TSongItem> => {
+  const removeFromFavorites = useFavoritesStore(({ removeFromFavorites }) => removeFromFavorites);
+
   const columns = useMemo(
     (): ColumnsType<TSongItem> => [
       {
         title: '#',
         key: EMusicTrackKeys.TRACK_ID,
-        render: (_, record, index) => (
-          <ContextMenuCell record={record}>
-            <div style={{ width: '100%', height: '100%' }}>{index}</div>
-          </ContextMenuCell>
-        ),
+        width: 50,
+        render: (_, __, index) => index + 1,
+      },
+      {
+        title: 'Artist',
+        key: EMusicTrackKeys.ARTIST_NAME,
+        dataIndex: EMusicTrackKeys.ARTIST_NAME,
+        ellipsis: true,
       },
       {
         title: 'Title',
-        key: EMusicTrackKeys.TRACK_ID,
+        key: EMusicTrackKeys.TRACK_NAME,
+        dataIndex: EMusicTrackKeys.TRACK_NAME,
+        ellipsis: true,
+      },
+      {
+        title: 'Time',
+        key: EMusicTrackKeys.TRACK_TIME_MILLIS,
+        width: 80,
+        render: (_, record) => formatDuration(record[EMusicTrackKeys.TRACK_TIME_MILLIS] / 1000),
+      },
+      {
+        title: ' ',
+        key: 'action',
+        width: 80,
         render: (_, record) => (
-          <ContextMenuCell record={record}>
-            <div style={{ width: '100%', height: '100%' }}>
-              {record[EMusicTrackKeys.TRACK_NAME]}
-            </div>
-          </ContextMenuCell>
+          <button
+            onClick={() => {
+              removeFromFavorites(record[EMusicTrackKeys.TRACK_ID]);
+            }}
+          >
+            Remove
+          </button>
         ),
       },
     ],
-    [],
+    [removeFromFavorites],
   );
 
   return columns;

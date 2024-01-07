@@ -17,6 +17,7 @@ const renderLoveSongsSectionItem = (additionalProps = {}) => {
     song: mockSongItem as TMusicTrack,
     isPlaying: false,
     isActive: false,
+    isFavorite: false,
     ...additionalProps,
   };
 
@@ -56,6 +57,7 @@ describe('LoveSongsSectionItem', () => {
           [EMusicTrackKeys.ARTIST_ID]: mockSongItem[EMusicTrackKeys.ARTIST_ID],
           [EMusicTrackKeys.COLLECTION_ID]: mockSongItem[EMusicTrackKeys.COLLECTION_ID],
           [EMusicTrackKeys.TRACK_ID]: mockSongItem[EMusicTrackKeys.TRACK_ID],
+          [EMusicTrackKeys.TRACK_TIME_MILLIS]: mockSongItem[EMusicTrackKeys.TRACK_TIME_MILLIS],
         },
       ],
     });

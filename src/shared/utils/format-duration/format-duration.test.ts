@@ -1,4 +1,4 @@
-import { formatDuration } from './format-duration';
+import { formatDuration } from '.';
 
 describe('formatDuration', () => {
   it('formats zero seconds correctly', () => {

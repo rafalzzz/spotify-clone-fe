@@ -48,3 +48,7 @@ export type TLoveAlbumsSectionItem = {
   isPlaying: boolean;
   isActive: boolean;
 };
+
+export type TSectionItemCounter = {
+  index: number;
+};

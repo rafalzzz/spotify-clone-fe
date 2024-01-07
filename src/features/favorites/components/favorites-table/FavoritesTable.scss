@@ -11,13 +11,29 @@
 .ant-table-thead > tr > th {
   border-radius: 0 !important;
   background-color: transparent !important;
+  color: var(--section-secondary-text-color) !important;
+
+  &::before {
+    background-color: transparent !important;
+  }
 }
 
-.ant-table-tbody > tr > td {
-  padding: 0 !important;
-  background-color: transparent !important;
+.ant-table-tbody {
+  > tr > td {
+    background-color: transparent !important;
+    color: var(--section-secondary-text-color) !important;
+    border-bottom: none !important;
 
-  .context-menu-cell {
-    padding: 16px 16px !important;
+    &::before {
+      background-color: transparent !important;
+    }
+  }
+
+  .ant-table-placeholder {
+    background-color: transparent !important;
+
+    .ant-empty-description {
+      color: var(--section-secondary-text-color) !important;
+    }
   }
 }

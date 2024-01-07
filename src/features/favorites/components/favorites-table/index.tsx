@@ -4,18 +4,19 @@ import dynamic from 'next/dynamic';
 
 import { useFavoritesTableColumns } from '@/favorites/hooks/use-favorites-table-columns';
 
+import { useFavoritesStore } from '@/store/favorites';
+
 import { NotificationContextProvider } from '@/contexts/notification-context';
 
 import { CustomContentWrapper } from '@/components/custom-content-wrapper';
 
-import { mockSongs } from '@/consts/mocks';
-
 import './FavoritesTable.scss';
 
 const FavoritesTableWrapper = (): JSX.Element => {
+  const favorites = useFavoritesStore(({ favorites }) => favorites);
   const columns = useFavoritesTableColumns();
 
-  return <Table columns={columns} dataSource={mockSongs} pagination={false} bordered={false} />;
+  return <Table columns={columns} dataSource={favorites} pagination={false} bordered={false} />;
 };
 
 const FavoritesTable = (): JSX.Element => {

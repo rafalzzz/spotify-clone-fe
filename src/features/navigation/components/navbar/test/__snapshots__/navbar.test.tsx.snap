@@ -12,7 +12,6 @@ exports[`Navbar render component without error 1`] = `
         <button
           class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-circle ant-btn-default nav-buttons__item"
           data-testid="undo-history"
-          disabled=""
           role="button"
           type="button"
         >
@@ -41,7 +40,6 @@ exports[`Navbar render component without error 1`] = `
         <button
           class="ant-btn css-dev-only-do-not-override-12upa3x ant-btn-circle ant-btn-default nav-buttons__item"
           data-testid="redo-history"
-          disabled=""
           role="button"
           type="button"
         >

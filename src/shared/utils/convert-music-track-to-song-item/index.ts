@@ -10,4 +10,5 @@ export const convertMusicTrackToSongItem = (musicTrack: TMusicTrack): TSongItem 
   [EMusicTrackKeys.ARTIST_ID]: musicTrack[EMusicTrackKeys.ARTIST_ID],
   [EMusicTrackKeys.COLLECTION_ID]: musicTrack[EMusicTrackKeys.COLLECTION_ID],
   [EMusicTrackKeys.TRACK_ID]: musicTrack[EMusicTrackKeys.TRACK_ID],
+  [EMusicTrackKeys.TRACK_TIME_MILLIS]: musicTrack[EMusicTrackKeys.TRACK_TIME_MILLIS],
 });

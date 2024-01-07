@@ -1,7 +1,8 @@
 import { FC, useMemo } from 'react';
 
 import { ETextAlign, TDuration } from '@/footer/types';
-import { formatDuration } from '@/footer/utils/format-duration';
+
+import { formatDuration } from '@/utils/format-duration';
 
 import './Duration.scss';
 

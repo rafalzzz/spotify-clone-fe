@@ -175,4 +175,9 @@ export type TSongItem = Pick<
   | EMusicTrackKeys.ARTIST_ID
   | EMusicTrackKeys.COLLECTION_ID
   | EMusicTrackKeys.TRACK_ID
+  | EMusicTrackKeys.TRACK_TIME_MILLIS
 >;
+
+export type ResultPage = {
+  params: { id: string };
+};
