@@ -21,7 +21,10 @@ import { EMusicTrackKeys, TMusicTrack } from './music-track';
 
 export type TAlbumInformation = Pick<
   TAlbum,
-  EAlbumKeys.COLLECTION_NAME | EAlbumKeys.RELEASE_DATE | EAlbumKeys.ARTIST_NAME
+  | EAlbumKeys.COLLECTION_NAME
+  | EAlbumKeys.RELEASE_DATE
+  | EAlbumKeys.ARTIST_ID
+  | EAlbumKeys.ARTIST_NAME
 >;
 
 export type TCustomAddToFavoriteButton = {
@@ -101,9 +104,10 @@ export type TCustomHyperlink = {
 };
 
 export type TCustomIconButton = {
-  onClick?: () => void;
   isActive?: boolean;
   testId?: string;
+  ariaLabel?: string;
+  onClick?: () => void;
 };
 
 export type TCustomMainContentWrapper = {

@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { FC } from 'react';
 
 import { CustomContentWrapper } from '@/components/custom-content-wrapper';
 
@@ -6,7 +7,7 @@ type SearchResultProps = {
   params: { term: string };
 };
 
-const SearchResult = ({ params: { term } }: SearchResultProps) => (
+const SearchResult: FC<SearchResultProps> = ({ params: { term } }): JSX.Element => (
   <CustomContentWrapper>
     <p>Term - {term}</p>
     <br />

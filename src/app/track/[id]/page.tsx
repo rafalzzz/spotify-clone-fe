@@ -5,7 +5,7 @@ import { CustomContentWrapper } from '@/components/custom-content-wrapper';
 
 import { ResultPage } from '@/types/components';
 
-const TrackResult: FC<ResultPage> = ({ params: { id } }) => (
+const TrackResult: FC<ResultPage> = ({ params: { id } }): JSX.Element => (
   <CustomContentWrapper>
     <p>Track Id - {id}</p>
     <br />

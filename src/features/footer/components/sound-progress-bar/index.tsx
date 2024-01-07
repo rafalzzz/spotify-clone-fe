@@ -15,7 +15,12 @@ export const SoundProgressBar = (): JSX.Element => {
 
   return (
     <div className='sound-progress-bar'>
-      <CustomIconButton onClick={toggleMuted} isActive testId='sound-progress-bar-button'>
+      <CustomIconButton
+        onClick={toggleMuted}
+        isActive
+        testId='sound-progress-bar-button'
+        ariaLabel={isMuted ? 'unmute' : 'mute'}
+      >
         {isMuted ? <MutedSoundIcon /> : <SoundIcon />}
       </CustomIconButton>
       <ProgressBar value={volume} minValue={0} maxValue={1} handleChange={handleChange} />

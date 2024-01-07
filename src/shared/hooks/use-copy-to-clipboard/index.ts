@@ -17,13 +17,17 @@ const CONTEXT_MENU_STYPES = {
   marginBottom: footerHeight,
 };
 
+const NOTIFICATION_KEY = 'copyToClipboard';
+
 export const useCopyToClipboard = (api: NotificationInstance): ((text: string) => void) => {
   const copytoClipboard = useCallback(
     (text: string): void => {
       navigator.clipboard
         .writeText(text)
         .then(() => {
+          api.destroy(NOTIFICATION_KEY);
           api.info({
+            key: NOTIFICATION_KEY,
             message: null,
             description: 'Link copied to clipboard.',
             duration: 3,
@@ -34,6 +38,7 @@ export const useCopyToClipboard = (api: NotificationInstance): ((text: string) =
           });
         })
         .catch((err) => {
+          api.destroy(NOTIFICATION_KEY);
           api.error({
             message: null,
             description: err,

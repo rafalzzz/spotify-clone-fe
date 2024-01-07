@@ -12,22 +12,23 @@ import './AlbumInformation.scss';
 export const AlbumInformation: FC<TAlbumInformation> = ({
   collectionName,
   releaseDate,
+  artistId,
   artistName,
 }): JSX.Element => {
   const router = useRouter();
   const releaseYear = releaseDate.split('-')[0];
 
   const handleArtistClick = () => {
-    const path = generateArtistRedirectionPath(artistName);
+    const path = generateArtistRedirectionPath(artistId);
     router.push(path);
   };
 
   return (
     <div className='album-information'>
       <CustomTooltip title={collectionName} testId='album-information-collection-name-tooltip'>
-        <h4 className='album-information__text' data-testid='album-information-collection-name'>
+        <h3 className='album-information__text' data-testid='album-information-collection-name'>
           {collectionName}
-        </h4>
+        </h3>
       </CustomTooltip>
       <div className='album-information__wrapper'>
         <span

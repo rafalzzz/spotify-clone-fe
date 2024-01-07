@@ -9,7 +9,12 @@ export const PlayerPlayButton = (): JSX.Element => {
   const togglePlay = useMusicPlayerStore(({ togglePlay }) => togglePlay);
 
   return (
-    <CustomIconButton onClick={togglePlay} isActive={false} testId='play-button'>
+    <CustomIconButton
+      onClick={togglePlay}
+      isActive={false}
+      testId='play-button'
+      ariaLabel={isPlaying ? 'stop' : 'play'}
+    >
       {isPlaying ? (
         <PauseCircleFilled data-testid='player-buttons-pause-icon' />
       ) : (

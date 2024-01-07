@@ -66,6 +66,7 @@ export const LoveAlbumsSectionItem: FC<TLoveAlbumsSectionItem> = memo(
             <AlbumInformation
               collectionName={album[EAlbumKeys.COLLECTION_NAME]}
               releaseDate={album[EAlbumKeys.RELEASE_DATE]}
+              artistId={album[EAlbumKeys.ARTIST_ID]}
               artistName={album[EAlbumKeys.ARTIST_NAME]}
             />
           </>

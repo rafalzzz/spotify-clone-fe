@@ -46,6 +46,7 @@ export const ProgressBar = ({
         onMouseUp={handleEndChange}
         onTouchEnd={handleEndChange}
         data-testid='progress-bar'
+        aria-label='progress-bar'
       />
       <span
         className='progress-bar__span-thumb'

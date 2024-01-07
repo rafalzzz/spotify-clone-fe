@@ -5,7 +5,7 @@ import { CustomContentWrapper } from '@/components/custom-content-wrapper';
 
 import { ResultPage } from '@/types/components';
 
-const ArtistResult: FC<ResultPage> = ({ params: { id } }) => (
+const ArtistResult: FC<ResultPage> = ({ params: { id } }): JSX.Element => (
   <CustomContentWrapper>
     <p>Artist Id - {id}</p>
     <br />
