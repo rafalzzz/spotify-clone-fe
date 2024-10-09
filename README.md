@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 [`Demo`](https://spotify-clone-fe-ten.vercel.app/)
 
-This is a copy of the Spotify app using the iTunes API. The application is not fully finished (the home page is mostly done, but not completely, as there are still many things that could be improved).
+This is a copy of the Spotify app using the iTunes API. The application is not fully finished (the home page is mostly done, but not completely, as there are still many things that could be improved, as well as some minor bugs that need to be fixed).
 
 The backend with the registration, login, password reset, and change functions for the application is located in a separate repository and is written in ASP.NET Core.
 
