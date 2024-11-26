@@ -37,6 +37,8 @@ export const LoveSongsSectionItem: FC<TLoveSongsSectionItem> = memo(
 
       const songItem = convertMusicTrackToSongItem(song);
 
+      console.log({songItem})
+
       playSong({ trackId: song[EMusicTrackKeys.TRACK_ID], songs: [songItem] });
     }, [isActive, song, playSong, togglePlay]);
 

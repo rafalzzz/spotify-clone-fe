@@ -6,6 +6,8 @@ export const Audio = (): JSX.Element => {
   const { ref, currentSong, isPlaying, isLoop, onLoadedMetadata, onTimeUpdate, onEnded } =
     useAudio();
 
+  console.log({currentSong, isPlaying})
+
   return (
     <audio
       ref={ref}
