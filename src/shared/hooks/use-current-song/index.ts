@@ -14,7 +14,5 @@ export const useCurrentSong = (): TSongItem => {
     return songsList[index];
   }, [activeIndex, songsList]);
 
-  console.log({currentSong, songsList})
-
   return currentSong;
 };
