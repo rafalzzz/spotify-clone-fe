@@ -1,3 +1,5 @@
+"use server"
+
 import { customRequest } from '@/utils/custom-request';
 
 export const fetchArtistAlbums = (artistId: number): Promise<string | Response | undefined> =>
