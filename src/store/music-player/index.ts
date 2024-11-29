@@ -29,13 +29,14 @@ export const useMusicPlayerStore = create(
       setDuration: (duration: number) => set(() => ({ duration: duration })),
       setCurrentTime: (time: number) => set(() => ({ currentTime: time })),
       playSong: ({ trackId, songs }: TPlaySongAction) =>
-        set(() => ({
+        set((isShuffle) => ({
           trackId,
           isPlaying: true,
           duration: 0,
           activeIndex: 0,
           songsList: songs,
           albumId: null,
+          shuffledIndexes: isShuffle ? [0] : []
         })),
       playAlbum: ({ albumId, songs }: TPlayAlbumAction) =>
         set((isShuffle) => ({
