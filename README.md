@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[`Demo`](https://spotify-clone-2jntg01oy-rafalzzzs-projects.vercel.app)
+[`Demo`](https://spotify-clone-gtwfxvhlk-rafalzzzs-projects.vercel.app)
 
 This is a copy of the Spotify app using the iTunes API. The application is not fully finished (the home page is mostly done, but not completely, as there are still many things that could be improved, as well as some minor bugs that need to be fixed).
 
