@@ -36,7 +36,7 @@ export const useMusicPlayerStore = create(
           activeIndex: 0,
           songsList: songs,
           albumId: null,
-          shuffledIndexes: isShuffle ? [0] : []
+          shuffledIndexes: isShuffle ? [0] : [],
         })),
       playAlbum: ({ albumId, songs }: TPlayAlbumAction) =>
         set((isShuffle) => ({

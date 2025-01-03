@@ -1,4 +1,4 @@
-"use server"
+'use server';
 
 import { convertMusicTrackToSongItem } from '@/utils/convert-music-track-to-song-item';
 import { customRequest } from '@/utils/custom-request';
